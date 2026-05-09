@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Séances Athlé — Crée des séances solides de U10 à Senior en 30 secondes</title>
+<meta name="description" content="L'outil des entraîneurs d'athlétisme qui structure des séances et des cycles pédagogiques solides en 30 secondes. 280+ exercices vidéo issus des meilleurs entraîneurs mondiaux.">
+<meta property="og:title" content="Séances Athlé — La séance d'athlé prête en 30 secondes, pas en 1h30">
+<meta property="og:description" content="L'IA structure tes séances dans une logique pédagogique FFA. Toi, tu coaches.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://seances-athle.fr">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        mondo: { DEFAULT: '#DD3F1A', dark: '#B8351A', light: '#FF8B6E', faint: '#FAEEEC' },
+        sable: { DEFAULT: '#F5EFE6', dark: '#E8DCC8', deep: '#6B5840' },
+        piste: { black: '#0A0A0A', graphite: '#1F1F1F' },
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .gradient-fade { background: linear-gradient(180deg, transparent 0%, rgba(245,239,230,0.6) 100%); }
+  .track-stripe { background: repeating-linear-gradient(90deg, #DD3F1A 0, #DD3F1A 20px, transparent 20px, transparent 40px); }
+</style>
+</head>
+<body class="bg-white text-piste-black">
+
+<!-- Nav -->
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-mondo rounded-lg flex items-center justify-center">
+        <div class="w-4 h-4 border-2 border-white rounded-full"></div>
+      </div>
+      <span class="font-medium text-base">Séances Athlé</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#comment-ca-marche" class="text-sm text-gray-600 hover:text-piste-black transition">Comment ça marche</a>
+      <a href="#disciplines" class="text-sm text-gray-600 hover:text-piste-black transition">Disciplines</a>
+      <a href="#tarifs" class="text-sm text-gray-600 hover:text-piste-black transition">Tarifs</a>
+      <a href="#faq" class="text-sm text-gray-600 hover:text-piste-black transition">FAQ</a>
+      <a href="https://app.seances-athle.fr" class="text-sm text-gray-600 hover:text-piste-black transition">Se connecter</a>
+      <a href="https://app.seances-athle.fr" class="text-sm bg-mondo text-white px-4 py-2 rounded-lg hover:bg-mondo-dark transition">Essai gratuit</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="text-white relative overflow-hidden" style="background-image: linear-gradient(rgba(10,10,10,0.78), rgba(10,10,10,0.92)), url('https://images.unsplash.com/photo-1474546652694-a33dd8161d66?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+  <div class="absolute top-0 left-0 right-0 h-1 track-stripe opacity-40"></div>
+  <div class="max-w-6xl mx-auto px-6 py-20 md:py-32 relative">
+    <div class="max-w-3xl">
+      <div class="inline-block mb-7">
+        <div class="text-mondo-light font-medium text-sm md:text-base uppercase tracking-[0.2em]">Pour les entraîneurs d'athlétisme</div>
+        <div class="h-0.5 w-12 bg-mondo mt-2"></div>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-medium leading-tight mb-6">
+        Ta séance d'athlé prête<br>en <span class="text-mondo">30 secondes,</span><br>pas en 1h30.
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl">
+        Tu décris ton objectif. L'app recherche dans 280+ exercices vidéo issus des meilleurs entraîneurs mondiaux. Elle structure ta séance dans une logique pédagogique FFA. Toi, tu coaches.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 mb-6">
+        <a href="https://app.seances-athle.fr" class="bg-mondo hover:bg-mondo-dark text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2">
+          Commencer gratuitement
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="#comment-ca-marche" class="border border-gray-700 hover:border-gray-500 text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2">
+          Voir comment ça marche
+        </a>
+      </div>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
+        <span class="flex items-center gap-1.5"><span class="text-mondo">✓</span> 14 jours gratuits</span>
+        <span class="flex items-center gap-1.5"><span class="text-mondo">✓</span> Sans carte bancaire</span>
+        <span class="flex items-center gap-1.5"><span class="text-mondo">✓</span> Annulable en 1 clic</span>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-1 track-stripe opacity-30"></div>
+</section>
+
+<!-- Trust strip -->
+<section class="bg-sable py-8">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      <div>
+        <div class="text-2xl md:text-3xl font-medium text-piste-black">280+</div>
+        <div class="text-xs uppercase tracking-wider text-sable-deep mt-1">Exercices vidéo</div>
+      </div>
+      <div>
+        <div class="text-2xl md:text-3xl font-medium text-piste-black">10</div>
+        <div class="text-xs uppercase tracking-wider text-sable-deep mt-1">Disciplines couvertes</div>
+      </div>
+      <div>
+        <div class="text-2xl md:text-3xl font-medium text-piste-black">30</div>
+        <div class="text-xs uppercase tracking-wider text-sable-deep mt-1">Entraîneurs internationaux</div>
+      </div>
+      <div>
+        <div class="text-2xl md:text-3xl font-medium text-piste-black">30 sec</div>
+        <div class="text-xs uppercase tracking-wider text-sable-deep mt-1">Pour une séance prête</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Avant / Après -->
+<section class="py-20 md:py-28">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Le problème</div>
+      <h2 class="text-3xl md:text-4xl font-medium leading-tight max-w-3xl mx-auto">
+        Préparer une séance d'athlé<br>prend du temps. Et fait douter.
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="bg-mondo-faint border-l-4 border-red-700 p-6 rounded-lg">
+        <div class="text-xs uppercase font-medium text-red-700 mb-3 tracking-wider">Aujourd'hui</div>
+        <ul class="space-y-3 text-base leading-relaxed text-gray-800">
+          <li class="flex gap-2"><span class="text-red-700 flex-shrink-0">—</span> 1h30 à fouiller Insta, YouTube et ton classeur</li>
+          <li class="flex gap-2"><span class="text-red-700 flex-shrink-0">—</span> Tu fouilles dans tes vieux bouquins de méthode</li>
+          <li class="flex gap-2"><span class="text-red-700 flex-shrink-0">—</span> 6 onglets ouverts, aucun lien entre les exercices</li>
+          <li class="flex gap-2"><span class="text-red-700 flex-shrink-0">—</span> Tu doutes de la cohérence pédagogique de ta séance</li>
+          <li class="flex gap-2"><span class="text-red-700 flex-shrink-0">—</span> Tu improvises encore au bord de la piste</li>
+        </ul>
+      </div>
+      <div class="bg-green-50 border-l-4 border-green-700 p-6 rounded-lg">
+        <div class="text-xs uppercase font-medium text-green-700 mb-3 tracking-wider">Avec Séances Athlé</div>
+        <ul class="space-y-3 text-base leading-relaxed text-gray-800">
+          <li class="flex gap-2"><span class="text-green-700 flex-shrink-0">+</span> Tu décris ton objectif. La séance est prête en 30 secondes</li>
+          <li class="flex gap-2"><span class="text-green-700 flex-shrink-0">+</span> Une logique pédagogique FFA, du début à la fin</li>
+          <li class="flex gap-2"><span class="text-green-700 flex-shrink-0">+</span> Une vidéo de référence pour chaque exercice</li>
+          <li class="flex gap-2"><span class="text-green-700 flex-shrink-0">+</span> Tu coaches. Tes athlètes progressent. Tu rentres serein</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comment ça marche -->
+<section id="comment-ca-marche" class="bg-sable py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Comment ça marche</div>
+      <h2 class="text-3xl md:text-4xl font-medium leading-tight">3 étapes. 30 secondes.<br>Une séance prête à coacher.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-7 rounded-xl border border-gray-100">
+        <div class="w-10 h-10 bg-mondo text-white rounded-lg flex items-center justify-center font-medium text-lg mb-5">1</div>
+        <h3 class="font-medium text-lg mb-4">Décris ton objectif</h3>
+        <ul class="space-y-2.5 text-sm text-gray-600">
+          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Discipline ciblée</li>
+          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Niveau (Poussins → Seniors)</li>
+          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Durée et matériel</li>
+          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> 1 à 4 qualités physiques à travailler</li>
+        </ul>
+      </div>
+      <div class="bg-white p-7 rounded-xl border border-gray-100">
+        <div class="w-10 h-10 bg-mondo text-white rounded-lg flex items-center justify-center font-medium text-lg mb-5">2</div>
+        <h3 class="font-medium text-lg mb-4">L'IA structure la séance</h3>
+        <ul class="space-y-2.5 text-sm text-gray-600">
+          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Choix des bons exercices</li>
+          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Pédagogie FFA respectée</li>
+          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Séance autonome ou cycle de 3 à 5</li>
+          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> 30 secondes pour la générer</li>
+        </ul>
+      </div>
+      <div class="bg-white p-7 rounded-xl border border-gray-100">
+        <div class="w-10 h-10 bg-mondo text-white rounded-lg flex items-center justify-center font-medium text-lg mb-5">3</div>
+        <h3 class="font-medium text-lg mb-4">Tu coaches</h3>
+        <ul class="space-y-2.5 text-sm text-gray-600">
+          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> La séance s'ouvre sur ton téléphone</li>
+          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Une vidéo cliquable par exercice</li>
+          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Tu modifies ce que tu veux</li>
+          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Tu observes, corriges, fais progresser</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Disciplines -->
+<section id="disciplines" class="py-20 md:py-28">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">La bibliothèque</div>
+      <h2 class="text-3xl md:text-4xl font-medium leading-tight max-w-2xl mx-auto">
+        280+ exercices vidéo. 10 disciplines.<br>30 entraîneurs internationaux.
+      </h2>
+      <p class="text-base text-gray-600 mt-4 max-w-2xl mx-auto">
+        Une base que tu mettrais deux ans à constituer toi-même. Enrichie chaque semaine.
+      </p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">~50</div><div class="text-xs text-gray-600 mt-1">Sprint</div></div>
+      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">~35</div><div class="text-xs text-gray-600 mt-1">Haies</div></div>
+      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">21</div><div class="text-xs text-gray-600 mt-1">Saut longueur</div></div>
+      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">16</div><div class="text-xs text-gray-600 mt-1">Saut hauteur</div></div>
+      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">25</div><div class="text-xs text-gray-600 mt-1">Lancer poids</div></div>
+      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">26</div><div class="text-xs text-gray-600 mt-1">Javelot</div></div>
+      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">7</div><div class="text-xs text-gray-600 mt-1">Disque</div></div>
+      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">5</div><div class="text-xs text-gray-600 mt-1">Marteau</div></div>
+      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">4</div><div class="text-xs text-gray-600 mt-1">Relais</div></div>
+      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">~80</div><div class="text-xs text-gray-600 mt-1">Transverse</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Features SaaS détaillées -->
+<section class="bg-piste-black text-white py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="text-xs uppercase tracking-widest text-mondo-light font-medium mb-3">Ce qui change tout</div>
+      <h2 class="text-3xl md:text-4xl font-medium leading-tight">Pensé pour les entraîneurs.<br>Pas pour les ingénieurs.</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4">
+
+      <div class="bg-piste-graphite p-6 rounded-xl border border-white/5">
+        <div class="w-10 h-10 bg-mondo/20 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-mondo-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <h3 class="font-medium text-base mb-2 text-white">Une vraie pédagogie. Pas un tas d'exercices.</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">Tes séances suivent les 4 étapes officielles de l'apprentissage moteur (découverte, structuration, globalisation, réinvestissement). Sans que tu y penses.</p>
+      </div>
+
+      <div class="bg-piste-graphite p-6 rounded-xl border border-white/5">
+        <div class="w-10 h-10 bg-mondo/20 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-mondo-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="font-medium text-base mb-2 text-white">Une vidéo pour chaque exercice</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">Plus jamais besoin de retourner sur YouTube pour montrer le geste. Un clic, ton athlète voit comment ça se fait.</p>
+      </div>
+
+      <div class="bg-piste-graphite p-6 rounded-xl border border-white/5">
+        <div class="w-10 h-10 bg-mondo/20 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-mondo-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+        </div>
+        <h3 class="font-medium text-base mb-2 text-white">Tu cibles précisément ce qu'il faut bosser</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">16 qualités physiques au catalogue FFA. Tu coches une à quatre cases (pliométrie, vitesse, explosivité…), l'IA structure la séance autour.</p>
+      </div>
+
+      <div class="bg-piste-graphite p-6 rounded-xl border border-white/5">
+        <div class="w-10 h-10 bg-mondo/20 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-mondo-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="font-medium text-base mb-2 text-white">Une séance ou un cycle. Tu choisis.</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">Une seule séance pour bosser un point précis. Ou un cycle progressif de 3 à 5 séances pour structurer un mois. Le mode change au moment de générer.</p>
+      </div>
+
+      <div class="bg-piste-graphite p-6 rounded-xl border border-white/5">
+        <div class="w-10 h-10 bg-mondo/20 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-mondo-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+        </div>
+        <h3 class="font-medium text-base mb-2 text-white">Du Poussin au Senior, sans erreur</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">L'IA tient compte du niveau (U10 → Senior) pour ajuster intensité, charges et complexité. Pas d'exercice cadets imposé à des Poussins.</p>
+      </div>
+
+      <div class="bg-piste-graphite p-6 rounded-xl border border-white/5">
+        <div class="w-10 h-10 bg-mondo/20 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-mondo-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg>
+        </div>
+        <h3 class="font-medium text-base mb-2 text-white">Une base qui s'enrichit chaque semaine</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">280+ exercices vidéo issus des plus grands entraîneurs internationaux. La base grandit tous les mardis. Tu profites des nouveautés sans rien faire.</p>
+      </div>
+
+      <div class="bg-piste-graphite p-6 rounded-xl border border-white/5">
+        <div class="w-10 h-10 bg-mondo/20 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-mondo-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="font-medium text-base mb-2 text-white">60 heures récupérées dans la saison</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">30 secondes par séance contre 1h30 en méthode classique. Multiplie par le nombre de séances que tu prépares dans l'année. Voilà ton ROI.</p>
+      </div>
+
+      <div class="bg-piste-graphite p-6 rounded-xl border border-white/5">
+        <div class="w-10 h-10 bg-mondo/20 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-mondo-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="font-medium text-base mb-2 text-white">Conçu pour le bord de piste</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">Lisible en plein soleil. Vidéos cliquables au pouce. Sections déroulantes. Optimisé téléphone et tablette pour t'accompagner pendant la séance.</p>
+      </div>
+
+      <div class="bg-piste-graphite p-6 rounded-xl border border-white/5">
+        <div class="w-10 h-10 bg-mondo/20 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-mondo-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+        </div>
+        <h3 class="font-medium text-base mb-2 text-white">L'IA propose. Tu décides.</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">Tu n'es pas un robot, ton groupe non plus. Tu remplaces un exercice, tu rallonges l'échauffement, tu adaptes au feeling du jour. Rien n'est figé.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Comparaison -->
+<section class="py-20 md:py-28 bg-white">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Comparaison honnête</div>
+      <h2 class="text-3xl md:text-4xl font-medium leading-tight max-w-3xl mx-auto">
+        Pourquoi pas juste ChatGPT,<br>ou YouTube et Google&nbsp;?
+      </h2>
+      <p class="text-base text-gray-600 mt-4 max-w-2xl mx-auto">
+        Parce que sortir une séance de coach, c'est un métier. Voilà ce que tu gagnes vraiment.
+      </p>
+    </div>
+
+    <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50 border-b border-gray-200">
+            <th class="text-left p-5 font-medium text-gray-900 w-2/5"></th>
+            <th class="text-center p-5 font-medium text-gray-400 text-xs uppercase tracking-wider">YouTube / Google</th>
+            <th class="text-center p-5 font-medium text-gray-400 text-xs uppercase tracking-wider">ChatGPT seul</th>
+            <th class="text-center p-5 font-medium text-mondo text-xs uppercase tracking-wider bg-mondo-faint border-l border-mondo/20">Séances Athlé</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700">
+          <tr class="border-b border-gray-100">
+            <td class="p-5 font-medium text-piste-black">Temps pour préparer une séance</td>
+            <td class="text-center p-5 text-gray-400">~1h30</td>
+            <td class="text-center p-5 text-gray-400">~15 min</td>
+            <td class="text-center p-5 bg-mondo-faint font-medium text-piste-black border-l border-mondo/20">30 secondes</td>
+          </tr>
+          <tr class="border-b border-gray-100 bg-gray-50/50">
+            <td class="p-5 font-medium text-piste-black">Exercices validés pédagogiquement</td>
+            <td class="text-center p-5 text-gray-400">Tri à faire toi-même</td>
+            <td class="text-center p-5 text-gray-400">L'IA invente sans source</td>
+            <td class="text-center p-5 bg-mondo-faint text-mondo font-medium border-l border-mondo/20">280+ exercices sourcés</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="p-5 font-medium text-piste-black">Vidéo de référence par exercice</td>
+            <td class="text-center p-5 text-gray-400">Vidéos isolées</td>
+            <td class="text-center p-5 text-gray-400">Texte uniquement</td>
+            <td class="text-center p-5 bg-mondo-faint text-mondo font-medium border-l border-mondo/20">Cliquable en 1 tap</td>
+          </tr>
+          <tr class="border-b border-gray-100 bg-gray-50/50">
+            <td class="p-5 font-medium text-piste-black">Pédagogie FFA respectée</td>
+            <td class="text-center p-5 text-gray-400">À toi de la connaître</td>
+            <td class="text-center p-5 text-gray-400">Si tu sais la prompter</td>
+            <td class="text-center p-5 bg-mondo-faint text-mondo font-medium border-l border-mondo/20">Par défaut</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="p-5 font-medium text-piste-black">Adaptation au niveau (U10 → Senior)</td>
+            <td class="text-center p-5 text-gray-400">Selon les vidéos trouvées</td>
+            <td class="text-center p-5 text-gray-400">Aléatoire</td>
+            <td class="text-center p-5 bg-mondo-faint text-mondo font-medium border-l border-mondo/20">Strictement respectée</td>
+          </tr>
+          <tr class="border-b border-gray-100 bg-gray-50/50">
+            <td class="p-5 font-medium text-piste-black">Cycle progressif multi-séances</td>
+            <td class="text-center p-5 text-gray-400">À structurer à la main</td>
+            <td class="text-center p-5 text-gray-400">Si tu sais cadrer</td>
+            <td class="text-center p-5 bg-mondo-faint text-mondo font-medium border-l border-mondo/20">En un clic</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="p-5 font-medium text-piste-black">Ciblage qualités physiques</td>
+            <td class="text-center p-5 text-gray-400">Inexistant</td>
+            <td class="text-center p-5 text-gray-400">Inexistant</td>
+            <td class="text-center p-5 bg-mondo-faint text-mondo font-medium border-l border-mondo/20">16 qualités FFA</td>
+          </tr>
+          <tr class="bg-gray-50/50">
+            <td class="p-5 font-medium text-piste-black">Lisible au bord de la piste</td>
+            <td class="text-center p-5 text-gray-400">Pas pensé pour</td>
+            <td class="text-center p-5 text-gray-400">Pas pensé pour</td>
+            <td class="text-center p-5 bg-mondo-faint text-mondo font-medium border-l border-mondo/20">Conçu pour ça</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-center text-sm text-gray-500 mt-6 max-w-2xl mx-auto">
+      Tu peux faire avec YouTube ou ChatGPT. Tu peux aussi cuire un plat de chef avec un micro-ondes. Mais bon, peut-être qu'il y a mieux.
+    </p>
+  </div>
+</section>
+
+<!-- Tarifs -->
+<section id="tarifs" class="bg-sable py-20 md:py-28">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Tarifs</div>
+      <h2 class="text-3xl md:text-4xl font-medium leading-tight">Un seul prix.<br>Tout débloqué.</h2>
+      <p class="text-base text-gray-600 mt-4">14 jours d'essai. Sans carte bancaire. Annulable à tout moment.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="bg-white p-8 rounded-2xl border border-gray-200">
+        <div class="text-sm font-medium text-gray-600 mb-2">Mensuel</div>
+        <div class="flex items-baseline gap-1 mb-1"><span class="text-5xl font-medium text-piste-black">12,99€</span><span class="text-sm text-gray-500">/mois</span></div>
+        <div class="text-xs text-gray-500 mb-6">Sans engagement. Tu pars quand tu veux.</div>
+        <a href="https://app.seances-athle.fr" class="block w-full text-center bg-piste-black hover:bg-piste-graphite text-white py-3 rounded-lg font-medium text-sm transition mb-6">Démarrer mes 14 jours</a>
+        <ul class="space-y-3 text-sm text-gray-700">
+          <li class="flex items-start gap-2"><span class="text-mondo mt-0.5">✓</span> Séances et cycles illimités</li>
+          <li class="flex items-start gap-2"><span class="text-mondo mt-0.5">✓</span> Bibliothèque complète (280+ exercices)</li>
+          <li class="flex items-start gap-2"><span class="text-mondo mt-0.5">✓</span> 10 disciplines · Du Poussin au Senior</li>
+          <li class="flex items-start gap-2"><span class="text-mondo mt-0.5">✓</span> Ciblage des 16 qualités physiques FFA</li>
+          <li class="flex items-start gap-2"><span class="text-mondo mt-0.5">✓</span> Mises à jour hebdomadaires</li>
+        </ul>
+      </div>
+      <div class="bg-piste-black text-white p-8 rounded-2xl border-2 border-mondo relative">
+        <div class="absolute -top-3 right-6 bg-mondo text-white text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full">2 mois offerts</div>
+        <div class="text-sm font-medium text-mondo-light mb-2">Annuel</div>
+        <div class="flex items-baseline gap-1 mb-1"><span class="text-5xl font-medium">119€</span><span class="text-sm text-gray-400">/an</span></div>
+        <div class="text-xs text-gray-500 mb-6">Soit 9,92€/mois. 37€ d'économie immédiate.</div>
+        <a href="https://app.seances-athle.fr" class="block w-full text-center bg-mondo hover:bg-mondo-dark text-white py-3 rounded-lg font-medium text-sm transition mb-6">Démarrer mes 14 jours</a>
+        <ul class="space-y-3 text-sm text-gray-300">
+          <li class="flex items-start gap-2"><span class="text-mondo-light mt-0.5">✓</span> Tout ce que contient le mensuel</li>
+          <li class="flex items-start gap-2"><span class="text-mondo-light mt-0.5">✓</span> 2 mois offerts (37€ économisés)</li>
+          <li class="flex items-start gap-2"><span class="text-mondo-light mt-0.5">✓</span> Accès prioritaire aux nouveautés</li>
+          <li class="flex items-start gap-2"><span class="text-mondo-light mt-0.5">✓</span> Support email prioritaire</li>
+          <li class="flex items-start gap-2"><span class="text-mondo-light mt-0.5">✓</span> Annulable à tout moment</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial -->
+<section class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="bg-white border border-gray-200 rounded-2xl p-8 md:p-10">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="w-14 h-14 bg-amber-100 text-amber-900 rounded-full flex items-center justify-center font-medium text-lg flex-shrink-0">JF</div>
+        <div>
+          <div class="font-medium text-base">Joël Fabreguettes</div>
+          <div class="text-sm text-gray-600">Coach lancers AC2A · 12 ans de coaching</div>
+        </div>
+      </div>
+      <blockquote class="text-lg md:text-xl leading-relaxed text-gray-800 italic font-normal">
+        « J'ai gagné 1h30 par semaine sur la prépa. Mes athlètes n'ont jamais autant progressé sur leur technique de lancer. Et c'est pas un coach qui le dit, c'est leurs marques. »
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="bg-sable py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">FAQ</div>
+      <h2 class="text-3xl md:text-4xl font-medium leading-tight">On répond à tes vraies questions.</h2>
+    </div>
+    <div class="space-y-4">
+      <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+        <summary class="font-medium text-base cursor-pointer flex items-center justify-between list-none">
+          <span>Je n'ai pas confiance dans l'IA pour préparer mes séances. C'est pas ma méthode.</span>
+          <span class="text-gray-400 group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="text-sm text-gray-600 mt-4 leading-relaxed">
+          Normal. La plupart des entraîneurs qu'on rencontre disent ça les dix premières secondes. La nuance : l'IA ne décide rien à ta place. Elle structure une proposition à partir d'une bibliothèque d'exercices validés par des entraîneurs internationaux. Toi, tu valides, tu modifies, tu coupes ce que tu veux. C'est un assistant, pas un autopilote.
+        </p>
+      </details>
+      <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+        <summary class="font-medium text-base cursor-pointer flex items-center justify-between list-none">
+          <span>D'où viennent vraiment les exercices ?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="text-sm text-gray-600 mt-4 leading-relaxed">
+          D'une veille rigoureuse menée pendant des mois sur les comptes Instagram d'entraîneurs reconnus internationalement : Henrik Thoms en saut en hauteur, David Storl au poids (double champion du monde), Sean Furey au javelot (double olympien US), Lucas Mathonat en sprint, et 25 autres. Chaque exercice est validé pédagogiquement et tagué par discipline, niveau, étape et qualité physique. Aucun exercice généré « à partir de rien » par l'IA.
+        </p>
+      </details>
+      <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+        <summary class="font-medium text-base cursor-pointer flex items-center justify-between list-none">
+          <span>Je peux modifier la séance proposée ou je suis bloqué dedans ?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="text-sm text-gray-600 mt-4 leading-relaxed">
+          Tout est éditable. Tu remplaces un exercice, tu rallonges l'échauffement, tu coupes le retour au calme. Tu adaptes selon le groupe que tu vois arriver à la séance. La séance générée est un point de départ propre, pas une cage.
+        </p>
+      </details>
+      <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+        <summary class="font-medium text-base cursor-pointer flex items-center justify-between list-none">
+          <span>Je veux juste une séance, pas un cycle de plusieurs.</span>
+          <span class="text-gray-400 group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="text-sm text-gray-600 mt-4 leading-relaxed">
+          Au moment de générer, tu choisis « séance unique » (une seule séance autonome qui cible un point précis) ou « cycle progressif » (trois à cinq séances qui s'enchaînent dans une logique pédagogique). Le tarif est le même dans les deux cas.
+        </p>
+      </details>
+      <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+        <summary class="font-medium text-base cursor-pointer flex items-center justify-between list-none">
+          <span>L'essai gratuit me prélève automatiquement à la fin ?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="text-sm text-gray-600 mt-4 leading-relaxed">
+          Non. L'essai gratuit ne te demande même pas ta carte bancaire à l'inscription. Pendant 14 jours, tu utilises tout. Au bout des 14 jours, c'est toi qui décides si tu actives ton abonnement. Aucun prélèvement, aucune mauvaise surprise.
+        </p>
+      </details>
+      <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+        <summary class="font-medium text-base cursor-pointer flex items-center justify-between list-none">
+          <span>C'est utilisable sur le téléphone au bord de la piste ?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="text-sm text-gray-600 mt-4 leading-relaxed">
+          Oui, c'est même conçu pour ça. Tu prépares ta séance sur ordinateur le dimanche soir, tu l'ouvres sur ton téléphone le mardi au stade. Lisible en plein soleil, vidéos cliquables au pouce, sections déroulantes. L'app travaille avec toi pendant la séance, pas contre toi.
+        </p>
+      </details>
+      <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+        <summary class="font-medium text-base cursor-pointer flex items-center justify-between list-none">
+          <span>Et si je coache la perche ou le triple saut ?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="text-sm text-gray-600 mt-4 leading-relaxed">
+          On joue franc jeu. La perche est en cours de constitution dans la bibliothèque, c'est le seul vrai trou actuel. Le triple saut, le marteau et le disque sont couverts mais avec moins de profondeur que les autres disciplines. Si tu coaches exclusivement la perche, attends quelques semaines avant de t'abonner.
+        </p>
+      </details>
+      <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+        <summary class="font-medium text-base cursor-pointer flex items-center justify-between list-none">
+          <span>J'annule comment si ça ne me convient pas ?</span>
+          <span class="text-gray-400 group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="text-sm text-gray-600 mt-4 leading-relaxed">
+          Depuis ton compte, en un clic. Pas de mail à envoyer, pas de chat à supporter, pas de raisons à donner. Tu paies pour l'utiliser, tu pars quand tu veux.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section class="bg-piste-black text-white py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-5xl font-medium leading-tight mb-6">
+      Ta prochaine séance,<br><span class="text-mondo">prête avant ton café.</span>
+    </h2>
+    <p class="text-lg text-gray-400 mb-8 max-w-xl mx-auto">
+      Mets l'app à l'épreuve pendant 14 jours. Sans carte bancaire. Sans rien à perdre.
+    </p>
+    <a href="https://app.seances-athle.fr" class="inline-flex items-center gap-2 bg-mondo hover:bg-mondo-dark text-white px-10 py-4 rounded-lg font-medium text-base transition">
+      Démarrer mes 14 jours
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+    <div class="text-sm text-gray-500 mt-6">Sans engagement · Sans CB · Annulable en 1 clic</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-piste-graphite text-gray-400 py-12">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between gap-8">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-7 h-7 bg-mondo rounded-md flex items-center justify-center">
+            <div class="w-3.5 h-3.5 border-2 border-white rounded-full"></div>
+          </div>
+          <span class="font-medium text-white text-sm">Séances Athlé</span>
+        </div>
+        <p class="text-xs leading-relaxed max-w-xs">L'outil des entraîneurs d'athlétisme qui structure des séances solides de U10 à Senior en 30 secondes.</p>
+      </div>
+      <div class="flex flex-wrap gap-x-12 gap-y-6 text-sm">
+        <div>
+          <div class="text-white font-medium mb-3 text-xs uppercase tracking-wider">Produit</div>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#comment-ca-marche" class="hover:text-white">Comment ça marche</a></li>
+            <li><a href="#disciplines" class="hover:text-white">Disciplines</a></li>
+            <li><a href="#tarifs" class="hover:text-white">Tarifs</a></li>
+            <li><a href="https://app.seances-athle.fr" class="hover:text-white">Se connecter</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="text-white font-medium mb-3 text-xs uppercase tracking-wider">Support</div>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#faq" class="hover:text-white">FAQ</a></li>
+            <li><a href="mailto:hello@seances-athle.fr" class="hover:text-white">Nous écrire</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="text-white font-medium mb-3 text-xs uppercase tracking-wider">Légal</div>
+          <ul class="space-y-2 text-xs">
+            <li><a href="/cgu" class="hover:text-white">CGU</a></li>
+            <li><a href="/confidentialite" class="hover:text-white">Confidentialité</a></li>
+            <li><a href="/mentions-legales" class="hover:text-white">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="mt-10 pt-6 border-t border-gray-800 text-xs text-gray-500 flex justify-between flex-wrap gap-3">
+      <span>© 2026 Séances Athlé. Tous droits réservés.</span>
+      <span>Fait au Puy-en-Velay · 🇫🇷</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

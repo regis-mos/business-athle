@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité — Séances Athlé</title>
+<meta name="description" content="Comment Séances Athlé protège tes données personnelles, conformément au RGPD.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        mondo: { DEFAULT: '#DD3F1A', dark: '#B8351A', light: '#FF8B6E', faint: '#FAEEEC' },
+        sable: { DEFAULT: '#F5EFE6', dark: '#E8DCC8', deep: '#6B5840' },
+        piste: { black: '#0A0A0A', graphite: '#1F1F1F' },
+      },
+      fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+    },
+  },
+}
+</script>
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .prose h2 { font-size: 22px; font-weight: 500; margin-top: 2.5rem; margin-bottom: 1rem; color: #0A0A0A; }
+  .prose h3 { font-size: 17px; font-weight: 500; margin-top: 1.75rem; margin-bottom: 0.75rem; color: #0A0A0A; }
+  .prose p, .prose li { line-height: 1.7; color: #444; font-size: 15px; margin-bottom: 0.75rem; }
+  .prose ul { list-style: disc; padding-left: 1.5rem; margin: 0.75rem 0 1rem; }
+  .prose strong { font-weight: 500; color: #0A0A0A; }
+  .prose a { color: #DD3F1A; text-decoration: underline; }
+  .prose table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 14px; }
+  .prose th, .prose td { border: 0.5px solid #E5E7EB; padding: 10px 12px; text-align: left; vertical-align: top; }
+  .prose th { background: #F9FAFB; font-weight: 500; }
+</style>
+</head>
+<body class="bg-white text-piste-black">
+
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+  <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-mondo rounded-lg flex items-center justify-center">
+        <div class="w-4 h-4 border-2 border-white rounded-full"></div>
+      </div>
+      <span class="font-medium text-base">Séances Athlé</span>
+    </a>
+    <a href="/" class="text-sm text-gray-600 hover:text-piste-black transition">← Retour à l'accueil</a>
+  </div>
+</nav>
+
+<main class="max-w-3xl mx-auto px-6 py-16 md:py-20">
+  <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Tes données</div>
+  <h1 class="text-4xl font-medium leading-tight mb-3">Politique de confidentialité</h1>
+  <p class="text-sm text-gray-500 mb-12">Dernière mise à jour : [À COMPLÉTER]</p>
+
+  <div class="prose">
+
+    <p>
+      Cette politique explique simplement quelles données on collecte, pourquoi, et ce que tu peux faire si tu n'es pas d'accord. On respecte le Règlement Général sur la Protection des Données (RGPD).
+    </p>
+
+    <h2>1. Qui est responsable de tes données</h2>
+    <p>
+      Le responsable du traitement des données personnelles est <strong>[À COMPLÉTER : nom complet de l'éditeur]</strong>, dont les coordonnées complètes figurent dans les <a href="/mentions-legales">mentions légales</a>.
+    </p>
+    <p>
+      Pour toute question : <a href="mailto:hello@seances-athle.fr">hello@seances-athle.fr</a>
+    </p>
+
+    <h2>2. Quelles données sont collectées</h2>
+    <p>
+      Pour utiliser Séances Athlé, on collecte uniquement le strict nécessaire :
+    </p>
+    <table>
+      <thead>
+        <tr><th>Donnée</th><th>Source</th><th>Finalité</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Adresse email</td><td>Tu la renseignes à l'inscription</td><td>Authentification, communication</td></tr>
+        <tr><td>Nom (prénom optionnel)</td><td>Tu le renseignes dans ton profil</td><td>Personnalisation de l'app</td></tr>
+        <tr><td>Club d'entraînement (optionnel)</td><td>Tu le renseignes dans ton profil</td><td>Personnalisation de l'app</td></tr>
+        <tr><td>Catégorie d'âge habituelle</td><td>Tu la renseignes dans ton profil</td><td>Adapter les séances générées</td></tr>
+        <tr><td>Séances et cycles que tu génères</td><td>Tu les crées dans l'app</td><td>Sauvegarde, historique</td></tr>
+        <tr><td>Date d'inscription</td><td>Automatique</td><td>Suivi du compte</td></tr>
+        <tr><td>Statut d'abonnement</td><td>Stripe / Lemon Squeezy</td><td>Gestion de l'accès payant (à venir)</td></tr>
+      </tbody>
+    </table>
+    <p>
+      <strong>On ne collecte aucune donnée sensible</strong> (santé, religion, opinions politiques) et on ne profile pas tes athlètes.
+    </p>
+
+    <h2>3. Pourquoi on collecte ces données (base légale)</h2>
+    <ul>
+      <li><strong>Exécution du contrat</strong> : pour te permettre d'utiliser Séances Athlé (création de compte, génération de séances, sauvegarde de ton historique).</li>
+      <li><strong>Obligation légale</strong> : facturation et conservation comptable des transactions, le cas échéant.</li>
+      <li><strong>Intérêt légitime</strong> : amélioration du service, statistiques agrégées et anonymes.</li>
+    </ul>
+
+    <h2>4. Combien de temps on garde tes données</h2>
+    <ul>
+      <li><strong>Compte actif</strong> : tant que tu utilises le service.</li>
+      <li><strong>Compte inactif</strong> : suppression automatique après 36 mois sans connexion (avec un email d'avertissement préalable).</li>
+      <li><strong>Données de facturation</strong> : 10 ans (obligation comptable).</li>
+      <li><strong>Logs techniques</strong> : 12 mois maximum.</li>
+    </ul>
+
+    <h2>5. Avec qui on partage tes données</h2>
+    <p>
+      On ne vend ni ne loue tes données à personne. Elles sont partagées uniquement avec les prestataires techniques nécessaires à faire fonctionner le service :
+    </p>
+    <ul>
+      <li><strong>Base 44</strong> (hébergement de l'application loggée) — données stockées dans l'Union européenne.</li>
+      <li><strong>Vercel</strong> (hébergement de la landing page) — pas de donnée utilisateur stockée chez Vercel.</li>
+      <li><strong>Anthropic (Claude)</strong> — utilisé pour générer les séances. Les données envoyées sont uniquement celles que tu fournis dans le formulaire (objectif, niveau, durée, matériel). Aucune donnée personnelle identifiable n'est transmise. Anthropic est basé aux États-Unis et applique des standards de protection conformes au DPF (Data Privacy Framework).</li>
+      <li><strong>Stripe ou Lemon Squeezy</strong> (à venir) pour le traitement des paiements. Tes informations bancaires ne transitent jamais par nos serveurs.</li>
+    </ul>
+
+    <h2>6. Tes droits sur tes données</h2>
+    <p>
+      Conformément au RGPD, tu peux à tout moment :
+    </p>
+    <ul>
+      <li><strong>Accéder</strong> à tes données et obtenir une copie.</li>
+      <li><strong>Rectifier</strong> les informations inexactes.</li>
+      <li><strong>Supprimer</strong> ton compte et toutes les données associées.</li>
+      <li><strong>Limiter</strong> ou <strong>t'opposer</strong> à certains traitements.</li>
+      <li><strong>Récupérer</strong> tes données dans un format portable (export JSON ou CSV).</li>
+      <li><strong>Retirer ton consentement</strong> à tout moment.</li>
+    </ul>
+    <p>
+      Pour exercer un de ces droits, écris-nous à <a href="mailto:hello@seances-athle.fr">hello@seances-athle.fr</a>. Une réponse t'est apportée sous 30 jours maximum.
+    </p>
+    <p>
+      Tu peux également déposer une réclamation auprès de la Commission Nationale de l'Informatique et des Libertés (<a href="https://www.cnil.fr">CNIL</a>) si tu estimes que tes droits ne sont pas respectés.
+    </p>
+
+    <h2>7. Cookies</h2>
+    <p>
+      Le site utilise uniquement des cookies <strong>techniques essentiels</strong> au fonctionnement (maintien de session après connexion, mémorisation de tes préférences d'affichage). Aucun cookie publicitaire, aucun traceur tiers, aucun outil de profilage n'est déposé.
+    </p>
+    <p>
+      Tu peux désactiver les cookies dans ton navigateur, mais l'application loggée ne fonctionnera plus correctement.
+    </p>
+
+    <h2>8. Sécurité</h2>
+    <p>
+      Les données sont stockées sur des serveurs sécurisés (chiffrement en transit via HTTPS et au repos via les standards de Base 44). Les mots de passe ne sont jamais stockés en clair. L'authentification se fait par email magic link ou compte Google (OAuth 2.0).
+    </p>
+
+    <h2>9. Modification de cette politique</h2>
+    <p>
+      Cette politique peut évoluer pour s'adapter à la législation ou à de nouvelles fonctionnalités. En cas de modification substantielle, on te prévient par email au moins 30 jours avant l'application des changements.
+    </p>
+
+  </div>
+</main>
+
+<footer class="bg-piste-graphite text-gray-400 py-12 mt-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-4">
+      <a href="/" class="flex items-center gap-2">
+        <div class="w-7 h-7 bg-mondo rounded-md flex items-center justify-center">
+          <div class="w-3.5 h-3.5 border-2 border-white rounded-full"></div>
+        </div>
+        <span class="font-medium text-white text-sm">Séances Athlé</span>
+      </a>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs">
+        <a href="/cgu" class="hover:text-white">CGU</a>
+        <a href="/confidentialite" class="hover:text-white">Confidentialité</a>
+        <a href="/mentions-legales" class="hover:text-white">Mentions légales</a>
+        <a href="mailto:hello@seances-athle.fr" class="hover:text-white">Contact</a>
+      </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-gray-800 text-xs text-gray-500 flex justify-between flex-wrap gap-3">
+      <span>© 2026 Séances Athlé. Tous droits réservés.</span>
+      <span>Fait au Puy-en-Velay · 🇫🇷</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
