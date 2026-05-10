@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://seances-athle.fr">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
@@ -24,6 +24,7 @@ tailwind.config = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Bricolage Grotesque"', 'Inter', 'system-ui', 'sans-serif'],
       },
     },
   },
@@ -32,8 +33,50 @@ tailwind.config = {
 <style>
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  h1, h2, .display { font-family: 'Bricolage Grotesque', Inter, system-ui, sans-serif; letter-spacing: -0.02em; }
   .gradient-fade { background: linear-gradient(180deg, transparent 0%, rgba(245,239,230,0.6) 100%); }
   .track-stripe { background: repeating-linear-gradient(90deg, #DD3F1A 0, #DD3F1A 20px, transparent 20px, transparent 40px); }
+
+  /* Hero gradient mesh (signature look) */
+  .mesh-bg {
+    background:
+      radial-gradient(at 18% 22%, rgba(221, 63, 26, 0.32) 0px, transparent 45%),
+      radial-gradient(at 82% 8%, rgba(221, 63, 26, 0.18) 0px, transparent 50%),
+      radial-gradient(at 92% 78%, rgba(255, 139, 110, 0.12) 0px, transparent 55%),
+      radial-gradient(at 8% 92%, rgba(221, 63, 26, 0.10) 0px, transparent 50%),
+      #0A0A0A;
+  }
+
+  /* Browser mockup frame */
+  .browser-frame {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+    background: #1F1F1F;
+  }
+  .browser-bar {
+    height: 32px;
+    background: #2A2A2A;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    gap: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .browser-dot { width: 11px; height: 11px; border-radius: 50%; }
+
+  /* Reveal-on-scroll animation */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1); }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: .08s; }
+  .reveal-delay-2 { transition-delay: .16s; }
+  .reveal-delay-3 { transition-delay: .24s; }
+
+  /* Step icon background */
+  .step-glow {
+    background: linear-gradient(135deg, #DD3F1A 0%, #FF8B6E 100%);
+    box-shadow: 0 8px 24px -8px rgba(221, 63, 26, 0.55);
+  }
 </style>
 </head>
 <body class="bg-white text-piste-black">
@@ -47,9 +90,9 @@ tailwind.config = {
       </div>
       <span class="font-medium text-base">Séances Athlé</span>
     </a>
-    <div class="hidden md:flex items-center gap-8">
+    <div class="hidden md:flex items-center gap-7">
+      <a href="#apercu" class="text-sm text-gray-600 hover:text-piste-black transition">L'app</a>
       <a href="#comment-ca-marche" class="text-sm text-gray-600 hover:text-piste-black transition">Comment ça marche</a>
-      <a href="#disciplines" class="text-sm text-gray-600 hover:text-piste-black transition">Disciplines</a>
       <a href="#tarifs" class="text-sm text-gray-600 hover:text-piste-black transition">Tarifs</a>
       <a href="#faq" class="text-sm text-gray-600 hover:text-piste-black transition">FAQ</a>
       <a href="https://app.seances-athle.fr" class="text-sm text-gray-600 hover:text-piste-black transition">Se connecter</a>
@@ -59,35 +102,50 @@ tailwind.config = {
 </nav>
 
 <!-- Hero -->
-<section class="text-white relative overflow-hidden" style="background-image: linear-gradient(rgba(10,10,10,0.78), rgba(10,10,10,0.92)), url('https://images.unsplash.com/photo-1474546652694-a33dd8161d66?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+<section class="mesh-bg text-white relative overflow-hidden">
   <div class="absolute top-0 left-0 right-0 h-1 track-stripe opacity-40"></div>
-  <div class="max-w-6xl mx-auto px-6 py-20 md:py-32 relative">
-    <div class="max-w-3xl">
+  <div class="max-w-7xl mx-auto px-6 pt-20 md:pt-28 pb-16 md:pb-24 relative">
+
+    <div class="max-w-3xl mx-auto text-center reveal">
       <div class="inline-block mb-7">
         <div class="text-mondo-light font-medium text-sm md:text-base uppercase tracking-[0.2em]">Pour les entraîneurs d'athlétisme</div>
-        <div class="h-0.5 w-12 bg-mondo mt-2"></div>
+        <div class="h-0.5 w-12 bg-mondo mt-2 mx-auto"></div>
       </div>
-      <h1 class="text-4xl md:text-6xl font-medium leading-tight mb-6">
+      <h1 class="display text-5xl md:text-7xl font-semibold leading-[1.05] mb-7">
         Ta séance d'athlé prête<br>en <span class="text-mondo">30 secondes,</span><br>pas en 1h30.
       </h1>
-      <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl">
+      <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-9 max-w-2xl mx-auto">
         Tu décris ton objectif. L'app recherche dans 280+ exercices vidéo issus des meilleurs entraîneurs mondiaux. Elle structure ta séance dans une logique pédagogique FFA. Toi, tu coaches.
       </p>
-      <div class="flex flex-col sm:flex-row gap-3 mb-6">
-        <a href="https://app.seances-athle.fr" class="bg-mondo hover:bg-mondo-dark text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2">
-          Commencer gratuitement
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-5">
+        <a href="https://app.seances-athle.fr" class="bg-mondo hover:bg-mondo-dark text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2 shadow-lg shadow-mondo/30">
+          Démarrer mes 14 jours
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
-        <a href="#comment-ca-marche" class="border border-gray-700 hover:border-gray-500 text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2">
-          Voir comment ça marche
+        <a href="#apercu" class="border border-white/20 hover:border-white/40 hover:bg-white/5 text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2 backdrop-blur-sm">
+          Voir l'app en action
         </a>
       </div>
-      <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400 justify-center">
         <span class="flex items-center gap-1.5"><span class="text-mondo">✓</span> 14 jours gratuits</span>
         <span class="flex items-center gap-1.5"><span class="text-mondo">✓</span> Sans carte bancaire</span>
         <span class="flex items-center gap-1.5"><span class="text-mondo">✓</span> Annulable en 1 clic</span>
       </div>
     </div>
+
+    <!-- Browser mockup avec capture de l'app -->
+    <div class="mt-16 md:mt-20 max-w-5xl mx-auto reveal reveal-delay-2">
+      <div class="browser-frame">
+        <div class="browser-bar">
+          <div class="browser-dot" style="background:#FF5F56"></div>
+          <div class="browser-dot" style="background:#FFBD2E"></div>
+          <div class="browser-dot" style="background:#27C93F"></div>
+          <div class="ml-3 px-3 py-0.5 rounded text-[11px] text-gray-500 bg-black/20">app.seances-athle.fr</div>
+        </div>
+        <img src="screenshots/app-home.jpg" alt="Aperçu de l'app Séances Athlé : tableau de bord avec séances générées, catégories Sauts/Courses/Lancers" class="block w-full" loading="eager">
+      </div>
+    </div>
+
   </div>
   <div class="absolute bottom-0 left-0 right-0 h-1 track-stripe opacity-30"></div>
 </section>
@@ -121,7 +179,7 @@ tailwind.config = {
   <div class="max-w-5xl mx-auto px-6">
     <div class="text-center mb-12">
       <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Le problème</div>
-      <h2 class="text-3xl md:text-4xl font-medium leading-tight max-w-3xl mx-auto">
+      <h2 class="display text-3xl md:text-4xl font-semibold leading-tight max-w-3xl mx-auto">
         Préparer une séance d'athlé<br>prend du temps. Et fait douter.
       </h2>
     </div>
@@ -154,12 +212,16 @@ tailwind.config = {
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-14">
       <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Comment ça marche</div>
-      <h2 class="text-3xl md:text-4xl font-medium leading-tight">3 étapes. 30 secondes.<br>Une séance prête à coacher.</h2>
+      <h2 class="display text-3xl md:text-4xl font-semibold leading-tight">3 étapes. 30 secondes.<br>Une séance prête à coacher.</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-7 rounded-xl border border-gray-100">
-        <div class="w-10 h-10 bg-mondo text-white rounded-lg flex items-center justify-center font-medium text-lg mb-5">1</div>
-        <h3 class="font-medium text-lg mb-4">Décris ton objectif</h3>
+
+      <div class="bg-white p-7 rounded-xl border border-gray-100 reveal">
+        <div class="w-12 h-12 step-glow rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M7 10h6M7 14h10"/><circle cx="17" cy="10" r="0.5" fill="currentColor"/></svg>
+        </div>
+        <div class="text-xs uppercase tracking-wider text-mondo font-medium mb-1">Étape 1</div>
+        <h3 class="font-medium text-lg mb-4 display">Décris ton objectif</h3>
         <ul class="space-y-2.5 text-sm text-gray-600">
           <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Discipline ciblée</li>
           <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Niveau (Poussins → Seniors)</li>
@@ -167,9 +229,13 @@ tailwind.config = {
           <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> 1 à 4 qualités physiques à travailler</li>
         </ul>
       </div>
-      <div class="bg-white p-7 rounded-xl border border-gray-100">
-        <div class="w-10 h-10 bg-mondo text-white rounded-lg flex items-center justify-center font-medium text-lg mb-5">2</div>
-        <h3 class="font-medium text-lg mb-4">L'IA structure la séance</h3>
+
+      <div class="bg-white p-7 rounded-xl border border-gray-100 reveal reveal-delay-1">
+        <div class="w-12 h-12 step-glow rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.5 4 4 1.5-4 1.5L12 14l-1.5-4-4-1.5 4-1.5L12 3z"/><path d="M19 13l.7 1.8L21.5 15.5l-1.8.7L19 18l-.7-1.8L16.5 15.5l1.8-.7L19 13z"/><path d="M5 15l.5 1.3L6.8 16.8l-1.3.5L5 18.5l-.5-1.2L3.2 16.8l1.3-.5L5 15z"/></svg>
+        </div>
+        <div class="text-xs uppercase tracking-wider text-mondo font-medium mb-1">Étape 2</div>
+        <h3 class="font-medium text-lg mb-4 display">L'IA structure la séance</h3>
         <ul class="space-y-2.5 text-sm text-gray-600">
           <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Choix des bons exercices</li>
           <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Pédagogie FFA respectée</li>
@@ -177,9 +243,13 @@ tailwind.config = {
           <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> 30 secondes pour la générer</li>
         </ul>
       </div>
-      <div class="bg-white p-7 rounded-xl border border-gray-100">
-        <div class="w-10 h-10 bg-mondo text-white rounded-lg flex items-center justify-center font-medium text-lg mb-5">3</div>
-        <h3 class="font-medium text-lg mb-4">Tu coaches</h3>
+
+      <div class="bg-white p-7 rounded-xl border border-gray-100 reveal reveal-delay-2">
+        <div class="w-12 h-12 step-glow rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 9l5 3-5 3V9z" fill="currentColor"/></svg>
+        </div>
+        <div class="text-xs uppercase tracking-wider text-mondo font-medium mb-1">Étape 3</div>
+        <h3 class="font-medium text-lg mb-4 display">Tu coaches</h3>
         <ul class="space-y-2.5 text-sm text-gray-600">
           <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> La séance s'ouvre sur ton téléphone</li>
           <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Une vidéo cliquable par exercice</li>
@@ -187,16 +257,120 @@ tailwind.config = {
           <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Tu observes, corriges, fais progresser</li>
         </ul>
       </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Aperçu de l'app -->
+<section id="apercu" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">L'app de l'intérieur</div>
+      <h2 class="display text-3xl md:text-5xl font-semibold leading-[1.1] max-w-3xl mx-auto">
+        Tout ton coaching, dans un seul outil.
+      </h2>
+      <p class="text-base text-gray-600 mt-5 max-w-2xl mx-auto">
+        Génération, planification, suivi des athlètes, statistiques. Pensé pour la saison entière, pas pour une séance isolée.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5">
+
+      <div class="md:col-span-2 bg-piste-black text-white rounded-2xl p-6 md:p-10 reveal">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <div class="text-xs uppercase tracking-wider text-mondo-light font-medium mb-3">Vue d&rsquo;ensemble d&rsquo;un cycle</div>
+            <h3 class="display text-2xl md:text-3xl font-semibold mb-4">Un cycle complet. Séance par séance.</h3>
+            <p class="text-base text-gray-300 leading-relaxed mb-4">
+              Chaque cycle généré est structuré en sections dépliables : identité de la séquence, vue d&rsquo;ensemble pédagogique, puis chaque séance dans l&rsquo;ordre. Tu vois tout. Tu déplie ce que tu veux.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li class="flex gap-2"><span class="text-mondo-light flex-shrink-0">✓</span> Toutes les séances dans un seul écran</li>
+              <li class="flex gap-2"><span class="text-mondo-light flex-shrink-0">✓</span> Dates de planification visibles d&rsquo;un coup d&rsquo;œil</li>
+              <li class="flex gap-2"><span class="text-mondo-light flex-shrink-0">✓</span> Annexes pédagogiques incluses (indicateurs + pour aller plus loin)</li>
+            </ul>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-2xl border border-white/10">
+            <img src="screenshots/app-sequence-overview.jpg" alt="Vue d&rsquo;ensemble d&rsquo;un cycle de saut en hauteur avec toutes les séances et les dates planifiées" class="block w-full" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-2 bg-sable rounded-2xl p-6 md:p-10 reveal">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <div class="text-xs uppercase tracking-wider text-mondo font-medium mb-3">Détail d'une séance</div>
+            <h3 class="display text-2xl md:text-3xl font-semibold mb-4">Une séance lisible. Avec la vidéo de chaque exercice.</h3>
+            <p class="text-base text-gray-700 leading-relaxed mb-4">
+              Objectif clair, échauffement chronométré, ateliers détaillés. Et pour chaque atelier technique, la vidéo Instagram du geste exact à montrer aux athlètes — un tap, c'est ouvert.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex gap-2"><span class="text-mondo flex-shrink-0">✓</span> Découpage temporel précis</li>
+              <li class="flex gap-2"><span class="text-mondo flex-shrink-0">✓</span> Vidéos des entraîneurs sources</li>
+              <li class="flex gap-2"><span class="text-mondo flex-shrink-0">✓</span> Export PDF en un clic</li>
+            </ul>
+          </div>
+          <div class="rounded-xl overflow-hidden bg-white border border-gray-200 shadow-lg">
+            <img src="screenshots/app-detail-seance.jpg" alt="Détail d'une séance avec atelier et vidéo Instagram intégrée" class="block w-full" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-200 reveal">
+        <div class="text-xs uppercase tracking-wider text-mondo font-medium mb-3">Planning</div>
+        <h3 class="display text-xl md:text-2xl font-semibold mb-3">Une saison qui tient debout.</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-5">
+          Tu planifies tes séances et cycles dans un calendrier mensuel. Statut « faite », « planifiée », « sautée » en un clic.
+        </p>
+        <div class="rounded-lg overflow-hidden bg-gray-50 border border-gray-100">
+          <img src="screenshots/app-planning.jpg" alt="Planning calendrier mensuel avec séances planifiées" class="block w-full" loading="lazy">
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-200 reveal reveal-delay-1">
+        <div class="text-xs uppercase tracking-wider text-mondo font-medium mb-3">Module athlètes <span class="bg-mondo-faint text-mondo px-2 py-0.5 rounded-full text-[10px] ml-1">Nouveau</span></div>
+        <h3 class="display text-xl md:text-2xl font-semibold mb-3">Tes athlètes, leurs catégories, leur présence.</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-5">
+          Fiche par athlète avec catégorie FFA calculée automatiquement, disciplines, groupes. Saisie de présence en un clic.
+        </p>
+        <div class="rounded-lg overflow-hidden bg-gray-50 border border-gray-100">
+          <img src="screenshots/app-athletes.jpg" alt="Module Mes athlètes avec fiches et filtrage par groupe" class="block w-full" loading="lazy">
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-200 reveal">
+        <div class="text-xs uppercase tracking-wider text-mondo font-medium mb-3">Statistiques <span class="bg-mondo-faint text-mondo px-2 py-0.5 rounded-full text-[10px] ml-1">Nouveau</span></div>
+        <h3 class="display text-xl md:text-2xl font-semibold mb-3">Vois ce que tu travailles vraiment.</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-5">
+          Répartition de tes séances par discipline et par niveau. Tu repères les disciplines négligées ou survenu, et tu rééquilibres ta saison.
+        </p>
+        <div class="rounded-lg overflow-hidden bg-gray-50 border border-gray-100">
+          <img src="screenshots/app-statistiques.jpg" alt="Tableau de bord des statistiques par discipline et par niveau" class="block w-full" loading="lazy">
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-200 reveal reveal-delay-1">
+        <div class="text-xs uppercase tracking-wider text-mondo font-medium mb-3">Planification multi-séances</div>
+        <h3 class="display text-xl md:text-2xl font-semibold mb-3">Un cycle, 3 séances, en 1 minute.</h3>
+        <p class="text-sm text-gray-600 leading-relaxed mb-5">
+          Quand l'IA génère un cycle, tu choisis les dates, heures et lieux des séances en une seule modale. Tout part dans le calendrier d'un coup.
+        </p>
+        <div class="rounded-lg overflow-hidden bg-gray-50 border border-gray-100">
+          <img src="screenshots/app-modal-planifier.jpg" alt="Modal Planifier les séances avec date, heure et lieu pour chaque séance" class="block w-full" loading="lazy">
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- Disciplines -->
-<section id="disciplines" class="py-20 md:py-28">
+<section id="disciplines" class="py-20 md:py-28 bg-sable">
   <div class="max-w-5xl mx-auto px-6">
-    <div class="text-center mb-12">
+    <div class="text-center mb-12 reveal">
       <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">La bibliothèque</div>
-      <h2 class="text-3xl md:text-4xl font-medium leading-tight max-w-2xl mx-auto">
+      <h2 class="display text-3xl md:text-4xl font-semibold leading-tight max-w-2xl mx-auto">
         280+ exercices vidéo. 10 disciplines.<br>30 entraîneurs internationaux.
       </h2>
       <p class="text-base text-gray-600 mt-4 max-w-2xl mx-auto">
@@ -204,16 +378,16 @@ tailwind.config = {
       </p>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
-      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">~50</div><div class="text-xs text-gray-600 mt-1">Sprint</div></div>
-      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">~35</div><div class="text-xs text-gray-600 mt-1">Haies</div></div>
-      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">21</div><div class="text-xs text-gray-600 mt-1">Saut longueur</div></div>
-      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">16</div><div class="text-xs text-gray-600 mt-1">Saut hauteur</div></div>
-      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">25</div><div class="text-xs text-gray-600 mt-1">Lancer poids</div></div>
-      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">26</div><div class="text-xs text-gray-600 mt-1">Javelot</div></div>
-      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">7</div><div class="text-xs text-gray-600 mt-1">Disque</div></div>
-      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">5</div><div class="text-xs text-gray-600 mt-1">Marteau</div></div>
-      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">4</div><div class="text-xs text-gray-600 mt-1">Relais</div></div>
-      <div class="bg-sable p-4 rounded-lg text-center"><div class="text-2xl font-medium text-piste-black">~80</div><div class="text-xs text-gray-600 mt-1">Transverse</div></div>
+      <div class="bg-white p-4 rounded-lg text-center border border-gray-100"><div class="text-2xl font-medium text-piste-black">~50</div><div class="text-xs text-gray-600 mt-1">Sprint</div></div>
+      <div class="bg-white p-4 rounded-lg text-center border border-gray-100"><div class="text-2xl font-medium text-piste-black">~35</div><div class="text-xs text-gray-600 mt-1">Haies</div></div>
+      <div class="bg-white p-4 rounded-lg text-center border border-gray-100"><div class="text-2xl font-medium text-piste-black">21</div><div class="text-xs text-gray-600 mt-1">Saut longueur</div></div>
+      <div class="bg-white p-4 rounded-lg text-center border border-gray-100"><div class="text-2xl font-medium text-piste-black">16</div><div class="text-xs text-gray-600 mt-1">Saut hauteur</div></div>
+      <div class="bg-white p-4 rounded-lg text-center border border-gray-100"><div class="text-2xl font-medium text-piste-black">25</div><div class="text-xs text-gray-600 mt-1">Lancer poids</div></div>
+      <div class="bg-white p-4 rounded-lg text-center border border-gray-100"><div class="text-2xl font-medium text-piste-black">26</div><div class="text-xs text-gray-600 mt-1">Javelot</div></div>
+      <div class="bg-white p-4 rounded-lg text-center border border-gray-100"><div class="text-2xl font-medium text-piste-black">7</div><div class="text-xs text-gray-600 mt-1">Disque</div></div>
+      <div class="bg-white p-4 rounded-lg text-center border border-gray-100"><div class="text-2xl font-medium text-piste-black">5</div><div class="text-xs text-gray-600 mt-1">Marteau</div></div>
+      <div class="bg-white p-4 rounded-lg text-center border border-gray-100"><div class="text-2xl font-medium text-piste-black">4</div><div class="text-xs text-gray-600 mt-1">Relais</div></div>
+      <div class="bg-white p-4 rounded-lg text-center border border-gray-100"><div class="text-2xl font-medium text-piste-black">~80</div><div class="text-xs text-gray-600 mt-1">Transverse</div></div>
     </div>
   </div>
 </section>
@@ -223,7 +397,7 @@ tailwind.config = {
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-14">
       <div class="text-xs uppercase tracking-widest text-mondo-light font-medium mb-3">Ce qui change tout</div>
-      <h2 class="text-3xl md:text-4xl font-medium leading-tight">Pensé pour les entraîneurs.<br>Pas pour les ingénieurs.</h2>
+      <h2 class="display text-3xl md:text-4xl font-semibold leading-tight">Pensé pour les entraîneurs.<br>Pas pour les ingénieurs.</h2>
     </div>
 
     <div class="grid md:grid-cols-3 gap-4">
@@ -309,7 +483,7 @@ tailwind.config = {
   <div class="max-w-5xl mx-auto px-6">
     <div class="text-center mb-12">
       <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Comparaison honnête</div>
-      <h2 class="text-3xl md:text-4xl font-medium leading-tight max-w-3xl mx-auto">
+      <h2 class="display text-3xl md:text-4xl font-semibold leading-tight max-w-3xl mx-auto">
         Pourquoi pas juste ChatGPT,<br>ou YouTube et Google&nbsp;?
       </h2>
       <p class="text-base text-gray-600 mt-4 max-w-2xl mx-auto">
@@ -391,7 +565,7 @@ tailwind.config = {
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-12">
       <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Tarifs</div>
-      <h2 class="text-3xl md:text-4xl font-medium leading-tight">Un seul prix.<br>Tout débloqué.</h2>
+      <h2 class="display text-3xl md:text-4xl font-semibold leading-tight">Un seul prix.<br>Tout débloqué.</h2>
       <p class="text-base text-gray-600 mt-4">14 jours d'essai. Sans carte bancaire. Annulable à tout moment.</p>
     </div>
     <div class="grid md:grid-cols-2 gap-4">
@@ -449,7 +623,7 @@ tailwind.config = {
   <div class="max-w-3xl mx-auto px-6">
     <div class="text-center mb-12">
       <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">FAQ</div>
-      <h2 class="text-3xl md:text-4xl font-medium leading-tight">On répond à tes vraies questions.</h2>
+      <h2 class="display text-3xl md:text-4xl font-semibold leading-tight">On répond à tes vraies questions.</h2>
     </div>
     <div class="space-y-4">
       <details class="bg-white p-6 rounded-xl border border-gray-200 group">
@@ -531,7 +705,7 @@ tailwind.config = {
 <!-- CTA final -->
 <section class="bg-piste-black text-white py-20 md:py-28">
   <div class="max-w-3xl mx-auto px-6 text-center">
-    <h2 class="text-3xl md:text-5xl font-medium leading-tight mb-6">
+    <h2 class="display text-3xl md:text-5xl font-semibold leading-tight mb-6">
       Ta prochaine séance,<br><span class="text-mondo">prête avant ton café.</span>
     </h2>
     <p class="text-lg text-gray-400 mb-8 max-w-xl mx-auto">
@@ -592,5 +766,22 @@ tailwind.config = {
   </div>
 </footer>
 
+<script>
+(function() {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+})();
+</script>
 </body>
 </html>
