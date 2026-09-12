@@ -3,40 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mentions légales — Séances Athlé</title>
-<meta name="description" content="Mentions légales du service Séances Athlé.">
+<title>Mentions légales · Séances Athlé</title>
+<meta name="description" content="Mentions légales de Séances Athlé : éditeur, directeur de la publication, hébergement, propriété intellectuelle et médiation.">
 <meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        mondo: { DEFAULT: '#DD3F1A', dark: '#B8351A', light: '#FF8B6E', faint: '#FAEEEC' },
-        sable: { DEFAULT: '#F5EFE6', dark: '#E8DCC8', deep: '#6B5840' },
-        piste: { black: '#0A0A0A', graphite: '#1F1F1F' },
-      },
-      fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-    },
-  },
-}
+tailwind.config = { theme: { extend: {
+  colors: { mondo: { DEFAULT:'#DD3F1A', dark:'#B8351A', light:'#FF8B6E', faint:'#FAEEEC' },
+    sable: { DEFAULT:'#F5EFE6', dark:'#E8DCC8' }, piste: { black:'#0A0A0A', graphite:'#1F1F1F' } },
+  fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['"Bricolage Grotesque"','Inter','sans-serif'] } } } }
 </script>
 <style>
-  body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-  .prose h2 { font-size: 22px; font-weight: 500; margin-top: 2.5rem; margin-bottom: 1rem; color: #0A0A0A; }
-  .prose h3 { font-size: 17px; font-weight: 500; margin-top: 1.75rem; margin-bottom: 0.75rem; color: #0A0A0A; }
-  .prose p, .prose li { line-height: 1.7; color: #444; font-size: 15px; margin-bottom: 0.75rem; }
-  .prose ul { list-style: disc; padding-left: 1.5rem; margin: 0.75rem 0 1rem; }
-  .prose strong { font-weight: 500; color: #0A0A0A; }
-  .prose a { color: #DD3F1A; text-decoration: underline; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,.display { font-family:'Bricolage Grotesque',Inter,system-ui,sans-serif; letter-spacing:-0.02em; }
+  .track-stripe { background:repeating-linear-gradient(90deg,#DD3F1A 0,#DD3F1A 20px,transparent 20px,transparent 40px); }
+  .doc h2 { font-size:1.35rem; font-weight:700; margin:2.6rem 0 .9rem; scroll-margin-top:5rem; }
+  .doc h3 { font-size:1.02rem; font-weight:600; margin:1.6rem 0 .5rem; }
+  .doc p { margin-bottom:.85rem; line-height:1.72; color:#3f3f3f; }
+  .doc ul { margin:0 0 .9rem 0; padding-left:1.1rem; list-style:disc; }
+  .doc li { margin-bottom:.4rem; line-height:1.7; color:#3f3f3f; }
+  .doc strong { color:#0A0A0A; font-weight:600; }
+  .doc a { color:#DD3F1A; text-decoration:underline; text-underline-offset:2px; }
+  .todo { display:inline-block; background:#FFF3CD; border:1px dashed #C79100; color:#7A5A00;
+          padding:1px 7px; border-radius:5px; font-size:.86em; font-weight:600; }
+  .box { background:#F5EFE6; border-radius:14px; padding:1.3rem 1.5rem; margin:1.4rem 0; }
+  .box p:last-child { margin-bottom:0; }
+  .box-green { background:#ECFDF3; border:1px solid #A7E3C0; }
+  .box-green p { color:#1A5C39; }
+  .box-green strong { color:#12653A; }
+  table { width:100%; border-collapse:collapse; margin:1.1rem 0; font-size:.92rem; }
+  th,td { border:1px solid #E5E0D6; padding:.6rem .7rem; text-align:left; vertical-align:top; line-height:1.55; }
+  th { background:#FAF7F2; font-weight:600; font-size:.82rem; text-transform:uppercase; letter-spacing:.03em; color:#6b6b6b; }
+  td { color:#3f3f3f; }
+  .toc a { color:#3f3f3f; text-decoration:none; }
+  .toc a:hover { color:#DD3F1A; }
 </style>
 </head>
 <body class="bg-white text-piste-black">
 
-<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+<nav class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-gray-100">
   <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2">
       <div class="w-8 h-8 bg-mondo rounded-lg flex items-center justify-center">
@@ -44,101 +53,90 @@ tailwind.config = {
       </div>
       <span class="font-medium text-base">Séances Athlé</span>
     </a>
-    <a href="/" class="text-sm text-gray-600 hover:text-piste-black transition">← Retour à l'accueil</a>
+    <div class="flex items-center gap-6 text-sm">
+      <a href="/clubs" class="text-gray-600 hover:text-piste-black transition hidden sm:inline">Pour les clubs</a>
+      <a href="https://app.seances-athle.fr" class="text-gray-600 hover:text-piste-black transition">Se connecter</a>
+    </div>
   </div>
 </nav>
 
-<main class="max-w-3xl mx-auto px-6 py-16 md:py-20">
-  <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Informations légales</div>
-  <h1 class="text-4xl font-medium leading-tight mb-3">Mentions légales</h1>
-  <p class="text-sm text-gray-500 mb-12">Dernière mise à jour : [À COMPLÉTER]</p>
+<div class="h-1 track-stripe opacity-70"></div>
 
-  <div class="prose">
+<main class="max-w-4xl mx-auto px-6 py-14 md:py-20">
+  <div class="mb-10 pb-8 border-b border-gray-200">
+    <div class="text-mondo font-medium text-sm uppercase tracking-[0.16em] mb-3">Informations légales</div>
+    <h1 class="text-3xl md:text-4xl font-bold mb-3">Mentions légales</h1>
+    <p class="text-gray-500 text-sm">Dernière mise à jour : 10 septembre 2026</p>
+  </div>
 
-    <h2>Éditeur du site</h2>
-    <p>
-      Le présent site <strong>seances-athle.fr</strong> est édité par :
-    </p>
-    <ul>
-      <li><strong>Nom de l'éditeur</strong> : [À COMPLÉTER : ton nom complet ou raison sociale]</li>
-      <li><strong>Statut juridique</strong> : [À COMPLÉTER : ex. Entreprise individuelle / Auto-entrepreneur / SASU / EURL]</li>
-      <li><strong>SIRET</strong> : [À COMPLÉTER]</li>
-      <li><strong>Adresse</strong> : [À COMPLÉTER : adresse complète au Puy-en-Velay]</li>
-      <li><strong>Email</strong> : <a href="mailto:hello@seances-athle.fr">hello@seances-athle.fr</a></li>
-      <li><strong>Numéro de TVA intracommunautaire</strong> : [À COMPLÉTER ou indiquer "Non applicable" si tu n'es pas assujetti]</li>
-    </ul>
+  <div class="doc">
 
-    <h2>Directeur de la publication</h2>
-    <p>
-      [À COMPLÉTER : ton nom complet]
-    </p>
+<p>Les présentes mentions sont publiées en application de l'article 6 III de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique.</p>
 
-    <h2>Hébergeur du site</h2>
-    <p>
-      Le site est hébergé par :
-    </p>
-    <ul>
-      <li><strong>Société</strong> : Vercel Inc.</li>
-      <li><strong>Adresse</strong> : 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis</li>
-      <li><strong>Site web</strong> : <a href="https://vercel.com">vercel.com</a></li>
-    </ul>
-    <p>
-      L'application en elle-même (app.seances-athle.fr) est hébergée par Base 44, plateforme de développement no-code.
-    </p>
+<h2 id="editeur">1. Éditeur du site et du service</h2>
+<p>Le site <strong>seances-athle.fr</strong> et l'application <strong>app.seances-athle.fr</strong>, désignés ensemble « Séances Athlé », sont édités par&nbsp;:</p>
+<div class="box">
+<p><strong>AUXOIS NATURE</strong><br>
+Société à responsabilité limitée (SARL) au capital de 100 €<br>Éditrice du service Séances Athlé<br>
+Siège social : LD Les Chirouzes, 43700 Coubon, France<br>
+SIREN 791 430 960 · SIRET du siège 791 430 960 00025<br>RCS Le Puy-en-Velay · Code APE 8559A<br>
+TVA intracommunautaire : FR30 791 430 960</p>
+<p><strong>Contact&nbsp;:</strong> <a href="mailto:regis@moscardini.fr">regis@moscardini.fr</a><br>
+<strong>Téléphone&nbsp;:</strong> <span class="todo">À COMPLÉTER : numéro de téléphone</span></p>
+</div>
 
-    <h2>Propriété intellectuelle</h2>
-    <p>
-      L'ensemble du contenu du site (textes, graphismes, logos, vidéos, structure, code source) est la propriété exclusive de l'éditeur ou des partenaires identifiés, et est protégé par le droit d'auteur français et international. Toute reproduction, distribution, modification ou utilisation sans autorisation écrite préalable est strictement interdite.
-    </p>
-    <p>
-      Les vidéos d'exercices référencées dans l'application proviennent de comptes Instagram publics et restent la propriété de leurs auteurs respectifs. Séances Athlé fournit uniquement un service d'indexation et d'organisation pédagogique de ces ressources publiques.
-    </p>
+<h2 id="publication">2. Directeur de la publication</h2>
+<p>Le directeur de la publication est Régis Moscardini, gérant d'AUXOIS NATURE.</p>
 
-    <h2>Limitation de responsabilité</h2>
-    <p>
-      L'éditeur s'efforce de fournir des informations exactes et à jour. Toutefois, il ne peut garantir l'exactitude, la complétude ou l'actualité absolue des contenus diffusés sur le site. La pédagogie sportive proposée par l'application est un outil d'aide à la décision : la responsabilité de l'application des séances reste celle de l'entraîneur utilisateur.
-    </p>
+<h2 id="hebergement">3. Hébergement</h2>
+<p>Le site vitrine <strong>seances-athle.fr</strong> est hébergé par&nbsp;:</p>
+<p><strong>Vercel Inc.</strong><br>440 N Barranca Ave #4133, Covina, CA 91723, États-Unis<br>
+<a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a></p>
+<p>L'application <strong>app.seances-athle.fr</strong> et les données qu'elle contient sont hébergées par&nbsp;:</p>
+<p><strong>Base44, Inc.</strong> (groupe Wix.com Ltd.)<br>Serveurs situés aux États-Unis<br>
+<a href="https://base44.com" target="_blank" rel="noopener">base44.com</a></p>
+<p>Les conséquences de cet hébergement sur le traitement des données personnelles sont détaillées dans la <a href="/confidentialite">politique de confidentialité</a>.</p>
 
-    <h2>Données personnelles</h2>
-    <p>
-      Le traitement des données personnelles est détaillé dans notre <a href="/confidentialite">politique de confidentialité</a>.
-    </p>
+<h2 id="pi">4. Propriété intellectuelle</h2>
+<p>La structure du site et de l'application, les textes, la charte graphique, le moteur de génération pédagogique, la structuration et l'indexation de la bibliothèque d'exercices sont la propriété exclusive de l'éditeur. Toute reproduction ou représentation, totale ou partielle, sans autorisation écrite préalable, est interdite.</p>
+<p>La base de données d'exercices constituée par l'éditeur est protégée au titre du droit du producteur de bases de données. L'extraction ou la réutilisation d'une partie substantielle de son contenu est interdite.</p>
+<p>Les vidéos d'illustration ne sont ni hébergées ni reproduites par l'éditeur&nbsp;: elles sont affichées au moyen de l'outil d'intégration officiel d'Instagram et restent la propriété de leurs auteurs, chaque compte d'origine étant identifié. Toute demande de retrait est traitée sous 48 heures&nbsp;: voir la <a href="https://app.seances-athle.fr/credits">page Crédits</a>.</p>
 
-    <h2>Cookies</h2>
-    <p>
-      Le site utilise uniquement des cookies techniques nécessaires à son fonctionnement (session utilisateur, préférences). Aucun cookie publicitaire ou de profilage n'est déposé.
-    </p>
+<h2 id="responsabilite">5. Responsabilité éditoriale</h2>
+<p>Séances Athlé est un outil d'assistance pédagogique. Les séances et plans de saison proposés constituent des trames destinées à être adaptées par l'encadrant. La conduite de la séance, la sécurité du matériel et la supervision des athlètes relèvent de la seule responsabilité de la personne présente sur le terrain, dans les conditions précisées par les <a href="/cgu">conditions générales</a>.</p>
 
-    <h2>Contact</h2>
-    <p>
-      Pour toute question relative au site ou aux présentes mentions légales, vous pouvez nous contacter à : <a href="mailto:hello@seances-athle.fr">hello@seances-athle.fr</a>
-    </p>
+<h2 id="mediation">6. Médiation de la consommation</h2>
+<p>Conformément à l'article L612-1 du code de la consommation, tout consommateur peut recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable d'un litige, après avoir tenté de le résoudre directement auprès de l'éditeur.</p>
+<div class="box">
+<p><strong>Médiateur compétent&nbsp;:</strong> <span class="todo">À COMPLÉTER : médiateur de la consommation, adhésion obligatoire</span></p>
+</div>
+<p>La plateforme européenne de règlement en ligne des litiges est également accessible&nbsp;: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</p>
 
+<h2 id="signalement">7. Signalement d'un contenu</h2>
+<p>Tout contenu manifestement illicite, ainsi que toute demande de retrait d'une vidéo par son auteur, peut être signalé à <a href="mailto:regis@moscardini.fr">regis@moscardini.fr</a>.</p>
+
+<h2 id="liens">8. Documents liés</h2>
+<ul>
+<li><a href="/cgu">Conditions générales d'utilisation et de vente</a></li>
+<li><a href="/confidentialite">Politique de confidentialité</a></li>
+<li><a href="https://app.seances-athle.fr/credits">Crédits et sources</a></li>
+</ul>
+
+  </div>
+
+  <div class="mt-16 pt-8 border-t border-gray-200 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+    <a href="/mentions-legales" class="text-gray-600 hover:text-mondo transition no-underline">Mentions légales</a>
+    <a href="/cgu" class="text-gray-600 hover:text-mondo transition no-underline">CGU et CGV</a>
+    <a href="/confidentialite" class="text-gray-600 hover:text-mondo transition no-underline">Confidentialité</a>
+    <a href="https://app.seances-athle.fr/credits" class="text-gray-600 hover:text-mondo transition no-underline">Crédits</a>
   </div>
 </main>
 
-<footer class="bg-piste-graphite text-gray-400 py-12 mt-16">
-  <div class="max-w-4xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row justify-between items-start gap-4">
-      <a href="/" class="flex items-center gap-2">
-        <div class="w-7 h-7 bg-mondo rounded-md flex items-center justify-center">
-          <div class="w-3.5 h-3.5 border-2 border-white rounded-full"></div>
-        </div>
-        <span class="font-medium text-white text-sm">Séances Athlé</span>
-      </a>
-      <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs">
-        <a href="/cgu" class="hover:text-white">CGU</a>
-        <a href="/confidentialite" class="hover:text-white">Confidentialité</a>
-        <a href="/mentions-legales" class="hover:text-white">Mentions légales</a>
-        <a href="mailto:hello@seances-athle.fr" class="hover:text-white">Contact</a>
-      </div>
-    </div>
-    <div class="mt-8 pt-6 border-t border-gray-800 text-xs text-gray-500 flex justify-between flex-wrap gap-3">
-      <span>© 2026 Séances Athlé. Tous droits réservés.</span>
-      <span>Fait au Puy-en-Velay · 🇫🇷</span>
-    </div>
+<footer class="bg-piste-graphite text-gray-400 py-10">
+  <div class="max-w-4xl mx-auto px-6 flex flex-wrap justify-between gap-4 text-xs">
+    <span>© 2026 Séances Athlé. Tous droits réservés.</span>
+    <span>Fait au Puy-en-Velay · 🇫🇷</span>
   </div>
 </footer>
-
 </body>
 </html>

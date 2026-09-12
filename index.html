@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Séances Athlé — Crée des séances solides de U10 à Espoirs en 60 secondes</title>
+<title>Séances Athlé : des séances solides de U10 à Espoirs en 60 secondes</title>
 <meta name="description" content="L'outil des entraîneurs d'athlétisme qui structure des séances et des cycles pédagogiques solides en 60 secondes. 280+ exercices vidéo issus des meilleurs entraîneurs mondiaux.">
-<meta property="og:title" content="Séances Athlé — La séance d'athlé prête en 60 secondes, pas en 1h30">
+<meta property="og:title" content="Séances Athlé : la séance d'athlé prête en 60 secondes, pas en 1h30">
 <meta property="og:description" content="L'App structure tes séances dans une logique pédagogique FFA. Toi, tu coaches.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://seances-athle.fr">
@@ -108,11 +108,29 @@ tailwind.config = {
       <a href="#comment-ca-marche" class="text-sm text-gray-600 hover:text-piste-black transition">Comment ça marche</a>
       <a href="#tarifs" class="text-sm text-gray-600 hover:text-piste-black transition">Tarifs</a>
       <a href="#faq" class="text-sm text-gray-600 hover:text-piste-black transition">FAQ</a>
+      <a href="/clubs" class="text-sm font-medium text-mondo hover:text-mondo-dark transition inline-flex items-center gap-1.5">
+        Vous êtes un club&nbsp;?
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
       <a href="https://app.seances-athle.fr" class="text-sm text-gray-600 hover:text-piste-black transition">Se connecter</a>
-      <a href="https://app.seances-athle.fr/inscription" class="text-sm bg-mondo text-white px-4 py-2 rounded-lg hover:bg-mondo-dark transition">Essai gratuit</a>
+      <a href="https://app.seances-athle.fr/inscription">Essai gratuit</a>
     </div>
   </div>
 </nav>
+
+<!-- Bandeau clubs -->
+<a href="/clubs" class="block bg-piste-black text-white hover:bg-piste-graphite transition group">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-center gap-3 text-center flex-wrap">
+    <span class="text-sm md:text-[15px]">
+      <strong class="font-semibold">Vous êtes un club&nbsp;?</strong>
+      <span class="text-gray-400 ml-1.5">Une licence pour tous vos encadrants, à partir de 490&nbsp;€ par an.</span>
+    </span>
+    <span class="text-mondo-light text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+      Voir l'offre club
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </span>
+  </div>
+</a>
 
 <!-- Hero -->
 <section class="mesh-bg text-white relative overflow-hidden">
@@ -131,7 +149,7 @@ tailwind.config = {
         Tu décris ton objectif. L'App recherche dans 280+ exercices vidéo issus des meilleurs entraîneurs mondiaux. Elle structure ta séance dans une logique pédagogique FFA. Toi, tu coaches.
       </p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center mb-5">
-        <a href="https://app.seances-athle.fr/inscription" class="bg-mondo hover:bg-mondo-dark text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2 shadow-lg shadow-mondo/30">
+        <a href="https://app.seances-athle.fr/inscription">
           Démarrer mes 14 jours
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
@@ -203,11 +221,11 @@ tailwind.config = {
       <div class="bg-mondo-faint border-l-4 border-red-700 p-6 rounded-lg">
         <div class="text-xs uppercase font-medium text-red-700 mb-3 tracking-wider">Aujourd'hui</div>
         <ul class="space-y-3 text-base leading-relaxed text-gray-800">
-          <li class="flex gap-2"><span class="text-red-700 flex-shrink-0">—</span> 1h30 à fouiller Insta, YouTube et ton classeur</li>
-          <li class="flex gap-2"><span class="text-red-700 flex-shrink-0">—</span> Tu fouilles dans tes vieux bouquins de méthode</li>
-          <li class="flex gap-2"><span class="text-red-700 flex-shrink-0">—</span> 6 onglets ouverts, aucun lien entre les exercices</li>
-          <li class="flex gap-2"><span class="text-red-700 flex-shrink-0">—</span> Tu doutes de la cohérence pédagogique de ta séance</li>
-          <li class="flex gap-2"><span class="text-red-700 flex-shrink-0">—</span> Tu improvises encore au bord de la piste</li>
+          <li class="flex gap-2"><span class="text-red-700 flex-shrink-0"></span> 1h30 à fouiller Insta, YouTube et ton classeur</li>
+          <li class="flex gap-2"><span class="text-red-700 flex-shrink-0"></span> Tu fouilles dans tes vieux bouquins de méthode</li>
+          <li class="flex gap-2"><span class="text-red-700 flex-shrink-0"></span> 6 onglets ouverts, aucun lien entre les exercices</li>
+          <li class="flex gap-2"><span class="text-red-700 flex-shrink-0"></span> Tu doutes de la cohérence pédagogique de ta séance</li>
+          <li class="flex gap-2"><span class="text-red-700 flex-shrink-0"></span> Tu improvises encore au bord de la piste</li>
         </ul>
       </div>
       <div class="bg-green-50 border-l-4 border-green-700 p-6 rounded-lg">
@@ -322,7 +340,7 @@ tailwind.config = {
             <div class="text-xs uppercase tracking-wider text-mondo font-medium mb-3">Détail d'une séance</div>
             <h3 class="display text-2xl md:text-3xl font-semibold mb-4">Une séance lisible. Avec la vidéo de chaque exercice.</h3>
             <p class="text-base text-gray-700 leading-relaxed mb-4">
-              Objectif clair, échauffement chronométré, ateliers détaillés. Et pour chaque atelier technique, la vidéo Instagram du geste exact à montrer aux athlètes — un tap, c'est ouvert.
+              Objectif clair, échauffement chronométré, ateliers détaillés. Et pour chaque atelier technique, la vidéo Instagram du geste exact à montrer aux athlètes, un tap, c'est ouvert.
             </p>
             <ul class="space-y-2 text-sm text-gray-700">
               <li class="flex gap-2"><span class="text-mondo flex-shrink-0">✓</span> Découpage temporel précis</li>
@@ -608,7 +626,7 @@ tailwind.config = {
           Prêt à coacher <span style="color:#60a5fa">sans perdre des heures</span><br>à préparer&nbsp;?
         </h2>
         <p class="text-gray-300 text-lg mb-8 max-w-xl mx-auto">14 jours gratuits. Sans carte bancaire. Ta prochaine séance prête en 60 secondes.</p>
-        <a href="https://app.seances-athle.fr/inscription" class="inline-flex items-center gap-2 text-white px-10 py-4 rounded-xl font-medium text-base transition hover:opacity-90" style="background:#3b82f6">
+        <a href="https://app.seances-athle.fr/inscription" style="background:#3b82f6">
           Démarrer gratuitement
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
@@ -630,7 +648,7 @@ tailwind.config = {
         <div class="text-sm font-medium text-gray-600 mb-2">Mensuel</div>
         <div class="flex items-baseline gap-1 mb-1"><span class="text-5xl font-medium text-piste-black">9€</span><span class="text-sm text-gray-500">/mois</span></div>
         <div class="text-xs text-gray-500 mb-6">Sans engagement. Tu pars quand tu veux.</div>
-        <a href="https://app.seances-athle.fr/inscription" class="block w-full text-center bg-piste-black hover:bg-piste-graphite text-white py-3 rounded-lg font-medium text-sm transition mb-6">Démarrer mes 14 jours</a>
+        <a href="https://app.seances-athle.fr/inscription">Démarrer mes 14 jours</a>
         <ul class="space-y-3 text-sm text-gray-700">
           <li class="flex items-start gap-2"><span class="text-mondo mt-0.5">✓</span> Séances et cycles illimités</li>
           <li class="flex items-start gap-2"><span class="text-mondo mt-0.5">✓</span> Bibliothèque complète (280+ exercices)</li>
@@ -643,8 +661,8 @@ tailwind.config = {
         <div class="absolute -top-3 right-6 bg-mondo text-white text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full">2 mois offerts</div>
         <div class="text-sm font-medium text-mondo-light mb-2">Annuel</div>
         <div class="flex items-baseline gap-1 mb-1"><span class="text-5xl font-medium">79€</span><span class="text-sm text-gray-400">/an</span></div>
-        <div class="text-xs text-gray-500 mb-6">Soit 6,6€/mois. 29€ d'économie immédiate.</div>
-        <a href="https://app.seances-athle.fr/inscription" class="block w-full text-center bg-mondo hover:bg-mondo-dark text-white py-3 rounded-lg font-medium text-sm transition mb-6">Démarrer mes 14 jours</a>
+        <div class="text-xs text-gray-500 mb-6">Soit 6,60€/mois. 29€ d'économie immédiate.</div>
+        <a href="https://app.seances-athle.fr/inscription">Démarrer mes 14 jours</a>
         <ul class="space-y-3 text-sm text-gray-300">
           <li class="flex items-start gap-2"><span class="text-mondo-light mt-0.5">✓</span> Tout ce que contient le mensuel</li>
           <li class="flex items-start gap-2"><span class="text-mondo-light mt-0.5">✓</span> 2 mois offerts (29€ économisés)</li>
@@ -768,7 +786,7 @@ tailwind.config = {
     <p class="text-lg text-gray-400 mb-8 max-w-xl mx-auto">
       Mets l'app à l'épreuve pendant 14 jours. Sans carte bancaire. Sans rien à perdre.
     </p>
-    <a href="https://app.seances-athle.fr/inscription" class="inline-flex items-center gap-2 bg-mondo hover:bg-mondo-dark text-white px-10 py-4 rounded-lg font-medium text-base transition">
+    <a href="https://app.seances-athle.fr/inscription">
       Démarrer mes 14 jours
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
     </a>
@@ -803,7 +821,7 @@ tailwind.config = {
           <div class="text-white font-medium mb-3 text-xs uppercase tracking-wider">Support</div>
           <ul class="space-y-2 text-xs">
             <li><a href="#faq" class="hover:text-white">FAQ</a></li>
-            <li><a href="mailto:hello@seances-athle.fr" class="hover:text-white">Nous écrire</a></li>
+            <li><a href="mailto:regis@moscardini.fr" class="hover:text-white">Nous écrire</a></li>
           </ul>
         </div>
         <div>

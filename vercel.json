@@ -1,4 +1,5 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
@@ -18,6 +19,28 @@
           "value": "strict-origin-when-cross-origin"
         }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/cgv",
+      "destination": "/cgu",
+      "permanent": true
+    },
+    {
+      "source": "/club",
+      "destination": "/clubs",
+      "permanent": true
+    },
+    {
+      "source": "/mentions",
+      "destination": "/mentions-legales",
+      "permanent": true
+    },
+    {
+      "source": "/politique-de-confidentialite",
+      "destination": "/confidentialite",
+      "permanent": true
     }
   ]
 }

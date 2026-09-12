@@ -3,40 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Conditions générales d'utilisation — Séances Athlé</title>
-<meta name="description" content="Conditions générales d'utilisation du service Séances Athlé.">
+<title>Conditions générales d'utilisation et de vente · Séances Athlé</title>
+<meta name="description" content="Conditions générales d'utilisation et de vente de Séances Athlé : périmètre du service, abonnements, résiliation, responsabilités.">
 <meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        mondo: { DEFAULT: '#DD3F1A', dark: '#B8351A', light: '#FF8B6E', faint: '#FAEEEC' },
-        sable: { DEFAULT: '#F5EFE6', dark: '#E8DCC8', deep: '#6B5840' },
-        piste: { black: '#0A0A0A', graphite: '#1F1F1F' },
-      },
-      fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-    },
-  },
-}
+tailwind.config = { theme: { extend: {
+  colors: { mondo: { DEFAULT:'#DD3F1A', dark:'#B8351A', light:'#FF8B6E', faint:'#FAEEEC' },
+    sable: { DEFAULT:'#F5EFE6', dark:'#E8DCC8' }, piste: { black:'#0A0A0A', graphite:'#1F1F1F' } },
+  fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['"Bricolage Grotesque"','Inter','sans-serif'] } } } }
 </script>
 <style>
-  body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-  .prose h2 { font-size: 22px; font-weight: 500; margin-top: 2.5rem; margin-bottom: 1rem; color: #0A0A0A; }
-  .prose h3 { font-size: 17px; font-weight: 500; margin-top: 1.75rem; margin-bottom: 0.75rem; color: #0A0A0A; }
-  .prose p, .prose li { line-height: 1.7; color: #444; font-size: 15px; margin-bottom: 0.75rem; }
-  .prose ul { list-style: disc; padding-left: 1.5rem; margin: 0.75rem 0 1rem; }
-  .prose strong { font-weight: 500; color: #0A0A0A; }
-  .prose a { color: #DD3F1A; text-decoration: underline; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,.display { font-family:'Bricolage Grotesque',Inter,system-ui,sans-serif; letter-spacing:-0.02em; }
+  .track-stripe { background:repeating-linear-gradient(90deg,#DD3F1A 0,#DD3F1A 20px,transparent 20px,transparent 40px); }
+  .doc h2 { font-size:1.35rem; font-weight:700; margin:2.6rem 0 .9rem; scroll-margin-top:5rem; }
+  .doc h3 { font-size:1.02rem; font-weight:600; margin:1.6rem 0 .5rem; }
+  .doc p { margin-bottom:.85rem; line-height:1.72; color:#3f3f3f; }
+  .doc ul { margin:0 0 .9rem 0; padding-left:1.1rem; list-style:disc; }
+  .doc li { margin-bottom:.4rem; line-height:1.7; color:#3f3f3f; }
+  .doc strong { color:#0A0A0A; font-weight:600; }
+  .doc a { color:#DD3F1A; text-decoration:underline; text-underline-offset:2px; }
+  .todo { display:inline-block; background:#FFF3CD; border:1px dashed #C79100; color:#7A5A00;
+          padding:1px 7px; border-radius:5px; font-size:.86em; font-weight:600; }
+  .box { background:#F5EFE6; border-radius:14px; padding:1.3rem 1.5rem; margin:1.4rem 0; }
+  .box p:last-child { margin-bottom:0; }
+  .box-green { background:#ECFDF3; border:1px solid #A7E3C0; }
+  .box-green p { color:#1A5C39; }
+  .box-green strong { color:#12653A; }
+  table { width:100%; border-collapse:collapse; margin:1.1rem 0; font-size:.92rem; }
+  th,td { border:1px solid #E5E0D6; padding:.6rem .7rem; text-align:left; vertical-align:top; line-height:1.55; }
+  th { background:#FAF7F2; font-weight:600; font-size:.82rem; text-transform:uppercase; letter-spacing:.03em; color:#6b6b6b; }
+  td { color:#3f3f3f; }
+  .toc a { color:#3f3f3f; text-decoration:none; }
+  .toc a:hover { color:#DD3F1A; }
 </style>
 </head>
 <body class="bg-white text-piste-black">
 
-<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+<nav class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-gray-100">
   <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2">
       <div class="w-8 h-8 bg-mondo rounded-lg flex items-center justify-center">
@@ -44,185 +53,141 @@ tailwind.config = {
       </div>
       <span class="font-medium text-base">Séances Athlé</span>
     </a>
-    <a href="/" class="text-sm text-gray-600 hover:text-piste-black transition">← Retour à l'accueil</a>
+    <div class="flex items-center gap-6 text-sm">
+      <a href="/clubs" class="text-gray-600 hover:text-piste-black transition hidden sm:inline">Pour les clubs</a>
+      <a href="https://app.seances-athle.fr" class="text-gray-600 hover:text-piste-black transition">Se connecter</a>
+    </div>
   </div>
 </nav>
 
-<main class="max-w-3xl mx-auto px-6 py-16 md:py-20">
-  <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Le contrat</div>
-  <h1 class="text-4xl font-medium leading-tight mb-3">Conditions générales d'utilisation</h1>
-  <p class="text-sm text-gray-500 mb-12">Dernière mise à jour : [À COMPLÉTER]</p>
+<div class="h-1 track-stripe opacity-70"></div>
 
-  <div class="prose">
+<main class="max-w-4xl mx-auto px-6 py-14 md:py-20">
+  <div class="mb-10 pb-8 border-b border-gray-200">
+    <div class="text-mondo font-medium text-sm uppercase tracking-[0.16em] mb-3">CGU et CGV</div>
+    <h1 class="text-3xl md:text-4xl font-bold mb-3">Conditions générales d'utilisation et de vente</h1>
+    <p class="text-gray-500 text-sm">Dernière mise à jour : 10 septembre 2026</p>
+  </div>
 
-    <h2>1. Objet</h2>
-    <p>
-      Les présentes Conditions Générales d'Utilisation (« CGU ») régissent l'utilisation du service <strong>Séances Athlé</strong>, accessible via les sites <a href="https://seances-athle.fr">seances-athle.fr</a> et <a href="https://app.seances-athle.fr">app.seances-athle.fr</a>, édité par <strong>[À COMPLÉTER : nom de l'éditeur]</strong> (ci-après « l'Éditeur »).
-    </p>
-    <p>
-      Le Service permet aux entraîneurs d'athlétisme de générer des séances et des cycles d'entraînement à l'aide d'une intelligence artificielle, à partir d'une bibliothèque d'exercices vidéo référencés.
-    </p>
+  <div class="doc">
 
-    <h2>2. Acceptation des CGU</h2>
-    <p>
-      L'inscription et l'utilisation du Service impliquent l'acceptation pleine et entière des présentes CGU. Si tu n'es pas d'accord avec ces conditions, tu ne dois pas utiliser le Service.
-    </p>
-    <p>
-      L'Éditeur se réserve le droit de modifier les CGU à tout moment. Tu seras informé par email en cas de modification substantielle, au moins 30 jours avant son application.
-    </p>
+<div class="box">
+<p>Ce document réunit les conditions générales d'utilisation (CGU) et les conditions générales de vente (CGV) de Séances Athlé. Il s'applique aussi bien à l'entraîneur qui souscrit à titre individuel qu'au club ou à l'association qui souscrit une licence pour son équipe technique.</p>
+</div>
 
-    <h2>3. Description du service</h2>
-    <p>
-      Séances Athlé propose :
-    </p>
-    <ul>
-      <li>Un générateur de séances et de cycles d'entraînement basé sur l'IA.</li>
-      <li>Une bibliothèque de plus de 280 exercices vidéo référencés depuis des comptes Instagram publics d'entraîneurs reconnus.</li>
-      <li>Un filtrage par discipline, niveau (du Poussin au Senior), qualités physiques, durée et matériel disponible.</li>
-      <li>L'affichage et la sauvegarde des séances générées.</li>
-    </ul>
-    <p>
-      Le Service est proposé en l'état. L'Éditeur s'efforce d'assurer la disponibilité et la qualité du Service mais ne peut garantir une disponibilité absolue (maintenance, incidents techniques, dépendances tierces).
-    </p>
+<h2 id="objet">1. Objet</h2>
+<p>Les présentes conditions régissent l'accès et l'utilisation du service Séances Athlé, accessible à l'adresse app.seances-athle.fr, ainsi que la vente des abonnements qui y donnent accès. Toute utilisation du service vaut acceptation pleine et entière des présentes conditions.</p>
 
-    <h2>4. Inscription et compte utilisateur</h2>
-    <p>
-      L'utilisation du Service nécessite la création d'un compte. Tu garantis que les informations fournies à l'inscription sont exactes et à jour.
-    </p>
-    <p>
-      Tu es responsable de la confidentialité de tes identifiants de connexion et de toute activité effectuée sous ton compte. En cas de suspicion d'utilisation frauduleuse, tu dois prévenir l'Éditeur sans délai.
-    </p>
+<h2 id="definitions">2. Définitions</h2>
+<ul>
+<li><strong>Éditeur</strong>&nbsp;: la personne identifiée dans les <a href="/mentions-legales">mentions légales</a>.</li>
+<li><strong>Service</strong>&nbsp;: l'application Séances Athlé et l'ensemble de ses fonctionnalités.</li>
+<li><strong>Utilisateur</strong>&nbsp;: toute personne disposant d'un compte, qu'elle souscrive à titre personnel ou dans le cadre d'une licence club.</li>
+<li><strong>Souscripteur</strong>&nbsp;: la personne physique ou morale qui paie l'abonnement.</li>
+<li><strong>Contenu généré</strong>&nbsp;: les séances, cycles et plans de saison produits par le Service à partir des paramètres saisis par l'Utilisateur.</li>
+<li><strong>Athlète</strong>&nbsp;: la personne dont l'Utilisateur enregistre les données dans le Service, le plus souvent mineure.</li>
+</ul>
 
-    <h2>5. Période d'essai gratuite</h2>
-    <p>
-      Le Service propose une période d'essai gratuite de <strong>14 jours</strong> sans demande de carte bancaire. Pendant cette période, tu accèdes à toutes les fonctionnalités sans engagement.
-    </p>
-    <p>
-      À l'issue des 14 jours, l'accès aux fonctionnalités payantes est restreint si tu ne souscris pas à un abonnement. Aucun prélèvement automatique n'est effectué.
-    </p>
+<h2 id="description">3. Ce que le Service fait, et ce qu'il ne fait pas</h2>
+<p>Le Service est un <strong>outil de gestion pédagogique</strong>. Il permet&nbsp;:</p>
+<ul>
+<li>de construire des séances, des cycles et des plans de saison d'athlétisme&nbsp;;</li>
+<li>de suivre les acquisitions, les présences et les performances des athlètes d'un groupe&nbsp;;</li>
+<li>de partager avec les familles des informations pratiques et de recueillir les réponses de présence.</li>
+</ul>
+<p>Le Service <strong>n'est pas</strong> un outil de gestion administrative de club. Il ne gère ni les licences fédérales, ni les cotisations ou encaissements, ni le fichier d'adhérents, ni la comptabilité, ni les engagements en compétition. Il ne se substitue pas aux obligations du club envers sa fédération.</p>
 
-    <h2>6. Tarifs et facturation</h2>
-    <p>
-      L'abonnement payant est proposé selon deux formules :
-    </p>
-    <ul>
-      <li><strong>Mensuel</strong> : 12,99 € par mois, sans engagement, prélevé chaque mois.</li>
-      <li><strong>Annuel</strong> : 119 € par an (soit 9,92 € par mois), prélevé en une fois.</li>
-    </ul>
-    <p>
-      Les tarifs sont indiqués TTC. Les paiements sont sécurisés et traités par <strong>[À COMPLÉTER : Stripe ou Lemon Squeezy]</strong>. Les informations bancaires ne transitent jamais par les serveurs de l'Éditeur.
-    </p>
-    <p>
-      Une facture est mise à disposition dans ton espace personnel à chaque échéance.
-    </p>
+<h2 id="compte">4. Compte et accès</h2>
+<p>La création d'un compte suppose des informations exactes et à jour. L'Utilisateur est responsable de la confidentialité de ses identifiants et de toute activité effectuée depuis son compte. Il informe l'Éditeur sans délai de toute utilisation non autorisée.</p>
+<p>Dans le cadre d'une licence club, le Souscripteur désigne les Utilisateurs autorisés et informe l'Éditeur de toute personne devant être retirée de l'accès.</p>
 
-    <h2>7. Résiliation</h2>
-    <p>
-      Tu peux résilier ton abonnement à tout moment depuis ton compte, en un clic, sans avoir à justifier. La résiliation est effective à la fin de la période d'abonnement en cours (mois ou année selon la formule).
-    </p>
-    <p>
-      Aucun remboursement au prorata n'est effectué pour les abonnements annuels résiliés en cours d'année, sauf cas de force majeure ou défaillance du Service.
-    </p>
+<h2 id="essai">5. Essai gratuit</h2>
+<p>Le Service est proposé en essai gratuit de quatorze (14) jours, sans communication de coordonnées bancaires et sans engagement. À l'issue de cette période, l'accès est suspendu à défaut de souscription. Aucun prélèvement automatique n'intervient au terme de l'essai.</p>
 
-    <h2>8. Droit de rétractation</h2>
-    <p>
-      Conformément à l'article L221-28 du Code de la consommation, le droit de rétractation de 14 jours ne s'applique pas aux services pleinement exécutés avant la fin du délai. Toutefois, la période d'essai gratuite de 14 jours te permet d'évaluer le Service sans engagement.
-    </p>
+<h2 id="tarifs">6. Abonnements et prix</h2>
+<p>Les prix en vigueur sont les suivants, exprimés toutes taxes comprises&nbsp;:</p>
+<table>
+<tr><th>Formule</th><th>Prix</th><th>Portée</th></tr>
+<tr><td>Individuelle, mensuelle</td><td>14 € par mois</td><td>Un Utilisateur, jusqu'à trois groupes</td></tr>
+<tr><td>Individuelle, annuelle</td><td>119 € par an</td><td>Un Utilisateur, jusqu'à trois groupes</td></tr>
+<tr><td>Club, mensuelle</td><td>49 € par mois</td><td>Utilisateurs et groupes illimités pour une structure</td></tr>
+<tr><td>Club, annuelle</td><td>490 € par an</td><td>Utilisateurs et groupes illimités pour une structure</td></tr>
+</table>
+<p>Les prix sont exprimés en euros toutes taxes comprises. <span class="todo">À CONFIRMER : régime de TVA applicable, assujettissement ou franchise en base</span></p>
+<p>Le paiement est traité par <strong>Stripe Payments Europe, Ltd.</strong> L'Éditeur n'a accès à aucune donnée de carte bancaire. Une facture est adressée par voie électronique&nbsp;; pour une licence club, elle est établie au nom de la structure.</p>
+<p>L'Éditeur peut faire évoluer ses tarifs. Toute modification est notifiée au moins trente (30) jours à l'avance et ne s'applique qu'à compter de l'échéance suivante. Le Souscripteur peut alors résilier sans frais.</p>
 
-    <h2>9. Propriété intellectuelle</h2>
-    <p>
-      Tous les éléments du Service (interface, code source, base de données structurée, taxonomies pédagogiques, identité visuelle) sont la propriété exclusive de l'Éditeur, protégée par le droit d'auteur et la propriété intellectuelle.
-    </p>
-    <p>
-      Les vidéos d'exercices référencées dans la bibliothèque proviennent de comptes Instagram publics et restent la propriété de leurs auteurs respectifs. Séances Athlé fournit un service d'indexation et d'organisation pédagogique de ces ressources, en redirigeant vers leur source d'origine.
-    </p>
-    <p>
-      Tu disposes d'une licence d'utilisation personnelle, non exclusive, non cessible et révocable du Service pendant la durée de ton abonnement. Tu ne peux ni revendre, ni redistribuer, ni copier le contenu du Service à des fins commerciales.
-    </p>
+<h2 id="duree">7. Durée, reconduction et résiliation</h2>
+<p>L'abonnement est souscrit pour la période choisie et se reconduit tacitement pour une durée identique, sauf résiliation.</p>
+<p>Le Souscripteur peut résilier à tout moment depuis son espace de gestion ou par simple demande à <a href="mailto:regis@moscardini.fr">regis@moscardini.fr</a>. La résiliation prend effet au terme de la période en cours&nbsp;: l'accès reste ouvert jusqu'à cette date, et aucun remboursement au prorata n'est dû pour la période entamée.</p>
+<p>Conformément à l'article L215-1 du code de la consommation, le consommateur souscripteur d'un abonnement à reconduction tacite est informé par écrit, au plus tôt trois mois et au plus tard un mois avant la date limite, de sa possibilité de ne pas reconduire. À défaut d'information dans ce délai, il peut mettre fin gratuitement au contrat à tout moment à compter de la reconduction.</p>
+<p>L'Éditeur peut suspendre ou résilier un compte en cas de manquement grave aux présentes conditions, après mise en demeure restée sans effet pendant quinze (15) jours, sauf en cas d'atteinte à la sécurité du Service ou de contenu manifestement illicite, où la suspension peut être immédiate.</p>
 
-    <h2>10. Utilisation du contenu généré</h2>
-    <p>
-      Les séances et cycles que tu génères avec le Service sont à ton usage personnel pour ton activité d'entraîneur. Tu peux les imprimer, les afficher à tes athlètes et les modifier librement.
-    </p>
-    <p>
-      L'Éditeur ne garantit pas l'exactitude pédagogique absolue des séances générées. Tu restes seul responsable de leur application sur le terrain et de la sécurité de tes athlètes.
-    </p>
+<h2 id="retractation">8. Droit de rétractation</h2>
+<p>Le consommateur dispose d'un délai de quatorze (14) jours à compter de la souscription pour exercer son droit de rétractation, sans motif ni pénalité, par tout moyen non équivoque adressé à <a href="mailto:regis@moscardini.fr">regis@moscardini.fr</a>.</p>
+<p>En sollicitant l'accès immédiat au Service avant l'expiration de ce délai, le consommateur reconnaît expressément qu'il perd son droit de rétractation une fois le service pleinement exécuté, conformément à l'article L221-28 du code de la consommation. L'essai gratuit préalable de quatorze jours permet en pratique d'évaluer le Service sans aucun engagement financier.</p>
+<p>Ce droit ne s'applique pas aux professionnels ni aux personnes morales, notamment aux clubs et associations souscrivant dans le cadre de leur activité.</p>
 
-    <h2>11. Données personnelles</h2>
-    <p>
-      Le traitement des données personnelles est détaillé dans notre <a href="/confidentialite">politique de confidentialité</a>, qui fait partie intégrante des présentes CGU.
-    </p>
+<h2 id="obligations">9. Obligations de l'Utilisateur</h2>
+<p>L'Utilisateur s'engage à&nbsp;:</p>
+<ul>
+<li>utiliser le Service conformément à sa destination pédagogique et à la réglementation applicable&nbsp;;</li>
+<li>ne pas tenter d'extraire tout ou partie substantielle de la base d'exercices, ni de contourner les mesures techniques du Service&nbsp;;</li>
+<li>ne pas partager ses identifiants ni donner accès au Service à des personnes non autorisées&nbsp;;</li>
+<li><strong>s'assurer qu'il dispose d'un fondement légitime pour enregistrer les données des athlètes</strong>, et notamment de l'information et, lorsque cela est requis, de l'accord des représentants légaux des mineurs&nbsp;;</li>
+<li><strong>ne saisir aucune donnée de santé</strong> ni aucune information sensible dans les champs libres du Service, qui n'est pas conçu pour en recevoir&nbsp;;</li>
+<li>n'adresser les liens publics de groupe et de présence qu'aux familles concernées.</li>
+</ul>
 
-    <h2>12. Responsabilité</h2>
-    <p>
-      L'Éditeur s'efforce de fournir un service de qualité, mais ne peut être tenu responsable :
-    </p>
-    <ul>
-      <li>Des conséquences pédagogiques ou physiques de l'application des séances générées sur tes athlètes.</li>
-      <li>Des indisponibilités temporaires du Service liées à la maintenance, à des incidents techniques, ou à des prestataires tiers (Base 44, Anthropic, Vercel).</li>
-      <li>De la suppression des vidéos sources sur Instagram, qui sont hors de son contrôle.</li>
-    </ul>
-    <p>
-      En tout état de cause, la responsabilité de l'Éditeur est limitée au montant des sommes effectivement versées au titre de l'abonnement sur les 12 derniers mois.
-    </p>
+<h2 id="pedagogie">10. Nature du Service et responsabilité sur le terrain</h2>
+<div class="box box-green">
+<p><strong>Séances Athlé est un outil d'assistance. Il ne remplace en aucun cas le jugement de l'encadrant.</strong></p>
+<p>Le Contenu généré constitue une proposition de trame, élaborée à partir des paramètres déclarés par l'Utilisateur. Il appartient à l'encadrant de la vérifier, de l'adapter à ses athlètes et aux conditions du jour, et de renoncer à toute situation qui lui paraîtrait inadaptée.</p>
+<p>La conduite de la séance, le contrôle du matériel et des installations, l'échauffement, la surveillance active des athlètes et le respect des règles de sécurité relèvent exclusivement de la responsabilité de l'encadrant présent et, le cas échéant, de la structure qui l'emploie ou l'accueille.</p>
+</div>
+<p>L'Éditeur ne saurait être tenu responsable d'un dommage corporel ou matériel survenu à l'occasion d'une séance, le Service ne disposant d'aucun moyen d'apprécier l'état des athlètes, du matériel ou des installations.</p>
 
-    <h2>13. Comportement de l'utilisateur</h2>
-    <p>
-      Tu t'engages à utiliser le Service de manière loyale et à ne pas :
-    </p>
-    <ul>
-      <li>Tenter de contourner les mesures de sécurité ou d'accès du Service.</li>
-      <li>Utiliser des moyens automatisés (scraping, bots) pour extraire la base de données.</li>
-      <li>Partager ton accès avec des tiers.</li>
-      <li>Utiliser le Service à des fins illégales ou contraires aux bonnes mœurs.</li>
-    </ul>
-    <p>
-      En cas de manquement, l'Éditeur peut suspendre ou résilier ton compte sans préavis ni remboursement.
-    </p>
+<h2 id="propriete">11. Propriété intellectuelle</h2>
+<p>Le Service, sa structure, son moteur de génération et la base d'exercices constituée par l'Éditeur demeurent sa propriété exclusive. L'abonnement confère un droit d'usage personnel, non exclusif et non cessible, pour la durée de l'abonnement.</p>
+<p><strong>Le Contenu généré appartient à l'Utilisateur.</strong> Il peut l'utiliser, l'imprimer, le modifier et le conserver sans limitation, y compris après la fin de son abonnement. Il ne peut en revanche le commercialiser en tant que tel ni le diffuser publiquement à grande échelle en s'en attribuant la conception.</p>
+<p>Les vidéos d'illustration restent la propriété de leurs auteurs et sont affichées au moyen de l'outil d'intégration officiel d'Instagram, sans reproduction sur les serveurs de l'Éditeur.</p>
 
-    <h2>14. Force majeure</h2>
-    <p>
-      L'Éditeur ne peut être tenu pour responsable d'un manquement à ses obligations résultant d'un cas de force majeure tel que défini par l'article 1218 du Code civil et la jurisprudence française.
-    </p>
+<h2 id="disponibilite">12. Disponibilité et évolutions</h2>
+<p>L'Éditeur met en œuvre les moyens raisonnables pour assurer la disponibilité du Service, sans garantie d'un fonctionnement ininterrompu. Des interruptions peuvent survenir pour maintenance, mise à jour, ou du fait d'un prestataire tiers.</p>
+<p>Le Service évolue régulièrement. Une fonctionnalité peut être modifiée ou retirée&nbsp;; si le retrait affecte substantiellement l'usage, le Souscripteur en est informé et peut résilier sans frais.</p>
+<p>À tout moment, l'Utilisateur peut exporter ses séances et ses données. Après résiliation, les données sont conservées puis supprimées dans les conditions décrites par la <a href="/confidentialite">politique de confidentialité</a>.</p>
 
-    <h2>15. Loi applicable et juridiction</h2>
-    <p>
-      Les présentes CGU sont soumises au droit français. En cas de litige, et après tentative de résolution amiable, les tribunaux français compétents seront seuls saisis.
-    </p>
-    <p>
-      Conformément à l'article L612-1 du Code de la consommation, tu peux recourir gratuitement au service de médiation [À COMPLÉTER : nom du médiateur si tu en désignes un].
-    </p>
+<h2 id="responsabilite-cgu">13. Limitation de responsabilité</h2>
+<p>L'Éditeur est tenu d'une obligation de moyens. Sa responsabilité ne peut être engagée qu'en cas de faute prouvée et pour les dommages directs. Hors dommages corporels, faute lourde ou dolosive, elle est plafonnée aux sommes effectivement versées par le Souscripteur au cours des douze mois précédant le fait générateur.</p>
+<p>L'Éditeur n'est pas responsable de l'usage fait du Contenu généré, ni des conséquences d'une saisie erronée par l'Utilisateur, ni de l'indisponibilité d'un service tiers.</p>
 
-    <h2>16. Contact</h2>
-    <p>
-      Pour toute question relative aux présentes CGU : <a href="mailto:hello@seances-athle.fr">hello@seances-athle.fr</a>
-    </p>
+<h2 id="donnees">14. Données personnelles</h2>
+<p>Le traitement des données est décrit dans la <a href="/confidentialite">politique de confidentialité</a>, qui fait partie intégrante des présentes conditions.</p>
+<p>Pour les données des athlètes saisies par l'Utilisateur, le Souscripteur agit en qualité de responsable de traitement et l'Éditeur en qualité de sous-traitant au sens de l'article 28 du règlement général sur la protection des données. Un contrat de sous-traitance est communiqué sur demande à <a href="mailto:regis@moscardini.fr">regis@moscardini.fr</a>.</p>
 
+<h2 id="modification">15. Modification des conditions</h2>
+<p>Les présentes conditions peuvent être modifiées. Les Utilisateurs sont informés au moins trente (30) jours avant l'entrée en vigueur de toute modification substantielle. La poursuite de l'utilisation du Service vaut acceptation&nbsp;; à défaut, le Souscripteur peut résilier sans frais.</p>
+
+<h2 id="droit">16. Droit applicable et litiges</h2>
+<p>Les présentes conditions sont soumises au droit français.</p>
+<p>En cas de différend, les parties s'efforcent de trouver une solution amiable. Le consommateur peut recourir gratuitement au médiateur de la consommation désigné dans les <a href="/mentions-legales">mentions légales</a>, ou à la <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">plateforme européenne de règlement en ligne des litiges</a>.</p>
+<p>À défaut d'accord, le litige est porté devant les juridictions françaises compétentes. Pour les professionnels et les personnes morales, compétence est attribuée aux tribunaux du ressort du siège de l'Éditeur.</p>
+
+  </div>
+
+  <div class="mt-16 pt-8 border-t border-gray-200 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+    <a href="/mentions-legales" class="text-gray-600 hover:text-mondo transition no-underline">Mentions légales</a>
+    <a href="/cgu" class="text-gray-600 hover:text-mondo transition no-underline">CGU et CGV</a>
+    <a href="/confidentialite" class="text-gray-600 hover:text-mondo transition no-underline">Confidentialité</a>
+    <a href="https://app.seances-athle.fr/credits" class="text-gray-600 hover:text-mondo transition no-underline">Crédits</a>
   </div>
 </main>
 
-<footer class="bg-piste-graphite text-gray-400 py-12 mt-16">
-  <div class="max-w-4xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row justify-between items-start gap-4">
-      <a href="/" class="flex items-center gap-2">
-        <div class="w-7 h-7 bg-mondo rounded-md flex items-center justify-center">
-          <div class="w-3.5 h-3.5 border-2 border-white rounded-full"></div>
-        </div>
-        <span class="font-medium text-white text-sm">Séances Athlé</span>
-      </a>
-      <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs">
-        <a href="/cgu" class="hover:text-white">CGU</a>
-        <a href="/confidentialite" class="hover:text-white">Confidentialité</a>
-        <a href="/mentions-legales" class="hover:text-white">Mentions légales</a>
-        <a href="mailto:hello@seances-athle.fr" class="hover:text-white">Contact</a>
-      </div>
-    </div>
-    <div class="mt-8 pt-6 border-t border-gray-800 text-xs text-gray-500 flex justify-between flex-wrap gap-3">
-      <span>© 2026 Séances Athlé. Tous droits réservés.</span>
-      <span>Fait au Puy-en-Velay · 🇫🇷</span>
-    </div>
+<footer class="bg-piste-graphite text-gray-400 py-10">
+  <div class="max-w-4xl mx-auto px-6 flex flex-wrap justify-between gap-4 text-xs">
+    <span>© 2026 Séances Athlé. Tous droits réservés.</span>
+    <span>Fait au Puy-en-Velay · 🇫🇷</span>
   </div>
 </footer>
-
 </body>
 </html>
