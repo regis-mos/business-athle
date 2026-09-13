@@ -167,7 +167,7 @@ tailwind.config = {
         </div>
         <div class="border border-white/10 rounded-2xl p-6">
           <div class="display text-4xl font-semibold text-mondo mb-2">0</div>
-          <p class="text-gray-300 leading-relaxed text-[15px]">euro supplémentaire par entraîneur : le tarif club couvre toute l'équipe technique.</p>
+          <p class="text-gray-300 leading-relaxed text-[15px]">euro de plus quand un bénévole rejoint l'équipe en cours de saison : votre palier est fixé à la signature.</p>
         </div>
       </div>
       <p class="text-gray-400 text-[15px] leading-relaxed max-w-2xl">
@@ -619,82 +619,105 @@ tailwind.config = {
 
 <!-- Tarif -->
 <section id="tarif" class="py-20 md:py-24 bg-sable">
-  <div class="max-w-5xl mx-auto px-6">
+  <div class="max-w-6xl mx-auto px-6">
     <div class="text-center max-w-2xl mx-auto mb-12 reveal">
-      <h2 class="text-3xl md:text-4xl font-semibold mb-5">Un tarif, tous vos entraîneurs.</h2>
-      <p class="text-lg text-gray-700 leading-relaxed">Indexé sur la taille du club, pour qu'un club de cinquante licenciés ne paie pas le prix d'un club de six cents. Encadrants et groupes illimités dans tous les cas.</p>
+      <h2 class="text-3xl md:text-4xl font-semibold mb-5">Trois paliers. Un seul tarif par club.</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Indexé sur votre nombre de licenciés et sur la taille de votre équipe technique, pour qu'un club de
+        cinquante licenciés ne paie pas le prix d'un club de six cents. Vous relevez du palier correspondant au
+        plus élevé des deux critères.
+      </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-5 mb-8">
-      <div class="bg-white rounded-2xl p-7 border border-gray-200 reveal">
-        <div class="text-sm text-gray-500 mb-1">Moins de 150 licenciés</div>
-        <div class="font-semibold text-lg mb-3">Club</div>
-        <div class="flex items-baseline gap-1.5 mb-1">
+    <div class="grid md:grid-cols-3 gap-5 items-stretch mb-8">
+
+      <div class="bg-white rounded-2xl border border-gray-200 p-7 flex flex-col reveal">
+        <div class="font-semibold text-lg">Club</div>
+        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Jusqu'à 150 licenciés<br>et 6 entraîneurs</p>
+        <div class="flex items-baseline gap-1.5">
           <span class="display text-4xl font-semibold">390 €</span><span class="text-gray-500 text-sm">/ an</span>
         </div>
-        <div class="text-sm text-gray-500">39 € par mois</div>
+        <div class="text-sm text-gray-500 mt-1 mb-6">soit 39 € par mois, facturé à l'année</div>
+        <a href="https://app.seances-athle.fr/reserver?source=clubs" class="block text-center border border-piste-black hover:bg-piste-black hover:text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Réserver 20 minutes</a>
+        <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Tout l'outil, sans réserve</div>
+        <ul class="space-y-2.5 text-[15px] text-gray-700">
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Entraîneurs et groupes illimités</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Séances, cycles et plans de saison, toutes disciplines</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Plans calculés pour les groupes encadrés à plusieurs</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Suivi des athlètes, présences, forme, bilans d'acquisition</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Import des résultats officiels athle.fr</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Pages publiques de groupe et liens de présence</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Bibliothèque de 900 exercices vidéo</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Vos groupes installés par nos soins</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Support par email</li>
+        </ul>
       </div>
 
-      <div class="bg-white rounded-2xl p-7 border-2 border-mondo shadow-xl relative reveal reveal-delay-1">
+      <div class="bg-white rounded-2xl border-2 border-mondo shadow-xl p-7 flex flex-col relative reveal reveal-delay-1">
         <div class="absolute -top-3 left-7 bg-mondo text-white text-xs font-semibold px-3 py-1 rounded-full">Le plus courant</div>
-        <div class="text-sm text-gray-500 mb-1">De 150 à 400 licenciés</div>
-        <div class="font-semibold text-lg mb-3">Club Standard</div>
-        <div class="flex items-baseline gap-1.5 mb-1">
+        <div class="font-semibold text-lg">Club Standard</div>
+        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Jusqu'à 400 licenciés<br>et 15 entraîneurs</p>
+        <div class="flex items-baseline gap-1.5">
           <span class="display text-4xl font-semibold">790 €</span><span class="text-gray-500 text-sm">/ an</span>
         </div>
-        <div class="text-sm text-gray-500">79 € par mois</div>
+        <div class="text-sm text-gray-500 mt-1 mb-6">soit 79 € par mois, facturé à l'année</div>
+        <a href="https://app.seances-athle.fr/reserver?source=clubs" class="block text-center bg-mondo hover:bg-mondo-dark text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Réserver 20 minutes</a>
+        <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Tout ce qu'il y a dans Club, plus</div>
+        <ul class="space-y-2.5 text-[15px] text-gray-700">
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Une session de prise en main avec toute votre équipe technique</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Un point de suivi en milieu de saison</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Support prioritaire</li>
+        </ul>
       </div>
 
-      <div class="bg-white rounded-2xl p-7 border border-gray-200 reveal reveal-delay-2">
-        <div class="text-sm text-gray-500 mb-1">Plus de 400 licenciés</div>
-        <div class="font-semibold text-lg mb-3">Club Grand</div>
-        <div class="flex items-baseline gap-1.5 mb-1">
+      <div class="bg-white rounded-2xl border border-gray-200 p-7 flex flex-col reveal reveal-delay-2">
+        <div class="font-semibold text-lg">Club Grand</div>
+        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Au-delà de 400 licenciés<br>ou de 15 entraîneurs</p>
+        <div class="flex items-baseline gap-1.5">
           <span class="display text-4xl font-semibold">1 290 €</span><span class="text-gray-500 text-sm">/ an</span>
         </div>
-        <div class="text-sm text-gray-500">129 € par mois</div>
+        <div class="text-sm text-gray-500 mt-1 mb-6">soit 129 € par mois, facturé à l'année</div>
+        <a href="https://app.seances-athle.fr/reserver?source=clubs" class="block text-center border border-piste-black hover:bg-piste-black hover:text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Réserver 20 minutes</a>
+        <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Tout ce qu'il y a dans Standard, plus</div>
+        <ul class="space-y-2.5 text-[15px] text-gray-700">
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Un point de suivi par trimestre</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Une visio de formation par saison pour vos nouveaux encadrants</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Vos demandes d'évolution examinées en priorité</li>
+        </ul>
       </div>
+
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 md:p-7 border border-gray-200 text-center mb-8 reveal">
+      <p class="text-[15px] text-gray-800 font-medium mb-1.5">Un mois d'essai sur un groupe, sans engagement et sans carte bancaire.</p>
+      <p class="text-sm text-gray-500 leading-relaxed max-w-3xl mx-auto">
+        Votre palier est constaté à la signature : un entraîneur de plus en cours de saison ne change pas votre
+        facture. Facturation en année sportive, de septembre à août. Facture au nom du club, devis sur demande.
+        Résiliable à tout moment, sans préavis ni pénalité.
+      </p>
     </div>
 
     <div class="grid md:grid-cols-5 gap-6 items-start">
-      <div class="md:col-span-3 bg-white rounded-2xl p-8 border border-gray-200 reveal">
-        <div class="font-semibold text-lg mb-5">Compris dans toutes les formules</div>
-        <ul class="space-y-3 text-[15px] mb-7">
-          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Entraîneurs illimités, groupes illimités</li>
-          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Séances, cycles et plans de saison sur toutes les disciplines</li>
-          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Plans de saison calculés pour les groupes encadrés à plusieurs</li>
-          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Suivi des athlètes, présences, état de forme, bilans d'acquisition</li>
-          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Import des résultats officiels athle.fr et courbes de progression</li>
-          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Pages publiques de groupe et liens de présence</li>
-          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Bibliothèque de 900+ exercices vidéo, enrichie chaque semaine</li>
-          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Mise en place accompagnée et interlocuteur direct</li>
-        </ul>
-        <a href="https://app.seances-athle.fr/reserver?source=clubs" class="block text-center bg-mondo hover:bg-mondo-dark text-white px-6 py-4 rounded-lg font-medium transition">Réserver 20 minutes en visio</a>
-        <p class="text-center text-sm text-gray-700 mt-4"><strong>Un mois d'essai sur un groupe, sans engagement et sans carte bancaire.</strong></p>
-        <p class="text-center text-xs text-gray-500 mt-1.5">Facturation en année sportive, de septembre à août. Facture au nom du club, devis sur demande. Résiliable à tout moment, sans préavis ni pénalité.</p>
+      <div class="md:col-span-3 bg-piste-black text-white rounded-2xl p-7 reveal">
+        <div class="inline-block bg-mondo text-white text-xs font-semibold px-2.5 py-1 rounded-full mb-3">Quinze clubs, pas un de plus</div>
+        <div class="font-semibold text-lg mb-2">Club fondateur</div>
+        <div class="flex items-baseline gap-1.5 mb-3">
+          <span class="display text-3xl font-semibold text-mondo-light">390 €</span>
+          <span class="text-gray-400 text-sm">/ an, quel que soit votre palier</span>
+        </div>
+        <p class="text-gray-300 text-[15px] leading-relaxed mb-3">
+          Tarif garanti trois saisons, avec le contenu du palier qui vous revient. Ce n'est pas une remise :
+          c'est un prix gelé pour les clubs qui embarquent pendant que l'outil se construit.
+        </p>
+        <p class="text-gray-400 text-[13px] leading-relaxed">
+          En échange : trente minutes de retour par trimestre, l'accord d'être cité comme club pilote, et un
+          témoignage en fin de saison si vous êtes satisfaits.
+        </p>
       </div>
-
-      <div class="md:col-span-2 space-y-5">
-        <div class="bg-piste-black text-white rounded-2xl p-6 reveal reveal-delay-1">
-          <div class="inline-block bg-mondo text-white text-xs font-semibold px-2.5 py-1 rounded-full mb-3">Quinze clubs, pas un de plus</div>
-          <div class="font-semibold text-lg mb-2">Club fondateur</div>
-          <div class="flex items-baseline gap-1.5 mb-3">
-            <span class="display text-3xl font-semibold text-mondo-light">390 €</span>
-            <span class="text-gray-400 text-sm">/ an, quelle que soit votre taille</span>
-          </div>
-          <p class="text-gray-300 text-[15px] leading-relaxed mb-3">
-            Tarif garanti trois saisons. Ce n'est pas une remise : c'est un prix gelé pour les clubs qui embarquent
-            pendant que l'outil se construit.
-          </p>
-          <p class="text-gray-400 text-[13px] leading-relaxed">
-            En échange : trente minutes de retour par trimestre, l'accord d'être cité comme club pilote, et un
-            témoignage en fin de saison si vous êtes satisfaits.
-          </p>
-        </div>
-        <div class="bg-white rounded-2xl p-6 border border-gray-200 reveal reveal-delay-2">
-          <div class="font-semibold mb-2">Un seul entraîneur ?</div>
-          <p class="text-gray-600 text-[15px] leading-relaxed mb-3">La formule individuelle existe à 14 € par mois, pour un entraîneur et jusqu'à trois groupes.</p>
-          <a href="/" class="text-mondo font-medium text-[15px] hover:underline">Voir la formule individuelle →</a>
-        </div>
+      <div class="md:col-span-2 bg-white rounded-2xl p-7 border border-gray-200 reveal reveal-delay-1">
+        <div class="font-semibold mb-2">Un seul entraîneur ?</div>
+        <p class="text-gray-600 text-[15px] leading-relaxed mb-3">La formule individuelle existe à 14 € par mois, pour un entraîneur et jusqu'à trois groupes. C'est la bonne porte d'entrée si vous voulez tester avant d'en parler à votre bureau.</p>
+        <a href="/" class="text-mondo font-medium text-[15px] hover:underline">Voir la formule individuelle →</a>
       </div>
     </div>
   </div>
