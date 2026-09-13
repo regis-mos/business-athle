@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Séances Athlé pour les clubs : aidez vos entraîneurs à tenir la distance</title>
-<meta name="description" content="L'outil pédagogique des clubs d'athlétisme : des séances solides pour chaque groupe, le suivi des athlètes, et l'information des parents. Aligné sur la progression Pass' Athlé. À partir de 390 € par an pour tout le club.">
+<meta name="description" content="L'outil pédagogique des clubs d'athlétisme : des séances solides pour chaque groupe, des plans de saison pour les groupes encadrés à plusieurs, le suivi des athlètes et l'information des parents. Aligné sur la progression Pass' Athlé. À partir de 390 € par an pour tout le club.">
 <meta property="og:title" content="Séances Athlé pour les clubs : aidez vos entraîneurs à tenir la distance">
 <meta property="og:description" content="Vos entraîneurs sont une pièce maîtresse de votre club. Donnez-leur une séance solide chaque semaine, pour chaque groupe.">
 <meta property="og:type" content="website">
@@ -72,8 +72,9 @@ tailwind.config = {
       <span class="font-medium text-base">Séances Athlé</span>
       <span class="hidden sm:inline text-xs font-medium text-mondo bg-mondo-faint px-2 py-0.5 rounded-full ml-1">Clubs</span>
     </a>
-    <div class="hidden md:flex items-center gap-7">
+    <div class="hidden md:flex items-center gap-5">
       <a href="#perimetre" class="text-sm text-gray-600 hover:text-piste-black transition">Ce que ça fait</a>
+      <a href="#ecrans" class="text-sm text-gray-600 hover:text-piste-black transition">Les écrans</a>
       <a href="#donnees" class="text-sm text-gray-600 hover:text-piste-black transition">Données</a>
       <a href="#tarif" class="text-sm text-gray-600 hover:text-piste-black transition">Tarif</a>
       <a href="#questions" class="text-sm text-gray-600 hover:text-piste-black transition">Questions</a>
@@ -97,8 +98,9 @@ tailwind.config = {
       </h1>
       <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-9">
         Séances Athlé donne à chacun de vos entraîneurs, diplômé ou pas, une séance construite, illustrée et
-        conforme à la progression Pass' Athlé. Pour chaque groupe, chaque semaine. Et il vous donne le suivi
-        des athlètes et l'information des familles qui va avec.
+        conforme à la progression Pass' Athlé. Pour chaque groupe, chaque semaine, même quand deux ou trois
+        personnes se partagent le même groupe. Et il vous donne le suivi des athlètes et l'information des
+        familles qui va avec.
       </p>
       <div class="flex flex-col sm:flex-row gap-3 mb-10">
         <a href="https://app.seances-athle.fr/reserver?source=clubs" class="bg-mondo hover:bg-mondo-dark text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2">
@@ -189,15 +191,22 @@ tailwind.config = {
       <div class="grid md:grid-cols-2 gap-10 items-center reveal">
         <div>
           <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">01. Construire</div>
-          <h3 class="text-2xl font-semibold mb-4">Les séances et les plans de saison</h3>
+          <h3 class="text-2xl font-semibold mb-4">Les séances, les cycles et le plan de saison</h3>
           <p class="text-gray-600 leading-relaxed mb-4">
             L'encadrant décrit son objectif, son créneau et son matériel. Il récupère une séance complète :
             accueil, échauffement en trois temps, ateliers avec consignes, critères de réussite, erreurs typiques
             et correctifs, schéma d'implantation au sol, et une vidéo par exercice.
           </p>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Au-dessus, un plan de saison annuel découpé en périodes et en mésocycles, avec la séance repère qui
+            valide chaque bloc. En dessous, un calendrier mensuel où chaque séance se pose à sa date et passe de
+            « planifiée » à « faite ». Les trois niveaux sont reliés : une séance sait dans quel bloc de la saison
+            elle s'inscrit.
+          </p>
           <p class="text-gray-600 leading-relaxed">
-            Au-dessus, un plan de saison structuré en périodes et mésocycles, avec la séance repère qui valide
-            chaque bloc. Les deux sont reliés : une séance sait dans quel bloc de la saison elle s'inscrit.
+            Et le plan explique ses propres choix. Pourquoi cette semaine allégée, pourquoi cette compétition
+            d'octobre ne doit pas être traitée comme un pic de forme, ce que le jour de la semaine change à la
+            charge. Un encadrant non formé apprend la périodisation en lisant le plan de son propre groupe.
           </p>
         </div>
         <a class="lb-trigger" onclick="lbOpen('/screenshots/app-detail-seance.jpg')">
@@ -209,23 +218,30 @@ tailwind.config = {
       </div>
 
       <div class="grid md:grid-cols-2 gap-10 items-center reveal">
-        <a class="lb-trigger md:order-1" onclick="lbOpen('/screenshots/app-athletes.jpg')">
+        <a class="lb-trigger md:order-1" onclick="lbOpen('/screenshots/app-apprentissage.jpg')">
           <div class="browser-frame">
             <div class="browser-bar"><div class="browser-dot bg-[#FF5F57]"></div><div class="browser-dot bg-[#FEBC2E]"></div><div class="browser-dot bg-[#28C840]"></div></div>
-            <img src="/screenshots/app-athletes.jpg" alt="Le suivi des athlètes" class="w-full block">
+            <img src="/screenshots/app-apprentissage.jpg" alt="La vue d'apprentissage d'un groupe, athlète par athlète et acquisition par acquisition" class="w-full block" loading="lazy">
           </div>
         </a>
         <div class="md:order-2">
           <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">02. Suivre</div>
           <h3 class="text-2xl font-semibold mb-4">Le suivi pédagogique des athlètes</h3>
           <p class="text-gray-600 leading-relaxed mb-4">
-            Les groupes, l'effectif, l'appel en un geste au bord de la piste. Un bilan de fin de séance où
-            l'encadrant coche, athlète par athlète, si l'acquisition du jour est acquise, en cours, ou pas encore.
+            L'effectif d'un groupe s'importe depuis un fichier, personne ne ressaisit trente noms à la main.
+            Ensuite : l'appel en un geste au bord de la piste, et un bilan de fin de séance où l'encadrant coche,
+            athlète par athlète, si l'acquisition du jour est acquise, en cours, ou pas encore.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Ces cases remplies deviennent une vue de groupe : qui a acquis quoi, sur quelle acquisition le groupe
+            entier bloque, quel jeune décroche sans le dire. Un encadrant peut aussi noter l'état de forme du jour
+            en quelques secondes, et la grille des quatre dernières semaines fait ressortir les signaux faibles.
           </p>
           <p class="text-gray-600 leading-relaxed">
-            Les performances peuvent être importées depuis les résultats officiels plutôt que ressaisies. Et
-            l'assiduité de chaque groupe se lit d'un coup d'œil. C'est souvent le premier signal qu'un groupe
-            décroche.
+            Côté performances, les records se récupèrent depuis la base de résultats athle.fr plutôt que d'être
+            ressaisis, avec les courbes d'évolution par épreuve. L'outil situe l'athlète par rapport aux
+            référentiels de son âge et propose une cible de fin de saison, argumentée, que l'entraîneur retient
+            ou écarte.
           </p>
         </div>
       </div>
@@ -235,20 +251,24 @@ tailwind.config = {
           <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">03. Informer</div>
           <h3 class="text-2xl font-semibold mb-4">La communication vers les familles</h3>
           <p class="text-gray-600 leading-relaxed mb-4">
-            Chaque groupe dispose d'une page publique : les créneaux, les entraîneurs, le point de rendez-vous,
-            la tenue, les prochaines compétitions, les infos pratiques. Un lien à envoyer une fois, que les
-            parents gardent.
+            Chaque groupe dispose d'une page publique : les créneaux avec le nom de l'entraîneur de chaque jour,
+            le message du coach, les entraînements du mois, les prochaines compétitions, les contacts. Un lien à
+            envoyer une fois, que les parents gardent.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Et avant chaque entraînement, un lien de présence qui se diffuse en un clic sur votre groupe WhatsApp :
+            les familles annoncent qui vient et qui ne vient pas, l'encadrant voit le compteur monter et arrive au
+            stade en sachant combien de jeunes il aura. Les compétitions fonctionnent de la même façon.
           </p>
           <p class="text-gray-600 leading-relaxed">
-            Et avant chaque entraînement, un lien de présence : les familles annoncent qui vient et qui ne vient
-            pas. L'encadrant arrive au stade en sachant combien de jeunes il aura. Fini les groupes WhatsApp à
-            trois cents messages.
+            La page porte aussi vos liens à vous : adhésions, calendrier sportif, boutique du club. Elle envoie
+            les familles vers vos outils au lieu de prétendre les remplacer.
           </p>
         </div>
-        <a class="lb-trigger" onclick="lbOpen('/screenshots/app-statistiques.jpg')">
+        <a class="lb-trigger" onclick="lbOpen('/screenshots/app-page-groupe.jpg')">
           <div class="browser-frame">
             <div class="browser-bar"><div class="browser-dot bg-[#FF5F57]"></div><div class="browser-dot bg-[#FEBC2E]"></div><div class="browser-dot bg-[#28C840]"></div></div>
-            <img src="/screenshots/app-statistiques.jpg" alt="Les statistiques du club" class="w-full block">
+            <img src="/screenshots/app-page-groupe.jpg" alt="La page publique d'un groupe, telle que la voient les familles" class="w-full block" loading="lazy">
           </div>
         </a>
       </div>
@@ -268,9 +288,164 @@ tailwind.config = {
         </div>
         <div>
           <div class="font-medium mb-2">Une mémoire du club</div>
-          <p class="text-gray-400 text-[15px] leading-relaxed">Ce qui a été travaillé, avec qui, et ce qui a été acquis. De quoi nourrir un bilan de saison ou un dossier de subvention avec autre chose que des impressions.</p>
+          <p class="text-gray-400 text-[15px] leading-relaxed">Ce qui a été travaillé, avec qui, et ce qui a été acquis. En fin de saison, votre taux de présence réel, la répartition de vos effectifs par catégorie et par discipline, le nombre d'acquisitions validées. De quoi écrire un rapport d'assemblée générale ou un dossier de subvention avec des chiffres plutôt qu'avec des impressions.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Co-encadrement -->
+<section class="py-20 md:py-24 bg-sable">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">La situation réelle de vos groupes</div>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-6 leading-tight">Un groupe, trois créneaux,<br>deux ou trois entraîneurs.</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          C'est le cas de la plupart des groupes de jeunes, et c'est ce qui rend la programmation impossible à
+          tenir. Chacun prépare son créneau dans son coin, personne ne sait ce que l'autre a fait la veille, et la
+          charge de la semaine n'est pilotée par personne.
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Séances Athlé pose la question au départ : combien de séances le groupe fait-il par semaine, et
+          lesquelles encadrez-vous ? La progressivité et les semaines de décharge sont alors calculées sur le
+          volume réel du groupe, pas sur votre seul créneau.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          Le plan ne détaille que les séances que vous menez, et chaque mésocycle indique en clair ce qu'il faut
+          transmettre à votre co-entraîneur. Vos encadrants n'ont plus besoin de se coordonner par SMS le
+          dimanche soir.
+        </p>
+      </div>
+      <a class="lb-trigger reveal reveal-delay-1" onclick="lbOpen('/screenshots/app-saison-macrocycle.jpg')">
+        <div class="browser-frame">
+          <div class="browser-bar"><div class="browser-dot bg-[#FF5F57]"></div><div class="browser-dot bg-[#FEBC2E]"></div><div class="browser-dot bg-[#28C840]"></div></div>
+          <img src="/screenshots/app-saison-macrocycle.jpg" alt="Un plan de saison calculé pour un groupe co-encadré" class="w-full block" loading="lazy">
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Galerie des écrans -->
+<section id="ecrans" class="py-20 md:py-24 bg-piste-black text-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-2xl mb-14 reveal">
+      <div class="text-mondo-light font-medium text-sm uppercase tracking-[0.2em] mb-4">Rien à imaginer</div>
+      <h2 class="text-3xl md:text-4xl font-semibold mb-5">L'outil, écran par écran.</h2>
+      <p class="text-gray-300 leading-relaxed text-lg">
+        Ce sont des captures d'un club réel, prises cette saison. Les noms des jeunes sont masqués, le reste
+        est tel quel. Cliquez pour agrandir.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <a class="lb-trigger reveal" onclick="lbOpen('/screenshots/app-saison-phases.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="/screenshots/app-saison-phases.jpg" alt="Le détail des phases d'un plan de saison" class="w-full block" loading="lazy">
+        </div>
+        <div class="mt-3 font-medium text-[15px]">Le plan de saison, phase par phase</div>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Six phases datées, l'avancement de chaque mésocycle, et les conseils qui expliquent les choix.</p>
+      </a>
+
+      <a class="lb-trigger reveal reveal-delay-1" onclick="lbOpen('/screenshots/app-planning-mois.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="/screenshots/app-planning-mois.jpg" alt="Le calendrier mensuel des séances" class="w-full block" loading="lazy">
+        </div>
+        <div class="mt-3 font-medium text-[15px]">Le calendrier du mois</div>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Ce qui est planifié, ce qui est fait. Une séquence entière se pose sur le calendrier en une fois.</p>
+      </a>
+
+      <a class="lb-trigger reveal reveal-delay-2" onclick="lbOpen('/screenshots/app-forme.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="/screenshots/app-forme.jpg" alt="La grille de forme du groupe sur quatre semaines" class="w-full block" loading="lazy">
+        </div>
+        <div class="mt-3 font-medium text-[15px]">L'état de forme du groupe</div>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Une saisie de quelques secondes en fin de séance, et quatre semaines d'historique qui se lisent en un coup d'œil.</p>
+      </a>
+
+      <a class="lb-trigger reveal" onclick="lbOpen('/screenshots/app-apprentissage.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="/screenshots/app-apprentissage.jpg" alt="La vue d'apprentissage du groupe" class="w-full block" loading="lazy">
+        </div>
+        <div class="mt-3 font-medium text-[15px]">Qui a acquis quoi</div>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Les acquisitions techniques travaillées, croisées avec l'effectif. La colonne qui reste orange vous dit quoi retravailler.</p>
+      </a>
+
+      <a class="lb-trigger reveal reveal-delay-1" onclick="lbOpen('/screenshots/app-bilan-athlete.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="/screenshots/app-bilan-athlete.jpg" alt="La fiche de suivi d'un athlète" class="w-full block" loading="lazy">
+        </div>
+        <div class="mt-3 font-medium text-[15px]">La fiche d'un jeune</div>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Ses bilans de séance, son assiduité, son historique. De quoi répondre à un parent sans chercher ses notes.</p>
+      </a>
+
+      <a class="lb-trigger reveal reveal-delay-2" onclick="lbOpen('/screenshots/app-athlete-records.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="/screenshots/app-athlete-records.jpg" alt="Les records personnels et l'import depuis athle.fr" class="w-full block" loading="lazy">
+        </div>
+        <div class="mt-3 font-medium text-[15px]">Les records, sans ressaisie</div>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Les performances publiques de l'athlète sont récupérées depuis la base de résultats athle.fr.</p>
+      </a>
+
+      <a class="lb-trigger reveal" onclick="lbOpen('/screenshots/app-objectifs-ia.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="/screenshots/app-objectifs-ia.jpg" alt="Les objectifs de saison proposés pour un athlète" class="w-full block" loading="lazy">
+        </div>
+        <div class="mt-3 font-medium text-[15px]">Une cible de fin de saison</div>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">L'athlète est situé par rapport aux référentiels de son âge. L'entraîneur retient la proposition, ou pas.</p>
+      </a>
+
+      <a class="lb-trigger reveal reveal-delay-1" onclick="lbOpen('/screenshots/app-effectif.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="/screenshots/app-effectif.jpg" alt="L'effectif d'un groupe" class="w-full block" loading="lazy">
+        </div>
+        <div class="mt-3 font-medium text-[15px]">L'effectif d'un groupe</div>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Importable depuis un fichier, avec la catégorie, les disciplines et le statut de chacun.</p>
+      </a>
+
+      <a class="lb-trigger reveal reveal-delay-2" onclick="lbOpen('/screenshots/app-appel.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="/screenshots/app-appel.jpg" alt="L'écran d'appel au bord de la piste" class="w-full block" loading="lazy">
+        </div>
+        <div class="mt-3 font-medium text-[15px]">L'appel au bord de la piste</div>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Présent, absent, excusé. Trois boutons assez grands pour être touchés avec des gants.</p>
+      </a>
+
+      <a class="lb-trigger reveal" onclick="lbOpen('/screenshots/app-presences.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="/screenshots/app-presences.jpg" alt="Les liens de présence envoyés aux familles" class="w-full block" loading="lazy">
+        </div>
+        <div class="mt-3 font-medium text-[15px]">Les liens de présence</div>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Diffusés sur WhatsApp en un clic, avec le nombre de familles qui ont répondu et le taux de présence par mois.</p>
+      </a>
+
+      <a class="lb-trigger reveal reveal-delay-1" onclick="lbOpen('/screenshots/app-stats-club.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="/screenshots/app-stats-club.jpg" alt="Le tableau de bord d'un groupe" class="w-full block" loading="lazy">
+        </div>
+        <div class="mt-3 font-medium text-[15px]">La photo de vos effectifs</div>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Répartition par catégorie, par genre, par discipline. Les chiffres qu'on vous demande chaque année.</p>
+      </a>
+
+      <a class="lb-trigger reveal reveal-delay-2" onclick="lbOpen('/screenshots/app-stats-bilans.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="/screenshots/app-stats-bilans.jpg" alt="L'assiduité et les acquisitions sur la saison" class="w-full block" loading="lazy">
+        </div>
+        <div class="mt-3 font-medium text-[15px]">Ce que le bureau lit en juin</div>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Le taux de présence réel, l'assiduité jeune par jeune, et la part des acquisitions validées.</p>
+      </a>
+
+      <a class="lb-trigger reveal" onclick="lbOpen('/screenshots/app-bibliotheque.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="/screenshots/app-bibliotheque.jpg" alt="La bibliothèque d'exercices vidéo" class="w-full block" loading="lazy">
+        </div>
+        <div class="mt-3 font-medium text-[15px]">La bibliothèque vidéo</div>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">900 exercices indexés par discipline, étape d'apprentissage et niveau. Vos propres vidéos y trouvent leur place.</p>
+      </a>
+
     </div>
   </div>
 </section>
@@ -295,8 +470,10 @@ tailwind.config = {
         </div>
         <ul class="space-y-3 text-[15px] text-gray-700">
           <li>Construire les séances et les plans de saison</li>
+          <li>Coordonner plusieurs entraîneurs sur un même groupe</li>
           <li>Suivre les acquisitions pédagogiques des jeunes</li>
           <li>Tenir les présences et l'assiduité par groupe</li>
+          <li>Suivre l'état de forme et la disponibilité des athlètes</li>
           <li>Informer les familles sur les créneaux et les compétitions</li>
           <li>Archiver les performances et suivre les progressions</li>
           <li>Donner à un encadrant non diplômé un cadre sur lequel s'appuyer</li>
@@ -323,6 +500,16 @@ tailwind.config = {
       Vos outils de licence et de cotisation restent en place. Séances Athlé s'occupe uniquement de ce qui se
       passe sur la piste le mardi soir, et de ce que vos entraîneurs en retiennent.
     </p>
+
+    <div class="mt-10 max-w-3xl mx-auto reveal">
+      <a class="lb-trigger" onclick="lbOpen('/screenshots/app-liens-club.jpg')">
+        <img src="/screenshots/app-liens-club.jpg" alt="Le bloc de liens vers les outils du club sur la page publique d'un groupe" class="w-full block rounded-xl border border-sable-dark" loading="lazy">
+      </a>
+      <p class="text-center text-gray-500 text-sm mt-3 leading-relaxed">
+        La preuve tient en trois liens : la page de groupe renvoie les familles vers vos adhésions, votre
+        calendrier et votre boutique. Ce sont vos outils, ils restent les vôtres.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -357,6 +544,10 @@ tailwind.config = {
         <div class="border-l-2 border-gray-200 pl-5">
           <div class="font-medium mb-1">Vos liens publics</div>
           <p class="text-gray-600 text-[15px] leading-relaxed">Les pages de présence et de groupe sont accessibles à qui détient le lien. Elles sont conçues pour être envoyées aux familles concernées, et rien d'autre n'y figure que ce que vous y mettez.</p>
+        </div>
+        <div class="border-l-2 border-gray-200 pl-5">
+          <div class="font-medium mb-1">Le suivi individuel</div>
+          <p class="text-gray-600 text-[15px] leading-relaxed">Les présences, les bilans d'acquisition, l'état de forme et les indisponibilités sont visibles par l'encadrant du groupe et par personne d'autre. Ces informations ne sont jamais transmises au moteur d'intelligence artificielle, ni utilisées pour autre chose que le suivi du jeune dans votre club.</p>
         </div>
         <div class="border-l-2 border-gray-200 pl-5">
           <div class="font-medium mb-1">Sortie de route</div>
@@ -415,7 +606,7 @@ tailwind.config = {
       <div class="reveal reveal-delay-1">
         <div class="w-11 h-11 rounded-xl bg-mondo text-white flex items-center justify-center font-semibold text-lg mb-4">2</div>
         <div class="font-medium text-lg mb-2">On installe vos groupes</div>
-        <p class="text-gray-600 text-[15px] leading-relaxed">Groupes, créneaux, effectifs, comptes de vos encadrants : on le fait avec vous. Vous n'avez rien à saisir vous-même.</p>
+        <p class="text-gray-600 text-[15px] leading-relaxed">Groupes, créneaux, comptes de vos encadrants : on le fait avec vous. Les effectifs s'importent depuis un fichier, vous n'avez pas trente noms à retaper.</p>
       </div>
       <div class="reveal reveal-delay-2">
         <div class="w-11 h-11 rounded-xl bg-mondo text-white flex items-center justify-center font-semibold text-lg mb-4">3</div>
@@ -470,7 +661,9 @@ tailwind.config = {
         <ul class="space-y-3 text-[15px] mb-7">
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Entraîneurs illimités, groupes illimités</li>
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Séances, cycles et plans de saison sur toutes les disciplines</li>
-          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Suivi des athlètes, présences, bilans et performances</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Plans de saison calculés pour les groupes encadrés à plusieurs</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Suivi des athlètes, présences, état de forme, bilans d'acquisition</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Import des résultats officiels athle.fr et courbes de progression</li>
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Pages publiques de groupe et liens de présence</li>
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Bibliothèque de 900+ exercices vidéo, enrichie chaque semaine</li>
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Mise en place accompagnée et interlocuteur direct</li>
@@ -615,6 +808,57 @@ tailwind.config = {
           C'est le cas de la plupart, et l'outil est construit pour ça. On installe vos groupes à votre place.
           Un encadrant a trois choses à faire : décrire son objectif, lire sa séance sur son téléphone au bord
           de la piste, cocher qui était là. S'il sait envoyer un message WhatsApp, il sait s'en servir.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          Nos groupes sont encadrés par deux ou trois personnes différentes.
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          C'est la règle plus que l'exception, et l'outil est construit pour ça. Au moment de bâtir le plan de
+          saison, on demande combien de séances le groupe fait par semaine, tous entraîneurs confondus, et
+          lesquelles chaque encadrant assure. La progression de charge et les semaines de décharge sont calculées
+          sur le volume total du groupe, pas sur un seul créneau.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          Chaque encadrant reçoit ensuite le détail de ses propres séances, plus ce qu'il doit transmettre à son
+          collègue pour que la semaine tienne debout. C'est précisément ce qui manque aujourd'hui dans les clubs :
+          personne ne pilote la charge d'un groupe que trois personnes se partagent.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          On a déjà nos exercices et nos habitudes de travail.
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          Tant mieux, et elles ne partent nulle part. La bibliothèque de 900 exercices vidéo est un point de
+          départ, pas une obligation : vos encadrants y ajoutent leurs propres vidéos, suivent les comptes
+          techniques qu'ils veulent, et remplacent l'illustration d'un atelier par la leur en deux clics.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          Le principe est le même partout dans l'outil : il propose, l'encadrant tranche. Une séance générée se
+          modifie, un objectif proposé se refuse, un plan se régénère avec une consigne. Ce que votre club a
+          construit se capitalise dedans au lieu de rester dans un classeur.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          Ça couvre quels âges et quelles disciplines ?
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          Des Poussins aux Espoirs, soit U10 à U20, avec la possibilité de mélanger deux catégories dans un même
+          groupe, ce qui est la réalité de la plupart des créneaux de jeunes. Côté disciplines : sprint,
+          demi-fond, haies, sauts horizontaux, hauteur, perche, lancers, épreuves combinées et multi-épreuves.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          Le travail le plus abouti porte aujourd'hui sur les Benjamins et les Minimes, parce que c'est là que le
+          besoin est le plus criant et que ce sont les groupes que nous testons chaque semaine sur le terrain.
         </p>
       </details>
 
