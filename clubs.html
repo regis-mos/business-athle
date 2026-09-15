@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Séances Athlé pour les clubs : aidez vos entraîneurs à tenir la distance</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#DD3F1A">
 <meta name="description" content="L'outil pédagogique des clubs d'athlétisme : des séances solides pour chaque groupe, des plans de saison pour les groupes encadrés à plusieurs, le suivi des athlètes et l'information des parents. Aligné sur la progression Pass' Athlé. À partir de 390 € par an pour tout le club.">
 <meta property="og:title" content="Séances Athlé pour les clubs : aidez vos entraîneurs à tenir la distance">
 <meta property="og:description" content="Vos entraîneurs sont une pièce maîtresse de votre club. Donnez-leur une séance solide chaque semaine, pour chaque groupe.">
@@ -73,13 +80,11 @@ tailwind.config = {
       <span class="hidden sm:inline text-xs font-medium text-mondo bg-mondo-faint px-2 py-0.5 rounded-full ml-1">Clubs</span>
     </a>
     <div class="hidden md:flex items-center gap-5">
-      <a href="#perimetre" class="text-sm text-gray-600 hover:text-piste-black transition">Ce que ça fait</a>
-      <a href="#ecrans" class="text-sm text-gray-600 hover:text-piste-black transition">Les écrans</a>
-      <a href="#donnees" class="text-sm text-gray-600 hover:text-piste-black transition">Données</a>
+      <a href="#perimetre" class="text-sm text-gray-600 hover:text-piste-black transition">Les fonctionnalités</a>
+      <a href="#ecrans" class="text-sm text-gray-600 hover:text-piste-black transition">Exemples</a>
       <a href="#tarif" class="text-sm text-gray-600 hover:text-piste-black transition">Tarif</a>
-      <a href="#questions" class="text-sm text-gray-600 hover:text-piste-black transition">Questions</a>
-      <a href="/" class="text-sm text-gray-600 hover:text-piste-black transition">Pour un entraîneur seul</a>
-      <a href="https://app.seances-athle.fr/reserver?source=clubs" class="bg-mondo hover:bg-mondo-dark text-white px-4 py-2 rounded-lg font-medium text-sm transition">Réserver un appel</a>
+      <a href="#questions" class="text-sm text-gray-600 hover:text-piste-black transition">FAQ</a>
+      <a href="https://app.seances-athle.fr/reserver?source=clubs" class="bg-mondo hover:bg-mondo-dark text-white px-4 py-2 rounded-lg font-medium text-sm transition">Réserver une démo <span class="text-white/70 font-normal">(gratuit)</span></a>
     </div>
   </div>
 </nav>
@@ -88,23 +93,40 @@ tailwind.config = {
 <section class="mesh-bg text-white relative overflow-hidden">
   <div class="absolute top-0 left-0 right-0 h-1 track-stripe opacity-40"></div>
   <div class="max-w-6xl mx-auto px-6 pt-16 md:pt-24 pb-16 md:pb-20 relative">
-    <div class="max-w-3xl">
+    <div class="grid lg:grid-cols-[1fr_minmax(0,480px)] gap-12 lg:gap-16 items-center">
+    <div>
       <div class="mb-7">
-        <div class="text-mondo-light font-medium text-sm uppercase tracking-[0.2em]">Pour les clubs et les associations</div>
-        <div class="h-0.5 w-12 bg-mondo mt-2"></div>
+        <div class="inline-flex items-center gap-2.5 rounded-full border border-mondo/40 bg-mondo/[0.14] pl-3 pr-4 py-2">
+          <span class="w-2 h-2 rounded-full bg-mondo-light flex-shrink-0"></span>
+          <span class="text-mondo-light font-semibold text-[15px] md:text-base">Le nouvel outil pédagogique des entraîneurs d'athlétisme</span>
+        </div>
       </div>
-      <h1 class="display text-4xl md:text-6xl font-semibold leading-[1.06] mb-7">
+      <h1 class="display text-4xl md:text-5xl lg:text-[3.4rem] font-semibold leading-[1.07] mb-6">
         Vos entraîneurs sont une<br>pièce maîtresse de votre club.<br><span class="text-mondo">Aidez-les à tenir la distance.</span>
       </h1>
-      <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-9">
-        Séances Athlé donne à chacun de vos entraîneurs, diplômé ou pas, une séance construite, illustrée et
-        conforme à la progression Pass' Athlé. Pour chaque groupe, chaque semaine, même quand deux ou trois
-        personnes se partagent le même groupe. Et il vous donne le suivi des athlètes et l'information des
-        familles qui va avec.
-      </p>
+      <p class="text-gray-300 text-lg mb-5">Grâce à un outil en ligne qui leur donne :</p>
+      <ul class="space-y-3.5 mb-9 text-lg text-gray-200">
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-mondo-light flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+          <span><strong class="text-white font-semibold">Une séance prête</strong> pour chaque groupe, chaque semaine</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-mondo-light flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+          <span><strong class="text-white font-semibold">Un plan de saison</strong> aligné sur la progression Pass' Athlé</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-mondo-light flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+          <span><strong class="text-white font-semibold">Le suivi de chaque athlète</strong>, même à trois encadrants sur un groupe</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-mondo-light flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+          <span><strong class="text-white font-semibold">Les familles informées</strong> sans que personne y passe ses soirées</span>
+        </li>
+      </ul>
+      <p class="text-gray-400 mb-8">Que vos entraîneurs soient diplômés ou non.</p>
       <div class="flex flex-col sm:flex-row gap-3 mb-10">
         <a href="https://app.seances-athle.fr/reserver?source=clubs" class="bg-mondo hover:bg-mondo-dark text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2">
-          Réserver 20 minutes en visio
+          Réserver une démo <span class="text-white/70 font-normal">(gratuit)</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
         <a href="/dossier-clubs.pdf" class="border border-white/20 hover:border-white/40 hover:bg-white/5 text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2 backdrop-blur-sm">
@@ -118,6 +140,29 @@ tailwind.config = {
         <span><strong class="text-white">Aucune donnée nominative</strong> d'athlète envoyée à l'IA</span>
       </div>
     </div>
+
+    <!-- Aperçu de l'outil -->
+    <div class="relative hidden lg:block">
+      <div class="absolute -inset-10 bg-mondo/25 blur-[70px] rounded-full pointer-events-none"></div>
+      <div class="absolute -top-6 -right-6 w-28 h-28 border border-white/10 rounded-2xl pointer-events-none"></div>
+      <a class="lb-trigger relative block" onclick="lbOpen('/screenshots/app-accueil.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/[0.14] bg-[#0E0E0E] shadow-[0_30px_70px_-20px_rgba(0,0,0,.8)]">
+          <div class="flex items-center gap-2 px-4 py-2.5 bg-white/[0.06] border-b border-white/[0.08]">
+            <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+            <span class="ml-2 text-[11px] text-gray-500">app.seances-athle.fr</span>
+          </div>
+          <div class="relative h-[440px] overflow-hidden">
+            <img src="/screenshots/app-accueil.jpg" alt="L'accueil de Séances Athlé : les prochaines séances du groupe, les raccourcis et les dernières séquences créées." class="w-full block">
+            <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0E0E0E] to-transparent"></div>
+          </div>
+        </div>
+      </a>
+      <p class="relative text-center text-xs text-gray-500 mt-4">L'accueil de l'outil, côté entraîneur. Cliquez pour agrandir.</p>
+    </div>
+
+    </div>
   </div>
 </section>
 
@@ -126,7 +171,7 @@ tailwind.config = {
   <div class="max-w-6xl mx-auto px-6">
     <div class="max-w-2xl mb-14 reveal">
       <h2 class="text-3xl md:text-4xl font-semibold mb-5">Ce qui fragilise un club, ce n'est pas le manque de licenciés.</h2>
-      <p class="text-lg text-gray-600 leading-relaxed">C'est le manque d'entraîneurs, et l'usure de ceux qui sont là. Vous le savez déjà. Voilà comment ça se déroule sur une saison.</p>
+      <p class="text-lg text-gray-600 leading-relaxed">C'est le manque d'entraîneurs, et l'usure de ceux qui sont là. Voilà comment se passe trop souvent la saison d'un ou d'une entraîneur.</p>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
       <div class="bg-sable rounded-2xl p-7 reveal">
@@ -149,7 +194,7 @@ tailwind.config = {
 </section>
 
 <!-- Ce que ça fait -->
-<section id="perimetre" class="py-20 md:py-24 bg-white">
+<section id="perimetre" class="py-20 md:py-24 bg-[#FBF7F2] border-y border-black/[0.05]">
   <div class="max-w-6xl mx-auto px-6">
     <div class="max-w-2xl mb-14 reveal">
       <h2 class="text-3xl md:text-4xl font-semibold mb-5">Trois fonctions dans un seul outil.</h2>
@@ -162,21 +207,19 @@ tailwind.config = {
         <div>
           <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">01. Construire</div>
           <h3 class="text-2xl font-semibold mb-4">Les séances, les cycles et le plan de saison</h3>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            L'encadrant décrit son objectif, son créneau et son matériel. Il récupère une séance complète :
-            accueil, échauffement en trois temps, ateliers avec consignes, critères de réussite, erreurs typiques
-            et correctifs, schéma d'implantation au sol, et une vidéo par exercice.
+          <p class="text-gray-600 leading-relaxed mb-5">
+            L'encadrant décrit son objectif, son créneau et son matériel. Il récupère une séance prête à mener.
           </p>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Au-dessus, un plan de saison annuel découpé en périodes et en mésocycles, avec la séance repère qui
-            valide chaque bloc. En dessous, un calendrier mensuel où chaque séance se pose à sa date et passe de
-            « planifiée » à « faite ». Les trois niveaux sont reliés : une séance sait dans quel bloc de la saison
-            elle s'inscrit.
-          </p>
+          <ul class="space-y-3 mb-5">
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">La séance entière</strong> : accueil, échauffement en trois temps, ateliers, consignes, critères de réussite</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Erreurs typiques et correctifs</strong>, atelier par atelier</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Un schéma d'implantation au sol</strong> et une vidéo par exercice</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Le plan de saison</strong> découpé en périodes, posé sur un calendrier</span></li>
+          </ul>
           <p class="text-gray-600 leading-relaxed">
-            Et le plan explique ses propres choix. Pourquoi cette semaine allégée, pourquoi cette compétition
-            d'octobre ne doit pas être traitée comme un pic de forme, ce que le jour de la semaine change à la
-            charge. Un encadrant non formé apprend la périodisation en lisant le plan de son propre groupe.
+            Et le plan explique ses propres choix : pourquoi cette semaine est allégée, pourquoi la compétition
+            d'octobre n'est pas un pic de forme. Un encadrant non formé comprend comment se construit une saison en lisant
+            le plan de son propre groupe.
           </p>
         </div>
         <a class="lb-trigger" onclick="lbOpen('/screenshots/app-detail-seance.jpg')">
@@ -197,21 +240,19 @@ tailwind.config = {
         <div class="md:order-2">
           <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">02. Suivre</div>
           <h3 class="text-2xl font-semibold mb-4">Le suivi pédagogique des athlètes</h3>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            L'effectif d'un groupe s'importe depuis un fichier, personne ne ressaisit trente noms à la main.
-            Ensuite : l'appel en un geste au bord de la piste, et un bilan de fin de séance où l'encadrant coche,
-            athlète par athlète, si l'acquisition du jour est acquise, en cours, ou pas encore.
+          <p class="text-gray-600 leading-relaxed mb-5">
+            L'effectif s'importe depuis un fichier. Personne ne ressaisit trente noms à la main.
           </p>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Ces cases remplies deviennent une vue de groupe : qui a acquis quoi, sur quelle acquisition le groupe
-            entier bloque, quel jeune décroche sans le dire. Un encadrant peut aussi noter l'état de forme du jour
-            en quelques secondes, et la grille des quatre dernières semaines fait ressortir les signaux faibles.
-          </p>
+          <ul class="space-y-3 mb-5">
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">L'appel en un geste</strong> au bord de la piste</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Un bilan de fin de séance</strong> : acquis, en cours, pas encore, athlète par athlète</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Une vue de groupe</strong> : qui a acquis quoi, et sur quoi le groupe entier bloque</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">L'état de forme sur quatre semaines</strong>, pour repérer le jeune qui décroche sans le dire</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Les records récupérés depuis athle.fr</strong>, avec les courbes par épreuve</span></li>
+          </ul>
           <p class="text-gray-600 leading-relaxed">
-            Côté performances, les records se récupèrent depuis la base de résultats athle.fr plutôt que d'être
-            ressaisis, avec les courbes d'évolution par épreuve. L'outil situe l'athlète par rapport aux
-            référentiels de son âge et propose une cible de fin de saison, argumentée, que l'entraîneur retient
-            ou écarte.
+            L'outil situe chaque athlète par rapport aux repères de son âge et propose une cible de fin de
+            saison, argumentée. L'entraîneur la retient, ou pas.
           </p>
         </div>
       </div>
@@ -220,19 +261,18 @@ tailwind.config = {
         <div>
           <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">03. Informer</div>
           <h3 class="text-2xl font-semibold mb-4">La communication vers les familles</h3>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Chaque groupe dispose d'une page publique : les créneaux avec le nom de l'entraîneur de chaque jour,
-            le message du coach, les entraînements du mois, les prochaines compétitions, les contacts. Un lien à
-            envoyer une fois, que les parents gardent.
+          <p class="text-gray-600 leading-relaxed mb-5">
+            Chaque groupe a sa page publique. Un lien à envoyer une fois, que les parents gardent.
           </p>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Et avant chaque entraînement, un lien de présence qui se diffuse en un clic sur votre groupe WhatsApp :
-            les familles annoncent qui vient et qui ne vient pas, l'encadrant voit le compteur monter et arrive au
-            stade en sachant combien de jeunes il aura. Les compétitions fonctionnent de la même façon.
-          </p>
+          <ul class="space-y-3 mb-5">
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Les créneaux</strong> avec le nom de l'entraîneur de chaque jour</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Le message du coach</strong>, les entraînements du mois, les prochaines compétitions</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Un lien de présence</strong> à diffuser sur WhatsApp avant chaque séance</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Le compteur monte</strong> et l'encadrant arrive au stade en sachant combien de jeunes il aura</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Vos liens à vous</strong> : adhésions, calendrier sportif, boutique du club</span></li>
+          </ul>
           <p class="text-gray-600 leading-relaxed">
-            La page porte aussi vos liens à vous : adhésions, calendrier sportif, boutique du club. Elle envoie
-            les familles vers vos outils au lieu de prétendre les remplacer.
+            La page envoie les familles vers vos outils au lieu de prétendre les remplacer.
           </p>
         </div>
         <a class="lb-trigger" onclick="lbOpen('/screenshots/app-page-groupe.jpg')">
@@ -245,48 +285,69 @@ tailwind.config = {
 
     </div>
 
-    <div class="mt-16 bg-piste-black text-white rounded-2xl p-8 md:p-10 reveal">
-      <h3 class="text-xl md:text-2xl font-semibold mb-7">Et trois bénéfices qu'un encadrant seul ne voit pas.</h3>
-      <div class="grid md:grid-cols-3 gap-7">
-        <div>
-          <div class="font-medium mb-2">Un cadre technique commun</div>
-          <p class="text-gray-400 text-[15px] leading-relaxed">Vos groupes travaillent sur la même progression et le même vocabulaire. Un jeune qui change de groupe ou d'entraîneur n'est plus dépaysé.</p>
+    <div class="mt-16 reveal">
+      <div class="max-w-2xl mb-8">
+        <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">Au niveau du club</div>
+        <h3 class="text-2xl md:text-3xl font-semibold leading-tight">Trois bénéfices qu'un encadrant seul ne voit pas.</h3>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+
+        <div class="bg-piste-black text-white rounded-2xl p-7 flex flex-col">
+          <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center mb-5">
+            <svg class="w-4.5 h-4.5 text-mondo-light" style="width:18px;height:18px" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </div>
+          <div class="font-semibold text-[17px] mb-2.5">Un cadre technique commun</div>
+          <p class="text-gray-400 text-[15px] leading-relaxed">Tous vos groupes suivent la même progression et le même vocabulaire. Un jeune qui change de groupe n'est plus dépaysé.</p>
         </div>
-        <div>
-          <div class="font-medium mb-2">De la continuité quand quelqu'un part</div>
-          <p class="text-gray-400 text-[15px] leading-relaxed">Le travail d'un encadrant ne s'en va plus avec lui. Son successeur reprend un groupe documenté au lieu d'une page blanche.</p>
+
+        <div class="bg-piste-black text-white rounded-2xl p-7 flex flex-col">
+          <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center mb-5">
+            <svg style="width:18px;height:18px" class="text-mondo-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <div class="font-semibold text-[17px] mb-2.5">De la continuité quand quelqu'un part</div>
+          <p class="text-gray-400 text-[15px] leading-relaxed">Le travail d'un encadrant ne s'en va plus avec lui. Son successeur reprend un groupe documenté, pas une page blanche.</p>
         </div>
-        <div>
-          <div class="font-medium mb-2">Une mémoire du club</div>
-          <p class="text-gray-400 text-[15px] leading-relaxed">Ce qui a été travaillé, avec qui, et ce qui a été acquis. En fin de saison, votre taux de présence réel, la répartition de vos effectifs par catégorie et par discipline, le nombre d'acquisitions validées. De quoi écrire un rapport d'assemblée générale ou un dossier de subvention avec des chiffres plutôt qu'avec des impressions.</p>
+
+        <div class="bg-piste-black text-white rounded-2xl p-7 flex flex-col">
+          <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center mb-5">
+            <svg style="width:18px;height:18px" class="text-mondo-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l-4 2v11m4 0h6m-6 0H5m10 0V9l4-2v12m-4 0h4"/></svg>
+          </div>
+          <div class="font-semibold text-[17px] mb-2.5">Des chiffres pour votre AG</div>
+          <p class="text-gray-400 text-[15px] leading-relaxed mb-4">Taux de présence réel, effectifs par catégorie et par discipline, acquisitions validées. De quoi remplir un rapport d'assemblée générale ou un dossier de subvention.</p>
+          <p class="text-mondo-light text-sm font-medium mt-auto">Des chiffres, pas des impressions.</p>
         </div>
+
       </div>
     </div>
   </div>
 </section>
 
 <!-- Co-encadrement -->
-<section class="py-20 md:py-24 bg-sable">
+<section class="py-20 md:py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div class="reveal">
         <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">La situation réelle de vos groupes</div>
         <h2 class="text-3xl md:text-4xl font-semibold mb-6 leading-tight">Un groupe, trois créneaux,<br>deux ou trois entraîneurs.</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          C'est le cas de la plupart des groupes de jeunes, et c'est ce qui rend la programmation impossible à
-          tenir. Chacun prépare son créneau dans son coin, personne ne sait ce que l'autre a fait la veille, et la
-          charge de la semaine n'est pilotée par personne.
+        <p class="text-gray-700 leading-relaxed text-lg mb-7">
+          C'est le cas de la plupart des groupes de jeunes, et c'est ce qui rend la programmation impossible
+          à tenir. Chacun prépare son créneau dans son coin, et la charge de la semaine n'est pilotée par
+          personne.
         </p>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          Séances Athlé pose la question au départ : combien de séances le groupe fait-il par semaine, et
-          lesquelles encadrez-vous ? La progressivité et les semaines de décharge sont alors calculées sur le
-          volume réel du groupe, pas sur votre seul créneau.
-        </p>
-        <p class="text-gray-700 leading-relaxed">
-          Le plan ne détaille que les séances que vous menez, et chaque mésocycle indique en clair ce qu'il faut
-          transmettre à votre co-entraîneur. Vos encadrants n'ont plus besoin de se coordonner par SMS le
-          dimanche soir.
-        </p>
+        <div class="space-y-4">
+          <div class="bg-sable rounded-xl p-5 border border-black/[0.06]">
+            <div class="font-semibold mb-1.5">La charge est calculée sur le groupe entier</div>
+            <p class="text-gray-600 text-[15px] leading-relaxed">On demande au départ combien de séances le groupe fait par semaine. La charge augmente selon le volume réel, pas selon votre seul créneau.</p>
+          </div>
+          <div class="bg-sable rounded-xl p-5 border border-black/[0.06]">
+            <div class="font-semibold mb-1.5">Chacun ne voit que ses propres séances</div>
+            <p class="text-gray-600 text-[15px] leading-relaxed">Le plan détaille les séances que vous menez, et rien d'autre.</p>
+          </div>
+          <div class="bg-sable rounded-xl p-5 border border-black/[0.06]">
+            <div class="font-semibold mb-1.5">Ce qu'il faut transmettre est écrit</div>
+            <p class="text-gray-600 text-[15px] leading-relaxed">Chaque bloc de la saison indique en clair ce qui revient à votre co-entraîneur. Plus de coordination par SMS le dimanche soir.</p>
+          </div>
+        </div>
       </div>
       <a class="lb-trigger reveal reveal-delay-1" onclick="lbOpen('/screenshots/app-saison-macrocycle.jpg')">
         <div class="browser-frame">
@@ -317,7 +378,7 @@ tailwind.config = {
           <img src="/screenshots/app-saison-phases.jpg" alt="Le détail des phases d'un plan de saison" class="w-full block" loading="lazy">
         </div>
         <div class="mt-3 font-medium text-[15px]">Le plan de saison, phase par phase</div>
-        <p class="text-gray-400 text-sm leading-relaxed mt-1">Six phases datées, l'avancement de chaque mésocycle, et les conseils qui expliquent les choix.</p>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Six phases datées, l'avancement de chacune, et les conseils qui expliquent les choix.</p>
       </a>
 
       <a class="lb-trigger reveal reveal-delay-1" onclick="lbOpen('/screenshots/app-planning-mois.jpg')">
@@ -365,7 +426,7 @@ tailwind.config = {
           <img src="/screenshots/app-objectifs-ia.jpg" alt="Les objectifs de saison proposés pour un athlète" class="w-full block" loading="lazy">
         </div>
         <div class="mt-3 font-medium text-[15px]">Une cible de fin de saison</div>
-        <p class="text-gray-400 text-sm leading-relaxed mt-1">L'athlète est situé par rapport aux référentiels de son âge. L'entraîneur retient la proposition, ou pas.</p>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">L'athlète est situé par rapport aux repères de son âge. L'entraîneur retient la proposition, ou pas.</p>
       </a>
 
       <a class="lb-trigger reveal reveal-delay-1" onclick="lbOpen('/screenshots/app-effectif.jpg')">
@@ -439,14 +500,14 @@ tailwind.config = {
           <span class="font-semibold">Ce qu'on fait</span>
         </div>
         <ul class="space-y-3 text-[15px] text-gray-700">
-          <li>Construire les séances et les plans de saison</li>
-          <li>Coordonner plusieurs entraîneurs sur un même groupe</li>
-          <li>Suivre les acquisitions pédagogiques des jeunes</li>
-          <li>Tenir les présences et l'assiduité par groupe</li>
-          <li>Suivre l'état de forme et la disponibilité des athlètes</li>
-          <li>Informer les familles sur les créneaux et les compétitions</li>
-          <li>Archiver les performances et suivre les progressions</li>
-          <li>Donner à un encadrant non diplômé un cadre sur lequel s'appuyer</li>
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Construire les séances et les plans de saison</span></li>
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Coordonner plusieurs entraîneurs sur un même groupe</span></li>
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Suivre les acquisitions pédagogiques des jeunes</span></li>
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Tenir les présences et l'assiduité par groupe</span></li>
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Suivre l'état de forme et la disponibilité des athlètes</span></li>
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Informer les familles sur les créneaux et les compétitions</span></li>
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Archiver les performances et suivre les progressions</span></li>
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Donner à un encadrant non diplômé un cadre sur lequel s'appuyer</span></li>
         </ul>
       </div>
       <div class="bg-white rounded-2xl p-8 border border-gray-200">
@@ -457,12 +518,12 @@ tailwind.config = {
           <span class="font-semibold text-gray-500">Ce qu'on ne fait pas</span>
         </div>
         <ul class="space-y-3 text-[15px] text-gray-500">
-          <li>Gérer vos licences fédérales</li>
-          <li>Encaisser vos cotisations ou vos paiements</li>
-          <li>Tenir votre fichier d'adhérents ou votre comptabilité</li>
-          <li>Gérer vos engagements en compétition</li>
-          <li>Remplacer vos entraîneurs diplômés</li>
-          <li>Décider à la place de l'encadrant : l'outil propose, il tranche</li>
+          <li class="flex gap-2.5"><span class="text-gray-400 flex-shrink-0">✕</span><span>Gérer vos licences fédérales</span></li>
+          <li class="flex gap-2.5"><span class="text-gray-400 flex-shrink-0">✕</span><span>Encaisser vos cotisations ou vos paiements</span></li>
+          <li class="flex gap-2.5"><span class="text-gray-400 flex-shrink-0">✕</span><span>Tenir votre fichier d'adhérents ou votre comptabilité</span></li>
+          <li class="flex gap-2.5"><span class="text-gray-400 flex-shrink-0">✕</span><span>Gérer vos engagements en compétition</span></li>
+          <li class="flex gap-2.5"><span class="text-gray-400 flex-shrink-0">✕</span><span>Remplacer vos entraîneurs diplômés</span></li>
+          <li class="flex gap-2.5"><span class="text-gray-400 flex-shrink-0">✕</span><span>Décider à la place de l'encadrant : l'outil propose, il tranche</span></li>
         </ul>
       </div>
     </div>
@@ -584,25 +645,26 @@ tailwind.config = {
     <div class="text-center max-w-2xl mx-auto mb-12 reveal">
       <h2 class="text-3xl md:text-4xl font-semibold mb-5">Trois paliers. Un seul tarif par club.</h2>
       <p class="text-lg text-gray-700 leading-relaxed">
-        Indexé sur votre nombre de licenciés et sur la taille de votre équipe technique, pour qu'un club de
-        cinquante licenciés ne paie pas le prix d'un club de six cents. Vous relevez du palier correspondant au
-        plus élevé des deux critères.
+        Vous payez au nombre de groupes que nous installons pour vous, et à rien d'autre. Ni au licencié, ni à
+        l'encadrant : un club de quatre groupes ne paie pas le prix d'un club qui en fait tourner vingt, et
+        inscrire un bénévole de plus ne change jamais votre facture.
       </p>
+      <p class="text-sm text-gray-500 mt-3">Tarifs saison 2026-2027, nets de taxe.</p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-5 items-stretch mb-8">
 
       <div class="bg-white rounded-2xl border border-gray-200 p-7 flex flex-col reveal">
         <div class="font-semibold text-lg">Club</div>
-        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Jusqu'à 150 licenciés<br>et 6 entraîneurs</p>
+        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Jusqu'à 6 groupes<br>encadrants illimités</p>
         <div class="flex items-baseline gap-1.5">
-          <span class="display text-4xl font-semibold">390 €</span><span class="text-gray-500 text-sm">/ an</span>
+          <span class="display text-4xl font-semibold">390 €</span><span class="text-gray-500 text-sm">/ saison</span>
         </div>
-        <div class="text-sm text-gray-500 mt-1 mb-6">soit 39 € par mois, facturé à l'année</div>
-        <a href="https://app.seances-athle.fr/reserver?source=clubs" class="block text-center border border-piste-black hover:bg-piste-black hover:text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Réserver 20 minutes</a>
+        <div class="text-sm text-gray-500 mt-1 mb-6">soit 65 € par groupe et par an</div>
+        <a href="https://app.seances-athle.fr/reserver?source=clubs" class="block text-center border border-piste-black hover:bg-piste-black hover:text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Réserver une démo</a>
         <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Tout l'outil, sans réserve</div>
         <ul class="space-y-2.5 text-[15px] text-gray-700">
-          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Entraîneurs et groupes illimités</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Encadrants, licenciés et athlètes suivis : illimités</li>
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Séances, cycles et plans de saison, toutes disciplines</li>
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Plans calculés pour les groupes encadrés à plusieurs</li>
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Suivi des athlètes, présences, forme, bilans d'acquisition</li>
@@ -617,12 +679,12 @@ tailwind.config = {
       <div class="bg-white rounded-2xl border-2 border-mondo shadow-xl p-7 flex flex-col relative reveal reveal-delay-1">
         <div class="absolute -top-3 left-7 bg-mondo text-white text-xs font-semibold px-3 py-1 rounded-full">Le plus courant</div>
         <div class="font-semibold text-lg">Club Standard</div>
-        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Jusqu'à 400 licenciés<br>et 15 entraîneurs</p>
+        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Jusqu'à 15 groupes<br>encadrants illimités</p>
         <div class="flex items-baseline gap-1.5">
-          <span class="display text-4xl font-semibold">790 €</span><span class="text-gray-500 text-sm">/ an</span>
+          <span class="display text-4xl font-semibold">690 €</span><span class="text-gray-500 text-sm">/ saison</span>
         </div>
-        <div class="text-sm text-gray-500 mt-1 mb-6">soit 79 € par mois, facturé à l'année</div>
-        <a href="https://app.seances-athle.fr/reserver?source=clubs" class="block text-center bg-mondo hover:bg-mondo-dark text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Réserver 20 minutes</a>
+        <div class="text-sm text-gray-500 mt-1 mb-6">soit 46 € par groupe et par an</div>
+        <a href="https://app.seances-athle.fr/reserver?source=clubs" class="block text-center bg-mondo hover:bg-mondo-dark text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Réserver une démo</a>
         <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Tout ce qu'il y a dans Club, plus</div>
         <ul class="space-y-2.5 text-[15px] text-gray-700">
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Une session de prise en main avec toute votre équipe technique</li>
@@ -630,19 +692,19 @@ tailwind.config = {
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Support prioritaire</li>
         </ul>
         <p class="text-sm text-gray-500 leading-relaxed mt-5 pt-5 border-t border-gray-100">
-          Et tout le socle : entraîneurs et groupes illimités, séances et plans de saison, suivi des athlètes,
+          Et tout le socle : encadrants et athlètes illimités, séances et plans de saison, suivi des athlètes,
           import athle.fr, pages publiques de groupe, bibliothèque vidéo, installation de vos groupes.
         </p>
       </div>
 
       <div class="bg-white rounded-2xl border border-gray-200 p-7 flex flex-col reveal reveal-delay-2">
         <div class="font-semibold text-lg">Club Grand</div>
-        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Au-delà de 400 licenciés<br>ou de 15 entraîneurs</p>
+        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Au-delà de 15 groupes<br>encadrants illimités</p>
         <div class="flex items-baseline gap-1.5">
-          <span class="display text-4xl font-semibold">1 290 €</span><span class="text-gray-500 text-sm">/ an</span>
+          <span class="display text-4xl font-semibold">1 190 €</span><span class="text-gray-500 text-sm">/ saison</span>
         </div>
-        <div class="text-sm text-gray-500 mt-1 mb-6">soit 129 € par mois, facturé à l'année</div>
-        <a href="https://app.seances-athle.fr/reserver?source=clubs" class="block text-center border border-piste-black hover:bg-piste-black hover:text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Réserver 20 minutes</a>
+        <div class="text-sm text-gray-500 mt-1 mb-6">tous vos groupes, sans plafond</div>
+        <a href="https://app.seances-athle.fr/reserver?source=clubs" class="block text-center border border-piste-black hover:bg-piste-black hover:text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Réserver une démo</a>
         <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Tout ce qu'il y a dans Standard, plus</div>
         <ul class="space-y-2.5 text-[15px] text-gray-700">
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Un point de suivi par trimestre</li>
@@ -650,7 +712,7 @@ tailwind.config = {
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Vos demandes d'évolution examinées en priorité</li>
         </ul>
         <p class="text-sm text-gray-500 leading-relaxed mt-5 pt-5 border-t border-gray-100">
-          Et tout le socle : entraîneurs et groupes illimités, séances et plans de saison, suivi des athlètes,
+          Et tout le socle : encadrants et athlètes illimités, séances et plans de saison, suivi des athlètes,
           import athle.fr, pages publiques de groupe, bibliothèque vidéo, installation de vos groupes.
         </p>
       </div>
@@ -661,9 +723,11 @@ tailwind.config = {
       <p class="text-[15px] text-gray-800 font-medium mb-1.5">Un mois d'essai sur un groupe, sans engagement et sans carte bancaire.</p>
       <p class="text-sm text-gray-500 leading-relaxed max-w-3xl mx-auto">
         Prix nets de taxe : la TVA n'est pas applicable, vous payez exactement le montant affiché. Votre palier est
-        constaté à la signature, un entraîneur de plus en cours de saison ne change pas votre facture. Facturation
-        en année sportive, de septembre à août. Facture au nom du club, devis sur demande. Résiliable à tout
-        moment, sans préavis ni pénalité.
+        constaté à la signature et ne bouge plus de la saison : un encadrant de plus, un athlète de plus, un
+        groupe qui grossit, rien de tout ça ne change votre facture. Facturation en année sportive, de septembre à
+        août, payable en une fois ou en deux fois, en septembre et en janvier. Facture au nom du club, devis sur
+        demande. Vous n'êtes jamais réengagé : si vous arrêtez, vous gardez l'accès jusqu'à la fin de la saison
+        sportive et vous ne payez rien l'année suivante, sans préavis ni pénalité.
       </p>
     </div>
 
@@ -683,19 +747,18 @@ tailwind.config = {
           </div>
           <div class="border border-white/10 rounded-xl px-3 py-2.5">
             <div class="text-[12px] text-gray-400 mb-0.5">Standard</div>
-            <div class="font-semibold">593 €<span class="text-gray-500 text-[12px] font-normal"> / an</span></div>
-            <div class="text-[11px] text-gray-500 line-through">790 €</div>
+            <div class="font-semibold">518 €<span class="text-gray-500 text-[12px] font-normal"> / an</span></div>
+            <div class="text-[11px] text-gray-500 line-through">690 €</div>
           </div>
           <div class="border border-white/10 rounded-xl px-3 py-2.5">
             <div class="text-[12px] text-gray-400 mb-0.5">Grand</div>
-            <div class="font-semibold">968 €<span class="text-gray-500 text-[12px] font-normal"> / an</span></div>
-            <div class="text-[11px] text-gray-500 line-through">1 290 €</div>
+            <div class="font-semibold">893 €<span class="text-gray-500 text-[12px] font-normal"> / an</span></div>
+            <div class="text-[11px] text-gray-500 line-through">1 190 €</div>
           </div>
         </div>
         <p class="text-gray-300 text-[15px] leading-relaxed mb-3">
           Pas de tarif de lancement qui remonte au bout de trois ans : la remise reste acquise tant que vous
-          êtes abonnés. Vous prenez un risque à notre place, celui d'embarquer sur un outil jeune, et ça se paie
-          une fois pour toutes.
+          êtes abonnés.
         </p>
         <p class="text-gray-400 text-[13px] leading-relaxed">
           En échange : trente minutes de retour par trimestre, l'accord d'être cité comme club pilote, et celui
@@ -704,7 +767,8 @@ tailwind.config = {
       </div>
       <div class="md:col-span-2 bg-white rounded-2xl p-7 border border-gray-200 reveal reveal-delay-1">
         <div class="font-semibold mb-2">Un seul entraîneur ?</div>
-        <p class="text-gray-600 text-[15px] leading-relaxed mb-3">La formule individuelle existe à 14 € par mois, pour un entraîneur et jusqu'à trois groupes. C'est la bonne porte d'entrée si vous voulez tester avant d'en parler à votre bureau.</p>
+        <p class="text-gray-600 text-[15px] leading-relaxed mb-3">La formule individuelle existe à 9 € par mois, pour un entraîneur et jusqu'à trois groupes. C'est la bonne porte d'entrée si vous voulez voir l'outil tourner avant d'en parler à votre bureau.</p>
+        <p class="text-gray-500 text-[13px] leading-relaxed mb-3">Et si le club souscrit ensuite, les abonnements individuels de vos encadrants sont remboursés au prorata. Personne ne paie deux fois.</p>
         <a href="/" class="text-mondo font-medium text-[15px] hover:underline">Voir la formule individuelle →</a>
       </div>
     </div>
@@ -725,7 +789,7 @@ tailwind.config = {
         <ul class="space-y-2.5 text-[15px] text-gray-700">
           <li>La fiche de présentation à joindre à l'ordre du jour</li>
           <li>Le coût annuel rapporté au prix de dix licences</li>
-          <li>Le nombre d'entraîneurs concernés dans votre club</li>
+          <li>La liste des groupes que vous voulez équiper</li>
           <li>Notre réponse écrite sur les données des mineurs</li>
         </ul>
         <a href="/dossier-clubs.pdf" class="inline-flex items-center gap-1.5 text-mondo font-medium text-[15px] hover:underline mt-4">
@@ -763,6 +827,28 @@ tailwind.config = {
   <div class="max-w-3xl mx-auto px-6">
     <h2 class="text-3xl md:text-4xl font-semibold mb-12 reveal">Les questions qu'on nous pose.</h2>
     <div class="space-y-3">
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          Qu'est-ce qui compte comme un groupe ?
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          Un groupe, c'est un ensemble de jeunes qui suivent la même progression sur la saison. En pratique,
+          c'est ce que vous appelez déjà un groupe chez vous : l'école d'athlé, les Benjamins-Minimes, le groupe
+          sprint-haies, le demi-fond. Deux créneaux dans la semaine pour les mêmes jeunes, c'est un seul groupe.
+          Trois encadrants qui se relaient sur ces créneaux, c'est toujours un seul groupe.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          C'est vous qui nous donnez la liste au moment de l'installation, et c'est nous qui installons les
+          groupes. Le compte est donc fait ensemble, une fois, et il est <strong>arrêté pour toute la
+          saison</strong> : si vous ouvrez un groupe en janvier, vous ne payez rien de plus avant septembre.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          Un club d'athlé de taille moyenne tourne entre quatre et huit groupes. La très grande majorité des
+          clubs relèvent donc du premier ou du deuxième palier.
+        </p>
+      </details>
 
       <details class="bg-sable rounded-xl p-6 reveal">
         <summary class="flex items-center justify-between gap-4 font-medium text-lg">
@@ -830,7 +916,7 @@ tailwind.config = {
         <p class="text-gray-700 leading-relaxed mt-4">
           C'est la règle plus que l'exception, et l'outil est construit pour ça. Au moment de bâtir le plan de
           saison, on demande combien de séances le groupe fait par semaine, tous entraîneurs confondus, et
-          lesquelles chaque encadrant assure. La progression de charge et les semaines de décharge sont calculées
+          lesquelles chaque encadrant assure. La charge de la semaine et les semaines allégées sont calculées
           sur le volume total du groupe, pas sur un seul créneau.
         </p>
         <p class="text-gray-700 leading-relaxed mt-3">
@@ -991,7 +1077,7 @@ tailwind.config = {
       <a href="https://app.seances-athle.fr/reserver?source=clubs" class="bg-mondo hover:bg-mondo-dark text-white rounded-xl p-5 transition block">
         <div class="flex items-center gap-2 mb-1.5">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-          <span class="font-semibold">Réserver un créneau</span>
+          <span class="font-semibold">Demander une démo</span>
         </div>
         <p class="text-sm text-white/80 leading-relaxed">Choisissez votre horaire en visio. Vingt minutes, confirmation immédiate.</p>
       </a>
@@ -1006,7 +1092,6 @@ tailwind.config = {
     <div class="mb-8">
       <a href="/dossier-clubs.pdf" class="text-sm text-gray-400 hover:text-white transition underline underline-offset-4">Ou télécharger d'abord la fiche de présentation</a>
     </div>
-    <p class="text-sm text-gray-400">Ou essayez d'abord vous-même : <a href="https://app.seances-athle.fr/inscription" class="text-mondo-light hover:underline">14 jours, sans carte bancaire</a>.</p>
   </div>
 </section>
 
