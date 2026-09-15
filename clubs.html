@@ -134,6 +134,10 @@ tailwind.config = {
           La fiche de présentation pour votre bureau
         </a>
       </div>
+      <p class="text-sm text-gray-400 -mt-5 mb-10">
+        Pas encore prêt à en parler ?
+        <a href="#seance-offerte" class="text-mondo-light hover:underline font-medium">Recevez une séance complète, gratuitement</a>.
+      </p>
       <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-gray-400 border-t border-white/10 pt-6">
         <span><strong class="text-white">900+</strong> exercices vidéo indexés</span>
         <span><strong class="text-white">Pass' Athlé</strong> : progression par année d'âge</span>
@@ -318,6 +322,85 @@ tailwind.config = {
         </div>
 
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Aimant : une séance d'exemple contre un email -->
+<section id="seance-offerte" class="py-16 md:py-20 bg-piste-black text-white relative overflow-hidden">
+  <div class="absolute -top-24 -right-24 w-96 h-96 bg-mondo/20 blur-[100px] rounded-full pointer-events-none"></div>
+  <div class="max-w-5xl mx-auto px-6 relative">
+    <div class="grid md:grid-cols-[1fr_auto] gap-10 md:gap-14 items-center">
+
+      <div>
+        <div class="inline-flex items-center gap-2 rounded-full border border-mondo/40 bg-mondo/[0.14] px-3 py-1 text-[12px] font-medium text-mondo-light mb-4">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+          Gratuit, sans engagement
+        </div>
+        <h2 class="display text-3xl md:text-[2.4rem] font-semibold leading-[1.1] mb-4">
+          Jugez sur pièce.<br><span class="text-mondo-light">Recevez une séance complète.</span>
+        </h2>
+        <p class="text-gray-300 leading-relaxed mb-6 max-w-lg">
+          Choisissez une catégorie, on vous envoie une séance telle qu'elle sort de l'outil. Prête à imprimer,
+          prête à mener mardi. Vous verrez en deux minutes ce qu'un de vos encadrants recevrait chaque semaine.
+        </p>
+
+        <form id="fSeance" class="max-w-lg" novalidate>
+          <div class="flex flex-wrap gap-2 mb-4" role="group" aria-label="Catégorie">
+            <button type="button" data-cat="ecole-athle" class="cat-btn px-3.5 py-2 rounded-full text-sm border border-white/15 text-gray-300 hover:border-white/40 transition">École d'athlé</button>
+            <button type="button" data-cat="u12-u13" class="cat-btn px-3.5 py-2 rounded-full text-sm border border-white/15 text-gray-300 hover:border-white/40 transition">U12-U13</button>
+            <button type="button" data-cat="u14-u16" class="cat-btn px-3.5 py-2 rounded-full text-sm border border-white/15 text-gray-300 hover:border-white/40 transition" data-defaut="1">U14-U16</button>
+            <button type="button" data-cat="u18-u20" class="cat-btn px-3.5 py-2 rounded-full text-sm border border-white/15 text-gray-300 hover:border-white/40 transition">U18-U20</button>
+          </div>
+
+          <!-- la pastille : champ + bouton dans un seul contenant, façon SaaS -->
+          <div class="bg-white/[0.07] border border-white/15 rounded-full p-1.5 flex flex-col sm:flex-row gap-1.5 focus-within:border-mondo/60 transition">
+            <input id="iEmail" type="email" required autocomplete="email" placeholder="Votre adresse email"
+                   class="flex-1 bg-transparent px-5 py-3 text-white placeholder-gray-500 focus:outline-none min-w-0">
+            <button id="bSeance" type="submit"
+                    class="bg-mondo hover:bg-mondo-dark text-white px-6 py-3 rounded-full font-semibold text-[15px] transition whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed">
+              Recevoir la séance
+            </button>
+          </div>
+
+          <!-- champs facultatifs, dépliés à la saisie de l'email -->
+          <div id="plus" class="hidden mt-3 grid sm:grid-cols-2 gap-2">
+            <input id="iPrenom" type="text" autocomplete="given-name" placeholder="Votre prénom (facultatif)"
+                   class="bg-white/[0.05] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-mondo/50 transition">
+            <input id="iClub" type="text" autocomplete="organization" placeholder="Votre club (facultatif)"
+                   class="bg-white/[0.05] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-mondo/50 transition">
+          </div>
+
+          <p id="mSeance" class="text-sm mt-3 hidden"></p>
+          <p class="text-xs text-gray-500 mt-3 leading-relaxed">
+            Votre adresse sert à vous envoyer cette séance et deux messages de suivi. Rien d'autre, aucun partage,
+            désinscription en un clic depuis chaque email.
+          </p>
+        </form>
+      </div>
+
+      <!-- Aperçu du PDF -->
+      <div class="hidden md:block relative w-[230px] flex-shrink-0">
+        <div class="absolute inset-0 bg-mondo/25 blur-3xl rounded-full pointer-events-none"></div>
+        <div class="relative bg-white rounded-lg shadow-[0_24px_60px_-15px_rgba(0,0,0,.7)] rotate-[3deg] overflow-hidden aspect-[1/1.414]">
+          <div class="h-1.5 bg-mondo"></div>
+          <div class="p-4 space-y-2">
+            <div class="h-2 w-16 bg-mondo/30 rounded"></div>
+            <div class="h-3 w-4/5 bg-gray-800 rounded"></div>
+            <div class="h-3 w-3/5 bg-gray-800 rounded mb-3"></div>
+            <div class="h-1.5 w-full bg-gray-200 rounded"></div>
+            <div class="h-1.5 w-11/12 bg-gray-200 rounded"></div>
+            <div class="h-1.5 w-3/4 bg-gray-200 rounded"></div>
+            <div class="pt-2"><div class="h-2 w-20 bg-mondo/30 rounded"></div></div>
+            <div class="h-1.5 w-full bg-gray-200 rounded"></div>
+            <div class="h-1.5 w-5/6 bg-gray-200 rounded"></div>
+            <div class="h-14 w-full bg-gray-100 border border-gray-200 rounded mt-2"></div>
+            <div class="h-1.5 w-full bg-gray-200 rounded"></div>
+            <div class="h-1.5 w-2/3 bg-gray-200 rounded"></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -767,7 +850,7 @@ tailwind.config = {
       </div>
       <div class="md:col-span-2 bg-white rounded-2xl p-7 border border-gray-200 reveal reveal-delay-1">
         <div class="font-semibold mb-2">Un seul entraîneur ?</div>
-        <p class="text-gray-600 text-[15px] leading-relaxed mb-3">La formule individuelle existe à 9 € par mois, pour un entraîneur et jusqu'à trois groupes. C'est la bonne porte d'entrée si vous voulez voir l'outil tourner avant d'en parler à votre bureau.</p>
+        <p class="text-gray-600 text-[15px] leading-relaxed mb-3">La formule individuelle existe à 9 € par mois, pour un entraîneur et jusqu'à trois groupes. C'est la bonne porte d'entrée si vous voulez voir l'outil tourner avant d'en parler à votre bureau, et elle commence par <a href="https://app.seances-athle.fr/inscription" class="text-mondo font-medium hover:underline">14 jours d'essai gratuit</a>, sans carte bancaire.</p>
         <p class="text-gray-500 text-[13px] leading-relaxed mb-3">Et si le club souscrit ensuite, les abonnements individuels de vos encadrants sont remboursés au prorata. Personne ne paie deux fois.</p>
         <a href="/" class="text-mondo font-medium text-[15px] hover:underline">Voir la formule individuelle →</a>
       </div>
@@ -1152,6 +1235,116 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') lbClose(); });
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+})();
+
+/* ---------------------------------------------------------------- Séance offerte
+ * Envoi vers la fonction publique de l'app. Deux chemins : fetch quand le
+ * navigateur et le CORS le permettent, sendBeacon en secours. Dans les deux cas
+ * le visiteur voit une confirmation : c'est l'email reçu qui fait foi.
+ */
+(function() {
+  var form = document.getElementById('fSeance');
+  if (!form) return;
+
+  var ENDPOINT = 'https://app.seances-athle.fr/api/apps/69f47a4f5f6a1719d3803879/functions/publicSeance';
+  var email  = document.getElementById('iEmail');
+  var prenom = document.getElementById('iPrenom');
+  var club   = document.getElementById('iClub');
+  var btn    = document.getElementById('bSeance');
+  var msg    = document.getElementById('mSeance');
+  var plus   = document.getElementById('plus');
+  var cats   = form.querySelectorAll('.cat-btn');
+  var choisie = 'u14-u16';
+
+  var ACTIVE = ['bg-mondo', 'border-mondo', 'text-white', 'font-medium'];
+  var INACTIVE = ['border-white/15', 'text-gray-300'];
+
+  function marquer(bouton) {
+    cats.forEach(function(b) {
+      ACTIVE.forEach(function(c) { b.classList.remove(c); });
+      INACTIVE.forEach(function(c) { b.classList.add(c); });
+    });
+    INACTIVE.forEach(function(c) { bouton.classList.remove(c); });
+    ACTIVE.forEach(function(c) { bouton.classList.add(c); });
+    choisie = bouton.getAttribute('data-cat');
+  }
+
+  cats.forEach(function(b) {
+    b.addEventListener('click', function() { marquer(b); });
+    if (b.getAttribute('data-defaut')) marquer(b);
+  });
+
+  /* Les champs facultatifs n'apparaissent qu'une fois l'email commencé :
+     un seul champ à l'écran au départ, c'est ce qui fait décoller le taux. */
+  email.addEventListener('input', function() {
+    if (email.value.length > 2) plus.classList.remove('hidden');
+  }, { once: false });
+
+  function afficher(texte, ok) {
+    msg.textContent = texte;
+    msg.className = 'text-sm mt-3 ' + (ok ? 'text-green-400' : 'text-mondo-light');
+  }
+
+  function succes(confirme) {
+    var texte = confirme
+      ? 'La séance arrive dans votre boîte mail, d\'ici une minute. Si vous ne la voyez pas, regardez '
+        + 'vos indésirables : c\'est souvent là que se cachent les premiers messages.'
+      : 'Votre demande est partie. Si vous ne recevez rien d\'ici quelques minutes, écrivez-moi à '
+        + '<a href="mailto:regis@moscardini.fr" class="text-mondo-light underline">regis@moscardini.fr</a> '
+        + 'et je vous l\'envoie à la main.';
+    form.innerHTML =
+      '<div class="flex items-start gap-3 bg-white/[0.06] border border-white/15 rounded-xl p-5">'
+      + '<svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">'
+      + '<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>'
+      + '<div><p class="font-medium mb-1">C\'est parti.</p>'
+      + '<p class="text-sm text-gray-300 leading-relaxed">' + texte + '</p></div></div>';
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var val = (email.value || '').trim();
+    if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(val)) {
+      afficher('Cette adresse ne semble pas valide.', false);
+      email.focus();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Un instant…';
+    msg.classList.add('hidden');
+
+    var charge = JSON.stringify({
+      action: 'demander',
+      email: val,
+      prenom: (prenom && prenom.value || '').trim(),
+      club: (club && club.value || '').trim(),
+      categorie: choisie,
+      source: 'clubs'
+    });
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: charge
+    }).then(function(r) {
+      return r.json().catch(function() { return {}; });
+    }).then(function(d) {
+      if (d && d.error) {
+        btn.disabled = false;
+        btn.textContent = 'Recevoir la séance';
+        msg.classList.remove('hidden');
+        afficher(d.error, false);
+        return;
+      }
+      succes(true);
+    }).catch(function() {
+      /* CORS ou réseau : on renvoie en aveugle, et on le dit honnêtement. */
+      try {
+        navigator.sendBeacon(ENDPOINT, new Blob([charge], { type: 'text/plain' }));
+      } catch (err) {}
+      succes(false);
+    });
+  });
 })();
 </script>
 

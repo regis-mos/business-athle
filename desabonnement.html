@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Désinscription · Séances Athlé</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#DD3F1A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&display=swap" rel="stylesheet">
+<style>
+  :root { --mondo:#DD3F1A; --sable:#F5EFE6; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    background:var(--sable); color:#1A1A1A;
+    min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px;
+  }
+  .carte {
+    background:#fff; border:1px solid rgba(0,0,0,.07); border-radius:20px;
+    padding:40px 36px; max-width:520px; width:100%; text-align:center;
+    box-shadow:0 1px 2px rgba(16,24,40,.04), 0 20px 50px -20px rgba(16,24,40,.18);
+  }
+  .marque { display:inline-flex; align-items:center; gap:9px; margin-bottom:28px; text-decoration:none; color:inherit; }
+  .logo { width:30px; height:30px; background:var(--mondo); border-radius:8px; position:relative; }
+  .logo::after {
+    content:""; position:absolute; left:8px; top:8px; width:14px; height:14px;
+    border:2.5px solid #fff; border-radius:50%;
+  }
+  .marque span { font-family:'Bricolage Grotesque','Inter',sans-serif; font-weight:700; font-size:17px; letter-spacing:-.02em; }
+  .pastille { width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; }
+  h1 { font-family:'Bricolage Grotesque','Inter',sans-serif; font-size:24px; font-weight:700; letter-spacing:-.02em; margin-bottom:10px; }
+  p { color:#5A5A5A; line-height:1.6; font-size:15px; }
+  p + p { margin-top:12px; }
+  .lien { display:inline-block; margin-top:26px; color:var(--mondo); font-weight:500; font-size:15px; text-decoration:none; }
+  .lien:hover { text-decoration:underline; }
+  .roue {
+    width:32px; height:32px; margin:12px auto; border:3px solid rgba(0,0,0,.1);
+    border-top-color:var(--mondo); border-radius:50%; animation:tourne .8s linear infinite;
+  }
+  @keyframes tourne { to { transform:rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<div class="carte">
+  <a class="marque" href="https://seances-athle.fr">
+    <span class="logo"></span>
+    <span>Séances Athlé</span>
+  </a>
+  <div id="zone">
+    <div class="roue"></div>
+    <p>Un instant…</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var zone = document.getElementById('zone');
+  var jeton = new URLSearchParams(location.search).get('jeton');
+  var ENDPOINT = 'https://app.seances-athle.fr/api/apps/69f47a4f5f6a1719d3803879/functions/publicSeance';
+
+  function rendre(couleur, icone, titre, texte) {
+    zone.innerHTML =
+      '<div class="pastille" style="background:' + couleur + '20;">' + icone + '</div>'
+      + '<h1>' + titre + '</h1><p>' + texte + '</p>'
+      + '<a class="lien" href="https://seances-athle.fr/clubs">Retour au site &rarr;</a>';
+  }
+
+  var COCHE = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2E9E5B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>';
+  var CROIX = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A8A8A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>';
+
+  if (!jeton) {
+    rendre('#8A8A8A', CROIX, 'Lien incomplet',
+      "Ce lien de désinscription n'est pas valide. Utilisez celui qui figure en bas de l'un de nos emails.");
+    return;
+  }
+
+  fetch(ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'desabonner', jeton: jeton })
+  })
+  .then(function (r) { return r.json().catch(function () { return {}; }); })
+  .then(function (d) {
+    if (d && d.error) {
+      rendre('#8A8A8A', CROIX, "Ce lien n'est plus valide", d.error);
+      return;
+    }
+    rendre('#2E9E5B', COCHE,
+      d && d.deja ? 'Vous étiez déjà désinscrit' : "C'est fait",
+      d && d.deja
+        ? "Aucun message ne partira plus vers cette adresse. Rien d'autre à faire."
+        : "Vous ne recevrez plus de message de notre part. Aucune justification demandée, et votre adresse n'est transmise à personne.");
+  })
+  .catch(function () {
+    rendre('#8A8A8A', CROIX, 'Désinscription impossible pour le moment',
+      'Réessayez dans un instant, ou écrivez simplement à <a href="mailto:regis@moscardini.fr" style="color:#DD3F1A;">regis@moscardini.fr</a> et je le ferai à la main.');
+  });
+})();
+</script>
+
+</body>
+</html>
