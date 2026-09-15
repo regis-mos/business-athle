@@ -93,14 +93,14 @@ tailwind.config = {
 <section class="mesh-bg text-white relative overflow-hidden">
   <div class="absolute top-0 left-0 right-0 h-1 track-stripe opacity-40"></div>
   <div class="max-w-6xl mx-auto px-6 pt-16 md:pt-24 pb-16 md:pb-20 relative">
+    <div class="text-center mb-10 md:mb-12">
+      <div class="inline-flex items-center gap-2.5 rounded-full border border-mondo/40 bg-mondo/[0.14] pl-3 pr-4 py-2">
+        <span class="w-2 h-2 rounded-full bg-mondo-light flex-shrink-0"></span>
+        <span class="text-mondo-light font-semibold text-[15px] md:text-base">Le nouvel outil pédagogique des entraîneurs d'athlétisme</span>
+      </div>
+    </div>
     <div class="grid lg:grid-cols-[1fr_minmax(0,480px)] gap-12 lg:gap-16 items-center">
     <div>
-      <div class="mb-7">
-        <div class="inline-flex items-center gap-2.5 rounded-full border border-mondo/40 bg-mondo/[0.14] pl-3 pr-4 py-2">
-          <span class="w-2 h-2 rounded-full bg-mondo-light flex-shrink-0"></span>
-          <span class="text-mondo-light font-semibold text-[15px] md:text-base">Le nouvel outil pédagogique des entraîneurs d'athlétisme</span>
-        </div>
-      </div>
       <h1 class="display text-4xl md:text-5xl lg:text-[3rem] font-semibold leading-[1.08] mb-6">
         Vos entraîneurs sont une pièce maîtresse de votre club.<br><span class="text-mondo">Aidez-les à tenir la distance.</span>
       </h1>
@@ -108,19 +108,15 @@ tailwind.config = {
       <ul class="space-y-3.5 mb-9 text-lg text-gray-200">
         <li class="flex items-start gap-3">
           <svg class="w-5 h-5 text-mondo-light flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-          <span><strong class="text-white font-semibold">Une séance prête</strong> pour chaque groupe, chaque semaine</span>
+          <span><strong class="text-white font-semibold">Des séances d'entraînement complètes</strong> pour leurs groupes</span>
         </li>
         <li class="flex items-start gap-3">
           <svg class="w-5 h-5 text-mondo-light flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-          <span><strong class="text-white font-semibold">Un plan de saison</strong> aligné sur la progression Pass' Athlé</span>
+          <span><strong class="text-white font-semibold">Un plan de saison</strong> aligné sur les préconisations de la FFA</span>
         </li>
         <li class="flex items-start gap-3">
           <svg class="w-5 h-5 text-mondo-light flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-          <span><strong class="text-white font-semibold">Le suivi de chaque athlète</strong>, même à trois encadrants sur un groupe</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <svg class="w-5 h-5 text-mondo-light flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-          <span><strong class="text-white font-semibold">Les familles informées</strong> sans que personne y passe ses soirées</span>
+          <span><strong class="text-white font-semibold">Le suivi individualisé de chaque athlète</strong> : forme, acquisitions, performances</span>
         </li>
       </ul>
       <p class="text-gray-400 mb-8">Que vos entraîneurs soient diplômés ou non.</p>
@@ -338,12 +334,12 @@ tailwind.config = {
           14 jours, sans carte bancaire
         </div>
         <h2 class="display text-3xl md:text-[2.4rem] font-semibold leading-[1.1] mb-4">
-          Jugez sur pièce.<br><span class="text-mondo-light">Générez votre première séance.</span>
+          Essai gratuit, 14 jours.<br><span class="text-mondo-light">Générez votre première séance.</span>
         </h2>
         <p class="text-gray-300 leading-relaxed mb-6 max-w-lg">
           Ouvrez un compte gratuit et construisez une séance pour un de vos groupes, avec votre objectif, votre
           matériel et la durée de votre créneau. Trois minutes, et vous verrez exactement ce que vos encadrants
-          auraient chaque semaine.
+          auront chaque semaine.
         </p>
 
         <form id="fEssai" class="max-w-lg" novalidate>
@@ -396,12 +392,13 @@ tailwind.config = {
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div class="reveal">
-        <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">La situation réelle de vos groupes</div>
-        <h2 class="text-3xl md:text-4xl font-semibold mb-6 leading-tight">Un groupe, trois créneaux,<br>deux ou trois entraîneurs.</h2>
+        <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">Quand plusieurs entraîneurs se partagent un groupe</div>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-6 leading-tight">Vos encadrants peuvent enfin<br>travailler ensemble.</h2>
         <p class="text-gray-700 leading-relaxed text-lg mb-7">
-          C'est le cas de la plupart des groupes de jeunes, et c'est ce qui rend la programmation impossible
-          à tenir. Chacun prépare son créneau dans son coin, et la charge de la semaine n'est pilotée par
-          personne.
+          Dans la plupart des clubs, un groupe de jeunes s'entraîne trois fois par semaine et deux ou trois
+          personnes se relaient pour l'encadrer. Chacun prépare son créneau de son côté. Personne ne sait ce
+          que les autres ont fait. Résultat : la charge de la semaine n'est pilotée par personne, et la
+          programmation ne tient pas.
         </p>
         <div class="space-y-4">
           <div class="bg-sable rounded-xl p-5 border border-black/[0.06]">
@@ -432,11 +429,11 @@ tailwind.config = {
 <section id="ecrans" class="py-20 md:py-24 bg-piste-black text-white">
   <div class="max-w-6xl mx-auto px-6">
     <div class="max-w-2xl mb-14 reveal">
-      <div class="text-mondo-light font-medium text-sm uppercase tracking-[0.2em] mb-4">Rien à imaginer</div>
-      <h2 class="text-3xl md:text-4xl font-semibold mb-5">L'outil, écran par écran.</h2>
+      <div class="text-mondo-light font-medium text-sm uppercase tracking-[0.2em] mb-4">De vraies captures d'écran</div>
+      <h2 class="text-3xl md:text-4xl font-semibold mb-5">Voyez l'outil, écran par écran.</h2>
       <p class="text-gray-300 leading-relaxed text-lg">
-        Ce sont des captures d'un club réel, prises cette saison. Les noms des jeunes sont masqués, le reste
-        est tel quel. Cliquez pour agrandir.
+        Ces images viennent d'un club réel et ont été prises cette saison. Nous avons masqué les noms des
+        jeunes, tout le reste est tel quel. Cliquez sur une image pour l'agrandir.
       </p>
     </div>
 
@@ -892,9 +889,9 @@ tailwind.config = {
 </section>
 
 <!-- Questions -->
-<section id="questions" class="py-20 md:py-24 bg-white">
+<section id="questions" class="pt-10 pb-20 md:pt-12 md:pb-24 bg-white">
   <div class="max-w-3xl mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-semibold mb-12 reveal">Les questions qu'on nous pose.</h2>
+    <h2 class="text-3xl md:text-4xl font-semibold mb-8 reveal">Les questions qu'on nous pose.</h2>
     <div class="space-y-3">
 
       <details class="bg-sable rounded-xl p-6 reveal">
@@ -1142,17 +1139,24 @@ tailwind.config = {
       On regarde vos groupes, vos créneaux et le niveau de vos entraîneurs. Si l'outil ne vous sert pas, on vous
       le dira. C'est plus rapide pour tout le monde.
     </p>
-    <div class="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-8 text-left">
+    <div class="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-8 text-left">
       <a href="https://app.seances-athle.fr/reserver?source=clubs" class="bg-mondo hover:bg-mondo-dark text-white rounded-xl p-5 transition block">
         <div class="flex items-center gap-2 mb-1.5">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
           <span class="font-semibold">Demander une démo</span>
         </div>
         <p class="text-sm text-white/80 leading-relaxed">Choisissez votre horaire en visio. Vingt minutes, confirmation immédiate.</p>
       </a>
+      <a href="https://app.seances-athle.fr/inscription#source=clubs-bas" class="border border-white/20 hover:border-white/40 hover:bg-white/5 text-white rounded-xl p-5 transition block backdrop-blur-sm">
+        <div class="flex items-center gap-2 mb-1.5">
+          <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+          <span class="font-semibold">Créer un compte gratuit</span>
+        </div>
+        <p class="text-sm text-gray-400 leading-relaxed">Essayez par vous-même pendant 14 jours, sans carte bancaire.</p>
+      </a>
       <a href="mailto:regis@moscardini.fr?subject=Licence%20club%20%E2%80%94%20Séances%20Athlé&body=Bonjour%20Régis%2C%0A%0ANotre%20club%20%3A%20%0ANombre%20de%20groupes%20jeunes%20%3A%20%0ANombre%20d'encadrants%20%3A%20%0A%0A" class="border border-white/20 hover:border-white/40 hover:bg-white/5 text-white rounded-xl p-5 transition block backdrop-blur-sm">
         <div class="flex items-center gap-2 mb-1.5">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
           <span class="font-semibold">Écrire un email</span>
         </div>
         <p class="text-sm text-gray-400 leading-relaxed">regis@moscardini.fr, réponse sous 24 h. C'est Régis qui répond.</p>
