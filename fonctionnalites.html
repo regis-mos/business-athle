@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Toutes les fonctionnalités · Séances Athlé</title>
+<meta name="description" content="La liste complète de ce que fait Séances Athlé : construction des séances et des plans de saison, gestion des groupes, suivi des athlètes, présences, bibliothèque de 900 exercices vidéo, information des familles. 166 fonctions, toutes incluses.">
+<meta property="og:title" content="Toutes les fonctionnalités de Séances Athlé">
+<meta property="og:description" content="166 fonctions, groupées par thématique. Tout est inclus dans chaque formule.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://seances-athle.fr/fonctionnalites">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -11,11 +16,6 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#DD3F1A">
-<meta name="description" content="La liste complète de ce que fait Séances Athlé : construction des séances et des plans de saison, gestion des groupes, suivi des athlètes, présences, bibliothèque de 900 exercices vidéo, information des familles. 166 fonctions, toutes incluses.">
-<meta property="og:title" content="Toutes les fonctionnalités de Séances Athlé">
-<meta property="og:description" content="166 fonctions, groupées par thématique. Tout est inclus dans chaque formule.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://seances-athle.fr/fonctionnalites">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
@@ -42,18 +42,17 @@ tailwind.config = { theme: { extend: {
 
 <nav class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-gray-100">
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/clubs" class="flex items-center gap-2">
+    <a href="/" class="flex items-center gap-2">
       <div class="w-8 h-8 bg-mondo rounded-lg flex items-center justify-center">
         <div class="w-4 h-4 border-2 border-white rounded-full"></div>
       </div>
       <span class="font-medium text-base">Séances Athlé</span>
     </a>
     <div class="hidden md:flex items-center gap-5">
-      <a href="/clubs#perimetre" class="text-sm text-gray-600 hover:text-piste-black transition">Les fonctionnalités</a>
-      <a href="/clubs#ecrans" class="text-sm text-gray-600 hover:text-piste-black transition">Exemples</a>
-      <a href="/clubs#tarif" class="text-sm text-gray-600 hover:text-piste-black transition">Tarif</a>
-      <a href="/clubs#questions" class="text-sm text-gray-600 hover:text-piste-black transition">FAQ</a>
-      <a href="https://app.seances-athle.fr/reserver?source=fonctionnalites" class="bg-mondo hover:bg-mondo-dark text-white px-4 py-2 rounded-lg font-medium text-sm transition">Réserver une démo <span class="text-white/70 font-normal">(gratuit)</span></a>
+      <a href="/" class="text-sm text-gray-600 hover:text-piste-black transition">Pour un entraîneur</a>
+      <a href="/clubs" class="text-sm text-gray-600 hover:text-piste-black transition">Pour un club</a>
+      <a href="https://app.seances-athle.fr" class="text-sm text-gray-600 hover:text-piste-black transition">Se connecter</a>
+      <a href="https://app.seances-athle.fr/inscription#source=fonctionnalites" class="bg-mondo hover:bg-mondo-dark text-white px-4 py-2 rounded-lg font-medium text-sm transition">Essai gratuit</a>
     </div>
   </div>
 </nav>
@@ -70,9 +69,9 @@ tailwind.config = { theme: { extend: {
       Tout ce que fait Séances Athlé.
     </h1>
     <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-      La liste complète, sans tri ni mise en avant. Il n'y a pas d'option payante en plus :
-      les paliers de prix ne changent que le nombre de groupes que vous équipez, jamais les fonctions
-      auxquelles vous avez droit.
+      La liste complète, sans tri ni mise en avant. Il n'y a pas d'option payante en plus, ni de fonction
+      réservée à une formule supérieure : que vous soyez un entraîneur seul ou un club, vous avez accès
+      à tout. Seul le nombre de groupes change d'une formule à l'autre.
     </p>
   </div>
 </section>
@@ -916,19 +915,19 @@ tailwind.config = { theme: { extend: {
   <section class="mt-10 text-center reveal">
     <h2 class="text-2xl md:text-3xl font-semibold mb-4">Le plus simple reste de le voir tourner.</h2>
     <p class="text-gray-600 leading-relaxed mb-7 max-w-xl mx-auto">
-      Vingt minutes en visio, sur vos groupes et vos créneaux à vous. Ou un compte gratuit
-      pendant quatorze jours, sans carte bancaire.
+      Un compte gratuit pendant quatorze jours, sans carte bancaire. Et si vous représentez un club,
+      vingt minutes en visio sur vos groupes et vos créneaux à vous.
     </p>
     <div class="flex flex-col sm:flex-row gap-3 justify-center">
-      <a href="https://app.seances-athle.fr/reserver?source=fonctionnalites" class="bg-mondo hover:bg-mondo-dark text-white px-7 py-3.5 rounded-lg font-medium transition">
-        Réserver une démo <span class="text-white/70 font-normal">(gratuit)</span>
-      </a>
-      <a href="https://app.seances-athle.fr/inscription#source=fonctionnalites" class="border border-black/15 hover:border-black/35 px-7 py-3.5 rounded-lg font-medium transition">
+      <a href="https://app.seances-athle.fr/inscription#source=fonctionnalites" class="bg-mondo hover:bg-mondo-dark text-white px-7 py-3.5 rounded-lg font-medium transition">
         Créer un compte gratuit
+      </a>
+      <a href="https://app.seances-athle.fr/reserver?source=fonctionnalites" class="border border-black/15 hover:border-black/35 px-7 py-3.5 rounded-lg font-medium transition">
+        Réserver une démo pour mon club
       </a>
     </div>
     <p class="text-sm text-gray-500 mt-6">
-      <a href="/clubs" class="text-mondo hover:underline">Revenir à la page clubs</a>
+      <a href="/" class="text-mondo hover:underline">Page entraîneur</a> &nbsp;·&nbsp; <a href="/clubs" class="text-mondo hover:underline">Page club</a>
     </p>
   </section>
 </main>
