@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toutes les fonctionnalités · Séances Athlé</title>
+<meta name="description" content="La liste complète de ce que fait Séances Athlé : construction des séances et des plans de saison, gestion des groupes, suivi des athlètes, présences, bibliothèque de 900 exercices vidéo, information des familles. 166 fonctions, toutes incluses.">
+<meta property="og:title" content="Toutes les fonctionnalités de Séances Athlé">
+<meta property="og:description" content="166 fonctions, groupées par thématique. Tout est inclus dans chaque formule.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://seances-athle.fr/fonctionnalites">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#DD3F1A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { mondo: { DEFAULT:'#DD3F1A', dark:'#B8351A', light:'#FF8B6E', faint:'#FAEEEC' },
+    sable: { DEFAULT:'#F5EFE6', dark:'#E8DCC8' }, piste: { black:'#0A0A0A', graphite:'#1F1F1F' } },
+  fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['"Bricolage Grotesque"','Inter','sans-serif'] } } } }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,.display { font-family:'Bricolage Grotesque',Inter,system-ui,sans-serif; letter-spacing:-0.02em; }
+  .track-stripe { background:repeating-linear-gradient(90deg,#DD3F1A 0,#DD3F1A 20px,transparent 20px,transparent 40px); }
+  .reveal { opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.is-visible { opacity:1; transform:none; }
+  .chip.actif { border-color:#DD3F1A; color:#DD3F1A; background:#FAEEEC; }
+  .barre-ancres { scrollbar-width:none; }
+  .barre-ancres::-webkit-scrollbar { display:none; }
+</style>
+</head>
+<body class="bg-white text-piste-black">
+
+<nav class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-gray-100">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-mondo rounded-lg flex items-center justify-center">
+        <div class="w-4 h-4 border-2 border-white rounded-full"></div>
+      </div>
+      <span class="font-medium text-base">Séances Athlé</span>
+    </a>
+    <div class="hidden md:flex items-center gap-5">
+      <a href="/" class="text-sm text-gray-600 hover:text-piste-black transition">Pour un entraîneur</a>
+      <a href="/clubs" class="text-sm text-gray-600 hover:text-piste-black transition">Pour un club</a>
+      <a href="https://app.seances-athle.fr" class="text-sm text-gray-600 hover:text-piste-black transition">Se connecter</a>
+      <a href="https://app.seances-athle.fr/inscription#source=fonctionnalites" class="bg-mondo hover:bg-mondo-dark text-white px-4 py-2 rounded-lg font-medium text-sm transition">Essai gratuit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="h-1 track-stripe opacity-70"></div>
+
+<!-- Titre -->
+<section class="bg-sable/50 border-b border-black/[0.05]">
+  <div class="max-w-4xl mx-auto px-6 pt-14 pb-12 text-center">
+    <div class="inline-flex items-center gap-2 rounded-full border border-mondo/25 bg-mondo-faint px-3 py-1 text-[12px] font-medium text-mondo-dark mb-5">
+      166 fonctions, toutes incluses
+    </div>
+    <h1 class="display text-3xl md:text-[2.8rem] font-semibold leading-[1.1] mb-5">
+      Tout ce que fait Séances Athlé.
+    </h1>
+    <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+      La liste complète, sans tri ni mise en avant. Il n'y a pas d'option payante en plus, ni de fonction
+      réservée à une formule supérieure : que vous soyez un entraîneur seul ou un club, vous avez accès
+      à tout. Seul le nombre de groupes change d'une formule à l'autre.
+    </p>
+  </div>
+</section>
+
+<!-- Ancres -->
+<div class="sticky top-[65px] z-40 bg-white/92 backdrop-blur-md border-b border-black/[0.06]">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="barre-ancres flex gap-2 overflow-x-auto py-3">
+        <a href="#construire" class="chip whitespace-nowrap px-3.5 py-1.5 rounded-full border border-black/[0.09] text-sm text-gray-600 hover:border-mondo hover:text-mondo transition">Construire une séance</a>
+        <a href="#retoucher" class="chip whitespace-nowrap px-3.5 py-1.5 rounded-full border border-black/[0.09] text-sm text-gray-600 hover:border-mondo hover:text-mondo transition">Retoucher et partager une séance</a>
+        <a href="#saison" class="chip whitespace-nowrap px-3.5 py-1.5 rounded-full border border-black/[0.09] text-sm text-gray-600 hover:border-mondo hover:text-mondo transition">Le plan de saison</a>
+        <a href="#groupes" class="chip whitespace-nowrap px-3.5 py-1.5 rounded-full border border-black/[0.09] text-sm text-gray-600 hover:border-mondo hover:text-mondo transition">Les groupes</a>
+        <a href="#athletes" class="chip whitespace-nowrap px-3.5 py-1.5 rounded-full border border-black/[0.09] text-sm text-gray-600 hover:border-mondo hover:text-mondo transition">Les athlètes</a>
+        <a href="#presences" class="chip whitespace-nowrap px-3.5 py-1.5 rounded-full border border-black/[0.09] text-sm text-gray-600 hover:border-mondo hover:text-mondo transition">Les présences</a>
+        <a href="#suivi" class="chip whitespace-nowrap px-3.5 py-1.5 rounded-full border border-black/[0.09] text-sm text-gray-600 hover:border-mondo hover:text-mondo transition">Le suivi pédagogique</a>
+        <a href="#planning" class="chip whitespace-nowrap px-3.5 py-1.5 rounded-full border border-black/[0.09] text-sm text-gray-600 hover:border-mondo hover:text-mondo transition">Le planning</a>
+        <a href="#bibliotheque" class="chip whitespace-nowrap px-3.5 py-1.5 rounded-full border border-black/[0.09] text-sm text-gray-600 hover:border-mondo hover:text-mondo transition">La bibliothèque d'exercices</a>
+        <a href="#familles" class="chip whitespace-nowrap px-3.5 py-1.5 rounded-full border border-black/[0.09] text-sm text-gray-600 hover:border-mondo hover:text-mondo transition">L'information des familles</a>
+        <a href="#statistiques" class="chip whitespace-nowrap px-3.5 py-1.5 rounded-full border border-black/[0.09] text-sm text-gray-600 hover:border-mondo hover:text-mondo transition">Les statistiques</a>
+        <a href="#assistant" class="chip whitespace-nowrap px-3.5 py-1.5 rounded-full border border-black/[0.09] text-sm text-gray-600 hover:border-mondo hover:text-mondo transition">L'assistant</a>
+        <a href="#compte" class="chip whitespace-nowrap px-3.5 py-1.5 rounded-full border border-black/[0.09] text-sm text-gray-600 hover:border-mondo hover:text-mondo transition">Compte, données et sécurité</a>
+    </div>
+  </div>
+</div>
+
+<!-- Les sections -->
+<main class="max-w-4xl mx-auto px-6 py-12">
+  <section id="construire" class="scroll-mt-24 mb-10 reveal">
+    <div class="flex items-center gap-3 bg-sable rounded-xl px-5 md:px-7 py-4 mb-1">
+      <svg class="w-[18px] h-[18px] text-mondo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      <h2 class="text-xl md:text-[1.35rem] font-semibold">Construire une séance</h2>
+      <span class="ml-auto text-sm text-gray-500 hidden sm:inline">21 fonctions</span>
+    </div>
+    <p class="text-[15px] text-gray-500 px-5 md:px-7 mb-3 leading-relaxed">Ce que l'encadrant récupère quand il décrit son objectif, son créneau et son matériel.</p>
+    <div class="bg-white rounded-xl border border-black/[0.07]">
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Séance complète, prête à mener</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Accueil du groupe, structuré</span>
+        <span class="flex-shrink-0 w-28 text-right"><span class="text-[15px] font-semibold text-piste-black">5 min</span></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Échauffement en trois temps, expliqués</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Ateliers avec leurs consignes</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Critères de réussite, atelier par atelier</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Erreurs typiques et leurs correctifs</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Retour au calme, après-séance et projection</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Schéma d'implantation au sol, à l'échelle</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Une vidéo par exercice</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Cycle progressif de plusieurs séances</span>
+        <span class="flex-shrink-0 w-28 text-right"><span class="text-[15px] font-semibold text-piste-black">3 à 5</span></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Les quatre étapes de l'apprentissage moteur</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Durée de la séance au choix</span>
+        <span class="flex-shrink-0 w-28 text-right"><span class="text-[15px] font-semibold text-piste-black">45 à 120 min</span></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Effectif du groupe pris en compte</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Matériel réellement disponible pris en compte</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Lieu et espace disponible pris en compte</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Contraintes libres, décrites en une phrase</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Qualités physiques ciblées, catalogue FFA</span>
+        <span class="flex-shrink-0 w-28 text-right"><span class="text-[15px] font-semibold text-piste-black">1 à 4</span></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Toutes les disciplines de l'athlétisme</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Groupes mixtes : deux catégories d'âge en une séance</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Discipline déduite du plan de saison</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Génération en arrière-plan, rien n'est perdu</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+    </div>
+  </section>
+  <section id="retoucher" class="scroll-mt-24 mb-10 reveal">
+    <div class="flex items-center gap-3 bg-sable rounded-xl px-5 md:px-7 py-4 mb-1">
+      <svg class="w-[18px] h-[18px] text-mondo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      <h2 class="text-xl md:text-[1.35rem] font-semibold">Retoucher et partager une séance</h2>
+      <span class="ml-auto text-sm text-gray-500 hidden sm:inline">12 fonctions</span>
+    </div>
+    <p class="text-[15px] text-gray-500 px-5 md:px-7 mb-3 leading-relaxed">Une séance générée n'est pas figée. L'encadrant garde la main sur tout.</p>
+    <div class="bg-white rounded-xl border border-black/[0.07]">
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Régénérer une phase avec une consigne libre</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Modifier un atelier à la main</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Modifier une phase entière</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Notes libres sur chaque bloc</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Choisir une autre vidéo pour un atelier</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Retirer une illustration</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Générer le schéma d'un atelier existant</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Navigation interne entre les étapes</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Mode terrain, lisible sur téléphone au bord de la piste</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Impression et export PDF</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Partage par lien en lecture seule, sans compte</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Marquer une séance comme réalisée</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+    </div>
+  </section>
+  <section id="saison" class="scroll-mt-24 mb-10 reveal">
+    <div class="flex items-center gap-3 bg-sable rounded-xl px-5 md:px-7 py-4 mb-1">
+      <svg class="w-[18px] h-[18px] text-mondo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      <h2 class="text-xl md:text-[1.35rem] font-semibold">Le plan de saison</h2>
+      <span class="ml-auto text-sm text-gray-500 hidden sm:inline">16 fonctions</span>
+    </div>
+    <p class="text-[15px] text-gray-500 px-5 md:px-7 mb-3 leading-relaxed">Au-dessus des séances, l'année entière, posée sur un calendrier.</p>
+    <div class="bg-white rounded-xl border border-black/[0.07]">
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Plan annuel découpé en périodes datées</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Blocs de travail à l'intérieur de chaque période</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Séance repère qui valide chaque bloc</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Calendrier des compétitions intégré</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Jours d'entraînement hebdomadaires du groupe</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Volume réel du groupe, toutes séances confondues</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Séances à votre charge quand le groupe est co-encadré</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Consignes à transmettre au co-entraîneur, bloc par bloc</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Le plan explique ses propres choix</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Semaines allégées calculées automatiquement</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Suivi de la couverture de chaque bloc</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Rattacher une séance existante au plan, après coup</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Import d'un plan existant, lu directement par l'outil</span>
+        <span class="flex-shrink-0 w-28 text-right"><span class="text-[15px] font-semibold text-piste-black">PDF, Word</span></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Export du plan en document imprimable</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Plusieurs plans de saison en parallèle</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Aligné sur les préconisations de la FFA</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+    </div>
+  </section>
+  <section id="groupes" class="scroll-mt-24 mb-10 reveal">
+    <div class="flex items-center gap-3 bg-sable rounded-xl px-5 md:px-7 py-4 mb-1">
+      <svg class="w-[18px] h-[18px] text-mondo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+      <h2 class="text-xl md:text-[1.35rem] font-semibold">Les groupes</h2>
+      <span class="ml-auto text-sm text-gray-500 hidden sm:inline">16 fonctions</span>
+    </div>
+    <p class="text-[15px] text-gray-500 px-5 md:px-7 mb-3 leading-relaxed">L'unité de travail du club. Tout s'organise autour.</p>
+    <div class="bg-white rounded-xl border border-black/[0.07]">
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Créer autant de groupes que nécessaire</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Couleur d'identification par groupe</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Plusieurs catégories d'âge dans un même groupe</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Catégorie FFA dominante calculée</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Plusieurs créneaux par groupe</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Jour, horaire et lieu par créneau</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Matériel disponible propre au groupe</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Points faibles collectifs identifiés</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Liste des encadrants du groupe</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Contacts des autres entraîneurs</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Onglet effectif</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Onglet présences</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Onglet performances</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Onglet apprentissage</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Onglet suivi de forme</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Générer les entraînements du groupe en une fois</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+    </div>
+  </section>
+  <section id="athletes" class="scroll-mt-24 mb-10 reveal">
+    <div class="flex items-center gap-3 bg-sable rounded-xl px-5 md:px-7 py-4 mb-1">
+      <svg class="w-[18px] h-[18px] text-mondo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+      <h2 class="text-xl md:text-[1.35rem] font-semibold">Les athlètes</h2>
+      <span class="ml-auto text-sm text-gray-500 hidden sm:inline">17 fonctions</span>
+    </div>
+    <p class="text-[15px] text-gray-500 px-5 md:px-7 mb-3 leading-relaxed">La fiche de chaque jeune, et tout ce qui s'y rattache.</p>
+    <div class="bg-white rounded-xl border border-black/[0.07]">
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Fiche individuelle par athlète</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Catégorie FFA calculée depuis la date de naissance</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Disciplines principales</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Objectifs et attentes du jeune</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Objectif de la saison en cours</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Autres sports pratiqués</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Statut : actif, blessé, indisponible, arrêté</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Athlète en période d'essai signalé</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Contact de l'athlète ou de ses parents</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Notes libres</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Import de l'effectif depuis un fichier</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Import des résultats officiels athle.fr</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Records personnels par épreuve</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Courbes d'évolution par épreuve</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Performances en compétition, en test et à l'entraînement</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Situation par rapport aux repères de son âge</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Cible de fin de saison proposée et argumentée</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+    </div>
+  </section>
+  <section id="presences" class="scroll-mt-24 mb-10 reveal">
+    <div class="flex items-center gap-3 bg-sable rounded-xl px-5 md:px-7 py-4 mb-1">
+      <svg class="w-[18px] h-[18px] text-mondo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+      <h2 class="text-xl md:text-[1.35rem] font-semibold">Les présences</h2>
+      <span class="ml-auto text-sm text-gray-500 hidden sm:inline">12 fonctions</span>
+    </div>
+    <p class="text-[15px] text-gray-500 px-5 md:px-7 mb-3 leading-relaxed">L'appel, et la question « combien seront-ils mardi ? ».</p>
+    <div class="bg-white rounded-xl border border-black/[0.07]">
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Appel en un geste au bord de la piste</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Entraînements et compétitions</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Présent, absent, excusé</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Motif d'absence en note libre</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Lien de présence à diffuser sur WhatsApp</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Les familles répondent sans créer de compte</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Compteur des réponses en direct</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Clôture des réponses quand vous le décidez</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Un jeune absent de la liste peut quand même répondre</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Bac des nouveaux venus à valider côté coach</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Signalement des événements déjà pointés</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Assiduité par groupe et par athlète</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+    </div>
+  </section>
+  <section id="suivi" class="scroll-mt-24 mb-10 reveal">
+    <div class="flex items-center gap-3 bg-sable rounded-xl px-5 md:px-7 py-4 mb-1">
+      <svg class="w-[18px] h-[18px] text-mondo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+      <h2 class="text-xl md:text-[1.35rem] font-semibold">Le suivi pédagogique</h2>
+      <span class="ml-auto text-sm text-gray-500 hidden sm:inline">11 fonctions</span>
+    </div>
+    <p class="text-[15px] text-gray-500 px-5 md:px-7 mb-3 leading-relaxed">Ce qui distingue un enchaînement de séances d'une vraie progression.</p>
+    <div class="bg-white rounded-xl border border-black/[0.07]">
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Bilan de fin de séance, athlète par athlète</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Critères repris automatiquement de la séance</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Acquis, en cours, pas encore, absent</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Précision libre sur chaque critère</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Auto-évaluation de l'encadrant sur sa propre séance</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Vue d'apprentissage du groupe entier</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Repérage de l'acquisition sur laquelle le groupe bloque</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">État de forme noté en quelques secondes</span>
+        <span class="flex-shrink-0 w-28 text-right"><span class="text-[15px] font-semibold text-piste-black">1 à 5</span></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Commentaire libre sur l'état de forme</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Grille des quatre dernières semaines</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Bilans remontés dans la fiche de l'athlète</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+    </div>
+  </section>
+  <section id="planning" class="scroll-mt-24 mb-10 reveal">
+    <div class="flex items-center gap-3 bg-sable rounded-xl px-5 md:px-7 py-4 mb-1">
+      <svg class="w-[18px] h-[18px] text-mondo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      <h2 class="text-xl md:text-[1.35rem] font-semibold">Le planning</h2>
+      <span class="ml-auto text-sm text-gray-500 hidden sm:inline">9 fonctions</span>
+    </div>
+    <p class="text-[15px] text-gray-500 px-5 md:px-7 mb-3 leading-relaxed">Les séances posées à leur date, et ce qu'on en a fait.</p>
+    <div class="bg-white rounded-xl border border-black/[0.07]">
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Calendrier mensuel des séances</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Planifier une séance à une date et une heure</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Durée et lieu propres à la séance planifiée</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Préremplissage avec le créneau habituel du groupe</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Planifiée, faite, annulée, sautée</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Notes après la séance : ce qui a marché, ce qu'il faut ajuster</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Créneau libre, sans séance rattachée</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Widget des prochaines séances sur l'accueil</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Nettoyage des séances orphelines</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+    </div>
+  </section>
+  <section id="bibliotheque" class="scroll-mt-24 mb-10 reveal">
+    <div class="flex items-center gap-3 bg-sable rounded-xl px-5 md:px-7 py-4 mb-1">
+      <svg class="w-[18px] h-[18px] text-mondo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+      <h2 class="text-xl md:text-[1.35rem] font-semibold">La bibliothèque d'exercices</h2>
+      <span class="ml-auto text-sm text-gray-500 hidden sm:inline">14 fonctions</span>
+    </div>
+    <p class="text-[15px] text-gray-500 px-5 md:px-7 mb-3 leading-relaxed">Le fonds vidéo qui illustre chaque atelier.</p>
+    <div class="bg-white rounded-xl border border-black/[0.07]">
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Exercices vidéo indexés</span>
+        <span class="flex-shrink-0 w-28 text-right"><span class="text-[15px] font-semibold text-piste-black">900+</span></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Filtre par discipline</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Filtre par étape d'apprentissage</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Filtre par catégorie d'âge</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Filtre par qualité physique</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Filtre par matériel requis</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Filtre par collection thématique</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Vos propres vidéos, à côté de la bibliothèque officielle</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Ajout d'une vidéo par son adresse</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Ajout en masse par collage</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Classement des exercices par pertinence pour l'atelier</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Historique d'utilisation de chaque exercice</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Commentaire personnel sur un exercice</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Aucun exercice ressorti en boucle</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+    </div>
+  </section>
+  <section id="familles" class="scroll-mt-24 mb-10 reveal">
+    <div class="flex items-center gap-3 bg-sable rounded-xl px-5 md:px-7 py-4 mb-1">
+      <svg class="w-[18px] h-[18px] text-mondo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      <h2 class="text-xl md:text-[1.35rem] font-semibold">L'information des familles</h2>
+      <span class="ml-auto text-sm text-gray-500 hidden sm:inline">14 fonctions</span>
+    </div>
+    <p class="text-[15px] text-gray-500 px-5 md:px-7 mb-3 leading-relaxed">Une page publique par groupe, un lien à envoyer une fois.</p>
+    <div class="bg-white rounded-xl border border-black/[0.07]">
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Page publique propre à chaque groupe</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Aucun compte à créer pour les parents</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Créneaux avec le nom de l'entraîneur de chaque jour</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Message du coach épinglé en haut</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Entraînements du mois</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Prochaines compétitions</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Point de rendez-vous précis</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Lien vers la carte du lieu</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Tenue et matériel à apporter</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Pense-bête pratique, libre</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Contact du coach référent</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Contacts des autres encadrants</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Vos liens de club : adhésions, calendrier, boutique</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Statistiques du groupe visibles par les familles</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+    </div>
+  </section>
+  <section id="statistiques" class="scroll-mt-24 mb-10 reveal">
+    <div class="flex items-center gap-3 bg-sable rounded-xl px-5 md:px-7 py-4 mb-1">
+      <svg class="w-[18px] h-[18px] text-mondo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
+      <h2 class="text-xl md:text-[1.35rem] font-semibold">Les statistiques</h2>
+      <span class="ml-auto text-sm text-gray-500 hidden sm:inline">8 fonctions</span>
+    </div>
+    <p class="text-[15px] text-gray-500 px-5 md:px-7 mb-3 leading-relaxed">De quoi remplir un rapport d'assemblée générale avec des chiffres.</p>
+    <div class="bg-white rounded-xl border border-black/[0.07]">
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Séances générées sur la saison</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Disciplines réellement travaillées</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Répartition des effectifs par catégorie</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Répartition par discipline</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Taux de présence réel</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Nombre d'acquisitions validées</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Groupes couverts par une séance</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Plans de saison actifs</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+    </div>
+  </section>
+  <section id="assistant" class="scroll-mt-24 mb-10 reveal">
+    <div class="flex items-center gap-3 bg-sable rounded-xl px-5 md:px-7 py-4 mb-1">
+      <svg class="w-[18px] h-[18px] text-mondo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+      <h2 class="text-xl md:text-[1.35rem] font-semibold">L'assistant</h2>
+      <span class="ml-auto text-sm text-gray-500 hidden sm:inline">3 fonctions</span>
+    </div>
+    <p class="text-[15px] text-gray-500 px-5 md:px-7 mb-3 leading-relaxed">Une question sur une séance, un échauffement, une adaptation.</p>
+    <div class="bg-white rounded-xl border border-black/[0.07]">
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Assistant de discussion intégré à l'outil</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Suggestions de questions courantes</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Accessible depuis n'importe quel écran</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+    </div>
+  </section>
+  <section id="compte" class="scroll-mt-24 mb-10 reveal">
+    <div class="flex items-center gap-3 bg-sable rounded-xl px-5 md:px-7 py-4 mb-1">
+      <svg class="w-[18px] h-[18px] text-mondo flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+      <h2 class="text-xl md:text-[1.35rem] font-semibold">Compte, données et sécurité</h2>
+      <span class="ml-auto text-sm text-gray-500 hidden sm:inline">13 fonctions</span>
+    </div>
+    <p class="text-[15px] text-gray-500 px-5 md:px-7 mb-3 leading-relaxed">Ce qui vous engage, et ce qui protège vos jeunes.</p>
+    <div class="bg-white rounded-xl border border-black/[0.07]">
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Connexion par email et mot de passe</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Connexion avec Google</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Vérification du compte par code à six chiffres</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Essai gratuit, sans carte bancaire</span>
+        <span class="flex-shrink-0 w-28 text-right"><span class="text-[15px] font-semibold text-piste-black">14 jours</span></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Aucune reconduction automatique à la fin de l'essai</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Gestion de l'abonnement en autonomie</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Encadrants et athlètes suivis illimités</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Aucune donnée nominative d'athlète envoyée à l'IA</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Hébergement certifié</span>
+        <span class="flex-shrink-0 w-28 text-right"><span class="text-[15px] font-semibold text-piste-black">ISO 27001, SOC 2</span></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Transferts encadrés par les clauses contractuelles types</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Données exportables à tout moment</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Données supprimables sans préavis</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+      <div class="flex items-center gap-4 px-5 md:px-7 py-3.5 border-b border-black/[0.05] last:border-0">
+        <span class="flex-1 text-[15px] text-gray-700 leading-snug">Signalement d'un problème depuis l'outil</span>
+        <span class="flex-shrink-0 w-28 text-right"><svg class="w-5 h-5 text-mondo" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ce que l'outil ne fait pas -->
+  <section class="mt-14 bg-piste-black text-white rounded-2xl p-7 md:p-9 reveal">
+    <h2 class="text-xl md:text-2xl font-semibold mb-4">Et ce que l'outil ne fait pas.</h2>
+    <p class="text-gray-300 leading-relaxed mb-5 max-w-2xl">
+      Autant le dire ici aussi, ça évite une réunion pour rien. Séances Athlé ne remplace pas votre
+      logiciel de gestion de club, il s'installe à côté.
+    </p>
+    <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2.5 text-[15px] text-gray-400">
+      <li class="flex gap-2.5"><span class="text-gray-600 flex-shrink-0">✕</span><span>Gérer vos licences fédérales</span></li>
+      <li class="flex gap-2.5"><span class="text-gray-600 flex-shrink-0">✕</span><span>Encaisser vos cotisations ou vos paiements</span></li>
+      <li class="flex gap-2.5"><span class="text-gray-600 flex-shrink-0">✕</span><span>Tenir votre fichier d'adhérents ou votre comptabilité</span></li>
+      <li class="flex gap-2.5"><span class="text-gray-600 flex-shrink-0">✕</span><span>Gérer vos engagements en compétition</span></li>
+      <li class="flex gap-2.5"><span class="text-gray-600 flex-shrink-0">✕</span><span>Remplacer vos entraîneurs diplômés</span></li>
+      <li class="flex gap-2.5"><span class="text-gray-600 flex-shrink-0">✕</span><span>Décider à la place de l'encadrant</span></li>
+    </ul>
+  </section>
+
+  <!-- Appel à l'action -->
+  <section class="mt-10 text-center reveal">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-4">Le plus simple reste de le voir tourner.</h2>
+    <p class="text-gray-600 leading-relaxed mb-7 max-w-xl mx-auto">
+      Un compte gratuit pendant quatorze jours, sans carte bancaire. Et si vous représentez un club,
+      vingt minutes en visio sur vos groupes et vos créneaux à vous.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="https://app.seances-athle.fr/inscription#source=fonctionnalites" class="bg-mondo hover:bg-mondo-dark text-white px-7 py-3.5 rounded-lg font-medium transition">
+        Créer un compte gratuit
+      </a>
+      <a href="https://app.seances-athle.fr/reserver?source=fonctionnalites" class="border border-black/15 hover:border-black/35 px-7 py-3.5 rounded-lg font-medium transition">
+        Réserver une démo pour mon club
+      </a>
+    </div>
+    <p class="text-sm text-gray-500 mt-6">
+      <a href="/" class="text-mondo hover:underline">Page entraîneur</a> &nbsp;·&nbsp; <a href="/clubs" class="text-mondo hover:underline">Page club</a>
+    </p>
+  </section>
+</main>
+
+<footer class="bg-piste-graphite text-gray-400 py-12">
+  <div class="max-w-6xl mx-auto px-6 flex flex-wrap gap-8 justify-between">
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-7 h-7 bg-mondo rounded-lg flex items-center justify-center">
+          <div class="w-3.5 h-3.5 border-2 border-white rounded-full"></div>
+        </div>
+        <span class="text-white font-medium">Séances Athlé</span>
+      </div>
+      <p class="text-sm max-w-xs leading-relaxed">L'outil pédagogique des entraîneurs d'athlétisme, de l'école d'athlé aux Espoirs.</p>
+    </div>
+    <div class="flex gap-12 text-sm">
+      <div class="space-y-2">
+        <div class="text-white font-medium mb-3">Le produit</div>
+        <div><a href="/clubs" class="hover:text-white transition">Pour les clubs</a></div>
+        <div><a href="/" class="hover:text-white transition">Pour un entraîneur</a></div>
+        <div><a href="/fonctionnalites" class="hover:text-white transition">Fonctionnalités</a></div>
+      </div>
+      <div class="space-y-2">
+        <div class="text-white font-medium mb-3">Le cadre</div>
+        <div><a href="/cgu" class="hover:text-white transition">CGU et CGV</a></div>
+        <div><a href="/confidentialite" class="hover:text-white transition">Confidentialité</a></div>
+        <div><a href="/mentions-legales" class="hover:text-white transition">Mentions légales</a></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Révélation progressive */
+(function() {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('is-visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+})();
+
+/* La pastille de la section visible s'allume, et la barre la fait défiler jusqu'à elle */
+(function() {
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var sections = chips.map(function(c) { return document.querySelector(c.getAttribute('href')); });
+  if (!('IntersectionObserver' in window) || !sections.length) return;
+  var barre = document.querySelector('.barre-ancres');
+
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (!e.isIntersecting) return;
+      var i = sections.indexOf(e.target);
+      if (i < 0) return;
+      chips.forEach(function(c) { c.classList.remove('actif'); });
+      chips[i].classList.add('actif');
+      var c = chips[i];
+      if (barre && (c.offsetLeft < barre.scrollLeft || c.offsetLeft + c.offsetWidth > barre.scrollLeft + barre.clientWidth)) {
+        barre.scrollTo({ left: c.offsetLeft - 16, behavior: 'smooth' });
+      }
+    });
+  }, { rootMargin: '-120px 0px -65% 0px' });
+  sections.forEach(function(s) { if (s) obs.observe(s); });
+})();
+</script>
+
+</body>
+</html>
