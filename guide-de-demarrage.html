@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide de démarrage pour votre club · Séances Athlé</title>
+<meta name="description" content="Le guide de démarrage de Séances Athlé pour les clubs d'athlétisme : six étapes, captures d'écran à l'appui, pour que votre premier groupe ait sa séance, son plan de saison et son suivi d'athlètes avant la fin de la semaine. À télécharger en PDF.">
+<meta property="og:title" content="Guide de démarrage Séances Athlé, pour votre club">
+<meta property="og:description" content="Six étapes chronométrées, captures d'écran à l'appui, pour équiper votre équipe technique en une semaine.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://seances-athle.fr/guide-de-demarrage">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#DD3F1A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { mondo: { DEFAULT:'#DD3F1A', dark:'#B8351A', light:'#FF8B6E', faint:'#FAEEEC' },
+    sable: { DEFAULT:'#F5EFE6', dark:'#E8DCC8' }, piste: { black:'#0A0A0A', graphite:'#1F1F1F' } },
+  fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['"Bricolage Grotesque"','Inter','sans-serif'] } } } }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,.display { font-family:'Bricolage Grotesque',Inter,system-ui,sans-serif; letter-spacing:-0.02em; }
+  .track-stripe { background:repeating-linear-gradient(90deg,#DD3F1A 0,#DD3F1A 20px,transparent 20px,transparent 40px); }
+  .mesh-bg { background:radial-gradient(1000px 500px at 15% -10%, #2A1410 0%, transparent 60%), radial-gradient(900px 500px at 90% 10%, #17110F 0%, transparent 55%), #0A0A0A; }
+  .reveal { opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.is-visible { opacity:1; transform:none; }
+  .page-shadow { box-shadow:0 1px 2px rgba(16,24,40,.06), 0 24px 60px -24px rgba(16,24,40,.30); }
+</style>
+</head>
+<body class="bg-white text-piste-black">
+
+<nav class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-gray-100">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-mondo rounded-lg flex items-center justify-center">
+        <div class="w-4 h-4 border-2 border-white rounded-full"></div>
+      </div>
+      <span class="font-medium text-base">Séances Athlé</span>
+    </a>
+    <div class="hidden md:flex items-center gap-5">
+      <a href="/" class="text-sm text-gray-600 hover:text-piste-black transition">Pour un entraîneur</a>
+      <a href="/clubs" class="text-sm text-gray-600 hover:text-piste-black transition">Pour un club</a>
+      <a href="/fonctionnalites" class="text-sm text-gray-600 hover:text-piste-black transition">Fonctionnalités</a>
+      <a href="https://app.seances-athle.fr" class="text-sm text-gray-600 hover:text-piste-black transition">Se connecter</a>
+      <a href="https://app.seances-athle.fr/inscription#source=guide" class="bg-mondo hover:bg-mondo-dark text-white px-4 py-2 rounded-lg font-medium text-sm transition">Essai gratuit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="h-1 track-stripe opacity-70"></div>
+
+<!-- Hero -->
+<section class="mesh-bg text-white">
+  <div class="max-w-6xl mx-auto px-6 py-14 md:py-20">
+    <div class="grid lg:grid-cols-[1fr_minmax(0,380px)] gap-12 lg:gap-16 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2.5 rounded-full border border-mondo/40 bg-mondo/[0.14] pl-3 pr-4 py-2 mb-7">
+          <span class="w-2 h-2 rounded-full bg-mondo-light flex-shrink-0"></span>
+          <span class="text-mondo-light font-semibold text-[15px]">Guide de démarrage, 10 pages, gratuit</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-semibold leading-[1.08] mb-6">
+          Équipez votre équipe technique<br><span class="text-mondo">en une semaine.</span>
+        </h1>
+        <p class="text-lg text-gray-300 leading-relaxed mb-8 max-w-xl">
+          Six étapes, chacune chronométrée, captures d'écran à l'appui. En les suivant dans l'ordre,
+          votre premier groupe aura sa séance, son plan de saison et son suivi d'athlètes avant le
+          week-end. Rien à savoir à l'avance, aucun diplôme requis.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/guide-demarrage.pdf" download
+             class="inline-flex items-center justify-center gap-2 bg-mondo hover:bg-mondo-dark text-white px-7 py-3.5 rounded-lg font-medium transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
+            Télécharger le guide (PDF)
+          </a>
+          <a href="/guide-demarrage.pdf" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center border border-white/20 hover:border-white/50 px-7 py-3.5 rounded-lg font-medium transition backdrop-blur-sm">
+            Le lire dans le navigateur
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400 mt-6">
+          <span class="flex items-center gap-1.5"><span class="text-mondo">✓</span> Sans inscription</span>
+          <span class="flex items-center gap-1.5"><span class="text-mondo">✓</span> Sans email à laisser</span>
+          <span class="flex items-center gap-1.5"><span class="text-mondo">✓</span> 1,2 Mo</span>
+        </div>
+      </div>
+      <div class="hidden lg:block">
+        <img src="/screenshots/guide-apercu-couverture.jpg" alt="La couverture du guide de démarrage Séances Athlé"
+             class="w-full rounded-xl page-shadow" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sommaire -->
+<section class="py-14 md:py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="max-w-2xl mb-10 reveal">
+      <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Ce qu'il y a dedans</div>
+      <h2 class="text-3xl md:text-4xl font-semibold mb-4">Six parties, dans l'ordre où on les vit.</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        Chaque étape indique le temps qu'elle prend réellement. Additionné, cela fait un peu plus
+        d'une heure, étalée sur une semaine.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+
+      <div class="border border-gray-200 rounded-2xl p-6 reveal">
+        <div class="flex items-baseline gap-3 mb-2">
+          <span class="display text-3xl font-semibold text-mondo/25">1</span>
+          <h3 class="text-lg font-semibold">Préparer le déploiement</h3>
+        </div>
+        <p class="text-[15px] text-gray-600 leading-relaxed">
+          Créer les comptes des encadrants, lister vos groupes avant d'ouvrir l'outil, et choisir
+          par lequel commencer. Avec ce que l'outil ne fait pas, dit d'entrée.
+        </p>
+      </div>
+
+      <div class="border border-gray-200 rounded-2xl p-6 reveal">
+        <div class="flex items-baseline gap-3 mb-2">
+          <span class="display text-3xl font-semibold text-mondo/25">2</span>
+          <h3 class="text-lg font-semibold">Créer son premier groupe</h3>
+        </div>
+        <p class="text-[15px] text-gray-600 leading-relaxed">
+          Les catégories, les créneaux, les encadrants, les points faibles collectifs, et le
+          matériel réellement disponible. C'est ce dernier champ qui change tout.
+        </p>
+      </div>
+
+      <div class="border border-gray-200 rounded-2xl p-6 reveal">
+        <div class="flex items-baseline gap-3 mb-2">
+          <span class="display text-3xl font-semibold text-mondo/25">3</span>
+          <h3 class="text-lg font-semibold">Générer sa première séance</h3>
+        </div>
+        <p class="text-[15px] text-gray-600 leading-relaxed">
+          Décrire l'objectif pédagogique, choisir entre une séance seule et un cycle, et cibler
+          les qualités et les contraintes du jour.
+        </p>
+      </div>
+
+      <div class="border border-gray-200 rounded-2xl p-6 reveal">
+        <div class="flex items-baseline gap-3 mb-2">
+          <span class="display text-3xl font-semibold text-mondo/25">4</span>
+          <h3 class="text-lg font-semibold">Mener la séance, et la retoucher</h3>
+        </div>
+        <p class="text-[15px] text-gray-600 leading-relaxed">
+          Régénérer une phase, changer une vidéo, emporter la séance au stade en mode terrain,
+          la partager en lecture seule, la poser à sa date.
+        </p>
+      </div>
+
+      <div class="border border-gray-200 rounded-2xl p-6 reveal">
+        <div class="flex items-baseline gap-3 mb-2">
+          <span class="display text-3xl font-semibold text-mondo/25">5</span>
+          <h3 class="text-lg font-semibold">Suivre les jeunes, informer les familles</h3>
+        </div>
+        <p class="text-[15px] text-gray-600 leading-relaxed">
+          Importer l'effectif, pointer les présences, envoyer le lien de présence sur WhatsApp,
+          remplir le bilan de fin de séance, donner la page d'infos aux parents.
+        </p>
+      </div>
+
+      <div class="border border-gray-200 rounded-2xl p-6 reveal">
+        <div class="flex items-baseline gap-3 mb-2">
+          <span class="display text-3xl font-semibold text-mondo/25">6</span>
+          <h3 class="text-lg font-semibold">Construire le plan de saison</h3>
+        </div>
+        <p class="text-[15px] text-gray-600 leading-relaxed">
+          Générer l'année en périodes datées, relier les séances au plan, importer un plan que
+          vous avez déjà, et sortir les chiffres pour l'assemblée générale.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Aperçu -->
+<section class="py-14 md:py-20 bg-sable">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-2xl mb-10 reveal">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-4">Deux pages, pour voir à quoi ça ressemble.</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Une colonne d'explications, la capture de l'écran concerné en face, et la durée de chaque
+        étape en haut à droite.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-6 max-w-3xl reveal">
+      <img src="/screenshots/guide-apercu-groupe.jpg" alt="Une page du guide : créer son premier groupe"
+           class="w-full rounded-xl page-shadow bg-white" loading="lazy">
+      <img src="/screenshots/guide-apercu-seance.jpg" alt="Une page du guide : générer sa première séance"
+           class="w-full rounded-xl page-shadow bg-white" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-piste-black text-white py-14 md:py-20">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <h2 class="display text-3xl md:text-4xl font-semibold leading-tight mb-5">
+      Le guide se lit en dix minutes.<br><span class="text-mondo">La première séance en prend trois.</span>
+    </h2>
+    <p class="text-lg text-gray-400 mb-8 max-w-xl mx-auto">
+      Vous pouvez tout à fait commencer par l'outil et garder le guide sous le coude. L'essai dure
+      quatorze jours, sans carte bancaire et sans reconduction automatique.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="https://app.seances-athle.fr/inscription#source=guide"
+         class="inline-flex items-center justify-center bg-mondo hover:bg-mondo-dark text-white px-7 py-3.5 rounded-lg font-medium transition">
+        Créer un compte gratuit
+      </a>
+      <a href="/guide-demarrage.pdf" download
+         class="inline-flex items-center justify-center border border-white/20 hover:border-white/50 px-7 py-3.5 rounded-lg font-medium transition">
+        Télécharger le guide
+      </a>
+      <a href="https://app.seances-athle.fr/reserver?source=guide"
+         class="inline-flex items-center justify-center border border-white/20 hover:border-white/50 px-7 py-3.5 rounded-lg font-medium transition">
+        Réserver une démo pour mon club
+      </a>
+    </div>
+    <div class="text-sm text-gray-500 mt-7">
+      Une question sur le guide ? <a href="mailto:regis@moscardini.fr" class="text-mondo-light hover:underline">regis@moscardini.fr</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-piste-graphite text-gray-400 py-12">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between gap-8">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-7 h-7 bg-mondo rounded-md flex items-center justify-center">
+            <div class="w-3.5 h-3.5 border-2 border-white rounded-full"></div>
+          </div>
+          <span class="font-medium text-white text-sm">Séances Athlé</span>
+        </div>
+        <p class="text-xs leading-relaxed max-w-xs">L'outil pédagogique des entraîneurs d'athlétisme, de l'école d'athlé aux Espoirs.</p>
+      </div>
+      <div class="flex flex-wrap gap-x-12 gap-y-6 text-sm">
+        <div>
+          <div class="text-white font-medium mb-3 text-xs uppercase tracking-wider">Produit</div>
+          <ul class="space-y-2 text-xs">
+            <li><a href="/" class="hover:text-white">Pour un entraîneur</a></li>
+            <li><a href="/clubs" class="hover:text-white">Pour un club</a></li>
+            <li><a href="/fonctionnalites" class="hover:text-white">Fonctionnalités</a></li>
+            <li><a href="https://app.seances-athle.fr" class="hover:text-white">Se connecter</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="text-white font-medium mb-3 text-xs uppercase tracking-wider">Légal</div>
+          <ul class="space-y-2 text-xs">
+            <li><a href="/cgu" class="hover:text-white">CGU</a></li>
+            <li><a href="/confidentialite" class="hover:text-white">Confidentialité</a></li>
+            <li><a href="/mentions-legales" class="hover:text-white">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="mt-10 pt-6 border-t border-gray-800 text-xs text-gray-500 flex justify-between flex-wrap gap-3">
+      <span>© 2026 Séances Athlé. Tous droits réservés.</span>
+      <span>Fait au Puy-en-Velay · 🇫🇷</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+})();
+</script>
+
+</body>
+</html>
