@@ -802,8 +802,8 @@ tailwind.config = {
     <div class="text-center max-w-2xl mx-auto mb-12 reveal">
       <h2 class="text-3xl md:text-4xl font-semibold mb-5">Trois paliers. Un seul tarif par club.</h2>
       <p class="text-lg text-gray-700 leading-relaxed">
-        Vous payez au nombre de groupes que nous installons pour vous, et à rien d'autre. Ni au licencié, ni à
-        l'encadrant : un club de quatre groupes ne paie pas le prix d'un club qui en fait tourner vingt, et
+        Vous payez au nombre d'encadrants qui utilisent l'outil, et à rien d'autre. Ni au licencié, ni au
+        groupe : un club qui équipe trois bénévoles ne paie pas le prix d'un club qui en équipe quinze, et
         inscrire un bénévole de plus ne change jamais votre facture.
       </p>
       <p class="text-sm text-gray-500 mt-3">Tarifs saison 2026-2027, nets de taxe.</p>
@@ -813,7 +813,7 @@ tailwind.config = {
 
       <div class="bg-white rounded-2xl border border-gray-200 p-7 flex flex-col reveal">
         <div class="font-semibold text-lg">Club</div>
-        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Jusqu'à 6 groupes<br>encadrants illimités</p>
+        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Jusqu'à 5 encadrants<br>groupes et athlètes illimités</p>
         <div class="flex items-baseline gap-1.5">
           <span class="display text-4xl font-semibold">390 €</span><span class="text-gray-500 text-sm">/ saison</span>
         </div>
@@ -836,7 +836,7 @@ tailwind.config = {
       <div class="bg-white rounded-2xl border-2 border-mondo shadow-xl p-7 flex flex-col relative reveal reveal-delay-1">
         <div class="absolute -top-3 left-7 bg-mondo text-white text-xs font-semibold px-3 py-1 rounded-full">Le plus courant</div>
         <div class="font-semibold text-lg">Club Standard</div>
-        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Jusqu'à 15 groupes<br>encadrants illimités</p>
+        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Jusqu'à 11 encadrants<br>groupes et athlètes illimités</p>
         <div class="flex items-baseline gap-1.5">
           <span class="display text-4xl font-semibold">690 €</span><span class="text-gray-500 text-sm">/ saison</span>
         </div>
@@ -856,11 +856,11 @@ tailwind.config = {
 
       <div class="bg-white rounded-2xl border border-gray-200 p-7 flex flex-col reveal reveal-delay-2">
         <div class="font-semibold text-lg">Club Grand</div>
-        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Au-delà de 15 groupes<br>encadrants illimités</p>
+        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Jusqu'à 22 encadrants<br>groupes et athlètes illimités</p>
         <div class="flex items-baseline gap-1.5">
           <span class="display text-4xl font-semibold">1 190 €</span><span class="text-gray-500 text-sm">/ saison</span>
         </div>
-        <div class="text-sm text-gray-500 mt-1 mb-6">tous vos groupes, sans plafond</div>
+        <div class="text-sm text-gray-500 mt-1 mb-6">toute votre équipe technique</div>
         <a href="https://app.seances-athle.fr/reserver?source=clubs" class="block text-center border border-piste-black hover:bg-piste-black hover:text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Réserver une démo</a>
         <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Tout ce qu'il y a dans Standard, plus</div>
         <ul class="space-y-2.5 text-[15px] text-gray-700">
@@ -876,12 +876,28 @@ tailwind.config = {
 
     </div>
 
+    <div class="bg-sable rounded-2xl p-6 md:p-7 border border-mondo/15 mb-6 reveal">
+      <p class="text-[15px] text-gray-800 font-medium mb-2">Et si chacun prenait son abonnement de son côté&nbsp;?</p>
+      <p class="text-[15px] text-gray-700 leading-relaxed max-w-3xl">
+        La question est légitime, et la réponse tient en deux points. D'abord le prix : à chaque palier, la
+        licence revient moins cher que le même nombre d'abonnements individuels, et vous n'avez qu'une facture
+        au lieu de cinq notes de frais à rembourser.
+      </p>
+      <p class="text-[15px] text-gray-700 leading-relaxed max-w-3xl mt-2.5">
+        Ensuite, et c'est le vrai sujet&nbsp;: <strong>avec des abonnements individuels, l'encadrant qui arrête en
+        juin emporte tout son travail</strong>. Ses séances, ses cycles, son plan de saison. Son remplaçant
+        recommence de zéro. Avec la licence club, ce qu'il a construit reste dans le fonds commun, et le suivant
+        le trouve en arrivant.
+      </p>
+    </div>
+
     <div class="bg-white rounded-2xl p-6 md:p-7 border border-gray-200 text-center mb-8 reveal">
       <p class="text-[15px] text-gray-800 font-medium mb-1.5">Un mois d'essai sur un groupe, sans engagement et sans carte bancaire.</p>
       <p class="text-sm text-gray-500 leading-relaxed max-w-3xl mx-auto">
         Prix nets de taxe : la TVA n'est pas applicable, vous payez exactement le montant affiché. Votre palier est
-        constaté à la signature et ne bouge plus de la saison : un encadrant de plus, un athlète de plus, un
-        groupe qui grossit, rien de tout ça ne change votre facture. Facturation en année sportive, de septembre à
+        constaté à la signature et ne bouge plus de la saison : un groupe de plus, un athlète de plus, un
+        effectif qui grossit, rien de tout ça ne change votre facture. Seul un encadrant supplémentaire au-delà
+        de votre palier la ferait évoluer, et jamais avant la saison suivante. Facturation en année sportive, de septembre à
         août, payable en une fois ou en deux fois, en septembre et en janvier. Facture au nom du club, devis sur
         demande. Vous n'êtes jamais réengagé : si vous arrêtez, vous gardez l'accès jusqu'à la fin de la saison
         sportive et vous ne payez rien l'année suivante, sans préavis ni pénalité.
@@ -987,23 +1003,24 @@ tailwind.config = {
 
       <details class="bg-sable rounded-xl p-6 reveal">
         <summary class="flex items-center justify-between gap-4 font-medium text-lg">
-          Qu'est-ce qui compte comme un groupe ?
+          Qu'est-ce qui compte comme un encadrant ?
           <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </summary>
         <p class="text-gray-700 leading-relaxed mt-4">
-          Un groupe, c'est un ensemble de jeunes qui suivent la même progression sur la saison. En pratique,
-          c'est ce que vous appelez déjà un groupe chez vous : l'école d'athlé, les Benjamins-Minimes, le groupe
-          sprint-haies, le demi-fond. Deux créneaux dans la semaine pour les mêmes jeunes, c'est un seul groupe.
-          Trois encadrants qui se relaient sur ces créneaux, c'est toujours un seul groupe.
+          Toute personne à qui vous ouvrez un compte. Un entraîneur diplômé, un parent bénévole, un service
+          civique, un assistant du mercredi : c'est le même compte et le même prix. Quelqu'un qui ne se connecte
+          jamais ne compte pas, puisqu'il n'a pas de compte.
         </p>
         <p class="text-gray-700 leading-relaxed mt-3">
-          C'est vous qui nous donnez la liste au moment de l'installation, et c'est nous qui installons les
-          groupes. Le compte est donc fait ensemble, une fois, et il est <strong>arrêté pour toute la
-          saison</strong> : si vous ouvrez un groupe en janvier, vous ne payez rien de plus avant septembre.
+          Vos groupes, vos athlètes et vos licenciés sont <strong>illimités</strong> à tous les paliers. Ouvrir un
+          groupe en janvier, accueillir quinze jeunes de plus en cours d'année, ajouter une discipline : rien de
+          tout cela ne change votre facture. Un encadrant peut suivre jusqu'à cinq groupes, ce qui couvre
+          largement l'usage réel d'un bénévole.
         </p>
         <p class="text-gray-700 leading-relaxed mt-3">
-          Un club d'athlé de taille moyenne tourne entre quatre et huit groupes. La très grande majorité des
-          clubs relèvent donc du premier ou du deuxième palier.
+          Le palier est <strong>arrêté à la signature pour toute la saison</strong>. Si un bénévole rejoint votre
+          équipe technique en février, vous ne payez rien de plus avant septembre. La très grande majorité des
+          clubs d'athlé relèvent du premier ou du deuxième palier.
         </p>
       </details>
 
