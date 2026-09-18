@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Séances Athlé : votre séance de mardi s'écrit en trois minutes</title>
+<title>Séances Athlé : vos séances, votre saison, vos athlètes, au même endroit</title>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -12,8 +12,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#DD3F1A">
 <meta name="description" content="L'outil pédagogique des entraîneurs d'athlétisme : des séances complètes pour votre groupe, un plan de saison aligné sur la progression Pass' Athlé, le suivi de chaque athlète et l'information des parents. 9 € par mois, 14 jours d'essai sans carte bancaire.">
-<meta property="og:title" content="Séances Athlé : votre séance de mardi s'écrit en trois minutes">
-<meta property="og:description" content="Vous décrivez votre objectif, votre créneau et votre matériel. Vous récupérez une séance complète, prête à mener.">
+<meta property="og:title" content="Séances Athlé : vos séances, votre saison, vos athlètes, au même endroit">
+<meta property="og:description" content="Tout ce que vous préparez pour vos groupes, réuni dans un seul outil : les séances, le plan de saison, le suivi des athlètes et l'information des familles.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://seances-athle.fr/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -117,9 +117,9 @@ tailwind.config = {
     <div class="grid lg:grid-cols-[1fr_minmax(0,480px)] gap-12 lg:gap-16 items-center">
     <div>
       <h1 class="display text-4xl md:text-5xl lg:text-[3rem] font-semibold leading-[1.08] mb-6">
-        Votre séance de mardi s'écrit<br><span class="text-mondo">en trois minutes.</span>
+        Vos séances, votre saison, vos athlètes.<br><span class="text-mondo">Au même endroit.</span>
       </h1>
-      <p class="text-gray-300 text-lg mb-5">Un outil en ligne qui vous donne :</p>
+      <p class="text-gray-300 text-lg mb-5">Un seul outil en ligne, qui vous donne :</p>
       <ul class="space-y-3.5 mb-9 text-lg text-gray-200">
         <li class="flex items-start gap-3">
           <svg class="w-5 h-5 text-mondo-light flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
@@ -137,7 +137,7 @@ tailwind.config = {
       <p class="text-gray-400 mb-8">Que vous soyez diplômé ou non.</p>
       <div class="flex flex-col sm:flex-row gap-3 mb-10">
         <a href="https://app.seances-athle.fr/inscription" class="bg-mondo hover:bg-mondo-dark text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2">
-          Démarrer mes 14 jours
+          Démarrer mes 14 jours offerts
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
         <a href="#ecrans" class="border border-white/20 hover:border-white/40 hover:bg-white/5 text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2 backdrop-blur-sm">
@@ -370,7 +370,7 @@ tailwind.config = {
                    class="flex-1 bg-transparent px-5 py-3 text-white placeholder-gray-500 focus:outline-none min-w-0">
             <button id="bEssai" type="submit"
                     class="bg-mondo hover:bg-mondo-dark text-white px-6 py-3 rounded-full font-semibold text-[15px] transition whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed">
-              Démarrer mes 14 jours
+              Démarrer mes 14 jours offerts
             </button>
           </div>
 
@@ -635,7 +635,7 @@ tailwind.config = {
             <td class="p-5 font-medium text-piste-black">Adaptation à l'année d'âge</td>
             <td class="text-center p-5 text-gray-400">Selon les vidéos trouvées</td>
             <td class="text-center p-5 text-gray-400">Aléatoire</td>
-            <td class="text-center p-5 bg-mondo-faint text-mondo font-medium border-l border-mondo/20">Quatre paliers, BE1 à MI2</td>
+            <td class="text-center p-5 bg-mondo-faint text-mondo font-medium border-l border-mondo/20">Année d'âge par année d'âge, de U10 à U23</td>
           </tr>
           <tr class="bg-gray-50/50">
             <td class="p-5 font-medium text-piste-black">Lisible au bord de la piste</td>
@@ -802,8 +802,8 @@ tailwind.config = {
     </div>
     <div class="grid md:grid-cols-3 gap-6">
       <div class="border border-white/10 rounded-2xl p-6 reveal">
-        <div class="font-medium mb-2">Quatre paliers, pas des catégories</div>
-        <p class="text-gray-400 text-[15px] leading-relaxed">Une acquisition se construit sur quatre ans : BE1, BE2, MI1, MI2. D'une année sur l'autre, on ne change pas d'exercice, on durcit un paramètre chiffré.</p>
+        <div class="font-medium mb-2">Une année d'âge, pas une catégorie</div>
+        <p class="text-gray-400 text-[15px] leading-relaxed">Une acquisition se construit d'une année d'âge à l'autre : BE1, BE2, puis MI1, MI2, et ainsi de suite jusqu'aux Cadets, aux Juniors et aux Espoirs. D'une année sur l'autre, on ne change pas d'exercice, on durcit un paramètre chiffré.</p>
       </div>
       <div class="border border-white/10 rounded-2xl p-6 reveal reveal-delay-1">
         <div class="font-medium mb-2">Un ordre non négociable</div>
@@ -838,11 +838,11 @@ tailwind.config = {
           <span class="display text-4xl font-semibold">9 €</span><span class="text-gray-500 text-sm">/ mois</span>
         </div>
         <div class="text-sm text-gray-500 mt-1 mb-6">Sans engagement. Vous partez quand vous voulez.</div>
-        <a href="https://app.seances-athle.fr/inscription" class="block text-center border border-piste-black hover:bg-piste-black hover:text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Démarrer mes 14 jours</a>
+        <a href="https://app.seances-athle.fr/inscription" class="block text-center border border-piste-black hover:bg-piste-black hover:text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Démarrer mes 14 jours offerts</a>
         <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Tout l'outil, sans réserve</div>
         <ul class="space-y-2.5 text-[15px] text-gray-700">
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Séances, cycles et plans de saison illimités</li>
-          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Toutes les disciplines, de U10 à U20</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Toutes les disciplines, de U10 à U23</li>
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Plans calculés pour les groupes encadrés à plusieurs</li>
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Suivi des athlètes, présences, forme, bilans d'acquisition</li>
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Import des résultats officiels athle.fr</li>
@@ -860,7 +860,7 @@ tailwind.config = {
           <span class="display text-4xl font-semibold">79 €</span><span class="text-gray-500 text-sm">/ an</span>
         </div>
         <div class="text-sm text-gray-500 mt-1 mb-6">soit 6,60 € par mois, 29 € d'économie</div>
-        <a href="https://app.seances-athle.fr/inscription" class="block text-center bg-mondo hover:bg-mondo-dark text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Démarrer mes 14 jours</a>
+        <a href="https://app.seances-athle.fr/inscription" class="block text-center bg-mondo hover:bg-mondo-dark text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Démarrer mes 14 jours offerts</a>
         <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Tout ce qu'il y a dans le mensuel, plus</div>
         <ul class="space-y-2.5 text-[15px] text-gray-700">
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Deux mois offerts sur la saison</li>
@@ -903,7 +903,7 @@ tailwind.config = {
     <div class="bg-piste-black text-white rounded-2xl p-7 reveal">
       <div class="grid md:grid-cols-[1fr_auto] gap-6 items-center">
         <div>
-          <div class="inline-block bg-mondo text-white text-xs font-semibold px-2.5 py-1 rounded-full mb-3">Vous n'êtes pas seul à encadrer</div>
+          <div class="inline-block bg-mondo text-white text-xs font-semibold px-2.5 py-1 rounded-full mb-3">Vous n'êtes pas seul à encadrer&nbsp;?</div>
           <div class="font-semibold text-lg mb-2">Votre club peut équiper toute l'équipe technique</div>
           <p class="text-gray-300 text-[15px] leading-relaxed mb-2">
             À partir de 390 € par saison pour cinq encadrants, groupes et athlètes illimités. Chacun garde son
@@ -948,22 +948,21 @@ tailwind.config = {
         <div class="font-semibold text-lg mb-3">Ce qui est moins profond, on le dit</div>
         <ul class="space-y-2.5 text-[15px] text-gray-700">
           <li><strong>La perche et le marteau</strong> sont les disciplines les moins fournies de la bibliothèque. Si vous ne coachez que l'une des deux, testez d'abord.</li>
-          <li><strong>Les Benjamins et Minimes</strong> sont la partie la plus aboutie, parce que c'est le groupe testé chaque semaine sur le terrain.</li>
-          <li><strong>L'outil est jeune.</strong> Il évolue toutes les semaines, et ce que vous demandez a de bonnes chances d'être codé.</li>
+          <li><strong>L'outil est jeune.</strong> Il évolue toutes les semaines, et ce que vous demandez a de bonnes chances d'être ajouté.</li>
         </ul>
       </div>
     </div>
 
     <div class="border border-gray-200 rounded-2xl p-7 reveal">
-      <div class="font-semibold text-lg mb-3">Ce qui se passe si vous arrêtez, ou si nous disparaissons</div>
+      <div class="font-semibold text-lg mb-3">Ce qui se passe si vous arrêtez</div>
       <p class="text-gray-600 leading-relaxed text-[15px] mb-3">
-        C'est une question légitime face à un outil jeune, et elle mérite mieux qu'une formule rassurante. Vos
-        séances s'exportent en PDF et restent lisibles sans nous. Vos données d'athlètes et de présences sont
+        Vous récupérez tout et vous partez, sans préavis et sans pénalité. Vos séances s'exportent en PDF et
+        restent lisibles sans nous. Vos données d'athlètes et de présences sont
         exportables à tout moment, sans démarche particulière. Rien de ce que vous produisez n'est enfermé dans
         l'outil.
       </p>
       <p class="text-gray-600 leading-relaxed text-[15px]">
-        Autrement dit, le pire scénario vous coûte un abonnement, pas votre travail.
+        Autrement dit, vous ne perdez jamais votre travail. C'est le vôtre, pas le nôtre.
       </p>
     </div>
   </div>
@@ -1133,14 +1132,13 @@ tailwind.config = {
           <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </summary>
         <p class="text-gray-700 leading-relaxed mt-4">
-          Des Poussins aux Espoirs, soit U10 à U20, avec la possibilité de mélanger deux catégories dans un même
+          Des Poussins aux Espoirs, soit U10 à U23, avec la possibilité de mélanger deux catégories dans un même
           groupe, ce qui est la réalité de la plupart des créneaux de jeunes. Côté disciplines : sprint,
           demi-fond, haies, sauts horizontaux, hauteur, perche, lancers, épreuves combinées et multi-épreuves.
         </p>
         <p class="text-gray-700 leading-relaxed mt-3">
           On joue franc jeu : la perche et le marteau sont les moins profonds de la bibliothèque. Si vous coachez
-          exclusivement l'un des deux, testez d'abord. Le travail le plus abouti porte sur les Benjamins et les
-          Minimes, parce que c'est le groupe testé chaque semaine sur le terrain.
+          exclusivement l'un des deux, testez d'abord.
         </p>
       </details>
 
@@ -1272,7 +1270,7 @@ tailwind.config = {
       <a href="https://app.seances-athle.fr/inscription" class="bg-mondo hover:bg-mondo-dark text-white rounded-xl p-5 transition block">
         <div class="flex items-center gap-2 mb-1.5">
           <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
-          <span class="font-semibold">Démarrer mes 14 jours</span>
+          <span class="font-semibold">Démarrer mes 14 jours offerts</span>
         </div>
         <p class="text-sm text-white/80 leading-relaxed">Sans carte bancaire. L'accès se ferme tout seul si vous ne faites rien.</p>
       </a>
