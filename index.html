@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Séances Athlé : votre séance d'athlé écrite en trois minutes, votre saison en cinq</title>
+<title>Séances Athlé : votre séance de mardi s'écrit en trois minutes</title>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -11,11 +11,11 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#DD3F1A">
-<meta name="description" content="Vous indiquez votre discipline, votre catégorie et votre matériel. Séances Athlé écrit la séance entière : échauffement minuté, ateliers, consignes, critères de réussite et une vidéo par exercice. Plan de saison, suivi des athlètes et page pour les parents. 14 jours d'essai sans carte bancaire.">
-<meta property="og:title" content="Séances Athlé : votre séance d'athlé écrite en trois minutes">
-<meta property="og:description" content="Échauffement minuté, ateliers, consignes, critères de réussite et une vidéo par exercice. Plus le suivi de vos athlètes et la page d'infos pour les parents.">
+<meta name="description" content="L'outil pédagogique des entraîneurs d'athlétisme : des séances complètes pour votre groupe, un plan de saison aligné sur la progression Pass' Athlé, le suivi de chaque athlète et l'information des parents. 9 € par mois, 14 jours d'essai sans carte bancaire.">
+<meta property="og:title" content="Séances Athlé : votre séance de mardi s'écrit en trois minutes">
+<meta property="og:description" content="Vous décrivez votre objectif, votre créneau et votre matériel. Vous récupérez une séance complète, prête à mener.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://seances-athle.fr">
+<meta property="og:url" content="https://seances-athle.fr/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
@@ -42,7 +42,6 @@ tailwind.config = {
   body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
   h1, h2, h3, .display { font-family: 'Bricolage Grotesque', Inter, system-ui, sans-serif; letter-spacing: -0.02em; }
   .track-stripe { background: repeating-linear-gradient(90deg, #DD3F1A 0, #DD3F1A 20px, transparent 20px, transparent 40px); }
-
   .mesh-bg {
     background:
       radial-gradient(at 18% 22%, rgba(221, 63, 26, 0.32) 0px, transparent 45%),
@@ -51,34 +50,18 @@ tailwind.config = {
       radial-gradient(at 8% 92%, rgba(221, 63, 26, 0.10) 0px, transparent 50%),
       #0A0A0A;
   }
-
-  .browser-frame { border-radius: 14px; overflow: hidden; box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06); background: #1F1F1F; }
-  .browser-bar { height: 32px; background: #2A2A2A; display: flex; align-items: center; padding: 0 14px; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-  .browser-dot { width: 11px; height: 11px; border-radius: 50%; }
-
-  .btn-mondo { background:#DD3F1A; color:#fff; padding:1rem 2rem; border-radius:.5rem; font-weight:500; display:inline-flex; align-items:center; justify-content:center; gap:.5rem; transition:background .2s; }
-  .btn-mondo:hover { background:#B8351A; }
-  .btn-ghost { border:1px solid rgba(255,255,255,.2); color:#fff; padding:1rem 2rem; border-radius:.5rem; font-weight:500; display:inline-flex; align-items:center; justify-content:center; gap:.5rem; transition:all .2s; }
-  .btn-ghost:hover { border-color:rgba(255,255,255,.4); background:rgba(255,255,255,.05); }
-
+  .browser-frame { border-radius: 14px; overflow: hidden; box-shadow: 0 30px 80px -20px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.06); background: #1F1F1F; }
+  .browser-bar { height: 30px; background: #2A2A2A; display: flex; align-items: center; padding: 0 13px; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .browser-dot { width: 10px; height: 10px; border-radius: 50%; }
   #lb-overlay { display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.92); align-items:center; justify-content:center; padding:1rem; cursor:zoom-out; }
   #lb-overlay.open { display:flex; }
   #lb-img { max-width:100%; max-height:calc(100vh - 80px); object-fit:contain; border-radius:10px; box-shadow:0 30px 80px rgba(0,0,0,0.6); cursor:default; }
   #lb-close { position:absolute; top:1rem; right:1.25rem; color:rgba(255,255,255,.7); font-size:2rem; line-height:1; background:none; border:none; cursor:pointer; font-weight:300; }
-  #lb-close:hover { color:#fff; }
   .lb-trigger { position:relative; cursor:zoom-in; display:block; }
-  .lb-trigger .lb-icon { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0); transition:background .2s; }
-  .lb-trigger:hover .lb-icon { background:rgba(0,0,0,.35); }
-  .lb-trigger .lb-icon span { opacity:0; background:rgba(255,255,255,.9); border-radius:50%; padding:.6rem; box-shadow:0 4px 16px rgba(0,0,0,.3); transition:opacity .2s; display:flex; }
-  .lb-trigger:hover .lb-icon span { opacity:1; }
-
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1); }
   .reveal.is-visible { opacity: 1; transform: translateY(0); }
   .reveal-delay-1 { transition-delay: .08s; }
   .reveal-delay-2 { transition-delay: .16s; }
-
-  .step-glow { background: linear-gradient(135deg, #DD3F1A 0%, #FF8B6E 100%); box-shadow: 0 8px 24px -8px rgba(221, 63, 26, 0.55); }
-
   details > summary { list-style: none; cursor: pointer; }
   details > summary::-webkit-details-marker { display: none; }
   details[open] .chev { transform: rotate(180deg); }
@@ -94,19 +77,15 @@ tailwind.config = {
         <div class="w-4 h-4 border-2 border-white rounded-full"></div>
       </div>
       <span class="font-medium text-base">Séances Athlé</span>
+      <span class="hidden sm:inline text-xs font-medium text-mondo bg-mondo-faint px-2 py-0.5 rounded-full ml-1">Entraîneur</span>
     </a>
     <div class="hidden md:flex items-center gap-5">
-      <a href="#ce-que-ca-fait" class="text-sm text-gray-600 hover:text-piste-black transition">Ce que ça fait</a>
-      <a href="#ecrans" class="text-sm text-gray-600 hover:text-piste-black transition">Les écrans</a>
-      <a href="/fonctionnalites" class="text-sm text-gray-600 hover:text-piste-black transition">Fonctionnalités</a>
-      <a href="#tarifs" class="text-sm text-gray-600 hover:text-piste-black transition">Tarifs</a>
-      <a href="#faq" class="text-sm text-gray-600 hover:text-piste-black transition">Questions</a>
-      <a href="/clubs" class="text-sm font-medium text-mondo hover:text-mondo-dark transition inline-flex items-center gap-1.5">
-        Vous êtes un club&nbsp;?
-        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-      </a>
+      <a href="/fonctionnalites" class="text-sm text-gray-600 hover:text-piste-black transition">Les fonctionnalités</a>
+      <a href="#ecrans" class="text-sm text-gray-600 hover:text-piste-black transition">Exemples</a>
+      <a href="#tarif" class="text-sm text-gray-600 hover:text-piste-black transition">Tarif</a>
+      <a href="#questions" class="text-sm text-gray-600 hover:text-piste-black transition">FAQ</a>
       <a href="https://app.seances-athle.fr" class="text-sm text-gray-600 hover:text-piste-black transition">Se connecter</a>
-      <a href="https://app.seances-athle.fr/inscription" class="bg-mondo hover:bg-mondo-dark text-white px-4 py-2 rounded-lg font-medium text-sm transition">Essai gratuit</a>
+      <a href="https://app.seances-athle.fr/inscription" class="bg-mondo hover:bg-mondo-dark text-white px-4 py-2 rounded-lg font-medium text-sm transition">Essai gratuit <span class="text-white/70 font-normal">(14 jours)</span></a>
     </div>
   </div>
 </nav>
@@ -115,8 +94,8 @@ tailwind.config = {
 <a href="/clubs" class="block bg-piste-black text-white hover:bg-piste-graphite transition group">
   <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-center gap-3 text-center flex-wrap">
     <span class="text-sm md:text-[15px]">
-      <strong class="font-semibold">Vous êtes un club&nbsp;?</strong>
-      <span class="text-gray-400 ml-1.5">Une licence pour toute votre équipe technique, à partir de 293&nbsp;€ par saison.</span>
+      <strong class="font-semibold">Vous encadrez à plusieurs dans le même club&nbsp;?</strong>
+      <span class="text-gray-400 ml-1.5">Une licence pour toute l'équipe technique, à partir de 293&nbsp;€ par saison.</span>
     </span>
     <span class="text-mondo-light text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
       Voir l'offre club
@@ -128,146 +107,140 @@ tailwind.config = {
 <!-- Hero -->
 <section class="mesh-bg text-white relative overflow-hidden">
   <div class="absolute top-0 left-0 right-0 h-1 track-stripe opacity-40"></div>
-  <div class="max-w-7xl mx-auto px-6 pt-14 md:pt-20 pb-10 md:pb-16 relative">
-
-    <div class="max-w-3xl mx-auto text-center">
-      <div class="inline-block mb-7">
-        <div class="text-mondo-light font-medium text-sm md:text-base uppercase tracking-[0.2em]">Pour les entraîneurs d'athlétisme</div>
-        <div class="h-0.5 w-12 bg-mondo mt-2 mx-auto"></div>
+  <div class="max-w-6xl mx-auto px-6 pt-16 md:pt-24 pb-16 md:pb-20 relative">
+    <div class="text-center mb-10 md:mb-12">
+      <div class="inline-flex items-center gap-2.5 rounded-full border border-mondo/40 bg-mondo/[0.14] pl-3 pr-4 py-2">
+        <span class="w-2 h-2 rounded-full bg-mondo-light flex-shrink-0"></span>
+        <span class="text-mondo-light font-semibold text-[15px] md:text-base">Le nouvel outil pédagogique des entraîneurs d'athlétisme</span>
       </div>
-      <h1 class="display text-4xl md:text-6xl font-semibold leading-[1.06] mb-7">
-        Votre séance de mardi s'écrit<br>en <span class="text-mondo">trois minutes.</span>
+    </div>
+    <div class="grid lg:grid-cols-[1fr_minmax(0,480px)] gap-12 lg:gap-16 items-center">
+    <div>
+      <h1 class="display text-4xl md:text-5xl lg:text-[3rem] font-semibold leading-[1.08] mb-6">
+        Votre séance de mardi s'écrit<br><span class="text-mondo">en trois minutes.</span>
       </h1>
-      <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-9 max-w-2xl mx-auto">
-        Vous indiquez votre discipline, votre catégorie, votre créneau et votre matériel. Séances Athlé écrit la séance
-        entière : échauffement minuté, ateliers avec consignes et critères de réussite, erreurs à corriger et une
-        vidéo de démonstration par exercice. Un plan de saison complet se construit en cinq minutes.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center mb-5">
-        <a href="https://app.seances-athle.fr/inscription" class="btn-mondo">
+      <p class="text-gray-300 text-lg mb-5">Un outil en ligne qui vous donne :</p>
+      <ul class="space-y-3.5 mb-9 text-lg text-gray-200">
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-mondo-light flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+          <span><strong class="text-white font-semibold">Des séances d'entraînement complètes</strong> pour votre groupe</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-mondo-light flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+          <span><strong class="text-white font-semibold">Un plan de saison</strong> aligné sur les préconisations de la FFA</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-mondo-light flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+          <span><strong class="text-white font-semibold">Le suivi individualisé de chaque athlète</strong> : forme, acquisitions, performances</span>
+        </li>
+      </ul>
+      <p class="text-gray-400 mb-8">Que vous soyez diplômé ou non.</p>
+      <div class="flex flex-col sm:flex-row gap-3 mb-10">
+        <a href="https://app.seances-athle.fr/inscription" class="bg-mondo hover:bg-mondo-dark text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2">
           Démarrer mes 14 jours
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
-        <a href="#ecrans" class="btn-ghost backdrop-blur-sm">Voir l'app en action</a>
+        <a href="#ecrans" class="border border-white/20 hover:border-white/40 hover:bg-white/5 text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2 backdrop-blur-sm">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          Voir l'outil en action
+        </a>
       </div>
-      <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400 justify-center">
-        <span class="flex items-center gap-1.5"><span class="text-mondo">✓</span> 14 jours gratuits</span>
-        <span class="flex items-center gap-1.5"><span class="text-mondo">✓</span> Sans carte bancaire</span>
-        <span class="flex items-center gap-1.5"><span class="text-mondo">✓</span> Annulable en 1 clic</span>
-      </div>
-    </div>
-
-    <div class="mt-10 md:mt-14 max-w-4xl mx-auto">
-      <div class="browser-frame">
-        <div class="browser-bar">
-          <div class="browser-dot" style="background:#FF5F56"></div>
-          <div class="browser-dot" style="background:#FFBD2E"></div>
-          <div class="browser-dot" style="background:#27C93F"></div>
-          <div class="ml-3 px-3 py-0.5 rounded text-[11px] text-gray-500 bg-black/20">app.seances-athle.fr</div>
-        </div>
-        <div class="lb-trigger" onclick="lbOpen('/screenshots/app-detail-seance.jpg')">
-          <img src="/screenshots/app-detail-seance.jpg" alt="Le détail d'une séance générée, avec l'échauffement chronométré et les ateliers" class="block w-full" loading="eager">
-          <div class="lb-icon"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"/></svg></span></div>
-        </div>
+      <p class="text-sm text-gray-400 -mt-5 mb-10">
+        Aucune carte bancaire à l'inscription.
+        <a href="#tarif" class="text-mondo-light hover:underline font-medium">9 € par mois</a> ensuite, si vous décidez de continuer.
+      </p>
+      <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-gray-400 border-t border-white/10 pt-6">
+        <span><strong class="text-white">900+</strong> exercices vidéo indexés</span>
+        <span><strong class="text-white">Pass' Athlé</strong> : progression par année d'âge</span>
+        <span><strong class="text-white">Aucune donnée nominative</strong> d'athlète envoyée à l'IA</span>
       </div>
     </div>
 
+    <!-- Aperçu de l'outil -->
+    <div class="relative hidden lg:block">
+      <div class="absolute -inset-10 bg-mondo/25 blur-[70px] rounded-full pointer-events-none"></div>
+      <div class="absolute -top-6 -right-6 w-28 h-28 border border-white/10 rounded-2xl pointer-events-none"></div>
+      <a class="lb-trigger relative block" onclick="lbOpen('/screenshots/app-detail-seance.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/[0.14] bg-[#0E0E0E] shadow-[0_30px_70px_-20px_rgba(0,0,0,.8)]">
+          <div class="flex items-center gap-2 px-4 py-2.5 bg-white/[0.06] border-b border-white/[0.08]">
+            <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+            <span class="ml-2 text-[11px] text-gray-500">app.seances-athle.fr</span>
+          </div>
+          <div class="relative h-[440px] overflow-hidden">
+            <img src="/screenshots/app-detail-seance.jpg" alt="Le détail d'une séance générée : échauffement chronométré, ateliers, consignes et critères de réussite." class="w-full block">
+            <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0E0E0E] to-transparent"></div>
+          </div>
+        </div>
+      </a>
+      <p class="relative text-center text-xs text-gray-500 mt-4">Une séance générée, telle qu'elle sort. Cliquez pour agrandir.</p>
+    </div>
+
+    </div>
   </div>
-  <div class="absolute bottom-0 left-0 right-0 h-1 track-stripe opacity-30"></div>
 </section>
 
-<!-- Trust strip -->
-<section class="bg-sable py-8">
+<!-- Le vrai problème -->
+<section class="py-20 md:py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-      <div>
-        <div class="text-2xl md:text-3xl font-medium text-piste-black">900+</div>
-        <div class="text-xs uppercase tracking-wider text-sable-deep mt-1">Exercices vidéo indexés</div>
-      </div>
-      <div>
-        <div class="text-2xl md:text-3xl font-medium text-piste-black">3 min</div>
-        <div class="text-xs uppercase tracking-wider text-sable-deep mt-1">Pour une séquence de 3 séances</div>
-      </div>
-      <div>
-        <div class="text-2xl md:text-3xl font-medium text-piste-black">5 min</div>
-        <div class="text-xs uppercase tracking-wider text-sable-deep mt-1">Pour un plan de saison entier</div>
-      </div>
-      <div>
-        <div class="text-2xl md:text-3xl font-medium text-piste-black">U10 → U20</div>
-        <div class="text-xs uppercase tracking-wider text-sable-deep mt-1">Progression Pass' Athlé</div>
-      </div>
+    <div class="max-w-2xl mb-14 reveal">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-5">Ce qui vous use, ce n'est pas la séance du mardi.</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">C'est la soirée qu'il faut y passer avant, et le doute qui reste après. Voilà à quoi ressemble une saison d'entraîneur bénévole.</p>
     </div>
-  </div>
-</section>
-
-<!-- Le problème -->
-<section class="py-12 md:py-16">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="text-center mb-8">
-      <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Le problème</div>
-      <h2 class="display text-3xl md:text-4xl font-semibold leading-tight max-w-3xl mx-auto">
-        Préparer une séance prend une soirée.<br>Et on n'est jamais sûr d'avoir bien fait.
-      </h2>
-    </div>
-    <div class="grid md:grid-cols-2 gap-4">
-      <div class="bg-mondo-faint border-l-4 border-red-700 p-6 rounded-lg">
-        <div class="text-xs uppercase font-medium text-red-700 mb-3 tracking-wider">Aujourd'hui</div>
-        <ul class="space-y-3 text-base leading-relaxed text-gray-800">
-          <li>Votre dimanche soir y passe, entre Instagram, YouTube et votre vieux classeur</li>
-          <li>Vos exercices sont bons, mais rien ne les relie d'une semaine à l'autre</li>
-          <li>Vous ne savez pas si l'enchaînement a du sens pour des Benjamins</li>
-          <li>En janvier, vous avez l'impression de refaire les mêmes choses</li>
-          <li>Et vous improvisez encore au bord de la piste</li>
-        </ul>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-sable rounded-2xl p-7 reveal">
+        <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">Septembre</div>
+        <p class="text-lg font-medium mb-3">On vous confie le groupe des Benjamins.</p>
+        <p class="text-gray-600 leading-relaxed text-[15px]">Vous avez dit oui parce que personne d'autre ne se proposait. Vous êtes motivé, vous avez des idées, et vous n'avez aucune idée de la manière dont on construit une saison.</p>
       </div>
-      <div class="bg-green-50 border-l-4 border-green-700 p-6 rounded-lg">
-        <div class="text-xs uppercase font-medium text-green-700 mb-3 tracking-wider">Avec Séances Athlé</div>
-        <ul class="space-y-3 text-base leading-relaxed text-gray-800">
-          <li>Vous décrivez votre objectif, votre séquence de trois séances arrive en trois minutes</li>
-          <li>Chaque séance sait où elle se situe dans votre saison</li>
-          <li>Une vidéo de référence par exercice, un tap pour la montrer à l'athlète</li>
-          <li>Vous savez ce que vous avez travaillé, avec qui, et ce qui est acquis</li>
-          <li>Vous arrivez au stade en sachant exactement ce que vous allez faire</li>
-        </ul>
+      <div class="bg-sable rounded-2xl p-7 reveal reveal-delay-1">
+        <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">Janvier</div>
+        <p class="text-lg font-medium mb-3">Vos dimanches soir y passent, et vous tournez en rond.</p>
+        <p class="text-gray-600 leading-relaxed text-[15px]">Instagram, YouTube, votre vieux classeur. Vos exercices sont bons, mais rien ne les relie d'une semaine à l'autre, et vous refaites un peu les mêmes choses.</p>
+      </div>
+      <div class="bg-sable rounded-2xl p-7 reveal reveal-delay-2">
+        <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">Juin</div>
+        <p class="text-lg font-medium mb-3">Vous n'arrivez pas à dire ce que le groupe a appris.</p>
+        <p class="text-gray-600 leading-relaxed text-[15px]">Vous y avez laissé une soirée par semaine pendant neuf mois. Vous n'avez aucune trace de ce qui a été travaillé, ni avec qui, ni de ce qui est acquis.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Ce que ça fait -->
-<section id="ce-que-ca-fait" class="py-12 md:py-20 bg-white">
+<section id="perimetre" class="py-20 md:py-24 bg-[#FBF7F2] border-y border-black/[0.05]">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="max-w-2xl mb-12 reveal">
+    <div class="max-w-2xl mb-14 reveal">
       <h2 class="text-3xl md:text-4xl font-semibold mb-5">Trois fonctions dans un seul outil.</h2>
-      <p class="text-lg text-gray-600 leading-relaxed">Écrire vos séances et votre plan de saison, suivre les progrès de chaque athlète, tenir les parents informés. Les trois sont reliés et couvrent la saison entière.</p>
+      <p class="text-lg text-gray-600 leading-relaxed">Séances Athlé est un outil de gestion pédagogique. Rien de plus, et rien de moins.</p>
     </div>
 
-    <div class="space-y-14">
+    <div class="space-y-16">
 
       <div class="grid md:grid-cols-2 gap-10 items-center reveal">
         <div>
           <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">01. Construire</div>
-          <h3 class="text-2xl font-semibold mb-4">Des séances complètes, écrites pour votre groupe</h3>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Vous décrivez votre objectif, votre créneau et votre matériel. Vous récupérez une séance complète : accueil,
-            échauffement en trois temps, ateliers avec consignes, critères de réussite, erreurs typiques et leur
-            correctif, schéma d'implantation au sol, et une vidéo par exercice.
+          <h3 class="text-2xl font-semibold mb-4">Vos séances, vos cycles et votre plan de saison</h3>
+          <p class="text-gray-600 leading-relaxed mb-5">
+            Vous décrivez votre objectif, votre créneau et votre matériel. Vous récupérez une séance prête à mener.
           </p>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Au-dessus, un plan de saison découpé en périodes et en mésocycles, posé sur un calendrier mensuel où
-            chaque séance passe de « planifiée » à « faite ». Les trois niveaux sont reliés : une séance sait dans
-            quel bloc de votre saison elle s'inscrit.
-          </p>
+          <ul class="space-y-3 mb-5">
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">La séance entière</strong> : accueil, échauffement en trois temps, ateliers, consignes, critères de réussite</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Erreurs typiques et correctifs</strong>, atelier par atelier</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Un schéma d'implantation au sol</strong> et une vidéo par exercice</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Le plan de saison</strong> découpé en périodes, posé sur un calendrier</span></li>
+          </ul>
           <p class="text-gray-600 leading-relaxed">
-            Et le plan vous explique ses choix. Pourquoi cette semaine allégée, pourquoi cette compétition d'octobre
-            ne doit pas être traitée comme un pic de forme. Vous apprenez la périodisation en lisant le plan de votre
-            propre groupe.
+            Et le plan vous explique ses propres choix : pourquoi cette semaine est allégée, pourquoi la compétition
+            d'octobre n'est pas un pic de forme. Vous apprenez la périodisation en lisant le plan de votre propre
+            groupe.
           </p>
         </div>
         <a class="lb-trigger" onclick="lbOpen('/screenshots/app-saison-macrocycle.jpg')">
           <div class="browser-frame">
-            <div class="browser-bar"><div class="browser-dot" style="background:#FF5F56"></div><div class="browser-dot" style="background:#FFBD2E"></div><div class="browser-dot" style="background:#27C93F"></div></div>
-            <img src="/screenshots/app-saison-macrocycle.jpg" alt="Un plan de saison découpé en six phases" class="w-full block" loading="lazy">
+            <div class="browser-bar"><div class="browser-dot bg-[#FF5F57]"></div><div class="browser-dot bg-[#FEBC2E]"></div><div class="browser-dot bg-[#28C840]"></div></div>
+            <img src="/screenshots/app-saison-macrocycle.jpg" alt="Un plan de saison découpé en six phases" class="w-full block">
           </div>
         </a>
       </div>
@@ -275,28 +248,26 @@ tailwind.config = {
       <div class="grid md:grid-cols-2 gap-10 items-center reveal">
         <a class="lb-trigger md:order-1" onclick="lbOpen('/screenshots/app-apprentissage.jpg')">
           <div class="browser-frame">
-            <div class="browser-bar"><div class="browser-dot" style="background:#FF5F56"></div><div class="browser-dot" style="background:#FFBD2E"></div><div class="browser-dot" style="background:#27C93F"></div></div>
-            <img src="/screenshots/app-apprentissage.jpg" alt="La vue d'apprentissage d'un groupe, athlète par athlète" class="w-full block" loading="lazy">
+            <div class="browser-bar"><div class="browser-dot bg-[#FF5F57]"></div><div class="browser-dot bg-[#FEBC2E]"></div><div class="browser-dot bg-[#28C840]"></div></div>
+            <img src="/screenshots/app-apprentissage.jpg" alt="La vue d'apprentissage d'un groupe, athlète par athlète et acquisition par acquisition" class="w-full block" loading="lazy">
           </div>
         </a>
         <div class="md:order-2">
           <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">02. Suivre</div>
-          <h3 class="text-2xl font-semibold mb-4">Un suivi pédagogique de chaque athlète</h3>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Vous créez votre groupe en important votre effectif depuis un fichier, sans retaper trente noms. Vous
-            pointez ensuite les présences en un geste au bord de la piste. À la fin de la séance, vous cochez
-            athlète par athlète si ce que vous avez travaillé est acquis, en cours, ou pas encore.
+          <h3 class="text-2xl font-semibold mb-4">Le suivi pédagogique de vos athlètes</h3>
+          <p class="text-gray-600 leading-relaxed mb-5">
+            Votre effectif s'importe depuis un fichier. Vous ne ressaisissez pas trente noms à la main.
           </p>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Ces cases construisent un tableau de votre groupe : vous voyez d'un coup d'œil qui maîtrise quoi, sur
-            quelle acquisition tout le monde bloque, et quel jeune vient de moins en moins souvent. Vous pouvez
-            aussi noter
-            l'état de forme du jour en quelques secondes, et lire les quatre dernières semaines sur une seule grille.
-          </p>
+          <ul class="space-y-3 mb-5">
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">L'appel en un geste</strong> au bord de la piste</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Un bilan de fin de séance</strong> : acquis, en cours, pas encore, athlète par athlète</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Une vue de groupe</strong> : qui a acquis quoi, et sur quoi le groupe entier bloque</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">L'état de forme sur quatre semaines</strong>, pour repérer le jeune qui décroche sans le dire</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Les records récupérés depuis athle.fr</strong>, avec les courbes par épreuve</span></li>
+          </ul>
           <p class="text-gray-600 leading-relaxed">
-            Les records de chaque athlète sont récupérés automatiquement depuis la base de résultats athle.fr, avec
-            la courbe d'évolution par épreuve. Séances Athlé compare ces marques aux référentiels de son âge et vous
-            propose un objectif chiffré pour la fin de saison, avec l'argument qui va avec. Vous le retenez, ou pas.
+            L'outil situe chaque athlète par rapport aux repères de son âge et vous propose une cible de fin de
+            saison, argumentée. Vous la retenez, ou pas.
           </p>
         </div>
       </div>
@@ -304,25 +275,136 @@ tailwind.config = {
       <div class="grid md:grid-cols-2 gap-10 items-center reveal">
         <div>
           <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">03. Informer</div>
-          <h3 class="text-2xl font-semibold mb-4">Une page d'infos et un appel de présence pour les parents</h3>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Chaque groupe a une page web que vous envoyez aux parents une seule fois, et qu'ils gardent dans leurs
-            favoris. Ils y trouvent les horaires et le lieu des entraînements, le nom de l'entraîneur de chaque
-            jour, vos annonces, la liste des entraînements du mois et les prochaines compétitions avec leur
-            programme horaire.
+          <h3 class="text-2xl font-semibold mb-4">La communication vers les familles</h3>
+          <p class="text-gray-600 leading-relaxed mb-5">
+            Votre groupe a sa page publique. Un lien à envoyer une fois, que les parents gardent.
           </p>
+          <ul class="space-y-3 mb-5">
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Les créneaux</strong> avec le nom de l'entraîneur de chaque jour</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Vos annonces</strong>, les entraînements du mois, les prochaines compétitions</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Un lien de présence</strong> à diffuser sur WhatsApp avant chaque séance</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Le compteur monte</strong> et vous partez de chez vous en sachant combien de jeunes vous attendent</span></li>
+            <li class="flex gap-3 text-[15px] text-gray-700"><span class="text-mondo mt-1">✓</span><span><strong class="font-medium text-piste-black">Les liens de votre club</strong> : adhésions, calendrier sportif, boutique</span></li>
+          </ul>
           <p class="text-gray-600 leading-relaxed">
-            Avant chaque entraînement, vous envoyez un lien de présence sur votre groupe WhatsApp en un clic. Les
-            parents cliquent pour dire si leur enfant vient. Vous voyez les réponses arriver en direct et vous
-            savez combien de jeunes vous attendent au stade avant de partir de chez vous.
+            Vous arrêtez de répondre dix fois à la même question dans le groupe WhatsApp.
           </p>
         </div>
         <a class="lb-trigger" onclick="lbOpen('/screenshots/app-page-groupe.jpg')">
           <div class="browser-frame">
-            <div class="browser-bar"><div class="browser-dot" style="background:#FF5F56"></div><div class="browser-dot" style="background:#FFBD2E"></div><div class="browser-dot" style="background:#27C93F"></div></div>
+            <div class="browser-bar"><div class="browser-dot bg-[#FF5F57]"></div><div class="browser-dot bg-[#FEBC2E]"></div><div class="browser-dot bg-[#28C840]"></div></div>
             <img src="/screenshots/app-page-groupe.jpg" alt="La page publique d'un groupe, telle que la voient les familles" class="w-full block" loading="lazy">
           </div>
         </a>
+      </div>
+
+    </div>
+
+    <div class="mt-16 reveal">
+      <div class="max-w-2xl mb-8">
+        <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">Ce que vous y gagnez</div>
+        <h3 class="text-2xl md:text-3xl font-semibold leading-tight">Trois choses qui changent votre saison.</h3>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+
+        <div class="bg-piste-black text-white rounded-2xl p-7 flex flex-col">
+          <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center mb-5">
+            <svg style="width:18px;height:18px" class="text-mondo-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2"/></svg>
+          </div>
+          <div class="font-semibold text-[17px] mb-2.5">Vos dimanches soir vous reviennent</div>
+          <p class="text-gray-400 text-[15px] leading-relaxed">Trois minutes pour une séquence de trois séances, cinq pour un plan de saison entier. Le temps que vous y passiez, vous le récupérez.</p>
+        </div>
+
+        <div class="bg-piste-black text-white rounded-2xl p-7 flex flex-col">
+          <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center mb-5">
+            <svg style="width:18px;height:18px" class="text-mondo-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 4v5c0 5-3.4 8.4-8 9-4.6-.6-8-4-8-9V7l8-4z"/></svg>
+          </div>
+          <div class="font-semibold text-[17px] mb-2.5">Un cadre, même sans diplôme</div>
+          <p class="text-gray-400 text-[15px] leading-relaxed">Vous arrêtez de vous demander si l'enchaînement a du sens pour des Benjamins. La progression est posée, et elle vous explique pourquoi.</p>
+        </div>
+
+        <div class="bg-piste-black text-white rounded-2xl p-7 flex flex-col">
+          <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center mb-5">
+            <svg style="width:18px;height:18px" class="text-mondo-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l-4 2v11m4 0h6m-6 0H5m10 0V9l4-2v12m-4 0h4"/></svg>
+          </div>
+          <div class="font-semibold text-[17px] mb-2.5">La mémoire de votre saison</div>
+          <p class="text-gray-400 text-[15px] leading-relaxed mb-4">Ce que vous avez travaillé, avec qui, et ce qui est acquis. En juin, vous savez répondre à un parent sans chercher vos notes.</p>
+          <p class="text-mondo-light text-sm font-medium mt-auto">Des traces, pas des impressions.</p>
+        </div>
+
+      </div>
+
+      <div class="mt-12 text-center reveal">
+        <a href="/fonctionnalites" class="inline-flex items-center gap-2 border border-black/15 hover:border-mondo hover:text-mondo px-6 py-3 rounded-lg font-medium text-[15px] transition">
+          Voir les 166 fonctions, une par une
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ouverture d'un compte d'essai -->
+<section id="essai-gratuit" class="py-16 md:py-20 bg-piste-black text-white relative overflow-hidden">
+  <div class="absolute -top-24 -right-24 w-96 h-96 bg-mondo/20 blur-[100px] rounded-full pointer-events-none"></div>
+  <div class="max-w-5xl mx-auto px-6 relative">
+    <div class="grid md:grid-cols-[1fr_auto] gap-10 md:gap-14 items-center">
+
+      <div>
+        <div class="inline-flex items-center gap-2 rounded-full border border-mondo/40 bg-mondo/[0.14] px-3 py-1 text-[12px] font-medium text-mondo-light mb-4">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          14 jours, sans carte bancaire
+        </div>
+        <h2 class="display text-3xl md:text-[2.4rem] font-semibold leading-[1.1] mb-4">
+          Essai gratuit, 14 jours.<br><span class="text-mondo-light">Générez votre première séance.</span>
+        </h2>
+        <p class="text-gray-300 leading-relaxed mb-6 max-w-lg">
+          Ouvrez un compte et construisez une séance pour votre groupe, avec votre objectif, votre
+          matériel et la durée de votre créneau. Trois minutes, et vous verrez si ça tient la route.
+          Commencez par votre groupe le plus compliqué.
+        </p>
+
+        <form id="fEssai" class="max-w-lg" novalidate>
+          <div class="bg-white/[0.07] border border-white/15 rounded-full p-1.5 flex flex-col sm:flex-row gap-1.5 focus-within:border-mondo/60 transition">
+            <input id="iEmail" type="email" required autocomplete="email" placeholder="Votre adresse email"
+                   class="flex-1 bg-transparent px-5 py-3 text-white placeholder-gray-500 focus:outline-none min-w-0">
+            <button id="bEssai" type="submit"
+                    class="bg-mondo hover:bg-mondo-dark text-white px-6 py-3 rounded-full font-semibold text-[15px] transition whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed">
+              Démarrer mes 14 jours
+            </button>
+          </div>
+
+          <p id="mEssai" class="text-sm mt-3 hidden"></p>
+          <p class="text-xs text-gray-500 mt-3 leading-relaxed">
+            Aucune carte bancaire, aucune reconduction automatique. L'accès se ferme tout seul au bout de
+            14 jours si vous ne faites rien.
+          </p>
+        </form>
+      </div>
+
+      <!-- Aperçu du guide -->
+      <div class="hidden md:block relative w-[230px] flex-shrink-0">
+        <div class="absolute inset-0 bg-mondo/25 blur-3xl rounded-full pointer-events-none"></div>
+        <a href="/guide-demarrage-entraineur.pdf" class="relative block bg-white rounded-lg shadow-[0_24px_60px_-15px_rgba(0,0,0,.7)] rotate-[3deg] overflow-hidden aspect-[1/1.414] hover:rotate-0 transition-transform">
+          <div class="h-1.5 bg-mondo"></div>
+          <div class="p-4 space-y-2">
+            <div class="h-2 w-16 bg-mondo/30 rounded"></div>
+            <div class="h-3 w-4/5 bg-gray-800 rounded"></div>
+            <div class="h-3 w-3/5 bg-gray-800 rounded mb-3"></div>
+            <div class="h-1.5 w-full bg-gray-200 rounded"></div>
+            <div class="h-1.5 w-11/12 bg-gray-200 rounded"></div>
+            <div class="h-1.5 w-3/4 bg-gray-200 rounded"></div>
+            <div class="pt-2"><div class="h-2 w-20 bg-mondo/30 rounded"></div></div>
+            <div class="h-1.5 w-full bg-gray-200 rounded"></div>
+            <div class="h-1.5 w-5/6 bg-gray-200 rounded"></div>
+            <div class="h-14 w-full bg-gray-100 border border-gray-200 rounded mt-2"></div>
+            <div class="h-1.5 w-full bg-gray-200 rounded"></div>
+            <div class="h-1.5 w-2/3 bg-gray-200 rounded"></div>
+          </div>
+        </a>
+        <p class="relative text-center text-xs text-gray-500 mt-4">
+          <a href="/guide-demarrage-entraineur.pdf" class="hover:text-gray-300 underline underline-offset-4">Le guide de démarrage, 10 pages</a>
+        </p>
       </div>
 
     </div>
@@ -330,69 +412,53 @@ tailwind.config = {
 </section>
 
 <!-- Comment ça marche -->
-<section id="comment-ca-marche" class="bg-sable py-12 md:py-16">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-9">
-      <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Comment ça marche</div>
-      <h2 class="display text-3xl md:text-4xl font-semibold leading-tight">De votre objectif à la séance<br>imprimée, en trois étapes.</h2>
+<section id="comment" class="py-20 md:py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="max-w-2xl mb-14 reveal">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-5">De votre objectif à la séance menée, en trois étapes.</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">Pas de paramétrage, pas de formation, pas de projet informatique. Vous créez votre compte et vous générez.</p>
     </div>
-    <div class="grid md:grid-cols-3 gap-6">
-
-      <div class="bg-white p-7 rounded-xl border border-gray-100 reveal">
-        <div class="w-12 h-12 step-glow rounded-xl flex items-center justify-center mb-5">
-          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M7 10h6M7 14h10"/></svg>
-        </div>
-        <div class="text-xs uppercase tracking-wider text-mondo font-medium mb-1">Étape 1</div>
-        <h3 class="font-medium text-lg mb-4 display">Vous décrivez votre objectif</h3>
-        <ul class="space-y-2.5 text-sm text-gray-600">
-          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Votre discipline et votre catégorie</li>
-          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Votre créneau et votre matériel réel</li>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="reveal">
+        <div class="w-11 h-11 rounded-xl bg-mondo text-white flex items-center justify-center font-semibold text-lg mb-4">1</div>
+        <div class="font-medium text-lg mb-2">Vous décrivez votre objectif</div>
+        <p class="text-gray-600 text-[15px] leading-relaxed mb-3">Votre discipline, votre catégorie, la durée réelle de votre créneau et le matériel dont vous disposez vraiment.</p>
+        <ul class="space-y-1.5 text-sm text-gray-600">
           <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Une à quatre qualités à travailler</li>
           <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Deux catégories si votre groupe est mixte</li>
         </ul>
       </div>
-
-      <div class="bg-white p-7 rounded-xl border border-gray-100 reveal reveal-delay-1">
-        <div class="w-12 h-12 step-glow rounded-xl flex items-center justify-center mb-5">
-          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.5 4 4 1.5-4 1.5L12 14l-1.5-4-4-1.5 4-1.5L12 3z"/><path d="M19 13l.7 1.8L21.5 15.5l-1.8.7L19 18l-.7-1.8L16.5 15.5l1.8-.7L19 13z"/></svg>
-        </div>
-        <div class="text-xs uppercase tracking-wider text-mondo font-medium mb-1">Étape 2</div>
-        <h3 class="font-medium text-lg mb-4 display">Séances Athlé écrit la séance</h3>
-        <ul class="space-y-2.5 text-sm text-gray-600">
-          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Une séance, ou une séquence de trois à cinq</li>
-          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> L'ordre pédagogique respecté par défaut</li>
+      <div class="reveal reveal-delay-1">
+        <div class="w-11 h-11 rounded-xl bg-mondo text-white flex items-center justify-center font-semibold text-lg mb-4">2</div>
+        <div class="font-medium text-lg mb-2">Séances Athlé écrit la séance</div>
+        <p class="text-gray-600 text-[15px] leading-relaxed mb-3">Une séance seule, ou une séquence de trois à cinq qui s'enchaînent. L'ordre pédagogique est respecté par défaut.</p>
+        <ul class="space-y-1.5 text-sm text-gray-600">
           <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Une vidéo choisie pour chaque atelier</li>
           <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Trois minutes pour une séquence entière</li>
         </ul>
       </div>
-
-      <div class="bg-white p-7 rounded-xl border border-gray-100 reveal reveal-delay-2">
-        <div class="w-12 h-12 step-glow rounded-xl flex items-center justify-center mb-5">
-          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 9l5 3-5 3V9z" fill="currentColor"/></svg>
-        </div>
-        <div class="text-xs uppercase tracking-wider text-mondo font-medium mb-1">Étape 3</div>
-        <h3 class="font-medium text-lg mb-4 display">Vous menez votre séance</h3>
-        <ul class="space-y-2.5 text-sm text-gray-600">
-          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> La séance s'ouvre sur votre téléphone</li>
+      <div class="reveal reveal-delay-2">
+        <div class="w-11 h-11 rounded-xl bg-mondo text-white flex items-center justify-center font-semibold text-lg mb-4">3</div>
+        <div class="font-medium text-lg mb-2">Vous menez votre séance</div>
+        <p class="text-gray-600 text-[15px] leading-relaxed mb-3">Le mode terrain est fait pour être lu sur un téléphone, au bord de la piste, avec du vent dans les feuilles.</p>
+        <ul class="space-y-1.5 text-sm text-gray-600">
           <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Vous modifiez ce que vous voulez, rien n'est figé</li>
-          <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Vous pointez les présences en un geste</li>
           <li class="flex gap-2"><span class="text-mondo flex-shrink-0">→</span> Vous cochez ce qui est acquis en partant</li>
         </ul>
       </div>
-
     </div>
   </div>
 </section>
 
 <!-- Galerie des écrans -->
-<section id="ecrans" class="py-12 md:py-20 bg-piste-black text-white">
+<section id="ecrans" class="py-20 md:py-24 bg-piste-black text-white">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="max-w-2xl mb-12 reveal">
-      <div class="text-mondo-light font-medium text-sm uppercase tracking-[0.2em] mb-4">Rien à imaginer</div>
-      <h2 class="text-3xl md:text-4xl font-semibold mb-5">L'outil, écran par écran.</h2>
+    <div class="max-w-2xl mb-14 reveal">
+      <div class="text-mondo-light font-medium text-sm uppercase tracking-[0.2em] mb-4">De vraies captures d'écran</div>
+      <h2 class="text-3xl md:text-4xl font-semibold mb-5">Voyez l'outil, écran par écran.</h2>
       <p class="text-gray-300 leading-relaxed text-lg">
-        Des captures d'un vrai groupe, prises cette saison. Les noms des jeunes sont masqués, le reste est tel
-        quel. Cliquez pour agrandir.
+        Ces images viennent d'un vrai groupe et ont été prises cette saison. Les noms des jeunes sont masqués,
+        tout le reste est tel quel. Cliquez sur une image pour l'agrandir.
       </p>
     </div>
 
@@ -403,7 +469,7 @@ tailwind.config = {
           <img src="/screenshots/app-saison-phases.jpg" alt="Le détail des phases d'un plan de saison" class="w-full block" loading="lazy">
         </div>
         <div class="mt-3 font-medium text-[15px]">Votre plan de saison, phase par phase</div>
-        <p class="text-gray-400 text-sm leading-relaxed mt-1">Six phases datées, l'avancement de chaque mésocycle, et les conseils qui expliquent les choix.</p>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Six phases datées, l'avancement de chacune, et les conseils qui expliquent les choix.</p>
       </a>
 
       <a class="lb-trigger reveal reveal-delay-1" onclick="lbOpen('/screenshots/app-planning-mois.jpg')">
@@ -427,7 +493,7 @@ tailwind.config = {
           <img src="/screenshots/app-forme.jpg" alt="La grille de forme du groupe sur quatre semaines" class="w-full block" loading="lazy">
         </div>
         <div class="mt-3 font-medium text-[15px]">L'état de forme du groupe</div>
-        <p class="text-gray-400 text-sm leading-relaxed mt-1">Une saisie de quelques secondes en fin de séance, et quatre semaines d'historique qui se lisent d'un coup d'œil.</p>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Une saisie de quelques secondes en fin de séance, et quatre semaines d'historique qui se lisent en un coup d'œil.</p>
       </a>
 
       <a class="lb-trigger reveal reveal-delay-1" onclick="lbOpen('/screenshots/app-apprentissage.jpg')">
@@ -450,7 +516,7 @@ tailwind.config = {
         <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
           <img src="/screenshots/app-athlete-records.jpg" alt="Les records personnels et l'import depuis athle.fr" class="w-full block" loading="lazy">
         </div>
-        <div class="mt-3 font-medium text-[15px]">Les records importés depuis athle.fr</div>
+        <div class="mt-3 font-medium text-[15px]">Les records, sans ressaisie</div>
         <p class="text-gray-400 text-sm leading-relaxed mt-1">Les performances publiques de l'athlète sont récupérées depuis la base de résultats athle.fr.</p>
       </a>
 
@@ -458,11 +524,19 @@ tailwind.config = {
         <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
           <img src="/screenshots/app-objectifs-ia.jpg" alt="Les objectifs de saison proposés pour un athlète" class="w-full block" loading="lazy">
         </div>
-        <div class="mt-3 font-medium text-[15px]">Un objectif chiffré par athlète</div>
-        <p class="text-gray-400 text-sm leading-relaxed mt-1">L'athlète est situé par rapport aux référentiels de son âge. Vous retenez la proposition, ou pas.</p>
+        <div class="mt-3 font-medium text-[15px]">Une cible de fin de saison</div>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">L'athlète est situé par rapport aux repères de son âge. Vous retenez la proposition, ou pas.</p>
       </a>
 
-      <a class="lb-trigger reveal reveal-delay-2" onclick="lbOpen('/screenshots/app-appel.jpg')">
+      <a class="lb-trigger reveal reveal-delay-2" onclick="lbOpen('/screenshots/app-effectif.jpg')">
+        <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="/screenshots/app-effectif.jpg" alt="L'effectif d'un groupe" class="w-full block" loading="lazy">
+        </div>
+        <div class="mt-3 font-medium text-[15px]">L'effectif de votre groupe</div>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Importable depuis un fichier, avec la catégorie, les disciplines et le statut de chacun.</p>
+      </a>
+
+      <a class="lb-trigger reveal" onclick="lbOpen('/screenshots/app-appel.jpg')">
         <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
           <img src="/screenshots/app-appel.jpg" alt="L'écran d'appel au bord de la piste" class="w-full block" loading="lazy">
         </div>
@@ -470,15 +544,15 @@ tailwind.config = {
         <p class="text-gray-400 text-sm leading-relaxed mt-1">Présent, absent, excusé. Trois boutons assez grands pour être touchés avec des gants.</p>
       </a>
 
-      <a class="lb-trigger reveal" onclick="lbOpen('/screenshots/app-presences.jpg')">
+      <a class="lb-trigger reveal reveal-delay-1" onclick="lbOpen('/screenshots/app-presences.jpg')">
         <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
           <img src="/screenshots/app-presences.jpg" alt="Les liens de présence envoyés aux familles" class="w-full block" loading="lazy">
         </div>
         <div class="mt-3 font-medium text-[15px]">Les liens de présence</div>
-        <p class="text-gray-400 text-sm leading-relaxed mt-1">Diffusés sur WhatsApp en un clic, avec le nombre de familles qui ont répondu.</p>
+        <p class="text-gray-400 text-sm leading-relaxed mt-1">Diffusés sur WhatsApp en un clic, avec le nombre de familles qui ont répondu et le taux de présence par mois.</p>
       </a>
 
-      <a class="lb-trigger reveal reveal-delay-1" onclick="lbOpen('/screenshots/app-stats-bilans.jpg')">
+      <a class="lb-trigger reveal reveal-delay-2" onclick="lbOpen('/screenshots/app-stats-bilans.jpg')">
         <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
           <img src="/screenshots/app-stats-bilans.jpg" alt="L'assiduité et les acquisitions sur la saison" class="w-full block" loading="lazy">
         </div>
@@ -486,7 +560,7 @@ tailwind.config = {
         <p class="text-gray-400 text-sm leading-relaxed mt-1">Votre taux de présence réel, l'assiduité jeune par jeune, et la part des acquisitions validées.</p>
       </a>
 
-      <a class="lb-trigger reveal reveal-delay-2" onclick="lbOpen('/screenshots/app-bibliotheque.jpg')">
+      <a class="lb-trigger reveal" onclick="lbOpen('/screenshots/app-bibliotheque.jpg')">
         <div class="rounded-xl overflow-hidden border border-white/10 bg-white/5">
           <img src="/screenshots/app-bibliotheque.jpg" alt="La bibliothèque d'exercices vidéo" class="w-full block" loading="lazy">
         </div>
@@ -498,21 +572,20 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- Comparaison -->
-<section class="py-12 md:py-16 bg-white">
+<!-- Comparaison honnête -->
+<section id="comparaison" class="py-20 md:py-24 bg-white">
   <div class="max-w-5xl mx-auto px-6">
-    <div class="text-center mb-7">
+    <div class="max-w-2xl mb-12 reveal">
       <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Comparaison honnête</div>
-      <h2 class="display text-3xl md:text-4xl font-semibold leading-tight max-w-3xl mx-auto">
-        Pourquoi pas juste ChatGPT,<br>ou YouTube et Google&nbsp;?
-      </h2>
-      <p class="text-base text-gray-600 mt-4 max-w-2xl mx-auto">
-        Parce que sortir une séance de coach, c'est un métier. Voilà ce que vous gagnez vraiment.
+      <h2 class="text-3xl md:text-4xl font-semibold mb-5">Pourquoi pas juste ChatGPT, ou YouTube et Google&nbsp;?</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Parce que sortir une séance de coach, c'est un métier. Vous pouvez tout faire à la main. Voilà exactement
+        ce que vous y gagnez, et ce que vous n'y gagnez pas.
       </p>
     </div>
 
-    <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
-      <table class="w-full text-sm">
+    <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm reveal">
+      <table class="w-full text-sm min-w-[640px]">
         <thead>
           <tr class="bg-gray-50 border-b border-gray-200">
             <th class="text-left p-5 font-medium text-gray-900 w-2/5"></th>
@@ -574,21 +647,157 @@ tailwind.config = {
       </table>
     </div>
 
-    <p class="text-center text-sm text-gray-500 mt-6 max-w-2xl mx-auto">
-      Vous pouvez faire avec YouTube ou ChatGPT. Vous pouvez aussi cuire un plat de chef au micro-ondes. Mais bon, peut-être qu'il y a mieux.
+    <p class="text-center text-gray-600 mt-10 max-w-2xl mx-auto reveal text-[15px] leading-relaxed">
+      Vous pouvez faire avec YouTube ou ChatGPT. Vous pouvez aussi cuire un plat de chef au micro-ondes.
+      Mais bon, peut-être qu'il y a mieux.
     </p>
   </div>
 </section>
 
-<!-- Cadre pédagogique -->
-<section class="py-12 md:py-20 bg-piste-black text-white">
+<!-- Co-encadrement -->
+<section class="py-20 md:py-24 bg-sable">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">Si vous partagez votre groupe</div>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-6 leading-tight">Vous n'êtes pas toujours<br>seul sur le créneau.</h2>
+        <p class="text-gray-700 leading-relaxed text-lg mb-7">
+          Dans la plupart des clubs, un groupe de jeunes s'entraîne trois fois par semaine et deux ou trois
+          personnes se relaient pour l'encadrer. Chacun prépare son créneau de son côté. Personne ne sait ce
+          que les autres ont fait. Résultat : la charge de la semaine n'est pilotée par personne, et la
+          programmation ne tient pas.
+        </p>
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl p-5 border border-black/[0.06]">
+            <div class="font-semibold mb-1.5">La charge est calculée sur le groupe entier</div>
+            <p class="text-gray-600 text-[15px] leading-relaxed">On vous demande au départ combien de séances le groupe fait par semaine. La charge augmente selon le volume réel, pas selon votre seul créneau.</p>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-black/[0.06]">
+            <div class="font-semibold mb-1.5">Vous ne voyez que vos propres séances</div>
+            <p class="text-gray-600 text-[15px] leading-relaxed">Le plan détaille les séances que vous menez, et rien d'autre.</p>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-black/[0.06]">
+            <div class="font-semibold mb-1.5">Ce qu'il faut transmettre est écrit</div>
+            <p class="text-gray-600 text-[15px] leading-relaxed">Chaque bloc de la saison indique en clair ce qui revient à votre co-entraîneur. Plus de coordination par SMS le dimanche soir.</p>
+          </div>
+        </div>
+      </div>
+      <a class="lb-trigger reveal reveal-delay-1" onclick="lbOpen('/screenshots/app-saison-macrocycle.jpg')">
+        <div class="browser-frame">
+          <div class="browser-bar"><div class="browser-dot bg-[#FF5F57]"></div><div class="browser-dot bg-[#FEBC2E]"></div><div class="browser-dot bg-[#28C840]"></div></div>
+          <img src="/screenshots/app-saison-macrocycle.jpg" alt="Un plan de saison calculé pour un groupe co-encadré" class="w-full block" loading="lazy">
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Ce que ce n'est pas -->
+<section class="py-20 md:py-24 bg-white">
   <div class="max-w-5xl mx-auto px-6">
-    <div class="max-w-2xl mb-10 reveal">
+    <div class="max-w-2xl mb-12 reveal">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-5">Ce que Séances Athlé n'est pas.</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Autant vous le dire tout de suite, ça vous évitera de vous abonner pour rien.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6 reveal">
+      <div class="bg-white rounded-2xl p-8 border-2 border-mondo/20">
+        <div class="flex items-center gap-2 mb-5">
+          <div class="w-6 h-6 rounded-full bg-mondo/10 flex items-center justify-center">
+            <svg class="w-3.5 h-3.5 text-mondo" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <span class="font-semibold">Ce qu'on fait</span>
+        </div>
+        <ul class="space-y-3 text-[15px] text-gray-700">
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Construire vos séances, vos cycles et votre plan de saison</span></li>
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Tenir compte du co-encadrement dans le plan de saison</span></li>
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Suivre les acquisitions pédagogiques de vos jeunes</span></li>
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Tenir vos présences et votre assiduité</span></li>
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Suivre l'état de forme et la disponibilité de vos athlètes</span></li>
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Informer les familles sans y passer vos soirées</span></li>
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Archiver les performances et suivre les progressions</span></li>
+          <li class="flex gap-2.5"><span class="text-mondo flex-shrink-0">✓</span><span>Vous donner un cadre sur lequel vous appuyer si vous n'êtes pas diplômé</span></li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-2xl p-8 border border-gray-200">
+        <div class="flex items-center gap-2 mb-5">
+          <div class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
+            <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </div>
+          <span class="font-semibold text-gray-500">Ce qu'on ne fait pas</span>
+        </div>
+        <ul class="space-y-3 text-[15px] text-gray-500">
+          <li class="flex gap-2.5"><span class="text-gray-400 flex-shrink-0">✕</span><span>Gérer les licences de votre club</span></li>
+          <li class="flex gap-2.5"><span class="text-gray-400 flex-shrink-0">✕</span><span>Encaisser les cotisations ou tenir la comptabilité</span></li>
+          <li class="flex gap-2.5"><span class="text-gray-400 flex-shrink-0">✕</span><span>Gérer vos engagements en compétition</span></li>
+          <li class="flex gap-2.5"><span class="text-gray-400 flex-shrink-0">✕</span><span>Remplacer votre œil sur la piste</span></li>
+          <li class="flex gap-2.5"><span class="text-gray-400 flex-shrink-0">✕</span><span>Décider à votre place : l'outil propose, vous tranchez</span></li>
+          <li class="flex gap-2.5"><span class="text-gray-400 flex-shrink-0">✕</span><span>Vous dispenser d'une formation ou d'un diplôme requis</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-center text-gray-600 mt-10 max-w-2xl mx-auto reveal text-[15px] leading-relaxed">
+      Les outils de licence et de cotisation de votre club restent en place. Séances Athlé s'occupe uniquement de
+      ce qui se passe sur la piste le mardi soir, et de ce que vous en retenez.
+    </p>
+  </div>
+</section>
+
+<!-- Données / RGPD -->
+<section id="donnees" class="py-20 md:py-24 bg-sable">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div class="reveal">
+        <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">Vos athlètes sont mineurs</div>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-6 leading-tight">La question que vous allez vous poser.</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Vous saisissez des prénoms, des dates de naissance, des présences. La réponse tient en une phrase.
+        </p>
+        <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
+          <p class="font-semibold text-emerald-900 mb-2">Aucune donnée nominative d'athlète ne quitte jamais l'application.</p>
+          <p class="text-emerald-800 text-[15px] leading-relaxed">
+            Ni pour générer une séance, ni pour proposer des objectifs, ni pour quoi que ce soit d'autre.
+            Ce qui part au moteur d'intelligence artificielle, c'est un contexte pédagogique : une catégorie
+            d'âge, un nombre d'athlètes, une durée, du matériel. Jamais un enfant identifiable.
+          </p>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1 space-y-5 pt-4">
+        <div class="border-l-2 border-gray-300 pl-5">
+          <div class="font-medium mb-1">Votre suivi reste chez vous</div>
+          <p class="text-gray-600 text-[15px] leading-relaxed">Les présences, les bilans d'acquisition, l'état de forme et les indisponibilités sont visibles par vous et par personne d'autre. Ils ne sont transmis à aucun moteur d'intelligence artificielle.</p>
+        </div>
+        <div class="border-l-2 border-gray-300 pl-5">
+          <div class="font-medium mb-1">Hébergement</div>
+          <p class="text-gray-600 text-[15px] leading-relaxed">Aux États-Unis, chez notre hébergeur applicatif, certifié ISO 27001 et SOC 2 Type II. Les transferts sont encadrés par les clauses contractuelles types et le Data Privacy Framework. On l'écrit noir sur blanc plutôt que de le cacher.</p>
+        </div>
+        <div class="border-l-2 border-gray-300 pl-5">
+          <div class="font-medium mb-1">Vos liens publics</div>
+          <p class="text-gray-600 text-[15px] leading-relaxed">La page de groupe et les liens de présence sont accessibles à qui détient le lien. Ils sont conçus pour être envoyés aux familles concernées, et rien d'autre n'y figure que ce que vous y mettez.</p>
+        </div>
+        <div class="border-l-2 border-gray-300 pl-5">
+          <div class="font-medium mb-1">Sortie de route</div>
+          <p class="text-gray-600 text-[15px] leading-relaxed">Vos séances s'exportent en PDF et restent lisibles sans nous. Vos données d'athlètes et de présences sont exportables et supprimables sur demande, sans condition et sans délai de préavis.</p>
+        </div>
+        <a href="https://app.seances-athle.fr/confidentialite" class="inline-flex items-center gap-1.5 text-mondo font-medium text-[15px] hover:underline pt-1">
+          Lire la page complète
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cadre pédagogique -->
+<section class="py-20 md:py-24 bg-piste-black text-white">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="max-w-2xl mb-12 reveal">
       <div class="text-mondo-light font-medium text-sm uppercase tracking-[0.2em] mb-4">Sur quoi ça s'appuie</div>
       <h2 class="text-3xl md:text-4xl font-semibold mb-6 leading-tight">Les séances suivent une progression,<br>pas un catalogue d'exercices.</h2>
       <p class="text-gray-300 leading-relaxed text-lg">
-        La progression Pass' Athlé, et l'état de l'art du développement du jeune athlète. Si vous êtes diplômé, vous
-        pouvez ouvrir n'importe quelle séance et vérifier.
+        La progression Pass' Athlé, et l'état de l'art international du développement du jeune athlète. Si vous
+        êtes diplômé, vous pouvez ouvrir n'importe quelle séance et vérifier.
       </p>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
@@ -602,46 +811,112 @@ tailwind.config = {
       </div>
       <div class="border border-white/10 rounded-2xl p-6 reveal reveal-delay-2">
         <div class="font-medium mb-2">Des garde-fous qui refusent</div>
-        <p class="text-gray-400 text-[15px] leading-relaxed">Pas de Fosbury sans tapis homologué. Pas de charges lourdes avant la fin de croissance. L'outil dit non et explique pourquoi, plutôt que de sortir une séance dangereuse.</p>
+        <p class="text-gray-400 text-[15px] leading-relaxed">Pas de Fosbury sans tapis homologué. Pas de charges lourdes avant la fin de croissance. L'outil dit non et explique pourquoi, plutôt que de générer une séance dangereuse.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Données -->
-<section id="donnees" class="py-12 md:py-20 bg-white">
+<!-- Tarif -->
+<section id="tarif" class="py-20 md:py-24 bg-sable">
   <div class="max-w-5xl mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-12 items-start">
-      <div class="reveal">
-        <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">Vos athlètes sont mineurs</div>
-        <h2 class="text-3xl md:text-4xl font-semibold mb-6 leading-tight">Les données de vos athlètes<br>ne sortent pas de l'application.</h2>
-        <p class="text-gray-600 leading-relaxed mb-4">
-          Vous saisissez des prénoms, des dates de naissance, des présences. La question mérite une réponse nette.
+    <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-5">Un seul prix. Tout débloqué.</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Pas de version bridée, pas d'option à rajouter, pas de quota de séances. Vous payez un abonnement et vous
+        avez l'outil entier, du générateur de séance au suivi des athlètes.
+      </p>
+      <p class="text-sm text-gray-500 mt-3">Prix nets de taxe. La TVA n'est pas applicable, vous payez exactement le montant affiché.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5 items-stretch mb-8 max-w-3xl mx-auto">
+
+      <div class="bg-white rounded-2xl border border-gray-200 p-7 flex flex-col reveal">
+        <div class="font-semibold text-lg">Mensuel</div>
+        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Un entraîneur, jusqu'à trois groupes<br>athlètes illimités</p>
+        <div class="flex items-baseline gap-1.5">
+          <span class="display text-4xl font-semibold">9 €</span><span class="text-gray-500 text-sm">/ mois</span>
+        </div>
+        <div class="text-sm text-gray-500 mt-1 mb-6">Sans engagement. Vous partez quand vous voulez.</div>
+        <a href="https://app.seances-athle.fr/inscription" class="block text-center border border-piste-black hover:bg-piste-black hover:text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Démarrer mes 14 jours</a>
+        <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Tout l'outil, sans réserve</div>
+        <ul class="space-y-2.5 text-[15px] text-gray-700">
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Séances, cycles et plans de saison illimités</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Toutes les disciplines, de U10 à U20</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Plans calculés pour les groupes encadrés à plusieurs</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Suivi des athlètes, présences, forme, bilans d'acquisition</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Import des résultats officiels athle.fr</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Pages publiques de groupe et liens de présence</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Bibliothèque de 900 exercices vidéo</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Support par email</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-2xl border-2 border-mondo shadow-xl p-7 flex flex-col relative reveal reveal-delay-1">
+        <div class="absolute -top-3 left-7 bg-mondo text-white text-xs font-semibold px-3 py-1 rounded-full">2 mois offerts</div>
+        <div class="font-semibold text-lg">Annuel</div>
+        <p class="text-gray-500 text-sm mt-1 mb-5 leading-relaxed">Un entraîneur, jusqu'à trois groupes<br>athlètes illimités</p>
+        <div class="flex items-baseline gap-1.5">
+          <span class="display text-4xl font-semibold">79 €</span><span class="text-gray-500 text-sm">/ an</span>
+        </div>
+        <div class="text-sm text-gray-500 mt-1 mb-6">soit 6,60 € par mois, 29 € d'économie</div>
+        <a href="https://app.seances-athle.fr/inscription" class="block text-center bg-mondo hover:bg-mondo-dark text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Démarrer mes 14 jours</a>
+        <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Tout ce qu'il y a dans le mensuel, plus</div>
+        <ul class="space-y-2.5 text-[15px] text-gray-700">
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Deux mois offerts sur la saison</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Accès prioritaire aux nouveautés</li>
+          <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Support par email prioritaire</li>
+        </ul>
+        <p class="text-sm text-gray-500 leading-relaxed mt-5 pt-5 border-t border-gray-100">
+          Et tout le socle : séances et plans de saison illimités, suivi des athlètes, import athle.fr, pages
+          publiques de groupe, bibliothèque vidéo. Annulable à tout moment.
         </p>
-        <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
-          <p class="font-semibold text-emerald-900 mb-2">Aucune donnée nominative d'athlète ne quitte jamais l'application.</p>
-          <p class="text-emerald-800 text-[15px] leading-relaxed">
-            Ni pour générer une séance, ni pour proposer des objectifs. Ce qui part au moteur d'intelligence
-            artificielle, c'est un contexte pédagogique : une catégorie d'âge, un nombre d'athlètes, une durée,
-            du matériel. Jamais un enfant identifiable.
+      </div>
+
+    </div>
+
+    <div class="bg-sable rounded-2xl p-6 md:p-7 border border-mondo/15 mb-6 reveal">
+      <p class="text-[15px] text-gray-800 font-medium mb-2">9 € par mois pour du bénévolat, c'est beaucoup&nbsp;?</p>
+      <p class="text-[15px] text-gray-700 leading-relaxed max-w-3xl">
+        La question est légitime, et la réponse tient en deux points. D'abord l'arithmétique : sur une saison de
+        trente-six semaines, l'abonnement annuel revient à <strong>2,20 € par séance préparée</strong>. C'est le
+        prix d'un café, contre une soirée de votre dimanche.
+      </p>
+      <p class="text-[15px] text-gray-700 leading-relaxed max-w-3xl mt-2.5">
+        Ensuite, et c'est le vrai sujet : beaucoup de clubs remboursent cette dépense, au même titre qu'une
+        formation ou qu'un déplacement. <strong>Demandez avant de payer de votre poche</strong>, et si vous êtes
+        plusieurs à encadrer, la licence club revient moins cher par personne.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 md:p-7 border border-gray-200 text-center mb-8 reveal">
+      <p class="text-[15px] text-gray-800 font-medium mb-1.5">14 jours d'essai, sans carte bancaire et sans engagement.</p>
+      <p class="text-sm text-gray-500 leading-relaxed max-w-3xl mx-auto">
+        L'essai ne demande pas votre carte bancaire et ne se transforme jamais en abonnement tout seul : au bout
+        de 14 jours, l'accès se ferme si vous ne faites rien. Ensuite, vous résiliez depuis votre compte en un
+        clic, sans préavis, sans mail à envoyer et sans raison à donner. Vous gardez l'accès jusqu'à la fin de la
+        période déjà payée, et vos séances s'exportent en PDF avant de partir. Prix nets de taxe : la TVA n'est
+        pas applicable, vous payez exactement le montant affiché.
+      </p>
+    </div>
+
+    <div class="bg-piste-black text-white rounded-2xl p-7 reveal">
+      <div class="grid md:grid-cols-[1fr_auto] gap-6 items-center">
+        <div>
+          <div class="inline-block bg-mondo text-white text-xs font-semibold px-2.5 py-1 rounded-full mb-3">Vous n'êtes pas seul à encadrer</div>
+          <div class="font-semibold text-lg mb-2">Votre club peut équiper toute l'équipe technique</div>
+          <p class="text-gray-300 text-[15px] leading-relaxed mb-2">
+            À partir de 390 € par saison pour cinq encadrants, groupes et athlètes illimités. Chacun garde son
+            compte et son mot de passe, et les séances construites par l'un deviennent lisibles par les autres.
+            Quand un bénévole s'en va, son travail reste au club.
+          </p>
+          <p class="text-gray-400 text-[13px] leading-relaxed">
+            Et si le club souscrit après vous, votre abonnement individuel est remboursé au prorata. Personne ne
+            paie deux fois.
           </p>
         </div>
-      </div>
-      <div class="reveal reveal-delay-1 space-y-5 pt-4">
-        <div class="border-l-2 border-gray-200 pl-5">
-          <div class="font-medium mb-1">Votre suivi reste chez vous</div>
-          <p class="text-gray-600 text-[15px] leading-relaxed">Les présences, les bilans d'acquisition et l'état de forme sont visibles par vous et par personne d'autre. Ils ne sont transmis à aucun moteur.</p>
-        </div>
-        <div class="border-l-2 border-gray-200 pl-5">
-          <div class="font-medium mb-1">Vos liens publics</div>
-          <p class="text-gray-600 text-[15px] leading-relaxed">La page de groupe et les liens de présence sont accessibles à qui détient le lien. Ils sont faits pour être envoyés aux familles concernées, et rien d'autre n'y figure que ce que vous y mettez.</p>
-        </div>
-        <div class="border-l-2 border-gray-200 pl-5">
-          <div class="font-medium mb-1">Vous partez quand vous voulez</div>
-          <p class="text-gray-600 text-[15px] leading-relaxed">Vos séances s'exportent en PDF et restent lisibles sans nous. Vos données d'athlètes et de présences sont exportables et supprimables sans délai. Le pire scénario vous coûte un abonnement, pas votre travail.</p>
-        </div>
-        <a href="/confidentialite" class="inline-flex items-center gap-1.5 text-mondo font-medium text-[15px] hover:underline pt-1">
-          Lire la page complète
+        <a href="/clubs" class="flex-shrink-0 inline-flex items-center justify-center gap-2 bg-white text-piste-black hover:bg-gray-100 px-6 py-3 rounded-lg font-medium text-[15px] transition whitespace-nowrap">
+          Voir l'offre club
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
       </div>
@@ -649,99 +924,275 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- Ce que ce n'est pas -->
-<section class="py-12 md:py-16 bg-sable">
+<!-- Réversibilité -->
+<section class="py-20 md:py-24 bg-white">
   <div class="max-w-5xl mx-auto px-6">
-    <div class="max-w-2xl mb-10 reveal">
-      <h2 class="text-3xl md:text-4xl font-semibold mb-5">Ce que Séances Athlé n'est pas.</h2>
-      <p class="text-lg text-gray-700 leading-relaxed">Autant le dire tout de suite, ça vous évitera de vous abonner pour rien.</p>
+    <div class="max-w-2xl mb-14 reveal">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-5">Avant de vous engager, trois choses.</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">On préfère les dire maintenant plutôt que de vous laisser les découvrir en mars.</p>
     </div>
-    <div class="grid md:grid-cols-2 gap-6 reveal">
-      <div class="bg-white rounded-2xl p-8 border-2 border-mondo/20">
-        <div class="flex items-center gap-2 mb-5">
-          <div class="w-6 h-6 rounded-full bg-mondo/10 flex items-center justify-center">
-            <svg class="w-3.5 h-3.5 text-mondo" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-          </div>
-          <span class="font-semibold">Ce que ça fait</span>
-        </div>
-        <ul class="space-y-3 text-[15px] text-gray-700">
-          <li>Construire vos séances, vos cycles et votre plan de saison</li>
-          <li>Suivre les acquisitions de chacun de vos jeunes</li>
-          <li>Tenir vos présences et votre assiduité</li>
-          <li>Informer les familles sans y passer vos soirées</li>
-          <li>Archiver les performances et suivre les progressions</li>
-          <li>Vous donner un cadre sur lequel vous appuyer si vous n'êtes pas diplômé</li>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="bg-sable rounded-2xl p-7 reveal">
+        <div class="font-semibold text-lg mb-3">Testez sur votre groupe le plus compliqué</div>
+        <p class="text-gray-700 text-[15px] leading-relaxed mb-3">
+          Pas sur celui qui tourne tout seul. Le groupe mixte, le créneau trop court, la catégorie que vous
+          connaissez mal : c'est là que vous verrez si l'outil tient ou pas.
+        </p>
+        <p class="text-gray-700 text-[15px] leading-relaxed">
+          En quatorze jours, vous avez largement le temps de générer un plan de saison, trois séquences et de
+          mener quatre séances.
+        </p>
+      </div>
+      <div class="bg-sable rounded-2xl p-7 reveal reveal-delay-1">
+        <div class="font-semibold text-lg mb-3">Ce qui est moins profond, on le dit</div>
+        <ul class="space-y-2.5 text-[15px] text-gray-700">
+          <li><strong>La perche et le marteau</strong> sont les disciplines les moins fournies de la bibliothèque. Si vous ne coachez que l'une des deux, testez d'abord.</li>
+          <li><strong>Les Benjamins et Minimes</strong> sont la partie la plus aboutie, parce que c'est le groupe testé chaque semaine sur le terrain.</li>
+          <li><strong>L'outil est jeune.</strong> Il évolue toutes les semaines, et ce que vous demandez a de bonnes chances d'être codé.</li>
         </ul>
       </div>
-      <div class="bg-white rounded-2xl p-8 border border-gray-200">
-        <div class="flex items-center gap-2 mb-5">
-          <div class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
-            <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-          </div>
-          <span class="font-semibold text-gray-500">Ce que ça ne fait pas</span>
-        </div>
-        <ul class="space-y-3 text-[15px] text-gray-500">
-          <li>Gérer les licences, les cotisations ou la compta de votre club</li>
-          <li>Gérer vos engagements en compétition</li>
-          <li>Remplacer votre œil sur la piste</li>
-          <li>Décider à votre place : l'outil propose, vous tranchez</li>
-          <li>Vous dispenser d'une formation ou d'un diplôme requis</li>
-        </ul>
-      </div>
+    </div>
+
+    <div class="border border-gray-200 rounded-2xl p-7 reveal">
+      <div class="font-semibold text-lg mb-3">Ce qui se passe si vous arrêtez, ou si nous disparaissons</div>
+      <p class="text-gray-600 leading-relaxed text-[15px] mb-3">
+        C'est une question légitime face à un outil jeune, et elle mérite mieux qu'une formule rassurante. Vos
+        séances s'exportent en PDF et restent lisibles sans nous. Vos données d'athlètes et de présences sont
+        exportables à tout moment, sans démarche particulière. Rien de ce que vous produisez n'est enfermé dans
+        l'outil.
+      </p>
+      <p class="text-gray-600 leading-relaxed text-[15px]">
+        Autrement dit, le pire scénario vous coûte un abonnement, pas votre travail.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- Tarifs -->
-<section id="tarifs" class="bg-white py-12 md:py-16">
-  <div class="max-w-4xl mx-auto px-6">
-    <div class="text-center mb-8">
-      <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Tarifs</div>
-      <h2 class="display text-3xl md:text-4xl font-semibold leading-tight">Un seul prix.<br>Tout débloqué.</h2>
-      <p class="text-base text-gray-600 mt-4">14 jours d'essai. Sans carte bancaire. Annulable à tout moment.</p>
-      <p class="text-sm text-gray-500 mt-2">Prix nets de taxe. La TVA n'est pas applicable, vous payez exactement le montant affiché.</p>
+<!-- Questions -->
+<section id="questions" class="pt-10 pb-20 md:pt-12 md:pb-24 bg-white">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-8 reveal">Les questions qu'on nous pose.</h2>
+    <div class="space-y-3">
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          Je n'ai pas confiance dans l'IA pour préparer mes séances.
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          Normal, et la plupart des entraîneurs le disent dans les dix premières secondes. La nuance : l'outil ne
+          décide rien à votre place. Il structure une proposition à partir d'une bibliothèque d'exercices validés
+          et d'une doctrine pédagogique écrite noir sur blanc. Vous validez, vous modifiez, vous coupez.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          C'est un assistant, pas un pilote automatique. Et c'est rappelé au pied de chaque séance générée :
+          l'outil ne remplace pas votre œil sur la piste.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          D'où viennent vraiment les exercices ?
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          D'une veille menée pendant des mois sur les comptes d'entraîneurs reconnus internationalement : Henrik
+          Thoms en saut en hauteur, David Storl au poids, Sean Furey au javelot, Lucas Mathonat en sprint, et une
+          trentaine d'autres. Chaque exercice est indexé par discipline, niveau, étape d'apprentissage et qualité
+          physique.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          Aucun exercice n'est inventé de toutes pièces, et chaque atelier de votre séance renvoie vers la vidéo
+          d'origine. Vous pouvez remonter à la source d'un seul tap.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          Combien de temps ça prend vraiment ?
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          Environ trois minutes pour une séquence de trois séances qui s'enchaînent, et cinq minutes pour un plan
+          de saison entier. Ce n'est pas instantané, parce que l'outil ne recrache pas une liste d'exercices : il
+          construit une progression, choisit les vidéos et écrit les consignes.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          Vous lancez la génération et vous allez faire autre chose. Elle vous attend quand vous revenez.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          Je peux modifier la séance, ou je suis bloqué dedans ?
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          Tout est éditable. Vous remplacez un exercice, vous changez la vidéo d'un atelier, vous rallongez
+          l'échauffement, vous régénérez une phase entière avec une consigne écrite de votre main.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          Le principe est le même partout dans l'outil : il propose, vous tranchez. Un objectif d'athlète se
+          refuse, un plan se régénère. La séance générée est un point de départ propre, pas une cage.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          Je n'ai qu'un seul groupe. Ça vaut le coup ?
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          C'est exactement le cas de départ. L'outil a été construit pour un seul groupe, celui du mercredi. Avec
+          un groupe, vous utilisez la génération, le plan de saison, le suivi des athlètes et la page pour les
+          parents, c'est-à-dire la totalité de l'outil.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          La formule individuelle couvre jusqu'à trois groupes, ce qui laisse de la marge si vous en récupérez un
+          autre en cours d'année.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          Je ne suis pas diplômé. C'est fait pour moi ?
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          C'est même la raison pour laquelle l'outil existe. Chaque séance explique ce qu'elle cherche à
+          construire, dans quel ordre et pourquoi. Le plan de saison justifie ses choix en clair : pourquoi cette
+          semaine est allégée, pourquoi cette compétition n'est pas un pic de forme.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          Vous apprenez la périodisation en lisant le plan de votre propre groupe. Cela dit, l'outil ne remplace
+          ni une formation ni une qualification requise par votre fédération.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          L'essai gratuit me prélève automatiquement à la fin ?
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          Non. L'essai ne demande même pas votre carte bancaire à l'inscription. Pendant 14 jours, vous utilisez
+          tout. Ensuite, c'est vous qui décidez d'activer votre abonnement. Aucun prélèvement, aucune mauvaise
+          surprise, et si vous ne faites rien l'accès se ferme tout seul.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          C'est utilisable sur le téléphone au bord de la piste ?
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          Oui, c'est même fait pour ça. Vous préparez votre séance sur ordinateur le dimanche soir, vous l'ouvrez
+          sur votre téléphone le mardi au stade. Lisible en plein soleil, vidéos cliquables au pouce, sections
+          déroulantes, appel en trois boutons assez grands pour être touchés avec des gants.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          Mon groupe est encadré par deux ou trois personnes.
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          C'est la règle plus que l'exception, et l'outil est construit pour ça. Au moment de bâtir le plan de
+          saison, on vous demande combien de séances le groupe fait par semaine, tous entraîneurs confondus, et
+          lesquelles vous assurez. La charge de la semaine et les semaines allégées sont calculées sur le volume
+          total du groupe, pas sur votre seul créneau.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          Vous recevez ensuite le détail de vos propres séances, plus ce que vous devez transmettre à votre
+          collègue pour que la semaine tienne debout. Si vous êtes plusieurs à vouloir l'outil,
+          <a href="/clubs" class="text-mondo hover:underline">la licence club</a> revient moins cher par personne.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          J'ai déjà mes exercices et mes habitudes de travail.
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          Tant mieux, et elles ne partent nulle part. La bibliothèque de 900 exercices vidéo est un point de
+          départ, pas une obligation : vous y ajoutez vos propres vidéos, vous suivez les comptes techniques que
+          vous voulez, et vous remplacez l'illustration d'un atelier par la vôtre en deux clics.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          Ce que vous avez construit au fil des années se capitalise dedans au lieu de rester dans un classeur.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          Ça couvre quels âges et quelles disciplines ?
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          Des Poussins aux Espoirs, soit U10 à U20, avec la possibilité de mélanger deux catégories dans un même
+          groupe, ce qui est la réalité de la plupart des créneaux de jeunes. Côté disciplines : sprint,
+          demi-fond, haies, sauts horizontaux, hauteur, perche, lancers, épreuves combinées et multi-épreuves.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          On joue franc jeu : la perche et le marteau sont les moins profonds de la bibliothèque. Si vous coachez
+          exclusivement l'un des deux, testez d'abord. Le travail le plus abouti porte sur les Benjamins et les
+          Minimes, parce que c'est le groupe testé chaque semaine sur le terrain.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          Mes athlètes sont mineurs. Qu'est-ce qui part à l'IA ?
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          Rien de nominatif. Ni prénom, ni nom, ni date de naissance. Ce qui part, c'est une catégorie d'âge, un
+          nombre d'athlètes, une durée, du matériel. Les présences, les bilans et l'état de forme ne sortent pas
+          de l'application.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-3">
+          Le détail est dans la
+          <a href="https://app.seances-athle.fr/confidentialite" class="text-mondo hover:underline">politique de confidentialité</a>.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          En cas d'accident pendant une séance, qui est responsable ?
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          Exactement les mêmes personnes qu'aujourd'hui. La conduite de la séance, le contrôle du matériel et la
+          surveillance des athlètes relèvent de vous et de la structure qui vous accueille. C'est écrit dans les
+          conditions générales et rappelé au pied de chaque séance générée. L'outil propose une trame, il ne
+          décide rien et ne voit rien du terrain. Vos obligations d'assurance et d'encadrement sont inchangées.
+        </p>
+      </details>
+
+      <details class="bg-sable rounded-xl p-6 reveal">
+        <summary class="flex items-center justify-between gap-4 font-medium text-lg">
+          J'annule comment si ça ne me convient pas ?
+          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <p class="text-gray-700 leading-relaxed mt-4">
+          Depuis votre compte, en un clic. Pas de mail à envoyer, pas de chat à supporter, pas de raisons à
+          donner. Vous gardez l'accès jusqu'à la fin de la période déjà payée, et vos séances s'exportent en PDF
+          avant de partir. C'est votre travail, pas le nôtre.
+        </p>
+      </details>
+
     </div>
-    <div class="grid md:grid-cols-2 gap-4">
-      <div class="bg-white p-8 rounded-2xl border border-gray-200">
-        <div class="text-sm font-medium text-gray-600 mb-2">Mensuel</div>
-        <div class="flex items-baseline gap-1 mb-1"><span class="text-5xl font-medium text-piste-black">9 €</span><span class="text-sm text-gray-500">/ mois</span></div>
-        <div class="text-xs text-gray-500 mb-6">Sans engagement. Vous partez quand vous voulez.</div>
-        <a href="https://app.seances-athle.fr/inscription" class="block text-center border border-piste-black hover:bg-piste-black hover:text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Démarrer mes 14 jours</a>
-        <ul class="space-y-3 text-sm text-gray-700">
-          <li class="flex items-start gap-2"><span class="text-mondo mt-0.5">✓</span> Séances, cycles et plans de saison illimités</li>
-          <li class="flex items-start gap-2"><span class="text-mondo mt-0.5">✓</span> Jusqu'à trois groupes</li>
-          <li class="flex items-start gap-2"><span class="text-mondo mt-0.5">✓</span> Suivi des athlètes, présences, forme, bilans</li>
-          <li class="flex items-start gap-2"><span class="text-mondo mt-0.5">✓</span> Import des résultats officiels athle.fr</li>
-          <li class="flex items-start gap-2"><span class="text-mondo mt-0.5">✓</span> Pages publiques de groupe et liens de présence</li>
-          <li class="flex items-start gap-2"><span class="text-mondo mt-0.5">✓</span> Bibliothèque de 900+ exercices vidéo</li>
-        </ul>
-      </div>
-      <div class="bg-piste-black text-white p-8 rounded-2xl border-2 border-mondo relative">
-        <div class="absolute -top-3 right-6 bg-mondo text-white text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full">2 mois offerts</div>
-        <div class="text-sm font-medium text-mondo-light mb-2">Annuel</div>
-        <div class="flex items-baseline gap-1 mb-1"><span class="text-5xl font-medium">79 €</span><span class="text-sm text-gray-400">/ an</span></div>
-        <div class="text-xs text-gray-500 mb-6">Soit 6,60 € par mois. 29 € d'économie immédiate.</div>
-        <a href="https://app.seances-athle.fr/inscription" class="block text-center bg-mondo hover:bg-mondo-dark text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Démarrer mes 14 jours</a>
-        <ul class="space-y-3 text-sm text-gray-300">
-          <li class="flex items-start gap-2"><span class="text-mondo-light mt-0.5">✓</span> Tout ce que contient le mensuel</li>
-          <li class="flex items-start gap-2"><span class="text-mondo-light mt-0.5">✓</span> Deux mois offerts</li>
-          <li class="flex items-start gap-2"><span class="text-mondo-light mt-0.5">✓</span> Accès prioritaire aux nouveautés</li>
-          <li class="flex items-start gap-2"><span class="text-mondo-light mt-0.5">✓</span> Support par email prioritaire</li>
-          <li class="flex items-start gap-2"><span class="text-mondo-light mt-0.5">✓</span> Annulable à tout moment</li>
-        </ul>
-      </div>
-    </div>
-    <p class="text-center text-sm text-gray-500 mt-7 max-w-2xl mx-auto leading-relaxed">
-      Vous encadrez avec d'autres entraîneurs dans le même club ? Il existe une formule pour toute l'équipe technique,
-      à partir de 293 € par saison, groupes et athlètes illimités. <a href="/clubs" class="text-mondo font-medium hover:underline">Voir l'offre club</a>
-    </p>
   </div>
 </section>
 
 <!-- Témoignage -->
-<section class="py-12 md:py-16 bg-sable">
-  <div class="max-w-3xl mx-auto px-6">
-    <div class="bg-white border border-gray-200 rounded-2xl p-8 md:p-10">
+<section class="py-16 md:py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-6 reveal">
+    <div class="bg-sable border border-black/[0.06] rounded-2xl p-8 md:p-10">
       <div class="flex items-start gap-4 mb-6">
         <div class="w-14 h-14 bg-amber-100 text-amber-900 rounded-full flex items-center justify-center font-medium text-lg flex-shrink-0">JF</div>
         <div>
@@ -750,16 +1201,18 @@ tailwind.config = {
         </div>
       </div>
       <blockquote class="text-lg md:text-xl leading-relaxed text-gray-800 italic font-normal">
-        « J'ai gagné 1h30 par semaine sur la prépa. Mes athlètes n'ont jamais autant progressé sur leur technique de lancer. Et c'est pas un coach qui le dit, c'est leurs marques. »
+        « J'ai gagné 1h30 par semaine sur la prépa. Mes athlètes n'ont jamais autant progressé sur leur technique
+        de lancer. Et c'est pas un coach qui le dit, c'est leurs marques. »
       </blockquote>
     </div>
   </div>
 </section>
 
 <!-- Qui est derrière -->
-<section class="py-12 md:py-16 bg-white">
+<section class="py-20 md:py-24 bg-sable">
   <div class="max-w-3xl mx-auto px-6">
-    <div class="flex items-center gap-5 mb-7 reveal">
+
+    <div class="flex items-center gap-5 mb-8 reveal">
       <div class="w-[104px] h-[104px] flex-shrink-0 rounded-full overflow-hidden bg-piste-black relative">
         <img src="https://media.base44.com/images/public/69f2870e02c50b1b1f3a339f/0d87df56e_regis.png" alt="Régis Moscardini" width="300" height="301" loading="lazy"
              class="w-full h-full object-cover"
@@ -767,221 +1220,109 @@ tailwind.config = {
         <div class="absolute inset-0 items-center justify-center text-mondo-light display text-2xl font-semibold" style="display:none">RM</div>
       </div>
       <div>
-        <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-2">Qui est derrière</div>
-        <h2 class="display text-2xl md:text-3xl font-semibold leading-tight">Une personne, joignable.</h2>
+        <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-1.5">Qui est derrière l'outil</div>
+        <h2 class="text-2xl md:text-3xl font-semibold leading-tight">Une personne, joignable.</h2>
       </div>
     </div>
-    <div class="space-y-4 text-gray-700 leading-relaxed reveal reveal-delay-1">
-      <p>
-        Régis Moscardini. Maîtrise STAPS, Brevet d'État 1er degré, un passé de joueur de volley en Nationale 3.
-        Et surtout, entraîneur bénévole en charge du groupe Benjamins et Minimes du mercredi, seul devant
-        vingt-trois jeunes, dans un club de Haute-Loire.
+
+    <div class="reveal reveal-delay-1">
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Séances Athlé est construit par <strong>Régis Moscardini</strong>. Pas une équipe commerciale, pas un
+        formulaire de support : quand vous écrivez, c'est lui qui répond, et quand vous demandez une évolution,
+        c'est lui qui la code.
       </p>
-      <p>
-        L'outil est né de ce créneau-là. Toutes les séances que vous voyez sur cette page ont d'abord été testées
-        avec ce groupe, le mercredi à seize heures, avant d'arriver dans l'application.
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Maîtrise STAPS, brevet d'État d'éducateur sportif 1<sup>er</sup> degré, et un passé de joueur de
+        volley-ball en Nationale 3. Il connaît la préparation d'un athlète et la vie d'un club de l'intérieur.
       </p>
-      <p>
-        Quand vous écrivez, c'est lui qui répond. Quand vous demandez une évolution, c'est lui qui la code.
-        <a href="mailto:regis@moscardini.fr" class="text-mondo font-medium hover:underline">regis@moscardini.fr</a>
+      <p class="text-gray-700 leading-relaxed mb-7">
+        Aujourd'hui, il est entraîneur bénévole et prend en charge le groupe des Benjamins et Minimes, le
+        mercredi, seul devant vingt-trois jeunes, dans son club du Puy-en-Velay. Toutes les séances que vous
+        voyez sur cette page ont d'abord été testées avec ce groupe avant d'arriver dans l'application.
       </p>
+      <div class="grid grid-cols-3 gap-4 border-t border-gray-300 pt-6">
+        <div>
+          <div class="display text-2xl font-semibold text-mondo">STAPS</div>
+          <div class="text-sm text-gray-600 mt-0.5">Maîtrise</div>
+        </div>
+        <div>
+          <div class="display text-2xl font-semibold text-mondo">BEES 1</div>
+          <div class="text-sm text-gray-600 mt-0.5">Brevet d'État</div>
+        </div>
+        <div>
+          <div class="display text-2xl font-semibold text-mondo">N3</div>
+          <div class="text-sm text-gray-600 mt-0.5">Volley-ball</div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
 
-<!-- FAQ -->
-<section id="faq" class="bg-sable py-12 md:py-16">
-  <div class="max-w-3xl mx-auto px-6">
-    <div class="text-center mb-8">
-      <div class="text-xs uppercase tracking-widest text-mondo font-medium mb-3">Questions</div>
-      <h2 class="display text-3xl md:text-4xl font-semibold leading-tight">On répond à vos vraies questions.</h2>
-    </div>
-    <div class="space-y-3">
-
-      <details class="bg-white p-6 rounded-xl border border-gray-200">
-        <summary class="font-medium text-base flex items-center justify-between gap-4">
-          Je n'ai pas confiance dans l'IA pour préparer mes séances. Ce n'est pas ma méthode.
-          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </summary>
-        <p class="text-[15px] text-gray-700 mt-4 leading-relaxed">
-          Normal, et la plupart des entraîneurs le disent dans les dix premières secondes. La nuance : l'outil ne
-          décide rien à votre place. Il structure une proposition à partir d'une bibliothèque d'exercices validés et
-          d'une doctrine pédagogique écrite noir sur blanc. Vous validez, vous modifiez, vous coupez. C'est un
-          assistant, pas un pilote automatique.
-        </p>
-      </details>
-
-      <details class="bg-white p-6 rounded-xl border border-gray-200">
-        <summary class="font-medium text-base flex items-center justify-between gap-4">
-          D'où viennent vraiment les exercices ?
-          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </summary>
-        <p class="text-[15px] text-gray-700 mt-4 leading-relaxed">
-          D'une veille menée pendant des mois sur les comptes d'entraîneurs reconnus internationalement : Henrik
-          Thoms en saut en hauteur, David Storl au poids, Sean Furey au javelot, Lucas Mathonat en sprint, et une
-          trentaine d'autres. Chaque exercice est indexé par discipline, niveau, étape d'apprentissage et qualité
-          physique. Aucun exercice inventé de toutes pièces.
-        </p>
-      </details>
-
-      <details class="bg-white p-6 rounded-xl border border-gray-200">
-        <summary class="font-medium text-base flex items-center justify-between gap-4">
-          Combien de temps ça prend vraiment ?
-          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </summary>
-        <p class="text-[15px] text-gray-700 mt-4 leading-relaxed">
-          Environ trois minutes pour une séquence de trois séances qui s'enchaînent, et cinq minutes pour un plan
-          de saison entier. Ce n'est pas instantané, parce que l'outil ne recrache pas une liste d'exercices : il
-          construit une progression, choisit les vidéos et écrit les consignes. Vous lancez la génération et vous allez
-          faire autre chose.
-        </p>
-      </details>
-
-      <details class="bg-white p-6 rounded-xl border border-gray-200">
-        <summary class="font-medium text-base flex items-center justify-between gap-4">
-          Je peux modifier la séance proposée ou je suis bloqué dedans ?
-          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </summary>
-        <p class="text-[15px] text-gray-700 mt-4 leading-relaxed">
-          Tout est éditable. Vous remplacez un exercice, vous changez la vidéo d'un atelier, vous rallongez
-          l'échauffement, vous régénérez une phase avec une consigne. La séance générée est un point de départ
-          propre, pas une cage.
-        </p>
-      </details>
-
-      <details class="bg-white p-6 rounded-xl border border-gray-200">
-        <summary class="font-medium text-base flex items-center justify-between gap-4">
-          Je n'ai qu'un seul groupe. Ça vaut le coup ?
-          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </summary>
-        <p class="text-[15px] text-gray-700 mt-4 leading-relaxed">
-          C'est exactement le cas de départ. L'outil a été construit pour un seul groupe, celui du mercredi. Avec
-          un groupe, vous utilisez la génération, le plan de saison, le suivi des athlètes et la page pour les
-          parents. La formule individuelle couvre jusqu'à trois groupes, ce qui laisse de la marge si vous en
-          récupérez un autre en cours d'année.
-        </p>
-      </details>
-
-      <details class="bg-white p-6 rounded-xl border border-gray-200">
-        <summary class="font-medium text-base flex items-center justify-between gap-4">
-          L'essai gratuit me prélève automatiquement à la fin ?
-          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </summary>
-        <p class="text-[15px] text-gray-700 mt-4 leading-relaxed">
-          Non. L'essai ne demande même pas votre carte bancaire à l'inscription. Pendant 14 jours, vous utilisez tout.
-          Ensuite, c'est vous qui décidez d'activer votre abonnement. Aucun prélèvement, aucune mauvaise surprise.
-        </p>
-      </details>
-
-      <details class="bg-white p-6 rounded-xl border border-gray-200">
-        <summary class="font-medium text-base flex items-center justify-between gap-4">
-          C'est utilisable sur le téléphone au bord de la piste ?
-          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </summary>
-        <p class="text-[15px] text-gray-700 mt-4 leading-relaxed">
-          Oui, c'est même fait pour ça. Vous préparez votre séance sur ordinateur le dimanche soir, vous l'ouvrez sur votre
-          téléphone le mardi au stade. Lisible en plein soleil, vidéos cliquables au pouce, sections déroulantes,
-          appel en trois boutons.
-        </p>
-      </details>
-
-      <details class="bg-white p-6 rounded-xl border border-gray-200">
-        <summary class="font-medium text-base flex items-center justify-between gap-4">
-          Ça couvre quels âges et quelles disciplines ?
-          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </summary>
-        <p class="text-[15px] text-gray-700 mt-4 leading-relaxed">
-          Des Poussins aux Espoirs, soit U10 à U20, avec la possibilité de mélanger deux catégories dans un même
-          groupe. Côté disciplines : sprint, demi-fond, haies, sauts horizontaux, hauteur, perche, lancers,
-          épreuves combinées et multi-épreuves. On joue franc jeu : la perche et le marteau sont les moins
-          profonds de la bibliothèque. Si vous coachez exclusivement l'un des deux, testez d'abord.
-        </p>
-      </details>
-
-      <details class="bg-white p-6 rounded-xl border border-gray-200">
-        <summary class="font-medium text-base flex items-center justify-between gap-4">
-          Mes athlètes sont mineurs. Qu'est-ce qui part à l'IA ?
-          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </summary>
-        <p class="text-[15px] text-gray-700 mt-4 leading-relaxed">
-          Rien de nominatif. Ni prénom, ni nom, ni date de naissance. Ce qui part, c'est une catégorie d'âge, un
-          nombre d'athlètes, une durée, du matériel. Les présences, les bilans et l'état de forme ne sortent pas
-          de l'application. Le détail est dans la <a href="/confidentialite" class="text-mondo hover:underline">politique de confidentialité</a>.
-        </p>
-      </details>
-
-      <details class="bg-white p-6 rounded-xl border border-gray-200">
-        <summary class="font-medium text-base flex items-center justify-between gap-4">
-          J'annule comment si ça ne me convient pas ?
-          <svg class="chev w-5 h-5 flex-shrink-0 text-mondo transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </summary>
-        <p class="text-[15px] text-gray-700 mt-4 leading-relaxed">
-          Depuis votre compte, en un clic. Pas de mail à envoyer, pas de chat à supporter, pas de raisons à donner.
-          Vous gardez l'accès jusqu'à la fin de la période déjà payée, et vos séances s'exportent en PDF avant de
-          partir.
-        </p>
-      </details>
-
-    </div>
   </div>
 </section>
 
 <!-- CTA final -->
-<section class="bg-piste-black text-white py-14 md:py-20">
-  <div class="max-w-3xl mx-auto px-6 text-center">
-    <h2 class="display text-3xl md:text-5xl font-semibold leading-tight mb-6">
-      Préparez votre prochaine séance<br><span class="text-mondo">en trois minutes.</span>
-    </h2>
-    <p class="text-lg text-gray-400 mb-8 max-w-xl mx-auto">
-      Essayez Séances Athlé pendant 14 jours, sans carte bancaire et sans engagement. Commencez par votre groupe le plus compliqué, c'est là que vous verrez si ça tient.
+<section id="commencer" class="mesh-bg text-white py-20 md:py-28 relative overflow-hidden">
+  <div class="absolute bottom-0 left-0 right-0 h-1 track-stripe opacity-40"></div>
+  <div class="max-w-3xl mx-auto px-6 text-center reveal">
+    <h2 class="text-3xl md:text-5xl font-semibold mb-6 leading-tight">Préparez votre prochaine séance en trois minutes.</h2>
+    <p class="text-lg text-gray-300 leading-relaxed mb-10 max-w-xl mx-auto">
+      Quatorze jours, sans carte bancaire et sans engagement. Commencez par votre groupe le plus compliqué,
+      c'est là que vous verrez si ça tient.
     </p>
-    <a href="https://app.seances-athle.fr/inscription" class="btn-mondo">
-      Démarrer mes 14 jours
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-    </a>
-    <div class="text-sm text-gray-500 mt-6">Sans engagement · Sans carte bancaire · Annulable en 1 clic</div>
+    <div class="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-8 text-left">
+      <a href="https://app.seances-athle.fr/inscription" class="bg-mondo hover:bg-mondo-dark text-white rounded-xl p-5 transition block">
+        <div class="flex items-center gap-2 mb-1.5">
+          <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+          <span class="font-semibold">Démarrer mes 14 jours</span>
+        </div>
+        <p class="text-sm text-white/80 leading-relaxed">Sans carte bancaire. L'accès se ferme tout seul si vous ne faites rien.</p>
+      </a>
+      <a href="/fonctionnalites" class="border border-white/20 hover:border-white/40 hover:bg-white/5 text-white rounded-xl p-5 transition block backdrop-blur-sm">
+        <div class="flex items-center gap-2 mb-1.5">
+          <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <span class="font-semibold">Voir les fonctionnalités</span>
+        </div>
+        <p class="text-sm text-gray-400 leading-relaxed">Les 166 fonctions de l'outil, listées une par une.</p>
+      </a>
+      <a href="mailto:regis@moscardini.fr?subject=Séances%20Athlé%20%E2%80%94%20une%20question&body=Bonjour%20Régis%2C%0A%0AMon%20club%20%3A%20%0AMon%20groupe%20%3A%20%0AMa%20question%20%3A%20%0A%0A" class="border border-white/20 hover:border-white/40 hover:bg-white/5 text-white rounded-xl p-5 transition block backdrop-blur-sm">
+        <div class="flex items-center gap-2 mb-1.5">
+          <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span class="font-semibold">Écrire un email</span>
+        </div>
+        <p class="text-sm text-gray-400 leading-relaxed">regis@moscardini.fr, réponse sous 24 h. C'est Régis qui répond.</p>
+      </a>
+    </div>
+    <div class="mb-8">
+      <a href="/clubs" class="text-sm text-gray-400 hover:text-white transition underline underline-offset-4">Ou découvrir l'offre pour les clubs</a>
+    </div>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="bg-piste-graphite text-gray-400 py-12">
+<footer class="bg-piste-graphite text-gray-400 py-14">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row justify-between gap-8">
+    <div class="flex flex-wrap gap-8 justify-between">
       <div>
         <div class="flex items-center gap-2 mb-3">
-          <div class="w-7 h-7 bg-mondo rounded-md flex items-center justify-center">
+          <div class="w-7 h-7 bg-mondo rounded-lg flex items-center justify-center">
             <div class="w-3.5 h-3.5 border-2 border-white rounded-full"></div>
           </div>
-          <span class="font-medium text-white text-sm">Séances Athlé</span>
+          <span class="font-medium text-white">Séances Athlé</span>
         </div>
-        <p class="text-xs leading-relaxed max-w-xs">L'outil pédagogique des entraîneurs d'athlétisme, de l'école d'athlé aux Espoirs.</p>
+        <p class="text-sm max-w-xs leading-relaxed">L'outil pédagogique des entraîneurs d'athlétisme, de l'école d'athlé aux Espoirs.</p>
       </div>
-      <div class="flex flex-wrap gap-x-12 gap-y-6 text-sm">
-        <div>
-          <div class="text-white font-medium mb-3 text-xs uppercase tracking-wider">Produit</div>
-          <ul class="space-y-2 text-xs">
-            <li><a href="#ce-que-ca-fait" class="hover:text-white">Ce que ça fait</a></li>
-            <li><a href="#ecrans" class="hover:text-white">Les écrans</a></li>
-            <li><a href="#tarifs" class="hover:text-white">Tarifs</a></li>
-            <li><a href="/fonctionnalites" class="hover:text-white">Fonctionnalités</a></li>
-            <li><a href="/clubs" class="hover:text-white">Pour un club</a></li>
-            <li><a href="https://app.seances-athle.fr" class="hover:text-white">Se connecter</a></li>
-          </ul>
+      <div class="flex gap-12 text-sm">
+        <div class="space-y-2">
+          <div class="text-white font-medium mb-3">Produit</div>
+          <div><a href="/" class="hover:text-white transition">Pour un entraîneur</a></div>
+          <div><a href="/fonctionnalites" class="hover:text-white transition">Fonctionnalités</a></div>
+          <div><a href="/clubs" class="hover:text-white transition">Pour un club</a></div>
+          <div><a href="https://app.seances-athle.fr" class="hover:text-white transition">Se connecter</a></div>
         </div>
-        <div>
-          <div class="text-white font-medium mb-3 text-xs uppercase tracking-wider">Support</div>
-          <ul class="space-y-2 text-xs">
-            <li><a href="#faq" class="hover:text-white">Questions</a></li>
-            <li><a href="mailto:regis@moscardini.fr" class="hover:text-white">Nous écrire</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="text-white font-medium mb-3 text-xs uppercase tracking-wider">Légal</div>
-          <ul class="space-y-2 text-xs">
-            <li><a href="/cgu" class="hover:text-white">CGU</a></li>
-            <li><a href="/confidentialite" class="hover:text-white">Confidentialité</a></li>
-            <li><a href="/mentions-legales" class="hover:text-white">Mentions légales</a></li>
-          </ul>
+        <div class="space-y-2">
+          <div class="text-white font-medium mb-3">En savoir plus</div>
+          <div><a href="https://app.seances-athle.fr/confidentialite" class="hover:text-white transition">Données et confidentialité</a></div>
+          <div><a href="https://app.seances-athle.fr/credits" class="hover:text-white transition">Crédits et mentions</a></div>
+          <div><a href="mailto:regis@moscardini.fr" class="hover:text-white transition">Nous écrire</a></div>
         </div>
       </div>
     </div>
@@ -1003,7 +1344,6 @@ function lbClose(){
   document.body.style.overflow = '';
 }
 document.addEventListener('keydown', e => { if(e.key==='Escape') lbClose(); });
-
 (function() {
   if (!('IntersectionObserver' in window)) {
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
@@ -1011,17 +1351,48 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') lbClose(); });
   }
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
+      if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 })();
+
+/* ---------------------------------------------------------------- Compte d'essai
+ * Le champ email de la page n'est qu'un amorceur : il porte l'adresse jusqu'au
+ * formulaire d'inscription de l'app, qui est sur un autre domaine.
+ *
+ * L'adresse voyage dans le fragment (#) et non dans la query string : un
+ * fragment n'est jamais envoye au serveur, n'apparait ni dans les journaux ni
+ * dans l'en-tete Referer. La page d'arrivee le consomme puis nettoie l'URL.
+ */
+(function() {
+  var form = document.getElementById('fEssai');
+  if (!form) return;
+
+  var INSCRIPTION = 'https://app.seances-athle.fr/inscription';
+  var email = document.getElementById('iEmail');
+  var btn   = document.getElementById('bEssai');
+  var msg   = document.getElementById('mEssai');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var val = (email.value || '').trim();
+    if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(val)) {
+      msg.textContent = 'Cette adresse ne semble pas valide.';
+      msg.className = 'text-sm mt-3 text-mondo-light';
+      email.focus();
+      return;
+    }
+    msg.classList.add('hidden');
+    btn.disabled = true;
+    btn.textContent = 'Un instant…';
+    window.location.href = INSCRIPTION
+      + '#email=' + encodeURIComponent(val)
+      + '&source=entraineur';
+  });
+})();
 </script>
 
-<!-- Lightbox -->
 <div id="lb-overlay" onclick="lbClose()">
   <button id="lb-close" onclick="lbClose()">&#215;</button>
   <img id="lb-img" src="" onclick="event.stopPropagation()">
