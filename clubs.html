@@ -85,7 +85,8 @@ tailwind.config = {
       <a href="#ecrans" class="text-sm text-gray-600 hover:text-piste-black transition">Exemples</a>
       <a href="#tarif" class="text-sm text-gray-600 hover:text-piste-black transition">Tarif</a>
       <a href="#questions" class="text-sm text-gray-600 hover:text-piste-black transition">FAQ</a>
-      <a href="https://app.seances-athle.fr/reserver?source=clubs" class="bg-mondo hover:bg-mondo-dark text-white px-4 py-2 rounded-lg font-medium text-sm transition">Réserver une démo <span class="text-white/70 font-normal">(gratuit)</span></a>
+      <a href="https://app.seances-athle.fr/reserver?source=clubs" class="hidden lg:inline text-sm text-gray-600 hover:text-piste-black transition">Réserver une démo</a>
+      <a href="https://app.seances-athle.fr/inscription-club?source=clubs" class="bg-mondo hover:bg-mondo-dark text-white px-4 py-2 rounded-lg font-medium text-sm transition whitespace-nowrap">Créer un compte gratuit</a>
     </div>
   </div>
 </nav>
@@ -121,19 +122,23 @@ tailwind.config = {
         </li>
       </ul>
       <p class="text-gray-400 mb-8">Que vos entraîneurs soient diplômés ou non.</p>
-      <div class="flex flex-col sm:flex-row gap-3 mb-10">
-        <a href="https://app.seances-athle.fr/reserver?source=clubs" class="bg-mondo hover:bg-mondo-dark text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2">
-          Réserver une démo <span class="text-white/70 font-normal">(gratuit)</span>
+      <div class="flex flex-col sm:flex-row gap-3 mb-4">
+        <a href="https://app.seances-athle.fr/inscription-club?source=clubs" class="bg-mondo hover:bg-mondo-dark text-white px-8 py-4 rounded-lg font-semibold text-base transition flex items-center justify-center gap-2">
+          Créer un compte gratuit
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
-        <a href="/dossier-clubs.pdf" class="border border-white/20 hover:border-white/40 hover:bg-white/5 text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2 backdrop-blur-sm">
+        <a href="https://app.seances-athle.fr/reserver?source=clubs" class="border border-white/30 hover:border-white/60 hover:bg-white/5 text-white px-8 py-4 rounded-lg font-semibold text-base transition flex items-center justify-center gap-2 backdrop-blur-sm">
+          Réserver une démo <span class="text-white/70 font-normal">(gratuit)</span>
+        </a>
+      </div>
+      <p class="text-sm text-gray-400 mb-8">
+        14 jours, sans carte bancaire. L'accès se ferme tout seul, il n'y a rien à résilier.
+      </p>
+      <p class="text-sm text-gray-400 mb-10">
+        <a href="/dossier-clubs.pdf" class="text-mondo-light hover:underline font-medium inline-flex items-center gap-1.5">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
           La fiche de présentation pour votre bureau
         </a>
-      </div>
-      <p class="text-sm text-gray-400 -mt-5 mb-10">
-        Pas encore prêt à en parler ?
-        <a href="#essai-gratuit" class="text-mondo-light hover:underline font-medium">Essayez gratuitement pendant 14 jours</a>, sans carte bancaire.
       </p>
       <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-gray-400 border-t border-white/10 pt-6">
         <span><strong class="text-white">900+</strong> exercices vidéo indexés</span>
