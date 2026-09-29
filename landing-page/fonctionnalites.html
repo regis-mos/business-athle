@@ -71,8 +71,14 @@ tailwind.config = { theme: { extend: {
     <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
       La liste complète, sans tri ni mise en avant. Il n'y a pas d'option payante en plus, ni de fonction
       réservée à une formule supérieure : que vous soyez un entraîneur seul ou un club, vous avez accès
-      à tout. Seul le nombre de groupes change d'une formule à l'autre.
+      à tout. Seul le nombre d'encadrants équipés change d'une formule à l'autre.
     </p>
+    <div class="mt-8">
+      <a href="/" class="inline-flex items-center gap-2 rounded-lg border border-black/15 bg-white px-5 py-2.5 text-sm font-medium text-piste-black hover:border-mondo hover:text-mondo transition">
+        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15l-5-5 5-5"/></svg>
+        Retour à la présentation
+      </a>
+    </div>
   </div>
 </section>
 
@@ -931,6 +937,16 @@ tailwind.config = { theme: { extend: {
     </p>
   </section>
 </main>
+
+<section class="border-t border-black/[0.06] bg-sable/40">
+  <div class="max-w-4xl mx-auto px-6 py-12 text-center">
+    <p class="text-gray-600 mb-5">Vous avez fait le tour de la liste.</p>
+    <a href="/" class="inline-flex items-center gap-2 rounded-lg bg-piste-black px-6 py-3 text-sm font-medium text-white hover:bg-mondo transition">
+      <svg class="w-4 h-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15l-5-5 5-5"/></svg>
+      Retour à la présentation
+    </a>
+  </div>
+</section>
 
 <footer class="bg-piste-graphite text-gray-400 py-12">
   <div class="max-w-6xl mx-auto px-6 flex flex-wrap gap-8 justify-between">
