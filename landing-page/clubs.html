@@ -1400,5 +1400,244 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') lbClose(); });
   <button id="lb-close" onclick="lbClose()">&#215;</button>
   <img id="lb-img" src="" onclick="event.stopPropagation()">
 </div>
+<!-- POPUP-SORTIE -->
+<!-- ============================================================
+     Pop-up de sortie : le cadeau, pas la supplique.
+     Elle ne s'ouvre qu'une fois par personne et par semaine, jamais
+     sur mobile (l'intention de sortie n'y existe pas), jamais avant
+     douze secondes de lecture, et jamais si la personne a deja donne
+     son adresse. Mieux vaut rater une capture que gacher une visite.
+     ============================================================ -->
+<div id="sortie" aria-hidden="true">
+  <div id="sortie-fond"></div>
+  <div id="sortie-boite" role="dialog" aria-modal="true" aria-labelledby="sortie-titre">
+    <button id="sortie-x" aria-label="Fermer">&times;</button>
+
+    <div id="sortie-visuel" aria-hidden="true">
+      <div class="doc">
+        <div class="doc-bande"></div>
+        <div class="doc-corps">
+          <div class="l l-kick"></div>
+          <div class="l l-t1"></div>
+          <div class="l l-t2"></div>
+          <div class="l l-t3"></div>
+          <div class="doc-sep"></div>
+          <div class="l l-p"></div><div class="l l-p2"></div><div class="l l-p3"></div>
+          <div class="doc-carte"><span>1</span><i></i></div>
+          <div class="doc-carte"><span>2</span><i></i></div>
+          <div class="doc-carte"><span>3</span><i></i></div>
+        </div>
+      </div>
+      <div class="badge">11 pages<br><b>PDF</b></div>
+    </div>
+
+    <div id="sortie-texte">
+      <div class="kick">Cadeau, avant de partir</div>
+      <h2 id="sortie-titre">20 échauffements d'athlétisme prêts à mener.</h2>
+      <p class="sub">
+        Pour vos groupes de jeunes, de l'école d'athlé aux minimes. Chacun tient en quinze
+        à dix-huit minutes, suit les trois temps, et indique le matériel nécessaire. Les
+        quatre premiers se mènent les mains dans les poches.
+      </p>
+
+      <form id="sortie-form" novalidate>
+        <div class="champ">
+          <input id="sortie-email" type="email" required autocomplete="email"
+                 placeholder="Votre adresse email" aria-label="Votre adresse email">
+          <button id="sortie-go" type="submit">Recevoir le PDF</button>
+        </div>
+        <p id="sortie-msg" role="status"></p>
+        <p class="mention">
+          Le PDF s'ouvre tout de suite et part aussi par email. Pas de compte à créer,
+          désinscription en un clic.
+        </p>
+      </form>
+
+      <div id="sortie-ok">
+        <div class="ok-pastille">✓</div>
+        <h3>C'est parti.</h3>
+        <p>Le document s'ouvre dans un nouvel onglet, et une copie arrive dans votre boîte.</p>
+        <a id="sortie-lien" href="/20-echauffements-athletisme.pdf" target="_blank" rel="noopener">Ouvrir le PDF</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+#sortie { position: fixed; inset: 0; z-index: 9999; display: none; align-items: center; justify-content: center; padding: 20px; }
+#sortie.on { display: flex; }
+#sortie-fond { position: absolute; inset: 0; background: rgba(20,20,20,.72); backdrop-filter: blur(3px); animation: sortie-fade .25s ease; }
+#sortie-boite {
+  position: relative; background: #fff; border-radius: 20px; width: 100%; max-width: 860px;
+  display: flex; overflow: hidden; box-shadow: 0 40px 90px -20px rgba(0,0,0,.55);
+  animation: sortie-up .32s cubic-bezier(.2,.8,.2,1);
+}
+@keyframes sortie-fade { from { opacity: 0 } }
+@keyframes sortie-up { from { opacity: 0; transform: translateY(18px) scale(.98) } }
+
+#sortie-x {
+  position: absolute; top: 12px; right: 14px; z-index: 2; background: rgba(255,255,255,.9);
+  border: 1px solid rgba(0,0,0,.08); color: #57534E; width: 34px; height: 34px; border-radius: 50%;
+  font-size: 22px; line-height: 1; cursor: pointer; transition: .15s;
+}
+#sortie-x:hover { background: #fff; color: #141414; }
+
+/* colonne visuelle */
+#sortie-visuel {
+  position: relative; flex: 0 0 38%; background: #141414; padding: 34px 26px;
+  display: flex; align-items: center; justify-content: center;
+}
+#sortie-visuel::before { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 80% at 70% 90%, rgba(221,63,26,.42), transparent 70%); }
+#sortie-visuel .doc {
+  position: relative; width: 168px; background: #fff; border-radius: 6px; overflow: hidden;
+  box-shadow: 0 26px 50px -12px rgba(0,0,0,.6); transform: rotate(-3deg);
+}
+.doc-bande { height: 7px; background: #DD3F1A; }
+.doc-corps { padding: 14px 13px 18px; }
+.l { border-radius: 3px; background: #E7E5E4; margin-bottom: 6px; }
+.l-kick { height: 6px; width: 46px; background: rgba(221,63,26,.35); margin-bottom: 10px; }
+.l-t1 { height: 11px; width: 92%; background: #292524; }
+.l-t2 { height: 11px; width: 78%; background: #292524; }
+.l-t3 { height: 11px; width: 54%; background: #DD3F1A; margin-bottom: 12px; }
+.doc-sep { height: 1px; background: #E7E5E4; margin: 12px 0; }
+.l-p { height: 5px; width: 100%; } .l-p2 { height: 5px; width: 92%; } .l-p3 { height: 5px; width: 70%; margin-bottom: 12px; }
+.doc-carte { display: flex; align-items: center; gap: 7px; border: 1px solid #EDE9E4; border-radius: 4px; padding: 6px 7px; margin-bottom: 6px; }
+.doc-carte span { width: 15px; height: 15px; border-radius: 3px; background: #DD3F1A; color: #fff; font: 700 9px/15px system-ui, sans-serif; text-align: center; flex: 0 0 auto; }
+.doc-carte i { display: block; height: 5px; background: #E7E5E4; border-radius: 3px; flex: 1; }
+#sortie-visuel .badge {
+  position: absolute; right: 16px; bottom: 22px; background: #DD3F1A; color: #fff;
+  border-radius: 50%; width: 74px; height: 74px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; font-size: 11px; line-height: 1.35; text-align: center;
+  transform: rotate(8deg); box-shadow: 0 10px 24px rgba(221,63,26,.45);
+}
+#sortie-visuel .badge b { font-size: 14px; font-weight: 700; }
+
+/* colonne texte */
+#sortie-texte { flex: 1; padding: 40px 38px 34px; font-family: Inter, -apple-system, "Helvetica Neue", Arial, sans-serif; }
+#sortie-texte .kick { font-size: 11px; letter-spacing: .13em; text-transform: uppercase; color: #DD3F1A; font-weight: 700; margin-bottom: 12px; }
+#sortie-texte h2 { font-size: 27px; line-height: 1.16; font-weight: 700; color: #141414; margin: 0 0 12px; letter-spacing: -.02em; }
+#sortie-texte .sub { font-size: 15px; line-height: 1.6; color: #57534E; margin: 0 0 22px; }
+.champ { display: flex; gap: 8px; border: 1.5px solid #E0D8CC; border-radius: 12px; padding: 5px; transition: border-color .15s; }
+.champ:focus-within { border-color: #DD3F1A; }
+#sortie-email { flex: 1; min-width: 0; border: none; outline: none; padding: 11px 13px; font: inherit; font-size: 15px; color: #141414; background: transparent; }
+#sortie-go { background: #DD3F1A; color: #fff; border: none; border-radius: 9px; padding: 12px 20px; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; white-space: nowrap; transition: .15s; }
+#sortie-go:hover { background: #C4370F; }
+#sortie-go:disabled { opacity: .6; cursor: not-allowed; }
+#sortie-msg { font-size: 13.5px; margin: 10px 0 0; color: #C4370F; display: none; }
+#sortie-msg.on { display: block; }
+#sortie-texte .mention { font-size: 12.5px; color: #A79C8D; line-height: 1.55; margin: 14px 0 0; }
+
+#sortie-ok { display: none; text-align: center; padding: 6px 0 4px; }
+#sortie.fini #sortie-form { display: none; }
+#sortie.fini #sortie-ok { display: block; }
+.ok-pastille { width: 48px; height: 48px; border-radius: 50%; background: #E8F5EC; color: #1F7A46; font-size: 24px; line-height: 48px; margin: 0 auto 14px; }
+#sortie-ok h3 { font-size: 20px; font-weight: 700; margin: 0 0 6px; color: #141414; }
+#sortie-ok p { font-size: 14.5px; color: #57534E; margin: 0 0 18px; line-height: 1.55; }
+#sortie-lien { display: inline-block; background: #141414; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 26px; border-radius: 10px; }
+
+@media (max-width: 760px) {
+  #sortie-visuel { display: none; }
+  #sortie-texte { padding: 34px 24px 28px; }
+  #sortie-texte h2 { font-size: 23px; }
+  .champ { flex-direction: column; }
+  #sortie-go { width: 100%; }
+}
+</style>
+
+<script>
+(function () {
+  var CLE = 'sa_popup_sortie';
+  var CLE_FAIT = 'sa_popup_donne';
+  var DELAI_MIN = 12000;          // on laisse la page se lire avant de proposer quoi que ce soit
+  var REPOS_JOURS = 7;
+  var FONCTION = 'https://app.seances-athle.fr/functions/leadMagnet';
+
+  var el = document.getElementById('sortie');
+  if (!el) return;
+
+  function lu(cle) { try { return localStorage.getItem(cle); } catch (e) { return null; } }
+  function ecris(cle, val) { try { localStorage.setItem(cle, val); } catch (e) {} }
+
+  // Deja donne son adresse : on ne la redemande jamais.
+  if (lu(CLE_FAIT)) return;
+  var vu = parseInt(lu(CLE) || '0', 10);
+  if (vu && (Date.now() - vu) < REPOS_JOURS * 864e5) return;
+
+  // Pas de pointeur fin : pas de sortie de fenetre a detecter.
+  var fin = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+  if (!fin || window.innerWidth < 780) return;
+
+  var pret = false, ouvert = false;
+  setTimeout(function () { pret = true; }, DELAI_MIN);
+
+  function ouvrir() {
+    if (ouvert || !pret) return;
+    ouvert = true;
+    ecris(CLE, String(Date.now()));
+    el.classList.add('on');
+    el.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function () { var c = document.getElementById('sortie-email'); if (c) c.focus(); }, 380);
+    document.removeEventListener('mouseout', guette);
+  }
+
+  function fermer() {
+    el.classList.remove('on');
+    el.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function guette(e) {
+    // La souris sort par le haut : elle vise la barre d'adresse ou un autre onglet.
+    if (e.clientY <= 4 && !e.relatedTarget && !e.toElement) ouvrir();
+  }
+
+  document.addEventListener('mouseout', guette);
+  document.getElementById('sortie-x').addEventListener('click', fermer);
+  document.getElementById('sortie-fond').addEventListener('click', fermer);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && ouvert) fermer(); });
+
+  var form = document.getElementById('sortie-form');
+  var champ = document.getElementById('sortie-email');
+  var bouton = document.getElementById('sortie-go');
+  var msg = document.getElementById('sortie-msg');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var val = (champ.value || '').trim();
+    if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(val)) {
+      msg.textContent = 'Cette adresse ne semble pas valide.';
+      msg.classList.add('on');
+      champ.focus();
+      return;
+    }
+    msg.classList.remove('on');
+    bouton.disabled = true;
+    bouton.textContent = 'Un instant…';
+
+    var page = (location.pathname.replace(/\//g, '') || 'accueil').slice(0, 30);
+
+    fetch(FONCTION, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: val, source: 'popup-' + page })
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (d && d.lien) document.getElementById('sortie-lien').href = d.lien;
+      ecris(CLE_FAIT, '1');
+      el.classList.add('fini');
+      // On ouvre le PDF tout de suite : la promesse est tenue sans attendre l'email.
+      try { window.open(document.getElementById('sortie-lien').href, '_blank', 'noopener'); } catch (err) {}
+    })
+    .catch(function () {
+      // Le serveur n'a pas repondu : on donne quand meme le document.
+      ecris(CLE_FAIT, '1');
+      el.classList.add('fini');
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
