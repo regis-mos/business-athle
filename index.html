@@ -181,6 +181,75 @@ tailwind.config = {
   </div>
 </section>
 
+<!-- Vidéo de présentation -->
+<section class="py-20 md:py-24 bg-white border-b border-black/[0.05]">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="max-w-2xl mb-10 reveal">
+      <div class="text-mondo font-semibold text-sm uppercase tracking-wider mb-3">En une minute</div>
+      <h2 class="display text-3xl md:text-4xl font-semibold mb-4">Voyez ce que l'outil fait, avant de créer un compte.</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">Neuf fonctions, des sorties réelles, aucune capture retouchée. Rien ne se télécharge tant que vous n'avez pas cliqué.</p>
+    </div>
+
+    <div id="videoPresentation" class="reveal relative rounded-2xl overflow-hidden bg-piste-black shadow-[0_24px_60px_-28px_rgba(0,0,0,.55)]">
+      <div class="relative w-full" style="aspect-ratio:16/9">
+        <!-- Affiche entièrement dessinée en CSS : aucun fichier n'est chargé avant le clic. -->
+        <button type="button" id="videoPlay" aria-label="Lancer la vidéo de présentation"
+                class="absolute inset-0 w-full h-full text-left group">
+          <span aria-hidden class="absolute inset-0" style="background:
+                radial-gradient(120% 90% at 80% 10%, rgba(221,63,26,.34), transparent 62%),
+                radial-gradient(100% 80% at 8% 100%, rgba(221,63,26,.18), transparent 58%), #141414"></span>
+          <span aria-hidden class="absolute inset-x-0 bottom-0 h-px"
+                style="background:linear-gradient(90deg,transparent,#DD3F1A,transparent)"></span>
+
+          <span class="relative h-full flex flex-col justify-between p-6 sm:p-10">
+            <span class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-mondo flex items-center justify-center flex-shrink-0">
+                <span class="w-3.5 h-3.5 border-2 border-white rounded-full block"></span>
+              </span>
+              <span class="text-white/90 font-medium">Séances Athlé</span>
+              <span class="ml-auto text-[11px] uppercase tracking-[.18em] text-white/45">57 secondes</span>
+            </span>
+
+            <span class="block">
+              <span class="block display text-white font-semibold leading-[1.12] text-2xl sm:text-4xl max-w-[20ch]">
+                Ce que l'outil fait, en une minute.
+              </span>
+              <span class="mt-6 inline-flex items-center gap-3 rounded-full bg-white text-piste-black pl-2.5 pr-6 py-2.5 font-semibold transition group-hover:bg-mondo group-hover:text-white">
+                <span class="w-9 h-9 rounded-full bg-mondo flex items-center justify-center transition group-hover:bg-white">
+                  <svg class="w-4 h-4 translate-x-[1px]" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"
+                       style="color:#fff"><path d="M3 1.5v13l11-6.5z"/></svg>
+                </span>
+                Lancer la vidéo
+              </span>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <p class="text-center text-xs text-gray-500 mt-4">Sans son, 57 secondes. Vous pouvez la mettre en plein écran.</p>
+  </div>
+</section>
+
+<script>
+/* Lecture à la demande : la balise video n'existe pas avant le clic, donc
+   aucun octet de la vidéo n'est téléchargé par un visiteur qui ne la regarde pas. */
+(function () {
+  var b = document.getElementById('videoPlay');
+  if (!b) return;
+  b.addEventListener('click', function () {
+    var cadre = b.parentElement;
+    var v = document.createElement('video');
+    v.src = '/presentation-seances-athle.mp4';
+    v.controls = true; v.autoplay = true; v.playsInline = true; v.preload = 'auto';
+    v.setAttribute('playsinline', '');
+    v.className = 'absolute inset-0 w-full h-full bg-black';
+    cadre.innerHTML = '';
+    cadre.appendChild(v);
+  });
+})();
+</script>
+
 <!-- Le vrai problème -->
 <section class="py-20 md:py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
