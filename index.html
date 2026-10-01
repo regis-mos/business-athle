@@ -86,7 +86,7 @@ tailwind.config = {
       <a href="#tarif" class="text-sm text-gray-600 hover:text-piste-black transition">Tarif</a>
       <a href="#questions" class="text-sm text-gray-600 hover:text-piste-black transition">FAQ</a>
       <a href="https://app.seances-athle.fr" class="text-sm text-gray-600 hover:text-piste-black transition">Se connecter</a>
-      <a href="https://app.seances-athle.fr/inscription" class="bg-mondo hover:bg-mondo-dark text-white px-4 py-2 rounded-lg font-medium text-sm transition">Essai gratuit <span class="text-white/70 font-normal">(14 jours)</span></a>
+      <a href="https://app.seances-athle.fr/inscription?source=accueil" class="bg-mondo hover:bg-mondo-dark text-white px-4 py-2 rounded-lg font-medium text-sm transition">Essai gratuit <span class="text-white/70 font-normal">(14 jours)</span></a>
     </div>
   </div>
 </nav>
@@ -137,7 +137,7 @@ tailwind.config = {
       </ul>
       <p class="text-gray-400 mb-8">Que vous soyez diplômé ou non.</p>
       <div class="flex flex-col sm:flex-row gap-3 mb-10">
-        <a href="https://app.seances-athle.fr/inscription" class="bg-mondo hover:bg-mondo-dark text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2">
+        <a href="https://app.seances-athle.fr/inscription?source=accueil" class="bg-mondo hover:bg-mondo-dark text-white px-8 py-4 rounded-lg font-medium text-base transition flex items-center justify-center gap-2">
           Démarrer mes 14 jours offerts
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
@@ -908,7 +908,7 @@ tailwind.config = {
           <span class="display text-4xl font-semibold">9 €</span><span class="text-gray-500 text-sm">/ mois</span>
         </div>
         <div class="text-sm text-gray-500 mt-1 mb-6">Sans engagement. Vous partez quand vous voulez.</div>
-        <a href="https://app.seances-athle.fr/inscription" class="block text-center border border-piste-black hover:bg-piste-black hover:text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Démarrer mes 14 jours offerts</a>
+        <a href="https://app.seances-athle.fr/inscription?source=accueil" class="block text-center border border-piste-black hover:bg-piste-black hover:text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Démarrer mes 14 jours offerts</a>
         <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Tout l'outil, sans réserve</div>
         <ul class="space-y-2.5 text-[15px] text-gray-700">
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Séances, cycles et plans de saison illimités</li>
@@ -930,7 +930,7 @@ tailwind.config = {
           <span class="display text-4xl font-semibold">79 €</span><span class="text-gray-500 text-sm">/ an</span>
         </div>
         <div class="text-sm text-gray-500 mt-1 mb-6">soit 6,60 € par mois, 29 € d'économie</div>
-        <a href="https://app.seances-athle.fr/inscription" class="block text-center bg-mondo hover:bg-mondo-dark text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Démarrer mes 14 jours offerts</a>
+        <a href="https://app.seances-athle.fr/inscription?source=accueil" class="block text-center bg-mondo hover:bg-mondo-dark text-white px-5 py-3 rounded-lg font-medium text-[15px] transition mb-7">Démarrer mes 14 jours offerts</a>
         <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Tout ce qu'il y a dans le mensuel, plus</div>
         <ul class="space-y-2.5 text-[15px] text-gray-700">
           <li class="flex gap-2.5"><span class="text-mondo mt-0.5">✓</span> Deux mois offerts sur la saison</li>
@@ -1337,7 +1337,7 @@ tailwind.config = {
       c'est là que vous verrez si ça tient.
     </p>
     <div class="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-8 text-left">
-      <a href="https://app.seances-athle.fr/inscription" class="bg-mondo hover:bg-mondo-dark text-white rounded-xl p-5 transition block">
+      <a href="https://app.seances-athle.fr/inscription?source=accueil" class="bg-mondo hover:bg-mondo-dark text-white rounded-xl p-5 transition block">
         <div class="flex items-center gap-2 mb-1.5">
           <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
           <span class="font-semibold">Démarrer mes 14 jours offerts</span>
@@ -1437,7 +1437,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') lbClose(); });
   var form = document.getElementById('fEssai');
   if (!form) return;
 
-  var INSCRIPTION = 'https://app.seances-athle.fr/inscription';
+  var INSCRIPTION = 'https://app.seances-athle.fr/inscription?source=accueil';
   var email = document.getElementById('iEmail');
   var btn   = document.getElementById('bEssai');
   var msg   = document.getElementById('mEssai');
@@ -1628,9 +1628,12 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') lbClose(); });
   var vu = parseInt(lu(CLE) || '0', 10);
   if (vu && (Date.now() - vu) < REPOS_JOURS * 864e5) return;
 
-  // Pas de pointeur fin : pas de sortie de fenetre a detecter.
+  // Deux facons de reperer qu'une visite touche a sa fin, selon l'appareil.
+  // Au doigt, il n'y a pas de sortie de fenetre a detecter : on se fie a la
+  // profondeur de lecture. Sans cela la pop-up ne s'affichait jamais sur
+  // telephone, c'est-a-dire pour la quasi-totalite du trafic Instagram.
   var fin = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
-  if (!fin || window.innerWidth < 780) return;
+  var surOrdinateur = fin && window.innerWidth >= 780;
 
   var pret = false, ouvert = false;
   setTimeout(function () { pret = true; }, DELAI_MIN);
@@ -1644,6 +1647,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') lbClose(); });
     document.body.style.overflow = 'hidden';
     setTimeout(function () { var c = document.getElementById('sortie-email'); if (c) c.focus(); }, 380);
     document.removeEventListener('mouseout', guette);
+    window.removeEventListener('scroll', guetteDefilement);
   }
 
   function fermer() {
@@ -1657,7 +1661,26 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') lbClose(); });
     if (e.clientY <= 4 && !e.relatedTarget && !e.toElement) ouvrir();
   }
 
-  document.addEventListener('mouseout', guette);
+  // Au doigt : la personne a lu plus de la moitie de la page et le delai de
+  // courtoisie est passe. On ne guette qu'un echantillon des evenements de
+  // defilement, le calcul ne doit rien couter pendant le scroll.
+  var enAttente = false;
+  function guetteDefilement() {
+    if (enAttente) return;
+    enAttente = true;
+    setTimeout(function () {
+      enAttente = false;
+      var h = document.documentElement;
+      var lu = (h.scrollTop + window.innerHeight) / (h.scrollHeight || 1);
+      if (lu > 0.55) ouvrir();
+    }, 250);
+  }
+
+  if (surOrdinateur) {
+    document.addEventListener('mouseout', guette);
+  } else {
+    window.addEventListener('scroll', guetteDefilement, { passive: true });
+  }
   document.getElementById('sortie-x').addEventListener('click', fermer);
   document.getElementById('sortie-fond').addEventListener('click', fermer);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && ouvert) fermer(); });
@@ -1685,7 +1708,14 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') lbClose(); });
     fetch(FONCTION, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: val, source: 'popup-' + page })
+      // Les identifiants de clic voyagent dans le corps : l'appel part vers un
+      // autre sous-domaine, et un fetch inter-domaines n'emporte pas les
+      // cookies. Sans eux, l'evenement Lead arrive chez Meta sans lien avec la
+      // publicite qui a amene la personne.
+      body: JSON.stringify(Object.assign(
+        { email: val, source: 'popup-' + page },
+        (window.saMeta && window.saMeta.identifiants()) || {}
+      ))
     })
     .then(function (r) { return r.json(); })
     .then(function (d) {

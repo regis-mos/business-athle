@@ -946,7 +946,7 @@ tailwind.config = {
       </div>
       <div class="md:col-span-2 bg-white rounded-2xl p-7 border border-gray-200 reveal reveal-delay-1">
         <div class="font-semibold mb-2">Un seul entraîneur ?</div>
-        <p class="text-gray-600 text-[15px] leading-relaxed mb-3">La formule individuelle existe à 9 € par mois, pour un entraîneur et jusqu'à trois groupes. C'est la bonne porte d'entrée si vous voulez voir l'outil tourner avant d'en parler à votre bureau, et elle commence par <a href="https://app.seances-athle.fr/inscription" class="text-mondo font-medium hover:underline">14 jours d'essai gratuit</a>, sans carte bancaire.</p>
+        <p class="text-gray-600 text-[15px] leading-relaxed mb-3">La formule individuelle existe à 9 € par mois, pour un entraîneur et jusqu'à trois groupes. C'est la bonne porte d'entrée si vous voulez voir l'outil tourner avant d'en parler à votre bureau, et elle commence par <a href="https://app.seances-athle.fr/inscription?source=clubs-individuel" class="text-mondo font-medium hover:underline">14 jours d'essai gratuit</a>, sans carte bancaire.</p>
         <p class="text-gray-500 text-[13px] leading-relaxed mb-3">Et si le club souscrit ensuite, les abonnements individuels de vos encadrants sont remboursés au prorata. Personne ne paie deux fois.</p>
         <a href="/" class="text-mondo font-medium text-[15px] hover:underline">Voir la formule individuelle →</a>
       </div>
@@ -1564,9 +1564,12 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') lbClose(); });
   var vu = parseInt(lu(CLE) || '0', 10);
   if (vu && (Date.now() - vu) < REPOS_JOURS * 864e5) return;
 
-  // Pas de pointeur fin : pas de sortie de fenetre a detecter.
+  // Deux facons de reperer qu'une visite touche a sa fin, selon l'appareil.
+  // Au doigt, il n'y a pas de sortie de fenetre a detecter : on se fie a la
+  // profondeur de lecture. Sans cela la pop-up ne s'affichait jamais sur
+  // telephone, c'est-a-dire pour la quasi-totalite du trafic Instagram.
   var fin = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
-  if (!fin || window.innerWidth < 780) return;
+  var surOrdinateur = fin && window.innerWidth >= 780;
 
   var pret = false, ouvert = false;
   setTimeout(function () { pret = true; }, DELAI_MIN);
@@ -1580,6 +1583,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') lbClose(); });
     document.body.style.overflow = 'hidden';
     setTimeout(function () { var c = document.getElementById('sortie-email'); if (c) c.focus(); }, 380);
     document.removeEventListener('mouseout', guette);
+    window.removeEventListener('scroll', guetteDefilement);
   }
 
   function fermer() {
@@ -1593,7 +1597,26 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') lbClose(); });
     if (e.clientY <= 4 && !e.relatedTarget && !e.toElement) ouvrir();
   }
 
-  document.addEventListener('mouseout', guette);
+  // Au doigt : la personne a lu plus de la moitie de la page et le delai de
+  // courtoisie est passe. On ne guette qu'un echantillon des evenements de
+  // defilement, le calcul ne doit rien couter pendant le scroll.
+  var enAttente = false;
+  function guetteDefilement() {
+    if (enAttente) return;
+    enAttente = true;
+    setTimeout(function () {
+      enAttente = false;
+      var h = document.documentElement;
+      var lu = (h.scrollTop + window.innerHeight) / (h.scrollHeight || 1);
+      if (lu > 0.55) ouvrir();
+    }, 250);
+  }
+
+  if (surOrdinateur) {
+    document.addEventListener('mouseout', guette);
+  } else {
+    window.addEventListener('scroll', guetteDefilement, { passive: true });
+  }
   document.getElementById('sortie-x').addEventListener('click', fermer);
   document.getElementById('sortie-fond').addEventListener('click', fermer);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && ouvert) fermer(); });
@@ -1621,7 +1644,14 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') lbClose(); });
     fetch(FONCTION, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: val, source: 'popup-' + page })
+      // Les identifiants de clic voyagent dans le corps : l'appel part vers un
+      // autre sous-domaine, et un fetch inter-domaines n'emporte pas les
+      // cookies. Sans eux, l'evenement Lead arrive chez Meta sans lien avec la
+      // publicite qui a amene la personne.
+      body: JSON.stringify(Object.assign(
+        { email: val, source: 'popup-' + page },
+        (window.saMeta && window.saMeta.identifiants()) || {}
+      ))
     })
     .then(function (r) { return r.json(); })
     .then(function (d) {

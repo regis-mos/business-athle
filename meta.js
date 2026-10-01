@@ -94,6 +94,20 @@
   initialiser();
   envoyer("PageView");
 
+  /**
+   * Les identifiants, mis a disposition du reste de la page. La pop-up de
+   * capture s'en sert pour les joindre a l'appel vers leadMagnet : cet appel
+   * part vers un autre sous-domaine, et un fetch inter-domaines n'emporte pas
+   * les cookies. Sans ca, l'evenement Lead arrive chez Meta sans aucun lien
+   * avec la publicite qui a amene la personne.
+   */
+  window.saMeta = {
+    identifiants: function () {
+      return { fbp: lire("_fbp") || undefined, fbc: lire("_fbc") || undefined };
+    },
+    envoyer: envoyer
+  };
+
   // Un clic vers l'inscription est le dernier signal observable depuis le site
   // de vente. La creation de compte elle-meme est constatee par initUserTrial.
   document.addEventListener(
