@@ -64,8 +64,12 @@
 <script>
 (function () {
   var zone = document.getElementById('zone');
-  var jeton = new URLSearchParams(location.search).get('jeton');
-  var ENDPOINT = 'https://app.seances-athle.fr/api/apps/69f47a4f5f6a1719d3803879/functions/publicSeance';
+  // Les emails ecrivent ?t=<jeton>. La page ne lisait que ?jeton=, donc tout
+  // clic de desinscription tombait sur l'ecran « Lien incomplet ». On accepte
+  // les deux, sans quoi les liens deja partis resteraient morts.
+  var parametres = new URLSearchParams(location.search);
+  var jeton = parametres.get('t') || parametres.get('jeton');
+  var ENDPOINT = 'https://app.seances-athle.fr/api/apps/69f47a4f5f6a1719d3803879/functions/desabonnement';
 
   function rendre(couleur, icone, titre, texte) {
     zone.innerHTML =
