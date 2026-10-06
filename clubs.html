@@ -1534,7 +1534,17 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') lbClose(); });
 window.addEventListener('load', function () {
   if (!location.hash) return;
   var cible = document.querySelector(location.hash);
-  if (cible) setTimeout(function () { cible.scrollIntoView(); }, 60);
+  // La page est en scroll-behavior:smooth : un scrollIntoView animerait la
+  // descente sur des milliers de pixels et se ferait interrompre en route.
+  // On saute donc d'un coup, puis on rend la douceur au reste du site.
+  if (!cible) return;
+  var html = document.documentElement;
+  var doux = html.style.scrollBehavior;
+  html.style.scrollBehavior = 'auto';
+  setTimeout(function () {
+    window.scrollTo(0, cible.getBoundingClientRect().top + window.scrollY - 72);
+    html.style.scrollBehavior = doux;
+  }, 60);
 });
 </script>
 <div id="vb-overlay" onclick="vbClose()" style="display:none;position:fixed;inset:0;z-index:70;background:rgba(10,9,8,.92);align-items:center;justify-content:center;padding:24px;">
